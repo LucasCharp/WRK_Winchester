@@ -15,6 +15,7 @@ public class MainMenuManager : MonoBehaviour
     private float moveSpeed = 5f;
     private float moveSpeedBack = 8f;
     private float rotationSpeed = 5f;
+    public AudioSource son;
 
     //public Transform initialCameraPosition;
     private bool isCameraClose = false;
@@ -23,6 +24,7 @@ public class MainMenuManager : MonoBehaviour
     {
         //initialCameraPosition = mainCamera.transform.position;
         backButton.gameObject.SetActive(false);
+        son = GameObject.Find("tidum").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -46,6 +48,7 @@ public class MainMenuManager : MonoBehaviour
     IEnumerator MoveAndRotateCamera(Vector3 targetPosition, Quaternion targetRotation)
     {
         Debug.Log("Je touche");
+            ClickSound();
             // Tant que la distance entre la caméra et la position cible est supérieure à une petite marge
             while (Vector3.Distance(mainCamera.transform.position, targetPosition) > 0.1f)
             {
@@ -94,5 +97,18 @@ public class MainMenuManager : MonoBehaviour
     public void OnPlayClicked()
     {
         SceneManager.LoadScene("MainScene");
+    }
+    
+    public void ClickSound()
+    {
+        // Vérifiez si l'Audio Source existe et jouez le son
+        if (son != null)
+        {
+            son.Play();
+        }
+        else
+        {
+            Debug.LogError("Audio Source non assigné. Assurez-vous d'attacher un Audio Source dans l'inspecteur.");
+        }
     }
 }
