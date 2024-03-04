@@ -1,0 +1,39 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SpotlightColor : MonoBehaviour
+{
+    public Color[] colors; // Liste des couleurs disponibles
+    private Light spotlight;
+    private float colorChangeInterval = 3f; // Intervalle de changement de couleur
+
+    void Start()
+    {
+        spotlight = GetComponent<Light>();
+
+        // Démarre la Coroutine pour changer la couleur à intervalles réguliers
+        StartCoroutine(ChangeColorRoutine());
+    }
+
+    IEnumerator ChangeColorRoutine()
+    {
+        while (true)
+        {
+            // Choisit une couleur aléatoire parmi la liste et l'applique à la spotlight
+            SetRandomColor();
+
+            // Attend l'intervalle de changement de couleur
+            yield return new WaitForSeconds(colorChangeInterval);
+        }
+    }
+
+    void SetRandomColor()
+    {
+        // Choix aléatoire d'un indice de couleur dans la liste
+        int randomIndex = Random.Range(0, colors.Length);
+
+        // Applique la couleur aléatoire à la spotlight
+        spotlight.color = colors[randomIndex];
+    }
+}
