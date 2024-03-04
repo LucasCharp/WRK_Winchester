@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
@@ -88,5 +89,10 @@ public class MainMenuManager : MonoBehaviour
         
         isCameraClose = false;
         objectToClick.GetComponent<Collider>().enabled = true;
+    }
+
+    public void OnPlayClicked()
+    {
+        SceneManager.LoadScene("MainScene");
     }
 }
