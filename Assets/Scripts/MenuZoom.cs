@@ -1,39 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class MenuZoom : MonoBehaviour
 {
-    public Camera mainCamera; // Référence à la caméra que vous souhaitez déplacer
-    public Transform targetObject; // L'objet vers lequel la caméra se déplacera
-    public float moveSpeed = 5f; // Vitesse de déplacement de la caméra
-    public float rotationSpeed = 5f; // Vitesse de rotation de la caméra
+    public Camera mainCamera; 
+    public Transform targetObject; 
+    public float moveSpeed = 5f; 
+    public float rotationSpeed = 5f; 
+    public Button retourButton;
+    public BoxCollider boxCollider;
 
+    private void Start()
+    {
+        boxCollider.enabled = true;
+    }
     void Update()
     {
-        // Vérifie si le joueur a cliqué avec le bouton gauche de la souris ou touché l'écran
-        if (Input.GetMouseButtonDown(0))
+        if (boxCollider == true)
         {
-            // Crée un rayon depuis la position de la souris/toucher dans la scène
-            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            // Si le rayon intersecte un objet dans la scène
-            if (Physics.Raycast(ray, out hit))
+            // Vérifie si le joueur a cliqué avec le bouton gauche de la souris ou touché l'écran
+            if (Input.GetMouseButtonDown(0))
             {
-                // Vérifie si l'objet touché est celui sur lequel le joueur a cliqué
-                if (hit.collider.gameObject == gameObject)
+                // Crée un rayon depuis la position de la souris/toucher dans la scène
+                Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                // Si le rayon intersecte un objet dans la scène
+                if (Physics.Raycast(ray, out hit))
                 {
-                    // Déplace et oriente la caméra vers l'objet
-                    StartCoroutine(MoveAndRotateCamera(targetObject.position, targetObject.rotation));
+                    // Vérifie si l'objet touché est celui sur lequel le joueur a cliqué
+                    if (hit.collider.gameObject == gameObject)
+                    {
+                        // Déplace et oriente la caméra vers l'objet
+                        StartCoroutine(MoveAndRotateCamera(targetObject.position, targetObject.rotation));
+                    }
                 }
             }
         }
+        
     }
 
     // Coroutine pour déplacer progressivement la caméra vers une position cible et l'orienter
     IEnumerator MoveAndRotateCamera(Vector3 targetPosition, Quaternion targetRotation)
     {
+        Debug.Log("Je touche");
         // Tant que la distance entre la caméra et la position cible est supérieure à une petite marge
         while (Vector3.Distance(mainCamera.transform.position, targetPosition) > 0.1f)
         {
@@ -44,6 +57,22 @@ public class MenuZoom : MonoBehaviour
             mainCamera.transform.rotation = Quaternion.Slerp(mainCamera.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
             yield return null; // Attend une frame
+           
+            retourButton.gameObject.SetActive(true);// met le bouton retour en visible
+
+            SetCollider();
         }
+    }
+
+    public void SetCollider() // activer et désactiver le fait de pouvoir cliquer sur le mesh
+    {
+        if (boxCollider == false)
+        {
+            boxCollider.enabled = true;
+        }
+        else if (boxCollider == true)
+        {
+            boxCollider.enabled = false;
+        }     
     }
 }
