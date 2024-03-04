@@ -38,11 +38,11 @@ public class RandomNavMeshMovement : MonoBehaviour
     void SetRandomDestination()
     {
         // Générer une destination aléatoire à l'intérieur du NavMesh
-        Vector3 randomDirection = Random.insideUnitSphere * 10f; // Rayon de 10 unités
+        Vector3 randomDirection = Random.insideUnitSphere * 5f; // Rayon de 10 unités
         randomDirection += transform.position;
         randomDirection.y = 0;
         NavMeshHit hit;
-        NavMesh.SamplePosition(randomDirection, out hit, 10f, NavMesh.AllAreas);
+        NavMesh.SamplePosition(randomDirection, out hit, 5f, NavMesh.AllAreas);
         randomDestination = hit.position;
 
         // Définir la destination pour le NavMeshAgent
