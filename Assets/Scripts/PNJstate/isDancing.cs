@@ -25,7 +25,8 @@ public class isDancing : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
+        animator.SetInteger("actions", animator.GetInteger("actions") + 1);
+        Debug.Log(animator.GetInteger("actions"));
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

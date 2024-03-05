@@ -41,6 +41,10 @@ public class RandomNavMeshMovement : MonoBehaviour
                     }
                 }
             }
+            if (animator.GetInteger("actions") == 3)
+            {
+                Destroy(gameObject, 1f);
+            }
     }
 
     void SetRandomDestination()
