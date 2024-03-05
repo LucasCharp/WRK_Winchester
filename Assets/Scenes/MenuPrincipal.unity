@@ -207,7 +207,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 395838432}
         m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: OnBackButtonClicked
+        m_MethodName: OnButtonDumpster
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -455,7 +455,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 395838432}
         m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: OnBackButtonClicked
+        m_MethodName: OnButtonMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -464,7 +464,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
 --- !u!114 &224121804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,13 +698,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f501f87a5581e04a9b90667529d50de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToClick: {fileID: 8169405279269882944}
+  objectDumpster: {fileID: 8169405279269882944}
+  objectMenu: {fileID: 438685140}
   buttonDumpster: {fileID: 138668074}
   buttonMenu: {fileID: 224121803}
   mainCamera: {fileID: 1046566910}
   targetDumpster: {fileID: 363351110}
   targetMenu: {fileID: 1629604168}
   initialPosition: {fileID: 1063673885}
+  playButton: {fileID: 443381397}
   son:
   - {fileID: 8300000, guid: 2e1f96be5f086154f8aa068ff1370300, type: 3}
   - {fileID: 8300000, guid: c03e7841add3e8544832f14c352b998e, type: 3}
