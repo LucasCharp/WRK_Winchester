@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
+using static UnityEngine.GridBrushBase;
 
 public class CameraRotation : MonoBehaviour
 {
     private Vector2 touchStartPos;
-    private bool isDragging = false;
+    private bool isSwiping = false;
     private bool rotationStarted = false;
     private float targetRotation = 0f;
     private float rotationSpeed = 90f; // Vitesse de rotation de la caméra en degrés par seconde
@@ -13,70 +15,51 @@ public class CameraRotation : MonoBehaviour
 
     void Update()
     {
-        if (canRotate == true) 
+        // Vérifie si la rotation est autorisée et si un mouvement de glissement est détecté
+        if (canRotate && Input.touchCount > 0)
         {
-            // Vérifie si le joueur touche l'écran
-            if (Input.touchCount > 0)
+            Touch touch = Input.GetTouch(0);
+
+            switch (touch.phase)
             {
-                Touch touch = Input.GetTouch(0);
+                case TouchPhase.Began:
+                    // Démarre le mouvement de glissement
+                    isSwiping = true;
+                    touchStartPos = touch.position;
+                    break;
 
-                // Gère les différents états du toucher
-                switch (touch.phase)
-                {
-
-                    case TouchPhase.Began:
-                        // Démarre le drag
-                        isDragging = true;
-                        touchStartPos = touch.position;
-                        break;
-
-                    case TouchPhase.Moved:
-                        if (isDragging)
+                case TouchPhase.Moved:
+                    if (isSwiping)
+                    {
+                        // Vérifie si le mouvement de glissement dépasse un certain seuil
+                        float slideDistanceX = touch.position.x - touchStartPos.x;
+                        if (Mathf.Abs(slideDistanceX) > 50f && !rotationStarted)
                         {
-                            // Calcule la distance horizontale du slide
-                            float slideDistanceX = touch.position.x - touchStartPos.x;
-
-                            // Si le slide dépasse un certain seuil et que la rotation n'a pas encore commencé
-                            if (Mathf.Abs(slideDistanceX) > 50f && !rotationStarted)
-                            {
-                                rotationStarted = true;
-
-                                // Détermine la direction de rotation en fonction du slide
-                                float rotationDirection = Mathf.Sign(slideDistanceX);
-
-                                // Calcule la rotation cible en fonction de la direction du slide
-                                targetRotation = (transform.rotation.eulerAngles.y + 90f * rotationDirection) % 360f;
-                            }// Démarre la rotation de la caméra
+                            // Calcule la direction de la rotation et démarre la rotation
+                            float rotationDirection = Mathf.Sign(slideDistanceX);
+                            targetRotation = (transform.rotation.eulerAngles.y + 90f * rotationDirection) % 360f;
+                            rotationStarted = true;
                         }
-                        break;
+                    }
+                    break;
 
-                    case TouchPhase.Ended:
-                        // Réinitialise les paramètres lorsque le toucher est terminé
-                        isDragging = false;
-                        break;
-                }
+                case TouchPhase.Ended:
+                    // Termine le mouvement de glissement
+                    isSwiping = false;
+                    break;
             }
+        }
 
-            Canvas[] canvases = FindObjectsOfType<Canvas>();
-            // Si la rotation a commencé, fait tourner progressivement la caméra vers la rotation cible
-            if (rotationStarted)
+        // Si la rotation a commencé, fait tourner progressivement la caméra vers la rotation cible
+        if (rotationStarted)
+        {
+            float currentRotation = Mathf.MoveTowardsAngle(transform.rotation.eulerAngles.y, targetRotation, rotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0f, currentRotation, 0f);
+
+            // Si la caméra a atteint la rotation cible, réinitialise la rotation
+            if (Mathf.Abs(Mathf.DeltaAngle(transform.rotation.eulerAngles.y, targetRotation)) < 0.01f)
             {
-                float currentRotation = Mathf.MoveTowardsAngle(transform.rotation.eulerAngles.y, targetRotation, rotationSpeed * Time.deltaTime);
-                transform.rotation = Quaternion.Euler(0f, currentRotation, 0f);
-
-                // Parcourt tous les canvas et les désactive
-                foreach (Canvas canvas in canvases)
-                {
-                    canvas.gameObject.SetActive(false);
-                }
-
-                // Si la caméra a atteint la rotation cible, réinitialise la rotation
-                if (Mathf.Abs(Mathf.DeltaAngle(transform.rotation.eulerAngles.y, targetRotation)) < 0.01f)
-                {
-                    rotationStarted = false;
-                    // Réinitialise la rotation cible
-                    targetRotation = transform.rotation.eulerAngles.y;
-                }
+                rotationStarted = false;
             }
         }
     }

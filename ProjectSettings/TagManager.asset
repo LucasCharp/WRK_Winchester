@@ -9,6 +9,10 @@ TagManager:
   - CinemachineTarget
   - Dumpster
   - Menu
+  - BoxCollider1
+  - BoxCollider2
+  - BoxCollider4
+  - '"BoxCollider"3'
   layers:
   - Default
   - TransparentFX
@@ -20,11 +24,11 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Cam
+  - Box11
+  - Box12
+  - Box13
+  - Box14
   - 
   - 
   - 
