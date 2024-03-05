@@ -6,7 +6,8 @@ using UnityEngine;
 public class MusicGenrePointCollector : MonoBehaviour
 {
     public GameObject PNJ;
-    private void Start ()
+    public MusicGenreAnalyzer scriptAffiche;
+    private void Start()
     {
         Debug.Log("j'existe");
     }
@@ -27,7 +28,8 @@ public class MusicGenrePointCollector : MonoBehaviour
             if (!pnjCounters.ContainsKey(PNJ))
             {
                 pnjCounters.Add(PNJ, musicCounter);
-                CalculateTotalPoints();
+                var totalPoints = CalculateTotalPoints();
+                scriptAffiche.DisplayResult(totalPoints, scriptAffiche.GetFavoriteGenre(totalPoints));
             }
         }
     }
@@ -38,6 +40,8 @@ public class MusicGenrePointCollector : MonoBehaviour
         if (pnjCounters.ContainsKey(PNJ))
         {
             pnjCounters.Remove(PNJ);
+            var totalPoints = CalculateTotalPoints();
+            scriptAffiche.DisplayResult(totalPoints, scriptAffiche.GetFavoriteGenre(totalPoints));
         }
     }
 
@@ -62,7 +66,8 @@ public class MusicGenrePointCollector : MonoBehaviour
             totalPoints["Electronic"] += pair.Value.electronicCounter;
             totalPoints["Classical"] += pair.Value.classicalCounter;
         }
-        Debug.Log(totalPoints);
+        foreach (var tab in totalPoints)
+        { Debug.Log(tab); }
         return totalPoints;
     }
 }

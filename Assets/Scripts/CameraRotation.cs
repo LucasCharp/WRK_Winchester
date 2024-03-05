@@ -57,11 +57,18 @@ public class CameraRotation : MonoBehaviour
                 }
             }
 
+            Canvas[] canvases = FindObjectsOfType<Canvas>();
             // Si la rotation a commencé, fait tourner progressivement la caméra vers la rotation cible
             if (rotationStarted)
             {
                 float currentRotation = Mathf.MoveTowardsAngle(transform.rotation.eulerAngles.y, targetRotation, rotationSpeed * Time.deltaTime);
                 transform.rotation = Quaternion.Euler(0f, currentRotation, 0f);
+
+                // Parcourt tous les canvas et les désactive
+                foreach (Canvas canvas in canvases)
+                {
+                    canvas.gameObject.SetActive(false);
+                }
 
                 // Si la caméra a atteint la rotation cible, réinitialise la rotation
                 if (Mathf.Abs(Mathf.DeltaAngle(transform.rotation.eulerAngles.y, targetRotation)) < 0.01f)
