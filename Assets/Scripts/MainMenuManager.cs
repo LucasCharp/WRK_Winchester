@@ -89,6 +89,7 @@ public class MainMenuManager : MonoBehaviour
         {
             playButton.gameObject.SetActive(false);
             Debug.Log("Je touche le menu");
+            soundPlayer.clip = son[3];
             ClickSound();
             // Tant que la distance entre la caméra et la position cible est supérieure à une petite marge
             while (Vector3.Distance(mainCamera.transform.position, targetPosition) > 0.1f)
@@ -115,6 +116,7 @@ public class MainMenuManager : MonoBehaviour
     IEnumerator MoveCameraBackDump(Vector3 targetPosition, Quaternion targetRotation)
     {
         soundPlayer.clip = son[2];
+        ClickSound();
         buttonDumpster.gameObject.SetActive(false);
         // Tant que la caméra n'est pas revenu à la position cible
         while (mainCamera.transform.position != targetPosition)
@@ -141,7 +143,8 @@ public class MainMenuManager : MonoBehaviour
     }
     IEnumerator MoveCameraBackMenu(Vector3 targetPosition, Quaternion targetRotation)
     {
-        soundPlayer.clip = son[2];
+        soundPlayer.clip = son[4];
+        ClickSound();
         buttonMenu.gameObject.SetActive(false);
         // Tant que la caméra n'est pas revenu à la position cible
         while (mainCamera.transform.position != targetPosition)
