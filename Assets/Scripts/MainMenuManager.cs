@@ -17,7 +17,8 @@ public class MainMenuManager : MonoBehaviour
     private float moveSpeed = 5f;
     private float moveSpeedBack = 8f;
     private float rotationSpeed = 5f;
-    public AudioSource son;
+    public List<AudioClip> son;
+    public AudioSource soundPlayer;
 
     //public Transform initialCameraPosition;
     private bool isCameraClose = false;
@@ -27,7 +28,8 @@ public class MainMenuManager : MonoBehaviour
         //initialCameraPosition = mainCamera.transform.position;
         buttonMenu.gameObject.SetActive(false);
         buttonDumpster.gameObject.SetActive(false);
-        son = GameObject.Find("tidum").GetComponent<AudioSource>();
+        soundPlayer = GetComponent<AudioSource>();
+
     }
 
     void Update()
@@ -60,6 +62,7 @@ public class MainMenuManager : MonoBehaviour
         if (objectToClick.CompareTag("Dumpster"))
         {
             Debug.Log("Je touche");
+            soundPlayer.clip = son[1];
             ClickSound();
             // Tant que la distance entre la caméra et la position cible est supérieure à une petite marge
             while (Vector3.Distance(mainCamera.transform.position, targetPosition) > 0.1f)
@@ -104,6 +107,7 @@ public class MainMenuManager : MonoBehaviour
     }
     IEnumerator MoveAndRotateCameraBack(Vector3 targetPosition, Quaternion targetRotation)
     {
+        soundPlayer.clip = son[2];
         buttonDumpster.gameObject.SetActive(false);
         // Tant que la caméra n'est pas revenu à la position cible
         while (mainCamera.transform.position != targetPosition)
@@ -125,15 +129,16 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnPlayClicked()
     {
+        soundPlayer.clip = son[0];
         SceneManager.LoadScene("MainScene");
     }
-    
+
     public void ClickSound()
     {
         // Vérifiez si l'Audio Source existe et jouez le son
         if (son != null)
         {
-            son.Play();
+            soundPlayer.Play();
         }
         else
         {
