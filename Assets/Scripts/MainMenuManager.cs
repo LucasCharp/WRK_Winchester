@@ -10,6 +10,8 @@ public class MainMenuManager : MonoBehaviour
     public GameObject objectDumpster;
     public GameObject objectMenu;
     private GameObject objectTouched;
+    public GameObject objectToRotate1;
+    public GameObject objectToRotate2;
 
     public Button buttonDumpster;
     public Button buttonMenu;
@@ -26,10 +28,13 @@ public class MainMenuManager : MonoBehaviour
     private float moveSpeedBack = 8f;
     private float rotationSpeed = 5f;
     private float playSpeed = 4f;
+    private float rotationDuration = 100f; 
+    private float rotationAmount = 110f;
 
     public List<AudioClip> son;
     public AudioSource soundPlayer;
-   
+
+    
     
 
     //public Transform initialCameraPosition;
@@ -41,7 +46,6 @@ public class MainMenuManager : MonoBehaviour
         buttonMenu.gameObject.SetActive(false);
         buttonDumpster.gameObject.SetActive(false);
         soundPlayer = GetComponent<AudioSource>();
-
     }
 
     void Update()
@@ -88,6 +92,7 @@ public class MainMenuManager : MonoBehaviour
                 yield return null; // Attend une frame
 
                 objectDumpster.GetComponent<Collider>().enabled = false;
+                objectMenu.GetComponent<Collider>().enabled = false;
             }
             buttonDumpster.gameObject.SetActive(true);// met le bouton en visible après que la caméra soit arrivée, pour pas spam dessus
         }
@@ -109,6 +114,7 @@ public class MainMenuManager : MonoBehaviour
                 yield return null; // Attend une frame
 
                 objectMenu.GetComponent<Collider>().enabled = false;
+                objectDumpster.GetComponent<Collider>().enabled = false;
             }
             buttonMenu.gameObject.SetActive(true);// met le bouton en visible après que la caméra soit arrivée, pour pas spam dessus
         }
@@ -140,6 +146,7 @@ public class MainMenuManager : MonoBehaviour
         
         isCameraClose = false;
         objectDumpster.GetComponent<Collider>().enabled = true;
+        objectMenu.GetComponent<Collider>().enabled = true;
         playButton.gameObject.SetActive(true);
     }
 
@@ -168,14 +175,38 @@ public class MainMenuManager : MonoBehaviour
 
         isCameraClose = false;
         objectMenu.GetComponent<Collider>().enabled = true;
+        objectDumpster.GetComponent<Collider>().enabled = true;
         playButton.gameObject.SetActive(true);
     }
 
     public void OnPlayClicked()
     {
         soundPlayer.clip = son[0];
-        //SceneManager.LoadScene("MainScene");
         StartCoroutine(MoveCameraPlay(targetPlay.position, targetPlay.rotation));
+        playButton.gameObject.SetActive(false);
+
+        // Rotation des objets
+        StartCoroutine(RotateObjects());
+    }
+    IEnumerator RotateObjects()
+    {
+        // Calcul de la rotation cible
+        Quaternion targetRotation1 = Quaternion.Euler(objectToRotate1.transform.localRotation.eulerAngles + Vector3.up * rotationAmount);
+        Quaternion targetRotation2 = Quaternion.Euler(objectToRotate2.transform.localRotation.eulerAngles + Vector3.up * -rotationAmount);
+
+        // Rotation progressive des objets
+        float elapsedTime = 0f;
+        while (elapsedTime < rotationDuration)
+        {
+            objectToRotate1.transform.localRotation = Quaternion.Slerp(objectToRotate1.transform.localRotation, targetRotation1, elapsedTime / rotationDuration);
+            objectToRotate2.transform.localRotation = Quaternion.Slerp(objectToRotate2.transform.localRotation, targetRotation2, elapsedTime / rotationDuration);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        // Assure que la rotation finale soit exacte
+        objectToRotate1.transform.localRotation = targetRotation1;
+        objectToRotate2.transform.localRotation = targetRotation2;
     }
     IEnumerator MoveCameraPlay(Vector3 targetPosition, Quaternion targetRotation)
     {
@@ -191,12 +222,12 @@ public class MainMenuManager : MonoBehaviour
 
             yield return null; // Attend une frame
         }
-
         // Une fois que la caméra est revenue à la position cible, désactive le bouton retour, réactive le clic sur l'objet
-
+       
+        SceneManager.LoadScene("MainScene");
         isCameraClose = false;
         objectMenu.GetComponent<Collider>().enabled = true;
-        playButton.gameObject.SetActive(true);
+        playButton.gameObject.SetActive(true); 
     }
 
     public void ClickSound()
