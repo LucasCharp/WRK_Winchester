@@ -8,9 +8,11 @@ using UnityEngine.UI;
 public class MainMenuManager : MonoBehaviour
 {
     public GameObject objectToClick;
-    public Button backButton;
+    public Button buttonDumpster;
+    public Button buttonMenu;
     public Camera mainCamera;
-    public Transform targetObject;
+    public Transform targetDumpster;
+    public Transform targetMenu;
     public Transform initialPosition;
     private float moveSpeed = 5f;
     private float moveSpeedBack = 8f;
@@ -23,7 +25,8 @@ public class MainMenuManager : MonoBehaviour
     void Start()
     {
         //initialCameraPosition = mainCamera.transform.position;
-        backButton.gameObject.SetActive(false);
+        buttonMenu.gameObject.SetActive(false);
+        buttonDumpster.gameObject.SetActive(false);
         son = GameObject.Find("tidum").GetComponent<AudioSource>();
     }
 
@@ -38,7 +41,14 @@ public class MainMenuManager : MonoBehaviour
             {
                 if (hit.collider.gameObject == objectToClick)
                 {
-                    StartCoroutine(MoveAndRotateCamera(targetObject.position, targetObject.rotation));
+                    if (objectToClick.CompareTag("Dumpster"))
+                        {
+                            StartCoroutine(MoveAndRotateCamera(targetDumpster.position, targetDumpster.rotation));
+                        }
+                        else if (objectToClick.CompareTag("Menu"))
+                    {
+                        StartCoroutine(MoveAndRotateCamera(targetMenu.position, targetMenu.rotation));
+                    }
                 }
                 
             }
@@ -47,7 +57,9 @@ public class MainMenuManager : MonoBehaviour
 
     IEnumerator MoveAndRotateCamera(Vector3 targetPosition, Quaternion targetRotation)
     {
-        Debug.Log("Je touche");
+        if (objectToClick.CompareTag("Dumpster"))
+        {
+            Debug.Log("Je touche");
             ClickSound();
             // Tant que la distance entre la caméra et la position cible est supérieure à une petite marge
             while (Vector3.Distance(mainCamera.transform.position, targetPosition) > 0.1f)
@@ -60,13 +72,30 @@ public class MainMenuManager : MonoBehaviour
 
                 yield return null; // Attend une frame
 
-                backButton.gameObject.SetActive(true);// met le bouton retour en visible
-
-                isCameraClose = true;
-                backButton.gameObject.SetActive(true);
-                // Désactiver le clic sur l'objet
                 objectToClick.GetComponent<Collider>().enabled = false;
             }
+            buttonDumpster.gameObject.SetActive(true);// met le bouton en visible après que la caméra soit arrivée, pour pas spam dessus
+        }
+        if (objectToClick.CompareTag("Menu"))
+        {
+            Debug.Log("Je touche");
+            ClickSound();
+            // Tant que la distance entre la caméra et la position cible est supérieure à une petite marge
+            while (Vector3.Distance(mainCamera.transform.position, targetPosition) > 0.1f)
+            {
+                // Déplace la caméra progressivement vers la position cible
+                mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+                // Oriente la caméra progressivement vers la rotation cible
+                mainCamera.transform.rotation = Quaternion.Slerp(mainCamera.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+                yield return null; // Attend une frame
+
+                objectToClick.GetComponent<Collider>().enabled = false;
+            }
+            buttonMenu.gameObject.SetActive(true);// met le bouton en visible après que la caméra soit arrivée, pour pas spam dessus
+        }
+
     }
 
     public void OnBackButtonClicked()
@@ -75,7 +104,7 @@ public class MainMenuManager : MonoBehaviour
     }
     IEnumerator MoveAndRotateCameraBack(Vector3 targetPosition, Quaternion targetRotation)
     {
-        backButton.gameObject.SetActive(false);
+        buttonDumpster.gameObject.SetActive(false);
         // Tant que la caméra n'est pas revenu à la position cible
         while (mainCamera.transform.position != targetPosition)
         {

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - PNJ
   - collider
+  - CinemachineTarget
+  - Dumpster
+  - Menu
   layers:
   - Default
   - TransparentFX
