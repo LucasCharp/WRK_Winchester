@@ -12,7 +12,15 @@ public class ShowResultOnClick : MonoBehaviour
 
     private void OnMouseDown()
     {
-                    // Affiche le canvas avec le résultat
-                    resultCanvas.SetActive(true);
-                }
+        Canvas[] canvases = FindObjectsOfType<Canvas>();
+        // Affiche le canvas avec le résultat
+        resultCanvas.SetActive(true);
+        if (resultCanvas != null) {
+            foreach (Canvas canvas in canvases)
+            {
+                canvas.gameObject.SetActive(false);
+            }
+        }
+
+     }
 }

@@ -7,10 +7,6 @@ public class MusicGenrePointCollector : MonoBehaviour
 {
     public GameObject PNJ;
     public MusicGenreAnalyzer scriptAffiche;
-    private void Start()
-    {
-        Debug.Log("j'existe");
-    }
     // Référence à la boîte de collision (trigger box)
     public Collider triggerCollider;
 
@@ -19,7 +15,6 @@ public class MusicGenrePointCollector : MonoBehaviour
 
     void OnTriggerEnter(Collider PNJ)
     {
-        Debug.Log("oui");
         // Vérifier si le collider est un PNJ et s'il possède un composant CharacterMusicCounter
         CharacterMusicCounter musicCounter = PNJ.GetComponent<CharacterMusicCounter>();
         if (musicCounter != null)
@@ -66,8 +61,7 @@ public class MusicGenrePointCollector : MonoBehaviour
             totalPoints["Electronic"] += pair.Value.electronicCounter;
             totalPoints["Classical"] += pair.Value.classicalCounter;
         }
-        foreach (var tab in totalPoints)
-        { Debug.Log(tab); }
+        foreach (var tab in totalPoints){}
         return totalPoints;
     }
 }
