@@ -58,7 +58,20 @@ public class CameraRotation : MonoBehaviour
 
             // Si la caméra a atteint la rotation cible, réinitialise la rotation
             if (Mathf.Abs(Mathf.DeltaAngle(transform.rotation.eulerAngles.y, targetRotation)) < 0.01f)
+
             {
+                {
+                    {
+                        // Trouve tous les objets de type Canvas dans la scène
+                        Canvas[] canvases = FindObjectsOfType<Canvas>();
+
+                        // Parcourt tous les canvas et les désactive
+                        foreach (Canvas canvas in canvases)
+                        {
+                            canvas.gameObject.SetActive(false);
+                        }
+                    }
+                }
                 rotationStarted = false;
             }
         }
