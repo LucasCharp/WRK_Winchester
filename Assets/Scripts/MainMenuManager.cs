@@ -9,17 +9,23 @@ public class MainMenuManager : MonoBehaviour
 {
     public GameObject objectDumpster;
     public GameObject objectMenu;
+    private GameObject objectTouched;
+
     public Button buttonDumpster;
     public Button buttonMenu;
+    public Button playButton;
+
     public Camera mainCamera;
+
     public Transform targetDumpster;
     public Transform targetMenu;
     public Transform initialPosition;
+    public Transform targetPlay;
+
     private float moveSpeed = 5f;
     private float moveSpeedBack = 8f;
     private float rotationSpeed = 5f;
-    public Button playButton;
-    private GameObject objectTouched;
+    private float playSpeed = 4f;
 
     public List<AudioClip> son;
     public AudioSource soundPlayer;
@@ -168,7 +174,29 @@ public class MainMenuManager : MonoBehaviour
     public void OnPlayClicked()
     {
         soundPlayer.clip = son[0];
-        SceneManager.LoadScene("MainScene");
+        //SceneManager.LoadScene("MainScene");
+        StartCoroutine(MoveCameraPlay(targetPlay.position, targetPlay.rotation));
+    }
+    IEnumerator MoveCameraPlay(Vector3 targetPosition, Quaternion targetRotation)
+    {
+        playButton.gameObject.SetActive(false);
+        // Tant que la caméra n'est pas revenu à la position cible
+        while (mainCamera.transform.position != targetPosition)
+        {
+            // Déplace la caméra progressivement vers la position cible
+            mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, targetPosition, playSpeed * Time.deltaTime);
+
+            // Oriente la caméra progressivement vers la rotation cible
+            mainCamera.transform.rotation = Quaternion.Slerp(mainCamera.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+            yield return null; // Attend une frame
+        }
+
+        // Une fois que la caméra est revenue à la position cible, désactive le bouton retour, réactive le clic sur l'objet
+
+        isCameraClose = false;
+        objectMenu.GetComponent<Collider>().enabled = true;
+        playButton.gameObject.SetActive(true);
     }
 
     public void ClickSound()
