@@ -9,9 +9,10 @@ public class MainMenuManager : MonoBehaviour
 {
     public GameObject objectDumpster;
     public GameObject objectMenu;
+    public GameObject Door1;
+    public GameObject Door2;
+    public GameObject Lid;
     private GameObject objectTouched;
-    public GameObject objectToRotate1;
-    public GameObject objectToRotate2;
 
     public Button buttonDumpster;
     public Button buttonMenu;
@@ -28,8 +29,11 @@ public class MainMenuManager : MonoBehaviour
     private float moveSpeedBack = 8f;
     private float rotationSpeed = 5f;
     private float playSpeed = 4f;
-    private float rotationDuration = 100f; 
+    private float rotationDuration = 100f;
+    private float lidRotDuration = 1f;
     private float rotationAmount = 110f;
+    private Quaternion originalRotation; //= Quaternion.Euler(-20f, 0f, 0f);
+    private bool isRotating = false;
 
     public List<AudioClip> son;
     public AudioSource soundPlayer;
@@ -42,6 +46,8 @@ public class MainMenuManager : MonoBehaviour
 
     void Start()
     {
+        // Sauvegarde la rotation d'origine du couvercle de la poubelle 
+        originalRotation = Lid.transform.localRotation;
         //initialCameraPosition = mainCamera.transform.position;
         buttonMenu.gameObject.SetActive(false);
         buttonDumpster.gameObject.SetActive(false);
@@ -72,10 +78,15 @@ public class MainMenuManager : MonoBehaviour
         }
     }
 
+
+
+
     IEnumerator MoveAndRotateCamera(Vector3 targetPosition, Quaternion targetRotation)
     {
         if (objectTouched.CompareTag("Dumpster"))
         {
+            StartCoroutine(RotateDumpLid());
+            Debug.Log("Je suis là aussi du con");
             playButton.gameObject.SetActive(false);
             Debug.Log("Je touche la poubelle");
             soundPlayer.clip = son[1];
@@ -121,15 +132,52 @@ public class MainMenuManager : MonoBehaviour
 
     }
 
+    IEnumerator RotateDumpLid()
+    {
+        // Calcul de la rotation cible
+        Quaternion targetRotation = Quaternion.Euler(
+            Lid.transform.localRotation.eulerAngles.x - 45f, // Rotation sur l'axe X
+            Lid.transform.localRotation.eulerAngles.y,      // Conserver la rotation sur l'axe Y
+            Lid.transform.localRotation.eulerAngles.z  // Rotation sur l'axe Z
+        );
+
+        // Rotation progressive des objets
+        float elapsedTime = 0f;
+        while (elapsedTime < rotationDuration)
+        {
+            // Interpolation linéaire de la rotation sur la durée spécifiée
+            Lid.transform.localRotation = Quaternion.Slerp(
+                Lid.transform.localRotation, // Rotation actuelle
+                targetRotation,              // Rotation cible
+                elapsedTime / rotationDuration
+            );
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Assure que la rotation finale soit exacte
+        Lid.transform.localRotation = targetRotation;
+    }
+
+
+
+
+
+
+
     public void OnButtonDumpster()
     {
         StartCoroutine(MoveCameraBackDump(initialPosition.position, initialPosition.rotation));
+        buttonDumpster.gameObject.SetActive(false);
+        StartCoroutine(RotateLidBack());
     }
+   
     IEnumerator MoveCameraBackDump(Vector3 targetPosition, Quaternion targetRotation)
     {
         soundPlayer.clip = son[2];
         ClickSound();
-        buttonDumpster.gameObject.SetActive(false);
+        
         // Tant que la caméra n'est pas revenu à la position cible
         while (mainCamera.transform.position != targetPosition)
         {
@@ -149,6 +197,38 @@ public class MainMenuManager : MonoBehaviour
         objectMenu.GetComponent<Collider>().enabled = true;
         playButton.gameObject.SetActive(true);
     }
+
+    IEnumerator RotateLidBack()
+{
+    if (isRotating) yield break; // Si la coroutine est déjà en cours d'exécution, ne rien faire
+
+    isRotating = true;
+
+    Quaternion lidStartRotation = Lid.transform.rotation;
+    Quaternion lidTargetRotation = originalRotation; // Utiliser la rotation d'origine comme rotation cible
+    lidTargetRotation.eulerAngles = new Vector3(originalRotation.eulerAngles.x, lidStartRotation.eulerAngles.y, lidStartRotation.eulerAngles.z); // Garder la rotation sur l'axe Y et Z
+    float elapsedTime = 0f;
+
+    while (elapsedTime < lidRotDuration)
+    {
+        elapsedTime += Time.deltaTime;
+        float time = Mathf.Clamp01(elapsedTime / lidRotDuration);
+        Lid.transform.rotation = Quaternion.Slerp(lidStartRotation, lidTargetRotation, time);
+        yield return null;
+        Debug.Log("Je bouge");
+    }
+    Debug.Log("Je suis arrivé");
+    // Assure que la rotation finale soit exacte
+    Lid.transform.rotation = lidTargetRotation;
+
+    isRotating = false; // Réinitialiser la variable booléenne une fois la coroutine terminée
+}
+
+
+
+
+
+
 
     public void OnButtonMenu()
     {
@@ -179,6 +259,11 @@ public class MainMenuManager : MonoBehaviour
         playButton.gameObject.SetActive(true);
     }
 
+
+
+
+
+
     public void OnPlayClicked()
     {
         soundPlayer.clip = son[0];
@@ -186,28 +271,34 @@ public class MainMenuManager : MonoBehaviour
         playButton.gameObject.SetActive(false);
 
         // Rotation des objets
-        StartCoroutine(RotateObjects());
+        StartCoroutine(RotateDoors());
     }
-    IEnumerator RotateObjects()
+    IEnumerator RotateDoors()
     {
         // Calcul de la rotation cible
-        Quaternion targetRotation1 = Quaternion.Euler(objectToRotate1.transform.localRotation.eulerAngles + Vector3.up * rotationAmount);
-        Quaternion targetRotation2 = Quaternion.Euler(objectToRotate2.transform.localRotation.eulerAngles + Vector3.up * -rotationAmount);
+        Quaternion targetRotation1 = Quaternion.Euler(Door1.transform.localRotation.eulerAngles + Vector3.up * rotationAmount);
+        Quaternion targetRotation2 = Quaternion.Euler(Door2.transform.localRotation.eulerAngles + Vector3.up * -rotationAmount);
 
         // Rotation progressive des objets
         float elapsedTime = 0f;
         while (elapsedTime < rotationDuration)
         {
-            objectToRotate1.transform.localRotation = Quaternion.Slerp(objectToRotate1.transform.localRotation, targetRotation1, elapsedTime / rotationDuration);
-            objectToRotate2.transform.localRotation = Quaternion.Slerp(objectToRotate2.transform.localRotation, targetRotation2, elapsedTime / rotationDuration);
+            Door1.transform.localRotation = Quaternion.Slerp(Door1.transform.localRotation, targetRotation1, elapsedTime / rotationDuration);
+            Door2.transform.localRotation = Quaternion.Slerp(Door2.transform.localRotation, targetRotation2, elapsedTime / rotationDuration);
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
         // Assure que la rotation finale soit exacte
-        objectToRotate1.transform.localRotation = targetRotation1;
-        objectToRotate2.transform.localRotation = targetRotation2;
+        Door1.transform.localRotation = targetRotation1;
+        Door2.transform.localRotation = targetRotation2;
     }
+
+
+
+
+
+
     IEnumerator MoveCameraPlay(Vector3 targetPosition, Quaternion targetRotation)
     {
         playButton.gameObject.SetActive(false);
