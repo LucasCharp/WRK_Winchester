@@ -12,7 +12,11 @@ public class MainMenuManager : MonoBehaviour
     public GameObject Door1;
     public GameObject Door2;
     public GameObject Lid;
+    public GameObject scoreSheet;
+    public GameObject scoreSheetTarget;
+    public GameObject scoreSheetOrigin;
     private GameObject objectTouched;
+    //private Vector3 scorePosition;
 
     public Button buttonDumpster;
     public Button buttonMenu;
@@ -28,12 +32,11 @@ public class MainMenuManager : MonoBehaviour
     private float moveSpeed = 5f;
     private float moveSpeedBack = 8f;
     private float rotationSpeed = 5f;
-    private float playSpeed = 4f;
+    private float playSpeed = 5f;
     private float rotationDuration = 100f;
     private float lidRotDuration = 1f;
+    private float scoreMoveDuration = 0.3f;
     private float rotationAmount = 110f;
-    private Quaternion originalRotation; //= Quaternion.Euler(-20f, 0f, 0f);
-    private bool isRotating = false;
 
     public List<AudioClip> son;
     public AudioSource soundPlayer;
@@ -46,8 +49,6 @@ public class MainMenuManager : MonoBehaviour
 
     void Start()
     {
-        // Sauvegarde la rotation d'origine du couvercle de la poubelle 
-        originalRotation = Lid.transform.localRotation;
         //initialCameraPosition = mainCamera.transform.position;
         buttonMenu.gameObject.SetActive(false);
         buttonDumpster.gameObject.SetActive(false);
@@ -134,30 +135,41 @@ public class MainMenuManager : MonoBehaviour
 
     IEnumerator RotateDumpLid()
     {
-        // Calcul de la rotation cible
+        // Sauvegarde de la position initiale de scoreSheet
+        Vector3 initialPosition = scoreSheet.transform.position;
+
+        // Calcul de la rotation cible pour Lid
         Quaternion targetRotation = Quaternion.Euler(
             Lid.transform.localRotation.eulerAngles.x - 45f, // Rotation sur l'axe X
             Lid.transform.localRotation.eulerAngles.y,      // Conserver la rotation sur l'axe Y
-            Lid.transform.localRotation.eulerAngles.z  // Rotation sur l'axe Z
+            Lid.transform.localRotation.eulerAngles.z       // Rotation sur l'axe Z
         );
 
-        // Rotation progressive des objets
-        float elapsedTime = 0f;
-        while (elapsedTime < rotationDuration)
-        {
-            // Interpolation linéaire de la rotation sur la durée spécifiée
-            Lid.transform.localRotation = Quaternion.Slerp(
-                Lid.transform.localRotation, // Rotation actuelle
-                targetRotation,              // Rotation cible
-                elapsedTime / rotationDuration
-            );
+        // Calcul de la position cible pour scoreSheet
+        Vector3 targetPosition = scoreSheetTarget.transform.position;
 
-            elapsedTime += Time.deltaTime;
+        // Durée de la rotation de Lid
+        float lidElapsedTime = 0f;
+        while (lidElapsedTime < lidRotDuration)
+        {
+            float t = lidElapsedTime / lidRotDuration;
+            Lid.transform.localRotation = Quaternion.Slerp(Lid.transform.localRotation, targetRotation, t);
+
+            // Interpolation linéaire pour déplacer scoreSheet vers targetPosition
+            Vector3 newPosition = Vector3.Lerp(initialPosition, targetPosition, t);
+            scoreSheet.transform.position = newPosition;
+
+            lidElapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        // Assure que la rotation finale soit exacte
+        // Assure que la rotation finale de Lid soit exacte
         Lid.transform.localRotation = targetRotation;
+        Debug.Log("Rotation Lid terminée.");
+
+        // Assure que la position finale de scoreSheet soit exacte
+        scoreSheet.transform.position = targetPosition;
+        Debug.Log("Déplacement de scoreSheet terminé.");
     }
 
 
@@ -171,6 +183,7 @@ public class MainMenuManager : MonoBehaviour
         StartCoroutine(MoveCameraBackDump(initialPosition.position, initialPosition.rotation));
         buttonDumpster.gameObject.SetActive(false);
         StartCoroutine(RotateLidBack());
+        StartCoroutine(ScoreSheetBack());
     }
    
     IEnumerator MoveCameraBackDump(Vector3 targetPosition, Quaternion targetRotation)
@@ -199,33 +212,55 @@ public class MainMenuManager : MonoBehaviour
     }
 
     IEnumerator RotateLidBack()
-{
-    if (isRotating) yield break; // Si la coroutine est déjà en cours d'exécution, ne rien faire
-
-    isRotating = true;
-
-    Quaternion lidStartRotation = Lid.transform.rotation;
-    Quaternion lidTargetRotation = originalRotation; // Utiliser la rotation d'origine comme rotation cible
-    lidTargetRotation.eulerAngles = new Vector3(originalRotation.eulerAngles.x, lidStartRotation.eulerAngles.y, lidStartRotation.eulerAngles.z); // Garder la rotation sur l'axe Y et Z
-    float elapsedTime = 0f;
-
-    while (elapsedTime < lidRotDuration)
     {
-        elapsedTime += Time.deltaTime;
-        float time = Mathf.Clamp01(elapsedTime / lidRotDuration);
-        Lid.transform.rotation = Quaternion.Slerp(lidStartRotation, lidTargetRotation, time);
-        yield return null;
-        Debug.Log("Je bouge");
+
+        // Calcul de la rotation cible pour Lid
+        Quaternion targetRotation = Quaternion.Euler(
+            Lid.transform.localRotation.eulerAngles.x - -45f, // Rotation sur l'axe X
+            Lid.transform.localRotation.eulerAngles.y,      // Conserver la rotation sur l'axe Y
+            Lid.transform.localRotation.eulerAngles.z       // Rotation sur l'axe Z
+        );
+
+        // Durée de la rotation de Lid
+        float lidElapsedTime = 0f;
+        while (lidElapsedTime < lidRotDuration)
+        {
+            float t = lidElapsedTime / lidRotDuration;
+            Lid.transform.localRotation = Quaternion.Slerp(Lid.transform.localRotation, targetRotation, t);
+
+
+            lidElapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Assure que la rotation finale de Lid soit exacte
+        Lid.transform.localRotation = targetRotation;
+        Debug.Log("Rotation Lid terminée.");
+
     }
-    Debug.Log("Je suis arrivé");
-    // Assure que la rotation finale soit exacte
-    Lid.transform.rotation = lidTargetRotation;
 
-    isRotating = false; // Réinitialiser la variable booléenne une fois la coroutine terminée
-}
+    IEnumerator ScoreSheetBack()
+    {
+        // Sauvegarde de la position initiale de scoreSheet
+        Vector3 initialPosition = scoreSheet.transform.position;
+        // Calcul de la position cible pour scoreSheet
+        Vector3 targetPosition = scoreSheetOrigin.transform.position;
+       
+        float lidElapsedTime = 0f;
+        while (lidElapsedTime < scoreMoveDuration)
+        {
+            float t = lidElapsedTime / scoreMoveDuration;
+            // Interpolation linéaire pour déplacer scoreSheet vers targetPosition
+            Vector3 newPosition = Vector3.Lerp(initialPosition, targetPosition, t);
+            scoreSheet.transform.position = newPosition;
 
-
-
+            lidElapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        // Assure que la position finale de scoreSheet soit exacte
+        scoreSheet.transform.position = targetPosition;
+        Debug.Log("Déplacement de scoreSheet terminé.");
+    }
 
 
 
