@@ -35,7 +35,7 @@ public class MainMenuManager : MonoBehaviour
     private float playSpeed = 5f;
     private float rotationDuration = 100f;
     private float lidRotDuration = 1f;
-    private float scoreMoveDuration = 0.3f;
+    private float scoreMoveDuration = 0.2f;
     private float rotationAmount = 110f;
 
     public List<AudioClip> son;
