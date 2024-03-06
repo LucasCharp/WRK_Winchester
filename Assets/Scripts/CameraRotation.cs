@@ -12,6 +12,7 @@ public class CameraRotation : MonoBehaviour
     private float targetRotation = 0f;
     private float rotationSpeed = 90f; // Vitesse de rotation de la caméra en degrés par seconde
     public bool canRotate;
+    public GameObject jobCanvas;
 
     void Update()
     {
@@ -63,12 +64,12 @@ public class CameraRotation : MonoBehaviour
                 {
                     {
                         // Trouve tous les objets de type Canvas dans la scène
-                        Canvas[] canvases = FindObjectsOfType<Canvas>();
+                        Canvas[] canvasJob = FindObjectsOfType<Canvas>();
 
                         // Parcourt tous les canvas et les désactive
-                        foreach (Canvas canvas in canvases)
+                        foreach (Canvas canvasjob in canvasJob)
                         {
-                            canvas.gameObject.SetActive(false);
+                            jobCanvas.SetActive(false);
                         }
                     }
                 }

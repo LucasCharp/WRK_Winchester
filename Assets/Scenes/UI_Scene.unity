@@ -698,6 +698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canRotate: 1
+  jobCanvas: {fileID: 544143139}
 --- !u!4 &113777588
 Transform:
   m_ObjectHideFlags: 0
@@ -2756,7 +2757,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &344134248
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3546,7 +3547,7 @@ RectTransform:
   m_Father: {fileID: 1676375749}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4561,6 +4562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resultCanvas: {fileID: 1729964588}
+  jobCanvas: {fileID: 544143139}
 --- !u!1 &541798858
 GameObject:
   m_ObjectHideFlags: 0
@@ -13147,7 +13149,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1729964589
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13356,7 +13358,7 @@ RectTransform:
   m_Father: {fileID: 140887910}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15352,7 +15354,7 @@ SceneRoots:
   - {fileID: 226363842}
   - {fileID: 1312999269}
   - {fileID: 1795230851}
-  - {fileID: 287523351}
-  - {fileID: 1231023135}
   - {fileID: 1029248073}
+  - {fileID: 1231023135}
+  - {fileID: 287523351}
   - {fileID: 1026083802}

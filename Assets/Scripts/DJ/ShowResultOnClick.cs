@@ -3,6 +3,7 @@ using UnityEngine;
 public class ShowResultOnClick : MonoBehaviour
 {
     public GameObject resultCanvas; // Référence au canvas contenant le texte résultat
+    public GameObject jobCanvas;
 
     void Start()
     {
@@ -18,7 +19,7 @@ public class ShowResultOnClick : MonoBehaviour
         if (resultCanvas != null) {
             foreach (Canvas canvas in canvases)
             {
-                canvas.gameObject.SetActive(false);
+                jobCanvas.SetActive(false);
             }
         }
 
