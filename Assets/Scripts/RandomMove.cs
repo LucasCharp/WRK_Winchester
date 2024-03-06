@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,11 +9,14 @@ public class RandomNavMeshMovement : MonoBehaviour
     public float minMoveDelay = 1f; // Délai minimum entre chaque déplacement
     public float maxMoveDelay = 3f; // Délai maximum entre chaque déplacement
 
+    public Transform secondNavMesh;
+
     private NavMeshAgent navMeshAgent;
     private float moveDelayTimer;
     private Vector3 randomDestination;
     private Animator animator;
     public Vector3 EndZonePosition;
+    private bool navMeshesConnected = false;
 
     void Start()
     {
@@ -42,8 +46,10 @@ public class RandomNavMeshMovement : MonoBehaviour
                     }
                 }
             }
-            if (animator.GetInteger("actions") == 3)
+            if (animator.GetInteger("actions") == 3 && !navMeshesConnected)
             {
+                //ConnectNavMeshes();
+                //navMeshesConnected = true;
                 navMeshAgent.SetDestination(EndZonePosition);
             }
     }
@@ -51,6 +57,7 @@ public class RandomNavMeshMovement : MonoBehaviour
     void SetRandomDestination()
     {
         // Générer une destination aléatoire à l'intérieur du NavMesh
+        
         if (animator.GetBool("isDancing") == false)
         {
             animator.SetBool("isWalking", true);
@@ -65,4 +72,16 @@ public class RandomNavMeshMovement : MonoBehaviour
             navMeshAgent.SetDestination(randomDestination);
         }
     }
+
+    //void ConnectNavMeshes()
+    //{
+    //    // Connecter les deux NavMesh en utilisant NavMeshLink
+    //    NavMeshLink navMeshLink = gameObject.AddComponent<NavMeshLink>();
+    //    navMeshLink.startPoint = NavMeshLink.StartPoint.Auto;
+    //    navMeshLink.endPoint = NavMeshLink.EndPoint.Auto;
+    //    navMeshLink.connectedTransform = secondNavMesh;
+    //    navMeshLink.updateInterval = 0.1f;
+    //
+    //    // Assurez-vous d'ajuster les paramètres de NavMeshLink en fonction de votre configuration spécifique.
+    //}
 }
