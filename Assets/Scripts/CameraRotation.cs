@@ -33,7 +33,7 @@ public class CameraRotation : MonoBehaviour
                     {
                         // Vérifie si le mouvement de glissement dépasse un certain seuil
                         float slideDistanceX = touch.position.x - touchStartPos.x;
-                        if (Mathf.Abs(slideDistanceX) > 50f && !rotationStarted)
+                        if (Mathf.Abs(slideDistanceX) > 250f && !rotationStarted)
                         {
                             // Calcule la direction de la rotation et démarre la rotation
                             float rotationDirection = Mathf.Sign(slideDistanceX);
