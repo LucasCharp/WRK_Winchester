@@ -29,6 +29,8 @@ public class CameraColliderDetection : MonoBehaviour
             boxNumber = 4;
             Debug.Log("La caméra est entrée dans la Box 4");
         }
+        else
+        Debug.Log("pas de box reconnu");
         // Ajoutez d'autres conditions pour les autres Layers ici
     }
 }

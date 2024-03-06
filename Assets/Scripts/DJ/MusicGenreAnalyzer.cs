@@ -16,6 +16,7 @@ public class MusicGenreAnalyzer : MonoBehaviour
         if (pointCollector == null)
         {
             Debug.LogError("Le script de collecte de points n'a pas été trouvé !");
+            Debug.LogError("VoirMusicGenreAnalyzer");
             return;
         }
 
