@@ -12,6 +12,7 @@ public class RandomNavMeshMovement : MonoBehaviour
     private float moveDelayTimer;
     private Vector3 randomDestination;
     private Animator animator;
+    public Vector3 EndZonePosition;
 
     void Start()
     {
@@ -43,7 +44,7 @@ public class RandomNavMeshMovement : MonoBehaviour
             }
             if (animator.GetInteger("actions") == 3)
             {
-                Destroy(gameObject, 1f);
+                navMeshAgent.SetDestination(EndZonePosition);
             }
     }
 

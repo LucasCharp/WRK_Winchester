@@ -181,6 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minMoveDelay: 1
   maxMoveDelay: 3
+  EndZonePosition: {x: 3.03, y: 1.86, z: 10.07}
 --- !u!114 &6234247279162783367
 MonoBehaviour:
   m_ObjectHideFlags: 0
