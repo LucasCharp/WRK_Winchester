@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &27897881
+--- !u!1 &116922397
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,8 +131,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 27897883}
-  - component: {fileID: 27897882}
+  - component: {fileID: 116922399}
+  - component: {fileID: 116922398}
   m_Layer: 0
   m_Name: MusicAmbience
   m_TagString: Untagged
@@ -140,13 +140,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &27897882
+--- !u!82 &116922398
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 27897881}
+  m_GameObject: {fileID: 116922397}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -236,16 +236,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!4 &27897883
+--- !u!4 &116922399
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 27897881}
+  m_GameObject: {fileID: 116922397}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.51331854, y: 0, z: -2.8569815}
+  m_LocalPosition: {x: -6.21, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -971,7 +971,7 @@ MonoBehaviour:
   initialPosition: {fileID: 1063673885}
   targetPlay: {fileID: 1099481684}
   son:
-  - {fileID: 8300000, guid: 2e1f96be5f086154f8aa068ff1370300, type: 3}
+  - {fileID: 8300000, guid: 3cd696d05cc93f3438b50d88c513de78, type: 3}
   - {fileID: 8300000, guid: c03e7841add3e8544832f14c352b998e, type: 3}
   - {fileID: 8300000, guid: e4fa09e899739404aad73f3e4d057fd4, type: 3}
   - {fileID: 8300000, guid: fa2576d1a05e2274981f2dcc6a2e3a02, type: 3}
@@ -5948,9 +5948,9 @@ SceneRoots:
   - {fileID: 2008735806}
   - {fileID: 439281649}
   - {fileID: 1346308152}
-  - {fileID: 27897883}
   - {fileID: 1099481684}
   - {fileID: 407857485}
   - {fileID: 1697492413}
   - {fileID: 2012643507}
   - {fileID: 1959778780}
+  - {fileID: 116922399}
