@@ -26,7 +26,7 @@ public class isDancing : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetInteger("actions", animator.GetInteger("actions") + 1);
-        Debug.Log(animator.GetInteger("actions"));
+        //Debug.Log(animator.GetInteger("actions"));
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

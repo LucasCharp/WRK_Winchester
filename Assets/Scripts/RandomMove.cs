@@ -13,6 +13,7 @@ public class RandomNavMeshMovement : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private float moveDelayTimer;
     private Vector3 randomDestination;
+    private Vector3 lastDestination;
     private Animator animator;
     public Vector3 EndZonePosition;
     private Vector3 PubMiddle;
@@ -28,6 +29,7 @@ public class RandomNavMeshMovement : MonoBehaviour
     void Update()
     {
         // Si le NavMeshAgent a atteint sa destination ou s'il est bloqué, choisir une nouvelle destination aléatoire
+            CheckCollisionWithOtherPNJs();
             if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.1f)
             {
                 if (moveDelayTimer <= 0f)
@@ -45,19 +47,49 @@ public class RandomNavMeshMovement : MonoBehaviour
                     }
                 }
             }
+
+            //Si le PNJ a réalisé 3 actions, il s'en va du pub
             if (animator.GetInteger("actions") == 3)
             {
                 navMeshAgent.SetDestination(EndZonePosition);
             }
 
+            //Si le PNJ est devant la porte d'entrée mais qu'il n'a pas réalisé ses 3 actions, il rerentre dans le pub
             if (animator.GetBool("shouldGoIn") == true)
             {
-                Debug.Log("denr");
-                Debug.Log(PubMiddle);
                 PubMiddle = new Vector3 (Random.Range(-3f, - 0.8f), 0.08950949f, Random.Range(-2f, 1.5f));
                 navMeshAgent.SetDestination(PubMiddle);
                 animator.SetBool("shouldGoIn", false);
             }
+    }
+
+    void CheckCollisionWithOtherPNJs()
+    {
+        // Récupérer tous les PNJs avec le tag "PNJ"
+        GameObject[] otherPNJs = GameObject.FindGameObjectsWithTag("PNJ");
+
+        foreach (GameObject otherPNJ in otherPNJs)
+        {
+            // Vérifier si c'est un autre PNJ et non le PNJ actuel
+            if (otherPNJ != gameObject)
+            {
+                // Obtenir le NavMeshAgent de l'autre PNJ
+                NavMeshAgent otherNavMeshAgent = otherPNJ.GetComponent<NavMeshAgent>();
+
+                // Calculer la distance entre les deux agents
+                float distance = Vector3.Distance(transform.position, otherPNJ.transform.position);
+
+                // Définir une distance de déclenchement (ajustez-la selon vos besoins)
+                float triggerDistance = navMeshAgent.radius + otherNavMeshAgent.radius;
+
+                // Si les NavMeshAgents sont suffisamment proches
+                if (distance < triggerDistance)
+                {
+                    // Déclencher votre code ici
+                    navMeshAgent.SetDestination(lastDestination);
+                }
+            }
+        }
     }
 
     void SetRandomDestination()
@@ -66,6 +98,7 @@ public class RandomNavMeshMovement : MonoBehaviour
         
         if (animator.GetBool("isDancing") == false)
         {
+            lastDestination = randomDestination;
             animator.SetBool("isWalking", true);
             Vector3 randomDirection = Random.insideUnitSphere * 5f; // Rayon de 10 unités
             randomDirection += transform.position;
