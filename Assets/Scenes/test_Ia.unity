@@ -538,8 +538,6 @@ Transform:
   - {fileID: 784181643}
   - {fileID: 9067400541137250171}
   - {fileID: 1853837149}
-  - {fileID: 1230529167}
-  - {fileID: 783385125}
   - {fileID: 461699343}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -801,11 +799,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 433669840}
-  m_Father: {fileID: 953344973}
+  m_Father: {fileID: 1424460826}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 499.99997, y: -30}
+  m_AnchoredPosition: {x: 500, y: -30}
   m_SizeDelta: {x: 2092, y: 991}
   m_Pivot: {x: 1, y: 1}
 --- !u!23 &228585706
@@ -1900,19 +1898,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b24737040796df0459c42ec62abc5905,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1466254860}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b24737040796df0459c42ec62abc5905,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1466254862}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b24737040796df0459c42ec62abc5905,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1466254861}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b24737040796df0459c42ec62abc5905,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1466254868}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b24737040796df0459c42ec62abc5905,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1466254865}
   m_SourcePrefab: {fileID: 100100000, guid: b24737040796df0459c42ec62abc5905, type: 3}
 --- !u!4 &461699343 stripped
 Transform:
@@ -2343,7 +2337,7 @@ RectTransform:
   m_Father: {fileID: 311901714}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2788,6 +2782,8 @@ Transform:
   - {fileID: 561520577}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+=======
 --- !u!1001 &783385124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2966,6 +2962,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvases: []
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> parent of 151ec76 (Portes qui s'ouvre + NavMesh se modifie + Les gens reviennent au milieu au lieu de quitter les bar)
+  pnjCanvases: []
+>>>>>>> parent of 2eb3491 (Revert "Portes qui s'ouvre + NavMesh se modifie + Les gens reviennent au milieu au lieu de quitter les bar")
+>>>>>>> parent of 073be17 (Revert "test reverse")
 --- !u!1001 &784181642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3575,7 +3580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &885070839
 Transform:
   m_ObjectHideFlags: 0
@@ -3589,7 +3594,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 953344973}
   - {fileID: 1735350147}
   - {fileID: 1280251568}
   m_Father: {fileID: 0}
@@ -3994,6 +3998,9 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928687285}
   m_Mesh: {fileID: -8807454807383912454, guid: 8c8833e34bcde9443acd51476797dfc2, type: 3}
+<<<<<<< HEAD
+--- !u!1001 &960600252
+=======
 --- !u!1 &953344972
 GameObject:
   m_ObjectHideFlags: 0
@@ -4096,7 +4103,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+<<<<<<< HEAD
+--- !u!4 &991670358 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1344583451948815420, guid: 6595c40d76e685847803db1373aeb62e,
+    type: 3}
+  m_PrefabInstance: {fileID: 457557570}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1000199190
+>>>>>>> parent of 073be17 (Revert "test reverse")
+=======
 --- !u!1001 &960600252
+>>>>>>> parent of 151ec76 (Portes qui s'ouvre + NavMesh se modifie + Les gens reviennent au milieu au lieu de quitter les bar)
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -4636,7 +4654,6 @@ GameObject:
   - component: {fileID: 1157511135}
   - component: {fileID: 1157511138}
   - component: {fileID: 1157511139}
-  - component: {fileID: 1157511142}
   - component: {fileID: 1157511140}
   - component: {fileID: 1157511141}
   m_Layer: 10
@@ -4825,18 +4842,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1157511142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157511134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc961744d31f9e4096c0a021adc207b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1162266082
 GameObject:
   m_ObjectHideFlags: 0
@@ -5064,6 +5069,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171067273}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
+=======
 --- !u!1001 &1230529166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5243,6 +5250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvases:
   - {fileID: 2038416033}
+>>>>>>> parent of 073be17 (Revert "test reverse")
 --- !u!4 &1246277478 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1344583451948815420, guid: 6595c40d76e685847803db1373aeb62e,
@@ -6249,6 +6257,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 228585705}
   - {fileID: 1940390510}
   - {fileID: 1950727311}
   - {fileID: 1495908220}
@@ -6487,6 +6496,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 461699342}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1466254860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466254856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d1623f84d76ee499729a7c6c887937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resultCanvas: {fileID: 0}
+  jobCanvas: {fileID: 0}
 --- !u!65 &1466254861
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6535,34 +6558,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &1466254865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1466254856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02b7515ba56498945b13625b656e0580, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvases:
-  - {fileID: 1424460825}
---- !u!114 &1466254868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1466254856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d1623f84d76ee499729a7c6c887937, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resultCanvas: {fileID: 0}
-  jobCanvas: {fileID: 228585704}
 --- !u!1 &1483014467
 GameObject:
   m_ObjectHideFlags: 0
@@ -7276,7 +7271,7 @@ RectTransform:
   m_Father: {fileID: 286456352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7894,19 +7889,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 77b7c09314c19374890f4d0d33364d0e,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1853837152}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 77b7c09314c19374890f4d0d33364d0e,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1853837151}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 77b7c09314c19374890f4d0d33364d0e,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1853837155}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77b7c09314c19374890f4d0d33364d0e, type: 3}
 --- !u!4 &1853837149 stripped
 Transform:
@@ -7914,73 +7897,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1853837148}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1853837150 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 77b7c09314c19374890f4d0d33364d0e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1853837148}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1853837151
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853837150}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.0751543, y: 4.077178, z: 2.977551}
-  m_Center: {x: 0.027288139, y: 2.0225723, z: 0.028213799}
---- !u!54 &1853837152
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853837150}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 0
-  m_ImplicitTensor: 0
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &1853837155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853837150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02b7515ba56498945b13625b656e0580, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvases: []
 --- !u!1 &1894623867
 GameObject:
   m_ObjectHideFlags: 0
@@ -8211,7 +8127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canRotate: 1
-  jobCanvas: {fileID: 1735350146}
+  jobCanvas: {fileID: 0}
 --- !u!1 &1904762642
 GameObject:
   m_ObjectHideFlags: 0
