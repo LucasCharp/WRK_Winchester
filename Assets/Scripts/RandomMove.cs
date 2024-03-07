@@ -9,14 +9,14 @@ public class RandomNavMeshMovement : MonoBehaviour
     public float minMoveDelay = 1f; // Délai minimum entre chaque déplacement
     public float maxMoveDelay = 3f; // Délai maximum entre chaque déplacement
 
-    public Transform secondNavMesh;
+    public Transform secondNavMeshDestination; // Destination dans le deuxième NavMesh
 
     private NavMeshAgent navMeshAgent;
     private float moveDelayTimer;
     private Vector3 randomDestination;
     private Animator animator;
     public Vector3 EndZonePosition;
-    private bool navMeshesConnected = false;
+    private bool moveToSecondNavMesh;
 
     void Start()
     {
@@ -46,10 +46,10 @@ public class RandomNavMeshMovement : MonoBehaviour
                     }
                 }
             }
-            if (animator.GetInteger("actions") == 3 && !navMeshesConnected)
-            {
-                //ConnectNavMeshes();
-                //navMeshesConnected = true;
+            if (animator.GetInteger("actions") == 3 && !moveToSecondNavMesh)
+        {
+                MoveToSecondNavMesh();
+                moveToSecondNavMesh = true;
                 navMeshAgent.SetDestination(EndZonePosition);
             }
     }
@@ -73,15 +73,9 @@ public class RandomNavMeshMovement : MonoBehaviour
         }
     }
 
-    //void ConnectNavMeshes()
-    //{
-    //    // Connecter les deux NavMesh en utilisant NavMeshLink
-    //    NavMeshLink navMeshLink = gameObject.AddComponent<NavMeshLink>();
-    //    navMeshLink.startPoint = NavMeshLink.StartPoint.Auto;
-    //    navMeshLink.endPoint = NavMeshLink.EndPoint.Auto;
-    //    navMeshLink.connectedTransform = secondNavMesh;
-    //    navMeshLink.updateInterval = 0.1f;
-    //
-    //    // Assurez-vous d'ajuster les paramètres de NavMeshLink en fonction de votre configuration spécifique.
-    //}
+    void MoveToSecondNavMesh()
+    {
+        // Déplacer l'agent vers la destination dans le deuxième NavMesh
+        navMeshAgent.SetDestination(secondNavMeshDestination.position);
+    }
 }
