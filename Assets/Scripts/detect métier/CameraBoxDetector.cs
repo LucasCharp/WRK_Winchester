@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class CameraBoxDetector : MonoBehaviour
 {
-    public CameraColliderDetection cameraColliderDetection; // Référence au script CameraColliderDetection
+    private CameraColliderDetection cameraColliderDetection; // Référence au script CameraColliderDetection
     private GameObject currentPNJ; // Référence au PNJ de la boîte actuelle
+    private GameObject currentPNJCanvas; // Référence au canvas du PNJ de la boîte actuelle
     public GameObject[] pnjCanvases; // Liste des canvas liés au PNJ
 
     private void Start()
@@ -40,13 +41,14 @@ public class CameraBoxDetector : MonoBehaviour
         }
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
         // Vérifier si le collider avec lequel la caméra entre en collision appartient à une box
         if (other.CompareTag("Box"))
         {
-            // Vérifier si cameraColliderDetection est null
+            // Obtenir une référence à CameraColliderDetection
+            CameraColliderDetection cameraColliderDetection = other.GetComponent<CameraColliderDetection>();
+
             if (cameraColliderDetection != null)
             {
                 // Utiliser la variable boxNumber de l'instance de CameraColliderDetection pour déterminer la box
@@ -58,20 +60,60 @@ public class CameraBoxDetector : MonoBehaviour
                 if (currentPNJ != null)
                 {
                     Debug.Log("PNJ trouvé pour la boîte " + boxNumber + ": " + currentPNJ.name);
+                    // Désactiver le canvas du PNJ précédent
+                    if (currentPNJCanvas != null)
+                    {
+                        currentPNJCanvas.SetActive(false);
+                    }
+                    // Activer le canvas du PNJ actuel
+                    currentPNJCanvas = GetCanvasOfPNJ(currentPNJ);
+                    if (currentPNJCanvas != null)
+                    {
+                        currentPNJCanvas.SetActive(true);
+                    }
                 }
                 else
                 {
                     Debug.LogWarning("Aucun PNJ trouvé pour la boîte " + boxNumber);
                 }
-
-                // Activer ou désactiver les canvas associés au PNJ
-                TogglePNJCanvases(currentPNJ);
             }
             else
             {
                 Debug.LogWarning("CameraColliderDetection non trouvée sur le collider.");
             }
         }
+    }
+
+    private GameObject GetCanvasOfPNJ(GameObject pnj)
+    {
+        if (pnj != null)
+        {
+            PNJCanvasController canvasController = pnj.GetComponent<PNJCanvasController>();
+            if (canvasController != null)
+            {
+                foreach (GameObject canvasObject in canvasController.pnjCanvases)
+                {
+                    Canvas canvas = canvasObject.GetComponent<Canvas>();
+                    if (canvas != null)
+                    {
+                        return canvasObject;
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Aucun composant Canvas trouvé sur le canvas PNJ.");
+                    }
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Aucun script PNJCanvasController trouvé sur le PNJ.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Aucun PNJ trouvé pour la boîte donnée.");
+        }
+        return null;
     }
 
     public GameObject FindPNJByBoxNumber(int boxNumber)
@@ -90,37 +132,5 @@ public class CameraBoxDetector : MonoBehaviour
 
         Debug.LogWarning("Aucun PNJ trouvé pour la boîte " + boxNumber);
         return null; // Retourner null si aucun PNJ trouvé pour le numéro de boîte donné
-    }
-
-    private void TogglePNJCanvases(GameObject pnj)
-    {
-        // Activer ou désactiver les canvas associés au PNJ
-        if (pnj != null)
-        {
-            PNJCanvasController canvasController = pnj.GetComponent<PNJCanvasController>();
-            if (canvasController != null)
-            {
-                foreach (GameObject canvasObject in canvasController.pnjCanvases)
-                {
-                    Canvas canvas = canvasObject.GetComponent<Canvas>();
-                    if (canvas != null)
-                    {
-                        canvas.enabled = !canvas.enabled; // Inverser l'état d'activation du canvas
-                    }
-                    else
-                    {
-                        Debug.LogWarning("Aucun composant Canvas trouvé sur le canvas PNJ.");
-                    }
-                }
-            }
-            else
-            {
-                Debug.LogWarning("Aucun script PNJCanvasController trouvé sur le PNJ.");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Aucun PNJ trouvé pour la boîte donnée.");
-        }
     }
 }
