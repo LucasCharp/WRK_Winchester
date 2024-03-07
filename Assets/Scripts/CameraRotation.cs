@@ -67,7 +67,7 @@ public class CameraRotation : MonoBehaviour
                         Canvas[] canvasJob = FindObjectsOfType<Canvas>();
 
                         // Parcourt tous les canvas et les désactive
-                        foreach (Canvas canvasjob in canvasJob)
+                        foreach (Canvas canvas in canvasJob)
                         {
                             jobCanvas.SetActive(false);
                         }

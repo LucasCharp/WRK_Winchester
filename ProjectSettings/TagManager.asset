@@ -13,6 +13,7 @@ TagManager:
   - BoxCollider2
   - BoxCollider4
   - '"BoxCollider"3'
+  - Box
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - PNJ
   - 
   - 
   - 

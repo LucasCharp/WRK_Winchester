@@ -5,7 +5,7 @@ using TMPro;
 public class MusicGenreAnalyzer : MonoBehaviour
 {
     public TextMeshProUGUI resultText; // Référence au texte où afficher le résultat
-    private MusicGenrePointCollector pointCollector; // Référence au script de collecte de points
+    public MusicGenrePointCollector pointCollector; // Référence au script de collecte de points
 
     void Start()
     {

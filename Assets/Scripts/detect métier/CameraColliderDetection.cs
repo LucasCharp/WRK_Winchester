@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class CameraColliderDetection : MonoBehaviour
 {
-    public int boxNumber = 0; // Variable publique contenant la valeur de la box
+    public int boxNumber = 0; // Déclaration de boxNumber en tant que variable statique
+
 
     private void OnTriggerEnter(Collider other)
     {
+
         // Vérifie si le collider avec lequel la caméra entre en collision appartient à un des Layers désirés
         if (other.gameObject.layer == LayerMask.NameToLayer("Box11"))
         {
@@ -31,6 +33,6 @@ public class CameraColliderDetection : MonoBehaviour
         }
         else
         Debug.Log("pas de box reconnu");
-        // Ajoutez d'autres conditions pour les autres Layers ici
     }
+
 }
