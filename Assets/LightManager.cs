@@ -48,6 +48,6 @@ public class LightManager : MonoBehaviour
 
     public void ChangeIntensitySpeed(float newSpeed)
     {
-        myLight.intensity = newSpeed;
+        intensitySpeed = newSpeed;
     }
 }
