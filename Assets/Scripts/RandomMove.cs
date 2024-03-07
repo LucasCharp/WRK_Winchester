@@ -9,14 +9,13 @@ public class RandomNavMeshMovement : MonoBehaviour
     public float minMoveDelay = 1f; // Délai minimum entre chaque déplacement
     public float maxMoveDelay = 3f; // Délai maximum entre chaque déplacement
 
-    public Transform secondNavMeshDestination; // Destination dans le deuxième NavMesh
 
     private NavMeshAgent navMeshAgent;
     private float moveDelayTimer;
     private Vector3 randomDestination;
     private Animator animator;
     public Vector3 EndZonePosition;
-    private bool moveToSecondNavMesh;
+    private Vector3 PubMiddle;
 
     void Start()
     {
@@ -46,11 +45,18 @@ public class RandomNavMeshMovement : MonoBehaviour
                     }
                 }
             }
-            if (animator.GetInteger("actions") == 3 && !moveToSecondNavMesh)
-        {
-                MoveToSecondNavMesh();
-                moveToSecondNavMesh = true;
+            if (animator.GetInteger("actions") == 3)
+            {
                 navMeshAgent.SetDestination(EndZonePosition);
+            }
+
+            if (animator.GetBool("shouldGoIn") == true)
+            {
+                Debug.Log("denr");
+                Debug.Log(PubMiddle);
+                PubMiddle = new Vector3 (Random.Range(-3f, - 0.8f), 0.08950949f, Random.Range(-2f, 1.5f));
+                navMeshAgent.SetDestination(PubMiddle);
+                animator.SetBool("shouldGoIn", false);
             }
     }
 
@@ -71,11 +77,5 @@ public class RandomNavMeshMovement : MonoBehaviour
             // Définir la destination pour le NavMeshAgent
             navMeshAgent.SetDestination(randomDestination);
         }
-    }
-
-    void MoveToSecondNavMesh()
-    {
-        // Déplacer l'agent vers la destination dans le deuxième NavMesh
-        navMeshAgent.SetDestination(secondNavMeshDestination.position);
     }
 }
