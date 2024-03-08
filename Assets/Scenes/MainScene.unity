@@ -323,6 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 40700851}
+  mainSceneManager: {fileID: 539335460}
 --- !u!1 &51198379
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,6 +489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 93493956}
+  mainSceneManager: {fileID: 539335460}
 --- !u!1 &200735930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1720,6 +1722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 440158445}
+  mainSceneManager: {fileID: 539335460}
 --- !u!1 &442920962
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,6 +2017,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 525783734}
+  mainSceneManager: {fileID: 539335460}
+--- !u!1 &539335458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 539335459}
+  - component: {fileID: 539335460}
+  m_Layer: 0
+  m_Name: MainSceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &539335459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539335458}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5775452, y: 0.35006538, z: 0.84835154}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &539335460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539335458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0ef1308101d5a846a58bc3647d5813d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startGame: 0
 --- !u!1001 &561480946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2400,6 +2449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 634732565}
+  mainSceneManager: {fileID: 539335460}
 --- !u!1 &663375142
 GameObject:
   m_ObjectHideFlags: 0
@@ -2672,6 +2722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 824142957}
+  mainSceneManager: {fileID: 539335460}
 --- !u!1 &824261413 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5416903853355975741, guid: 74777b1cbf115db4c8d73086a54225f9,
@@ -2703,6 +2754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 824261416}
+  mainSceneManager: {fileID: 539335460}
 --- !u!1 &834337321
 GameObject:
   m_ObjectHideFlags: 0
@@ -2817,6 +2869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 843468551}
+  mainSceneManager: {fileID: 539335460}
 --- !u!1 &900561759
 GameObject:
   m_ObjectHideFlags: 0
@@ -3471,6 +3524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 1038859315}
+  mainSceneManager: {fileID: 539335460}
 --- !u!1 &1051429197
 GameObject:
   m_ObjectHideFlags: 0
@@ -4354,6 +4408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 1254403991}
+  mainSceneManager: {fileID: 539335460}
 --- !u!1 &1254813970
 GameObject:
   m_ObjectHideFlags: 0
@@ -4819,6 +4874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 1335693387}
+  mainSceneManager: {fileID: 539335460}
 --- !u!1 &1361893748
 GameObject:
   m_ObjectHideFlags: 0
@@ -5904,6 +5960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 1581833685}
+  mainSceneManager: {fileID: 539335460}
 --- !u!1001 &1585152379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6912,6 +6969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 1972135740}
+  mainSceneManager: {fileID: 539335460}
 --- !u!1 &2002645645 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1850600737392949292, guid: 723de64a9e67bb2498a58af6d08f2005,
@@ -6943,6 +7001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 2002645648}
+  mainSceneManager: {fileID: 539335460}
 --- !u!1 &2007995689 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1308496804084036937, guid: 4258e4ccee9d27943a944edd67c84d86,
@@ -6974,6 +7033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 2007995692}
+  mainSceneManager: {fileID: 539335460}
 --- !u!1 &2014777889
 GameObject:
   m_ObjectHideFlags: 0
@@ -7162,6 +7222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 2060877220}
+  mainSceneManager: {fileID: 539335460}
 --- !u!1 &2073740880
 GameObject:
   m_ObjectHideFlags: 0
@@ -8681,6 +8742,11 @@ PrefabInstance:
       propertyPath: rotationAmount
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3334295310291757149, guid: 28a17664bb78a1e489af9c0d13adc399,
+        type: 3}
+      propertyPath: mainSceneManager
+      value: 
+      objectReference: {fileID: 539335460}
     - target: {fileID: 3774935916385336826, guid: 28a17664bb78a1e489af9c0d13adc399,
         type: 3}
       propertyPath: m_Name
@@ -14633,6 +14699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 80
   rotationAmount: -100
+  mainSceneManager: {fileID: 539335460}
 --- !u!4 &8752988794788805044
 Transform:
   m_ObjectHideFlags: 0
@@ -15001,3 +15068,4 @@ SceneRoots:
   - {fileID: 347415725}
   - {fileID: 584910252}
   - {fileID: 1688362322}
+  - {fileID: 539335459}

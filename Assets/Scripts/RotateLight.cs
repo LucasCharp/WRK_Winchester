@@ -9,8 +9,14 @@ public class RotateLight : MonoBehaviour
     public float rotationAmount;
     private Quaternion startRotation;
     private Quaternion targetRotation;
+    public MainSceneManager mainSceneManager;
+    private bool hasStarted;
 
-    void Start()
+    private void Start()
+    {
+        hasStarted = false;
+    }
+    void StartMoving()
     {
         startRotation = transform.rotation;
         targetRotation = Quaternion.Euler(startRotation.eulerAngles + new Vector3(0f, rotationAmount, 0f));
@@ -18,10 +24,22 @@ public class RotateLight : MonoBehaviour
 
     void Update()
     {
-        if (!rotating)
+        if (mainSceneManager.startGame == true)
         {
-            rotating = true;
-            RotateObject();
+            if (!hasStarted)
+            {
+                StartMoving();
+                hasStarted = true;
+            }
+            if (!rotating)
+            {
+                rotating = true;
+                RotateObject();
+            }
+        }
+         else if (mainSceneManager.startGame == false)
+        {
+            rotating = false;
         }
     }
 
@@ -37,6 +55,7 @@ public class RotateLight : MonoBehaviour
         if (transform.rotation == targetRotation)
         {
             Invoke("ReturnToStartRotation", Time.deltaTime);
+            Debug.Log("Je suis arrivé");
         }
         else
         {

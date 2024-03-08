@@ -7,7 +7,15 @@ public class SpotlightColor : MonoBehaviour
     public Color[] colors; // Liste des couleurs disponibles
     private Light spotlight;
     private float colorChangeInterval = 3f; // Intervalle de changement de couleur
+    public MainSceneManager mainSceneManager;
 
+    private void Update()
+    {
+        if (mainSceneManager.startGame == true)
+        {
+
+        }
+    }
     void Start()
     {
         spotlight = GetComponent<Light>();

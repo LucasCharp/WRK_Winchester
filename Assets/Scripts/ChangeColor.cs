@@ -10,6 +10,7 @@ public class ChangeColor : MonoBehaviour
     private int minTime = 2;
     private int maxTime = 2;
     private string[] hexColors = new string[4];
+    public MainSceneManager mainSceneManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,19 +31,23 @@ public class ChangeColor : MonoBehaviour
 
     private void Update()
     {
-        // Incrémente le timer
-        timer += Time.deltaTime;
-
-        // Vérifie si le timer dépasse le temps entre les changements
-        if (timer >= timeBetweenChanges)
+        if (mainSceneManager.startGame == true)
         {
-            // Change la couleur du cube et réinitialise le timer
-            ChangeCubeColor();
-            timer = 0f;
+            // Incrémente le timer
+            timer += Time.deltaTime;
 
-            // Redéfinit le temps entre les changements pour le prochain changement
-            timeBetweenChanges = Random.Range(minTime, maxTime); 
+            // Vérifie si le timer dépasse le temps entre les changements
+            if (timer >= timeBetweenChanges)
+            {
+                // Change la couleur du cube et réinitialise le timer
+                ChangeCubeColor();
+                timer = 0f;
+
+                // Redéfinit le temps entre les changements pour le prochain changement
+                timeBetweenChanges = Random.Range(minTime, maxTime);
+            }
         }
+        
     }
     void ChangeCubeColor()
     {
