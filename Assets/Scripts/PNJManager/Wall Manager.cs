@@ -10,7 +10,7 @@ public class WallManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Soit faire la même méthode que pour Exit Manager soit trouver une autre méthode
+        
     }
 
     // Update is called once per frame
@@ -29,6 +29,7 @@ public class WallManager : MonoBehaviour
         if (-1 < actions && actions < 3)
         {
             animator.SetBool("shouldGoIn", true);
+            animator.SetBool("isOutOfWall", true);
         }
     }
 }
