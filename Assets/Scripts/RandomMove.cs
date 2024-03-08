@@ -16,7 +16,7 @@ public class RandomNavMeshMovement : MonoBehaviour
     private Vector3 lastDestination;
     private Animator animator;
     public Vector3 EndZonePosition;
-    private Vector3 PubMiddle;
+    private Vector3 PubOpposite;
 
     void Start()
     {
@@ -51,14 +51,24 @@ public class RandomNavMeshMovement : MonoBehaviour
             //Si le PNJ a réalisé 3 actions, il s'en va du pub
             if (animator.GetInteger("actions") == 3)
             {
+                animator.SetBool("isWalking", true);
                 navMeshAgent.SetDestination(EndZonePosition);
             }
 
             //Si le PNJ est devant la porte d'entrée mais qu'il n'a pas réalisé ses 3 actions, il rerentre dans le pub
             if (animator.GetBool("shouldGoIn") == true)
             {
-                PubMiddle = new Vector3 (Random.Range(-3f, - 0.8f), 0.08950949f, Random.Range(-2f, 1.5f));
-                navMeshAgent.SetDestination(PubMiddle);
+                animator.SetBool("isWalking", true);
+                if (animator.GetBool("isOutOfWall") == true) 
+                {
+                    PubOpposite = new Vector3(Random.Range(0f, 2.3f), 0.08950949f, Random.Range(2.5f, 4f));
+                    navMeshAgent.SetDestination(PubOpposite);
+                }
+                else
+                {
+                    PubOpposite = new Vector3(Random.Range(-3f, -0.8f), 0.08950949f, Random.Range(-2f, 1.5f));
+                    navMeshAgent.SetDestination(PubOpposite);
+                }
                 animator.SetBool("shouldGoIn", false);
             }
     }
@@ -86,6 +96,7 @@ public class RandomNavMeshMovement : MonoBehaviour
                 if (distance < triggerDistance)
                 {
                     // Déclencher votre code ici
+                    animator.SetBool("isWalking", true);
                     navMeshAgent.SetDestination(lastDestination);
                 }
             }
