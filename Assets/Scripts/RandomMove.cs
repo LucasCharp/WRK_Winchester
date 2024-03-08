@@ -17,6 +17,14 @@ public class RandomNavMeshMovement : MonoBehaviour
     private Animator animator;
     public Vector3 EndZonePosition;
     private Vector3 PubOpposite;
+    bool hasManagedDoor = false;
+
+    private GameObject[] doors;
+
+    private void Awake()
+    {
+        doors = GameObject.FindGameObjectsWithTag("Door");
+    }
 
     void Start()
     {
@@ -52,6 +60,16 @@ public class RandomNavMeshMovement : MonoBehaviour
             if (animator.GetInteger("actions") == 3)
             {
                 animator.SetBool("isWalking", true);
+                if (!hasManagedDoor)
+                {
+                    foreach (GameObject door in doors)
+                    {
+                        DoorLeft doorScript = door.GetComponent<DoorLeft>();
+                        doorScript.OpenDoor();
+                    }
+                    // Mettez à jour la variable pour indiquer que ManageDoor() a été appelé
+                    hasManagedDoor = true;
+                }
                 navMeshAgent.SetDestination(EndZonePosition);
             }
 

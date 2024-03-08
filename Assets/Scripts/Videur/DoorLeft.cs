@@ -13,6 +13,8 @@ public class DoorLeft : MonoBehaviour
     private bool isMoving = false;
     private bool isOpen = false;
 
+    Animator animator;
+
     void Start()
     {
         // Assurez-vous que le composant NavMeshSurface est référencé
@@ -27,8 +29,24 @@ public class DoorLeft : MonoBehaviour
 
     void Update()
     {
-        // Vérifier s'il y a un toucher sur l'écran
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !isMoving)
+
+    }
+
+    public void OpenDoor()
+    {
+        StartCoroutine(MoveDoor(doorOpenAngle));
+        StartCoroutine(WaitForDoorMovement());
+    }
+
+    public void CloseDoor()
+    {
+        StartCoroutine(MoveDoor(doorCloseAngle));
+        StartCoroutine(WaitForDoorMovement());
+    }
+
+   public void ManageDoor()
+    {
+        if (!isMoving)
         {
             // Si la porte est ouverte, la fermer. Sinon, l'ouvrir.
             if (isOpen)
@@ -39,16 +57,6 @@ public class DoorLeft : MonoBehaviour
             // Attendez la fin du mouvement de la porte avant de mettre à jour le NavMesh
             StartCoroutine(WaitForDoorMovement());
         }
-    }
-
-    void OpenDoor()
-    {
-        StartCoroutine(MoveDoor(doorOpenAngle));
-    }
-
-    void CloseDoor()
-    {
-        StartCoroutine(MoveDoor(doorCloseAngle));
     }
 
     IEnumerator MoveDoor(float targetAngle)

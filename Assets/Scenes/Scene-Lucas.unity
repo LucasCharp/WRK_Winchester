@@ -986,7 +986,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &149098056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3863,7 +3863,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &433338670
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6188,7 +6188,7 @@ PrefabInstance:
     - target: {fileID: 4901183693053418168, guid: 3e1e76c519f25b14ebc971f5766da26c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.59
+      value: 4.55
       objectReference: {fileID: 0}
     - target: {fileID: 4901183693053418168, guid: 3e1e76c519f25b14ebc971f5766da26c,
         type: 3}
@@ -6198,7 +6198,7 @@ PrefabInstance:
     - target: {fileID: 4901183693053418168, guid: 3e1e76c519f25b14ebc971f5766da26c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.86
+      value: -4.04
       objectReference: {fileID: 0}
     - target: {fileID: 4901183693053418168, guid: 3e1e76c519f25b14ebc971f5766da26c,
         type: 3}
@@ -6453,7 +6453,7 @@ PrefabInstance:
     - target: {fileID: 4901183693053418168, guid: 3e1e76c519f25b14ebc971f5766da26c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.20757
+      value: -1.256
       objectReference: {fileID: 0}
     - target: {fileID: 4901183693053418168, guid: 3e1e76c519f25b14ebc971f5766da26c,
         type: 3}
@@ -6463,7 +6463,7 @@ PrefabInstance:
     - target: {fileID: 4901183693053418168, guid: 3e1e76c519f25b14ebc971f5766da26c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.912924
+      value: 2.287
       objectReference: {fileID: 0}
     - target: {fileID: 4901183693053418168, guid: 3e1e76c519f25b14ebc971f5766da26c,
         type: 3}
@@ -7008,7 +7008,7 @@ GameObject:
   - component: {fileID: 809308966}
   m_Layer: 0
   m_Name: Left_Door
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8887,7 +8887,7 @@ GameObject:
   - component: {fileID: 1038499152}
   m_Layer: 0
   m_Name: Right_Door
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9833,7 +9833,7 @@ PrefabInstance:
     - target: {fileID: 4901183693053418168, guid: 3e1e76c519f25b14ebc971f5766da26c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.74
+      value: -3.88
       objectReference: {fileID: 0}
     - target: {fileID: 4901183693053418168, guid: 3e1e76c519f25b14ebc971f5766da26c,
         type: 3}
@@ -9843,7 +9843,7 @@ PrefabInstance:
     - target: {fileID: 4901183693053418168, guid: 3e1e76c519f25b14ebc971f5766da26c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.95
+      value: 2.483
       objectReference: {fileID: 0}
     - target: {fileID: 4901183693053418168, guid: 3e1e76c519f25b14ebc971f5766da26c,
         type: 3}
@@ -11024,7 +11024,7 @@ PrefabInstance:
     - target: {fileID: 4901183693053418168, guid: 3e1e76c519f25b14ebc971f5766da26c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.3522472
+      value: 2.84
       objectReference: {fileID: 0}
     - target: {fileID: 4901183693053418168, guid: 3e1e76c519f25b14ebc971f5766da26c,
         type: 3}
@@ -11034,7 +11034,7 @@ PrefabInstance:
     - target: {fileID: 4901183693053418168, guid: 3e1e76c519f25b14ebc971f5766da26c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.4236755
+      value: 3.49
       objectReference: {fileID: 0}
     - target: {fileID: 4901183693053418168, guid: 3e1e76c519f25b14ebc971f5766da26c,
         type: 3}
@@ -11724,7 +11724,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1391113447
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12340,7 +12340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1468626758
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ TagManager:
   - '"BoxCollider"3'
   - Box
   - BarmanZone
+  - Door
   layers:
   - Default
   - TransparentFX

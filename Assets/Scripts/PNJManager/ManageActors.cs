@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class ManageActors : MonoBehaviour
 {
+    private GameObject[] doors;
+
+    private void Awake()
+    {
+        doors = GameObject.FindGameObjectsWithTag("Door");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +28,11 @@ public class ManageActors : MonoBehaviour
         if (other.CompareTag("PNJ"))
         {
             // Détruit l'objet s'il a le tag "PNJ"
+            foreach (GameObject door in doors)
+            {
+                DoorLeft doorScript = door.GetComponent<DoorLeft>();
+                doorScript.CloseDoor();
+            }
             Destroy(other.gameObject, 1);
         }
     }
