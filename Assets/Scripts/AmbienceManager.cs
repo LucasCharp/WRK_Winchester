@@ -26,8 +26,9 @@ public class SoundManager : MonoBehaviour
             AudioClip sonChoisi = sonsAmbiance[Random.Range(0, sonsAmbiance.Length)];
 
             // Jouez le son
-            ambianceAudioSource.clip = sonChoisi;
-            ambianceAudioSource.Play();
+            //ambianceAudioSource.clip = sonChoisi;
+            //ambianceAudioSource.Play();
+            SFXManager.instance.PlaySoundFXClip(sonChoisi, transform, 1f);
 
             // Attendez un certain temps avant de jouer le prochain son
             float tempsAttente = Random.Range(tempsEntreSonsMin, tempsEntreSonsMax);
