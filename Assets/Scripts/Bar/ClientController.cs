@@ -5,15 +5,32 @@ using UnityEngine;
 public class ClientController : MonoBehaviour
 {
     private bool inBarZone = false;
-    private string commande = "";
+    public string[] boissons;
+    public string commande = new string("");
     private bool commandeFulfilled = false;
+    private BarmanController barmanController;
+
+    public string commandeClient;
+
+    private void Start()
+    {
+        barmanController = FindObjectOfType<BarmanController>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("BarmanZone"))
         {
             inBarZone = true;
-            DemanderBoisson();
+            if (barmanController != null)
+                if (commandeFulfilled == false)
+                {
+                    string[] boissons = { "t'es qui la", "Rome", "abe-sainte", "Mot riz tôt", "vaux 2 k" };
+                    string commande = boissons[Random.Range(0, boissons.Length)];
+                    Debug.Log("Commande ajoutée : " + commande);
+                    commandeClient = commande;
+                    barmanController.AjouterCommande(this);
+                }
         }
     }
 
@@ -22,33 +39,25 @@ public class ClientController : MonoBehaviour
         if (other.CompareTag("BarmanZone"))
         {
             inBarZone = false;
-            commandeFulfilled = false;
         }
     }
 
-    private void DemanderBoisson()
+    public void LivrerBoisson(string nomBoisson)
     {
-        if (!commandeFulfilled)
-        {
-            BarmanController barman = FindObjectOfType<BarmanController>();
-            if (barman != null)
-            {
-                string[] boissons = { "Cocktail", "Bière", "Vin", "Soda" };
-                commande = boissons[Random.Range(0, boissons.Length)];
-                Debug.Log("Commande reçue : " + commande);
-            }
-        }
-    }
-
-    public void CommanderBoisson(string nomBoisson)
-    {
+        Debug.Log("leboutonfaitilvrer");
         if (inBarZone && !commandeFulfilled)
         {
-            if (nomBoisson == commande)
+            Debug.Log(nomBoisson + commandeClient);
+            if (nomBoisson == commandeClient)
             {
-                Debug.Log("Commande complétée !");
-                commandeFulfilled = true;
+                Debug.Log("Commande complétée : " + commande);
+                barmanController.TraiterCommandes();
             }
         }
+    }
+
+    public bool EstCommandeFulfilled()
+    {
+        return commandeFulfilled;
     }
 }
