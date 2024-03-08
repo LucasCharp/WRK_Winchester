@@ -10,9 +10,12 @@ public class LightManager : MonoBehaviour
     public float intensityRange = 1.0f; // Plage d'intensité pour la variation
     public float intensitySpeed = 1.0f; // Vitesse de variation d'intensité
     private float initialIntensity; // Intensité initiale
+    public MainSceneManager mainSceneManager;
+    private bool hasStarted;
 
     void Start()
     {
+        hasStarted = false;
         // Récupérer le composant Light attaché au GameObject
         myLight = GetComponent<Light>();
 
@@ -22,12 +25,24 @@ public class LightManager : MonoBehaviour
 
     void Update()
     {
-        // Variation de couleur au fil du temps (comme avant)
-        //float t = Mathf.PingPong(Time.time, 1.0f) / 1.0f;
-        //myLight.color = Color.Lerp(Color.red, Color.blue, t);
+        if (mainSceneManager.startGame == false)
+        {
+            intensitySpeed = 0;
+        }
+        else if (mainSceneManager.startGame == true)
+        {
+            if (hasStarted == false)
+            {
+                intensitySpeed = 1;
+                hasStarted = true;
+            }  
+        }
+            // Variation de couleur au fil du temps (comme avant)
+            //float t = Mathf.PingPong(Time.time, 1.0f) / 1.0f;
+            //myLight.color = Color.Lerp(Color.red, Color.blue, t);
 
-        // Variation sinusoïdale de l'intensité
-        float intensityFactor = Mathf.Sin(Time.time * intensitySpeed);
+            // Variation sinusoïdale de l'intensité
+            float intensityFactor = Mathf.Sin(Time.time * intensitySpeed);
         myLight.intensity = initialIntensity + intensityRange * intensityFactor;
     }
 

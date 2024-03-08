@@ -671,6 +671,7 @@ MonoBehaviour:
   - {r: 1, g: 0.27450982, b: 0.6, a: 0}
   - {r: 0.6431373, g: 0.27450982, b: 1, a: 0}
   - {r: 0.27450982, g: 1, b: 0.2901961, a: 0}
+  mainSceneManager: {fileID: 539335460}
 --- !u!1 &252247241
 GameObject:
   m_ObjectHideFlags: 0
@@ -2318,6 +2319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intensityRange: 250
   intensitySpeed: 5
+  mainSceneManager: {fileID: 539335460}
 --- !u!114 &584910250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5406,6 +5408,7 @@ MonoBehaviour:
   - {r: 1, g: 0.2745098, b: 0.6017849, a: 0}
   - {r: 0.6443359, g: 0.2745098, b: 1, a: 0}
   - {r: 0.2745098, g: 1, b: 0.29185387, a: 0}
+  mainSceneManager: {fileID: 539335460}
 --- !u!1 &1462771283
 GameObject:
   m_ObjectHideFlags: 0
@@ -8815,12 +8818,12 @@ PrefabInstance:
     - target: {fileID: 8745005290661272540, guid: 28a17664bb78a1e489af9c0d13adc399,
         type: 3}
       propertyPath: m_Range
-      value: 9.79
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8745005290661272540, guid: 28a17664bb78a1e489af9c0d13adc399,
         type: 3}
       propertyPath: m_Intensity
-      value: 548.89
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 8745005290661272540, guid: 28a17664bb78a1e489af9c0d13adc399,
         type: 3}
@@ -14141,12 +14144,12 @@ PrefabInstance:
     - target: {fileID: 8980482442711311995, guid: b749a3ab589c35c44921fb6d37bd9add,
         type: 3}
       propertyPath: m_Range
-      value: 9.79
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8980482442711311995, guid: b749a3ab589c35c44921fb6d37bd9add,
         type: 3}
       propertyPath: m_Intensity
-      value: 548.89
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 8980482442711311995, guid: b749a3ab589c35c44921fb6d37bd9add,
         type: 3}

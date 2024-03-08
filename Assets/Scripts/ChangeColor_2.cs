@@ -24,8 +24,6 @@ public class ChangeColor_2 : MonoBehaviour
         hexColors[0] = "#FF0000"; // Rouge
         hexColors[1] = "#0000FF"; // Bleu
         hexColors[2] = "#00FF00"; // Vert
-
-        ChangeCubeColor();
     }
 
     private void Update()

@@ -24,9 +24,6 @@ public class ChangeColor : MonoBehaviour
         hexColors[1] = "#FF00FF"; // Magenta
         hexColors[2] = "#00FFFF"; // Cyan
         hexColors[3] = "#595959"; // Gris
-
-
-        ChangeCubeColor();
     }
 
     private void Update()

@@ -8,22 +8,28 @@ public class SpotlightColor : MonoBehaviour
     private Light spotlight;
     private float colorChangeInterval = 3f; // Intervalle de changement de couleur
     public MainSceneManager mainSceneManager;
-
+    private bool hasStarted;
+    private int lightIntensity = 600;
+   
+    void Start()
+    {
+        hasStarted = false;
+        spotlight = GetComponent<Light>();
+        spotlight.intensity = 0;
+    }
     private void Update()
     {
         if (mainSceneManager.startGame == true)
         {
-
+            if (!hasStarted ) 
+            {
+                // Démarre la Coroutine pour changer la couleur à intervalles réguliers
+                StartCoroutine(ChangeColorRoutine());
+                hasStarted = true;
+                spotlight.intensity = lightIntensity;
+            }
         }
     }
-    void Start()
-    {
-        spotlight = GetComponent<Light>();
-
-        // Démarre la Coroutine pour changer la couleur à intervalles réguliers
-        StartCoroutine(ChangeColorRoutine());
-    }
-
     IEnumerator ChangeColorRoutine()
     {
         while (true)

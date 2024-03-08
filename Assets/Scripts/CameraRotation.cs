@@ -69,7 +69,7 @@ public class CameraRotation : MonoBehaviour
                         // Parcourt tous les canvas et les désactive
                         foreach (Canvas canvas in canvasJob)
                         {
-                            jobCanvas.SetActive(false);
+                            //jobCanvas.SetActive(false);
                         }
                     }
                 }
