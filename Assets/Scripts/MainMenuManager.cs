@@ -90,8 +90,10 @@ public class MainMenuManager : MonoBehaviour
             Debug.Log("Je suis là aussi du con");
             playButton.gameObject.SetActive(false);
             Debug.Log("Je touche la poubelle");
-            soundPlayer.clip = son[1];
-            ClickSound();
+            //soundPlayer.clip = son[1];
+            //ClickSound();
+            SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+
             // Tant que la distance entre la caméra et la position cible est supérieure à une petite marge
             while (Vector3.Distance(mainCamera.transform.position, targetPosition) > 0.1f)
             {
@@ -112,8 +114,10 @@ public class MainMenuManager : MonoBehaviour
         {
             playButton.gameObject.SetActive(false);
             Debug.Log("Je touche le menu");
-            soundPlayer.clip = son[3];
-            ClickSound();
+            //soundPlayer.clip = son[3];
+            //ClickSound();
+            SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+
             // Tant que la distance entre la caméra et la position cible est supérieure à une petite marge
             while (Vector3.Distance(mainCamera.transform.position, targetPosition) > 0.1f)
             {
@@ -188,9 +192,10 @@ public class MainMenuManager : MonoBehaviour
    
     IEnumerator MoveCameraBackDump(Vector3 targetPosition, Quaternion targetRotation)
     {
-        soundPlayer.clip = son[2];
-        ClickSound();
-        
+        //soundPlayer.clip = son[2];
+        //ClickSound();
+        SFXManager.instance.PlaySoundFXClip(son[2], transform, 1f);
+
         // Tant que la caméra n'est pas revenu à la position cible
         while (mainCamera.transform.position != targetPosition)
         {
@@ -271,8 +276,10 @@ public class MainMenuManager : MonoBehaviour
     }
     IEnumerator MoveCameraBackMenu(Vector3 targetPosition, Quaternion targetRotation)
     {
-        soundPlayer.clip = son[4];
-        ClickSound();
+        //soundPlayer.clip = son[4];
+        //ClickSound();
+        SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
+
         buttonMenu.gameObject.SetActive(false);
         // Tant que la caméra n'est pas revenu à la position cible
         while (mainCamera.transform.position != targetPosition)
@@ -301,7 +308,9 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnPlayClicked()
     {
-        soundPlayer.clip = son[0];
+        //soundPlayer.clip = son[0];
+        SFXManager.instance.PlaySoundFXClip(son[0], transform, 1f);
+
         StartCoroutine(MoveCameraPlay(targetPlay.position, targetPlay.rotation));
         playButton.gameObject.SetActive(false);
 
