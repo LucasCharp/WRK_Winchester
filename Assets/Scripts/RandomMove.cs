@@ -93,29 +93,32 @@ public class RandomNavMeshMovement : MonoBehaviour
 
     void CheckCollisionWithOtherPNJs()
     {
-        // Récupérer tous les PNJs avec le tag "PNJ"
-        GameObject[] otherPNJs = GameObject.FindGameObjectsWithTag("PNJ");
-
-        foreach (GameObject otherPNJ in otherPNJs)
+        if (animator.GetBool("isDancing") == false)
         {
-            // Vérifier si c'est un autre PNJ et non le PNJ actuel
-            if (otherPNJ != gameObject)
+            // Récupérer tous les PNJs avec le tag "PNJ"
+            GameObject[] otherPNJs = GameObject.FindGameObjectsWithTag("PNJ");
+
+            foreach (GameObject otherPNJ in otherPNJs)
             {
-                // Obtenir le NavMeshAgent de l'autre PNJ
-                NavMeshAgent otherNavMeshAgent = otherPNJ.GetComponent<NavMeshAgent>();
-
-                // Calculer la distance entre les deux agents
-                float distance = Vector3.Distance(transform.position, otherPNJ.transform.position);
-
-                // Définir une distance de déclenchement (ajustez-la selon vos besoins)
-                float triggerDistance = navMeshAgent.radius + otherNavMeshAgent.radius;
-
-                // Si les NavMeshAgents sont suffisamment proches
-                if (distance < triggerDistance)
+                // Vérifier si c'est un autre PNJ et non le PNJ actuel
+                if (otherPNJ != gameObject)
                 {
-                    // Déclencher votre code ici
-                    animator.SetBool("isWalking", true);
-                    navMeshAgent.SetDestination(lastDestination);
+                    // Obtenir le NavMeshAgent de l'autre PNJ
+                    NavMeshAgent otherNavMeshAgent = otherPNJ.GetComponent<NavMeshAgent>();
+
+                    // Calculer la distance entre les deux agents
+                    float distance = Vector3.Distance(transform.position, otherPNJ.transform.position);
+
+                    // Définir une distance de déclenchement (ajustez-la selon vos besoins)
+                    float triggerDistance = navMeshAgent.radius + otherNavMeshAgent.radius;
+
+                    // Si les NavMeshAgents sont suffisamment proches
+                    if (distance < triggerDistance)
+                    {
+                        // Déclencher votre code ici
+                        animator.SetBool("isWalking", true);
+                        navMeshAgent.SetDestination(lastDestination);
+                    }
                 }
             }
         }
