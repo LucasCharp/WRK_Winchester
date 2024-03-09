@@ -22,13 +22,22 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     public Button buttonWallWhite;
     public Button buttonWallRetour;
 
+    public Button buttonTable;
+    public Button buttonTableRed;
+    public Button buttonTableYellow;
+    public Button buttonTableBlue;
+    public Button buttonTableGreen;
+    public Button buttonTableRetour;
+
     public Color redColor;
     public Color brownColor;
     public Color whiteColor;
     public GameObject floor;
+    public GameObject table;
     public List<GameObject> walls;
 
     public Transform targetBar;
+    public Transform targetTable;
     public Camera mainCamera;
     public MainSceneManager mainSceneManager;
     public CameraRotation cameraRotation;
@@ -60,6 +69,12 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         buttonWallBrown.gameObject.SetActive(false);
         buttonWallWhite.gameObject.SetActive(false);
         buttonWallRetour.gameObject.SetActive(false);
+
+        buttonTableRed.gameObject.SetActive(false);
+        buttonTableYellow.gameObject.SetActive(false);
+        buttonTableGreen.gameObject.SetActive(false);
+        buttonTableBlue.gameObject.SetActive(false);
+        buttonTableRetour.gameObject.SetActive(false);
     }
 
 
@@ -215,6 +230,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         wallCliqued = true;
         buttonBar.gameObject.SetActive(false);
         buttonFloor.gameObject.SetActive(false);
+        buttonWall.gameObject.SetActive(false);
 
         buttonWallRed.gameObject.SetActive(true);
         buttonWallBrown.gameObject.SetActive(true);
@@ -277,7 +293,16 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnTableCliqued()
     {
-        Debug.Log("Je clique");
+        initialCameraPosition = mainCamera.transform.position; // récupère les valeurs de la caméra avant de la faire bouger pour la remettre en place à la fin
+        initialCameraRotation = mainCamera.transform.rotation;
+
+        StartCoroutine(MoveAndRotateCamera(targetTable.position, targetTable.rotation)); buttonTableRed.gameObject.SetActive(false);
+        buttonTable.gameObject.SetActive(false);
+        buttonTableRed.gameObject.SetActive(true);
+        buttonTableYellow.gameObject.SetActive(true);
+        buttonTableGreen.gameObject.SetActive(true);
+        buttonTableBlue.gameObject.SetActive(true);
+        buttonTableRetour.gameObject.SetActive(true);
     }
 
     public void OnBanquetteCliqued()
