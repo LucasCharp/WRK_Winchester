@@ -16,10 +16,17 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     public Button buttonFloorWhite;
     public Button buttonFloorRetour;
 
+    public Button buttonWall;
+    public Button buttonWallRed;
+    public Button buttonWallBrown;
+    public Button buttonWallWhite;
+    public Button buttonWallRetour;
+
     public Color redColor;
     public Color brownColor;
     public Color whiteColor;
     public GameObject floor;
+    public List<GameObject> walls;
 
     public Transform targetBar;
     public Camera mainCamera;
@@ -30,6 +37,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     private Quaternion initialCameraRotation;
     private bool goToBar;
     private bool floorCliqued;
+    private bool wallCliqued;
 
     private float moveSpeed = 5f;
     private float rotationSpeed = 5f;
@@ -47,6 +55,11 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         buttonFloorBrown.gameObject.SetActive(false);
         buttonFloorWhite.gameObject.SetActive(false);
         buttonFloorRetour.gameObject.SetActive(false);
+
+        buttonWallRed.gameObject.SetActive(false);
+        buttonWallBrown.gameObject.SetActive(false);
+        buttonWallWhite.gameObject.SetActive(false);
+        buttonWallRetour.gameObject.SetActive(false);
     }
 
 
@@ -104,15 +117,30 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         if (floorCliqued == true)
         {
             cameraRotation.canRotate = true;
-            buttonFloor.gameObject.SetActive(true);
             buttonFloorRed.gameObject.SetActive(false);
             buttonFloorBrown.gameObject.SetActive(false);
             buttonFloorWhite.gameObject.SetActive(false);
             buttonFloorRetour.gameObject.SetActive(false);
+
             buttonBar.gameObject.SetActive(true);
+            buttonWall.gameObject.SetActive(true);
+            buttonFloor.gameObject.SetActive(true);
             floorCliqued = false;
         }
+        else if (wallCliqued == true)
+        {
+            buttonBar.gameObject.SetActive(true);
+            buttonWall.gameObject.SetActive(true);
+            buttonFloor.gameObject.SetActive(true);
+
+            buttonWallRed.gameObject.SetActive(false);
+            buttonWallBrown.gameObject.SetActive(false);
+            buttonWallWhite.gameObject.SetActive(false);
+            buttonWallRetour.gameObject.SetActive(false);
+            wallCliqued = false;
+        }
         else StartCoroutine(MoveAndRotateCamera(initialCameraPosition, initialCameraRotation));
+        
         if (goToBar == true)
         {
             buttonRefill.gameObject.SetActive(false);
@@ -135,7 +163,9 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         buttonFloorBrown.gameObject.SetActive(true);
         buttonFloorWhite.gameObject.SetActive(true);
         buttonFloorRetour.gameObject.SetActive(true);
+
         buttonBar.gameObject.SetActive(false);
+        buttonWall.gameObject.SetActive(false);
     }
 
     public void OnRedFloorCliqued()
@@ -179,6 +209,72 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
 
 
+
+    public void OnWallCliqued()
+    {
+        wallCliqued = true;
+        buttonBar.gameObject.SetActive(false);
+        buttonFloor.gameObject.SetActive(false);
+
+        buttonWallRed.gameObject.SetActive(true);
+        buttonWallBrown.gameObject.SetActive(true);
+        buttonWallWhite.gameObject.SetActive(true);
+        buttonWallRetour.gameObject.SetActive(true);
+    }
+
+    public void OnRedWallCliqued()
+    {
+        foreach (GameObject wall in walls)
+        {
+            Renderer renderer = wall.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                // Changez la couleur de tous les matériaux du Renderer
+                foreach (Material material in renderer.materials)
+                {
+                    material.color = redColor;
+                }
+            }
+        }
+    }
+
+    public void OnBrownWallCliqued()
+    {
+        foreach (GameObject wall in walls)
+        {
+            Renderer renderer = wall.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                // Changez la couleur de tous les matériaux du Renderer
+                foreach (Material material in renderer.materials)
+                {
+                    material.color = brownColor;
+                }
+            }
+        }
+    }
+
+    public void OnWhiteWallCliqued()
+    {
+        foreach (GameObject wall in walls)
+        {
+            Renderer renderer = wall.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                // Changez la couleur de tous les matériaux du Renderer
+                foreach (Material material in renderer.materials)
+                {
+                    material.color = whiteColor;
+                }
+            }
+        }
+    }
+
+
+
+
+
+
     public void OnTableCliqued()
     {
         Debug.Log("Je clique");
@@ -190,11 +286,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     }
 
     public void OnBarstoolCliqued()
-    {
-        Debug.Log("Je clique");
-    }
-
-    public void OnWallCliqued()
     {
         Debug.Log("Je clique");
     }
