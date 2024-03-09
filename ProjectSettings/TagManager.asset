@@ -17,6 +17,7 @@ TagManager:
   - BarmanZone
   - Door
   - Bar
+  - Floor
   layers:
   - Default
   - TransparentFX
