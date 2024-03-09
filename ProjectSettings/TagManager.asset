@@ -16,6 +16,7 @@ TagManager:
   - Box
   - BarmanZone
   - Door
+  - Bar
   layers:
   - Default
   - TransparentFX
