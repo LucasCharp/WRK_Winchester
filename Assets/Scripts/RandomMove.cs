@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Windows;
 
 public class RandomNavMeshMovement : MonoBehaviour
 {
     public float minMoveDelay = 1f; // Délai minimum entre chaque déplacement
     public float maxMoveDelay = 3f; // Délai maximum entre chaque déplacement
+
+    public Vector3 queueStart;
+    public Vector3 queueSecond;
+    public Vector3 queueThird;
+    public Vector3 queueLast;
+
+    public GameObject file;
 
 
     private NavMeshAgent navMeshAgent;
@@ -31,7 +39,8 @@ public class RandomNavMeshMovement : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
 
-        SetRandomDestination();
+        //SetRandomDestination();
+        InQueue();
     }
 
     void Update()
@@ -145,6 +154,28 @@ public class RandomNavMeshMovement : MonoBehaviour
 
             // Définir la destination pour le NavMeshAgent
             navMeshAgent.SetDestination(randomDestination);
+        }
+    }
+
+    void InQueue()
+    {
+        QueueManager queueScript = file.GetComponent<QueueManager>();
+        queueScript.numberOfPeopleInQueue += 1;
+        if (queueScript.numberOfPeopleInQueue == 1)
+        {
+            navMeshAgent.SetDestination(queueLast);
+        }
+        if (queueScript.numberOfPeopleInQueue == 2)
+        {
+            navMeshAgent.SetDestination(queueThird);
+        }
+        if (queueScript.numberOfPeopleInQueue == 3)
+        {
+            navMeshAgent.SetDestination(queueSecond);
+        }
+        if (queueScript.numberOfPeopleInQueue == 4)
+        {
+            navMeshAgent.SetDestination(queueStart);
         }
     }
 }

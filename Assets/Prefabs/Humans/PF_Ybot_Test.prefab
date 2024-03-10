@@ -181,6 +181,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minMoveDelay: 1
   maxMoveDelay: 3
+  queueStart: {x: -4.5, y: 0, z: 7.4}
+  queueSecond: {x: -3.3, y: 0, z: 7.4}
+  queueThird: {x: -2.1, y: 0, z: 7.4}
+  queueLast: {x: -0.9, y: 0, z: 7.4}
+  file: {fileID: 7856530953602506616, guid: d0f54b5de6161214384f94a679fc10e9, type: 3}
   EndZonePosition: {x: 3.03, y: 1.86, z: 10}
 --- !u!114 &6234247279162783367
 MonoBehaviour:
