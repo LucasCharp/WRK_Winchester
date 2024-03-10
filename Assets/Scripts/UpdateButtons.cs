@@ -33,8 +33,13 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     public Color brownColor;
     public Color whiteColor;
     public GameObject floor;
-    public GameObject table;
+    public List<GameObject> tables;
     public List<GameObject> walls;
+
+    public Material redMat;
+    public Material yellowMat;
+    public Material blueMat;
+    public Material greenMat;
 
     public Transform targetBar;
     public Transform targetTable;
@@ -47,6 +52,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     private bool goToBar;
     private bool floorCliqued;
     private bool wallCliqued;
+    private bool tableCliqued;
 
     private float moveSpeed = 5f;
     private float rotationSpeed = 5f;
@@ -81,6 +87,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnBarCliqued()
     {
+        buttonWall.gameObject.SetActive(false);
+        buttonTable.gameObject.SetActive(false);
         buttonFloor.gameObject.SetActive(false);
 
         initialCameraPosition = mainCamera.transform.position; // récupère les valeurs de la caméra avant de la faire bouger pour la remettre en place à la fin
@@ -119,16 +127,46 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             {
                 buttonBar.gameObject.SetActive(true);
                 buttonFloor.gameObject.SetActive(true);
+                buttonWall.gameObject.SetActive(true);
+                buttonTable.gameObject.SetActive(true);
                 goToBar = false;
             }
            
         }
-        
+        if (tableCliqued == true)
+        {
+            if (buttonTable.gameObject.activeSelf)
+            {
+                buttonTable.gameObject.SetActive(false);
+                buttonBar.gameObject.SetActive(false);
+                buttonWall.gameObject.SetActive(false);
+                buttonFloor.gameObject.SetActive(false);
+
+                buttonTable.gameObject.SetActive(false);
+                buttonTableRed.gameObject.SetActive(true);
+                buttonTableYellow.gameObject.SetActive(true);
+                buttonTableGreen.gameObject.SetActive(true);
+                buttonTableBlue.gameObject.SetActive(true);
+                buttonTableRetour.gameObject.SetActive(true);
+            }
+            else if (!buttonTable.gameObject.activeSelf)
+            {
+                buttonTable.gameObject.SetActive(true);
+                buttonBar.gameObject.SetActive(true);
+                buttonWall.gameObject.SetActive(true);
+                buttonFloor.gameObject.SetActive(true);
+
+                buttonTable.gameObject.SetActive(true);
+                tableCliqued = false;
+                
+            }
+        }
     }
 
 
     public void OnRetourCLiqued()
     {
+        cameraRotation.canRotate = false;
         if (floorCliqued == true)
         {
             cameraRotation.canRotate = true;
@@ -137,6 +175,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             buttonFloorWhite.gameObject.SetActive(false);
             buttonFloorRetour.gameObject.SetActive(false);
 
+            buttonTable.gameObject.SetActive(true);
             buttonBar.gameObject.SetActive(true);
             buttonWall.gameObject.SetActive(true);
             buttonFloor.gameObject.SetActive(true);
@@ -147,6 +186,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             buttonBar.gameObject.SetActive(true);
             buttonWall.gameObject.SetActive(true);
             buttonFloor.gameObject.SetActive(true);
+            buttonTable.gameObject.SetActive (true);
 
             buttonWallRed.gameObject.SetActive(false);
             buttonWallBrown.gameObject.SetActive(false);
@@ -161,7 +201,28 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             buttonRefill.gameObject.SetActive(false);
             buttonRetourBar.gameObject.SetActive(false);
         }
-   
+        if (wallCliqued == true)
+        {
+            wallCliqued = true;
+            buttonBar.gameObject.SetActive(false);
+            buttonFloor.gameObject.SetActive(false);
+            buttonWall.gameObject.SetActive(false);
+
+            buttonWallRed.gameObject.SetActive(true);
+            buttonWallBrown.gameObject.SetActive(true);
+            buttonWallWhite.gameObject.SetActive(true);
+            buttonWallRetour.gameObject.SetActive(true);
+
+        }
+        if (tableCliqued)
+        {
+            buttonTableRed.gameObject.SetActive(false);
+            buttonTableYellow.gameObject.SetActive(false);
+            buttonTableGreen.gameObject.SetActive(false);
+            buttonTableBlue.gameObject.SetActive(false);
+            buttonTableRetour.gameObject.SetActive(false);
+            
+        }
     }
 
     public void OnRefillCliqued()
@@ -231,6 +292,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         buttonBar.gameObject.SetActive(false);
         buttonFloor.gameObject.SetActive(false);
         buttonWall.gameObject.SetActive(false);
+        buttonTable.gameObject.SetActive(false);
 
         buttonWallRed.gameObject.SetActive(true);
         buttonWallBrown.gameObject.SetActive(true);
@@ -297,14 +359,127 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         initialCameraRotation = mainCamera.transform.rotation;
 
         StartCoroutine(MoveAndRotateCamera(targetTable.position, targetTable.rotation)); buttonTableRed.gameObject.SetActive(false);
-        buttonTable.gameObject.SetActive(false);
-        buttonTableRed.gameObject.SetActive(true);
-        buttonTableYellow.gameObject.SetActive(true);
-        buttonTableGreen.gameObject.SetActive(true);
-        buttonTableBlue.gameObject.SetActive(true);
-        buttonTableRetour.gameObject.SetActive(true);
+       
+        buttonBar.gameObject.SetActive(false);
+        buttonWall.gameObject.SetActive(false);
+        buttonFloor.gameObject.SetActive(false);
+
+        cameraRotation.canRotate = false;
+
+        tableCliqued = true;
     }
 
+    public void OnPrefabRed()
+    {
+        foreach (GameObject table in tables)
+        {
+            if (table != null)
+            {
+                // Obtenez tous les renderers de l'objet
+                Renderer[] renderers = table.GetComponentsInChildren<Renderer>();
+
+                // Parcourez tous les renderers et changez leurs matériaux
+                foreach (Renderer renderer in renderers)
+                {
+                    // Obtenez tous les matériaux actuels du Renderer
+                    Material[] materials = renderer.sharedMaterials;
+
+                    // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                    for (int i = 0; i < materials.Length; i++)
+                    {
+                        materials[i] = redMat;
+                    }
+
+                    // Appliquez les nouveaux matériaux au Renderer
+                    renderer.sharedMaterials = materials;
+                }
+            }
+        }
+    }
+
+    public void OnPrefabGreen()
+    {
+        foreach (GameObject table in tables)
+        {
+            if (table != null)
+            {
+                // Obtenez tous les renderers de l'objet
+                Renderer[] renderers = table.GetComponentsInChildren<Renderer>();
+
+                // Parcourez tous les renderers et changez leurs matériaux
+                foreach (Renderer renderer in renderers)
+                {
+                    // Obtenez tous les matériaux actuels du Renderer
+                    Material[] materials = renderer.sharedMaterials;
+
+                    // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                    for (int i = 0; i < materials.Length; i++)
+                    {
+                        materials[i] = greenMat;
+                    }
+
+                    // Appliquez les nouveaux matériaux au Renderer
+                    renderer.sharedMaterials = materials;
+                }
+            }
+        }
+    }
+
+    public void OnPrefabYellow()
+    {
+        foreach (GameObject table in tables)
+        {
+            if (table != null)
+            {
+                // Obtenez tous les renderers de l'objet
+                Renderer[] renderers = table.GetComponentsInChildren<Renderer>();
+
+                // Parcourez tous les renderers et changez leurs matériaux
+                foreach (Renderer renderer in renderers)
+                {
+                    // Obtenez tous les matériaux actuels du Renderer
+                    Material[] materials = renderer.sharedMaterials;
+
+                    // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                    for (int i = 0; i < materials.Length; i++)
+                    {
+                        materials[i] = yellowMat;
+                    }
+
+                    // Appliquez les nouveaux matériaux au Renderer
+                    renderer.sharedMaterials = materials;
+                }
+            }
+        }
+    }
+
+    public void OnPrefabBlue()
+    {
+        foreach (GameObject table in tables)
+        {
+            if (table != null)
+            {
+                // Obtenez tous les renderers de l'objet
+                Renderer[] renderers = table.GetComponentsInChildren<Renderer>();
+
+                // Parcourez tous les renderers et changez leurs matériaux
+                foreach (Renderer renderer in renderers)
+                {
+                    // Obtenez tous les matériaux actuels du Renderer
+                    Material[] materials = renderer.sharedMaterials;
+
+                    // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                    for (int i = 0; i < materials.Length; i++)
+                    {
+                        materials[i] = blueMat;
+                    }
+
+                    // Appliquez les nouveaux matériaux au Renderer
+                    renderer.sharedMaterials = materials;
+                }
+            }
+        }
+    }
     public void OnBanquetteCliqued()
     {
         Debug.Log("Je clique");

@@ -3091,6 +3091,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 634732565}
   mainSceneManager: {fileID: 539335460}
+--- !u!1 &646632550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7071714893520592142, guid: 8879c5f13edd2254db75302b937b3beb,
+    type: 3}
+  m_PrefabInstance: {fileID: 604234760}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &659332011
 GameObject:
   m_ObjectHideFlags: 0
@@ -4732,6 +4738,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 286708250}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1083138300 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7071714893520592142, guid: 8879c5f13edd2254db75302b937b3beb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1133876056}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1104973257
 GameObject:
   m_ObjectHideFlags: 0
@@ -5108,7 +5120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1146561675}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1958602890}
+        m_TargetAssemblyTypeName: UpgradeButtons, Assembly-CSharp
+        m_MethodName: OnPrefabYellow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1146561675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5122,7 +5146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.87292755, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6988,6 +7012,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361893748}
   m_CullTransparentMesh: 1
+--- !u!1 &1387944472 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7071714893520592142, guid: 8879c5f13edd2254db75302b937b3beb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1428257868}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1388122842
 GameObject:
   m_ObjectHideFlags: 0
@@ -7605,6 +7635,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462771283}
   m_Mesh: {fileID: 4383583644122791515, guid: 136aed9c679c26c41a8f5f413b48c311, type: 3}
+--- !u!1 &1537326954 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7071714893520592142, guid: 8879c5f13edd2254db75302b937b3beb,
+    type: 3}
+  m_PrefabInstance: {fileID: 2077522546}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1546445679
 GameObject:
   m_ObjectHideFlags: 0
@@ -8649,7 +8685,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1686365178}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1958602890}
+        m_TargetAssemblyTypeName: UpgradeButtons, Assembly-CSharp
+        m_MethodName: OnPrefabBlue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1686365178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8663,7 +8711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.33947134, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9205,7 +9253,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1862423315}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1958602890}
+        m_TargetAssemblyTypeName: UpgradeButtons, Assembly-CSharp
+        m_MethodName: OnPrefabGreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1862423315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9219,7 +9279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.08714509, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9542,7 +9602,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1907594767}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1958602890}
+        m_TargetAssemblyTypeName: UpgradeButtons, Assembly-CSharp
+        m_MethodName: OnPrefabRed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1907594767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9556,7 +9628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9726,13 +9798,21 @@ MonoBehaviour:
   redColor: {r: 0.509434, g: 0.12591669, b: 0.12591669, a: 0}
   brownColor: {r: 0.42352945, g: 0.2509804, b: 0, a: 0}
   whiteColor: {r: 0.3056603, g: 0.3056603, b: 0.3056603, a: 0}
-  floor: {fileID: 7071714893520592142, guid: 8879c5f13edd2254db75302b937b3beb, type: 3}
-  table: {fileID: 0}
+  floor: {fileID: 1051429197}
+  tables:
+  - {fileID: 1537326954}
+  - {fileID: 1387944472}
+  - {fileID: 1083138300}
+  - {fileID: 646632550}
   walls:
   - {fileID: 8570463114104912892}
   - {fileID: 1881205}
   - {fileID: 3692032967310479657}
   - {fileID: 410874590807751234}
+  redMat: {fileID: 2100000, guid: 8aade21a35a89584da64218d7aa93814, type: 2}
+  yellowMat: {fileID: 2100000, guid: 5ad4373a54cfee5418cb5c39a2738bee, type: 2}
+  blueMat: {fileID: 2100000, guid: b2356c25e2057504683dc854973700e9, type: 2}
+  greenMat: {fileID: 2100000, guid: 14bac34bf323cb641bd9ad7b81a60222, type: 2}
   targetBar: {fileID: 1546445680}
   targetTable: {fileID: 2145967694}
   mainCamera: {fileID: 1157511136}
