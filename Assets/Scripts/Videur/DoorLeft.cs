@@ -2,6 +2,7 @@ using System.Collections;
 using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem.Controls;
 
 public class DoorLeft : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class DoorLeft : MonoBehaviour
     public float doorOpenAngle = 90f;
     public float doorCloseAngle = 0f;
     public float smoothTime;
+    public float howManyPnjUseDoors = 0f;
 
     private bool isMoving = false;
     private bool isOpen = false;

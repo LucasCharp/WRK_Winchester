@@ -65,7 +65,11 @@ public class RandomNavMeshMovement : MonoBehaviour
                     foreach (GameObject door in doors)
                     {
                         DoorLeft doorScript = door.GetComponent<DoorLeft>();
-                        doorScript.OpenDoor();
+                        doorScript.howManyPnjUseDoors += 1;
+                        if (doorScript.howManyPnjUseDoors == 1)
+                        {
+                            doorScript.OpenDoor();
+                        }                         
                     }
                     // Mettez à jour la variable pour indiquer que ManageDoor() a été appelé
                     hasManagedDoor = true;

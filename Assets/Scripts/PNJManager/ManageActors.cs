@@ -31,7 +31,11 @@ public class ManageActors : MonoBehaviour
             foreach (GameObject door in doors)
             {
                 DoorLeft doorScript = door.GetComponent<DoorLeft>();
-                doorScript.CloseDoor();
+                doorScript.howManyPnjUseDoors -= 1;
+                if (doorScript.howManyPnjUseDoors == 0)
+                {
+                    doorScript.CloseDoor();
+                }
             }
             Destroy(other.gameObject, 1);
         }
