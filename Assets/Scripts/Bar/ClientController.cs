@@ -5,12 +5,9 @@ using UnityEngine;
 public class ClientController : MonoBehaviour
 {
     private bool inBarZone = false;
-    public string[] boissons;
-    public string commande = new string("");
+    public string commande = "";
     private bool commandeFulfilled = false;
     private BarmanController barmanController;
-
-    public string commandeClient;
 
     private void Start()
     {
@@ -23,14 +20,9 @@ public class ClientController : MonoBehaviour
         {
             inBarZone = true;
             if (barmanController != null)
-                if (commandeFulfilled == false)
-                {
-                    string[] boissons = { "t'es qui la", "Rome", "abe-sainte", "Mot riz tôt", "vaux 2 k" };
-                    string commande = boissons[Random.Range(0, boissons.Length)];
-                    Debug.Log("Commande ajoutée : " + commande);
-                    commandeClient = commande;
-                    barmanController.AjouterCommande(this);
-                }
+            {
+                barmanController.AjouterCommande(this);
+            }
         }
     }
 
@@ -44,16 +36,20 @@ public class ClientController : MonoBehaviour
 
     public void LivrerBoisson(string nomBoisson)
     {
-        Debug.Log("leboutonfaitilvrer");
         if (inBarZone && !commandeFulfilled)
         {
-            Debug.Log(nomBoisson + commandeClient);
-            if (nomBoisson == commandeClient)
+            if (nomBoisson == commande)
             {
                 Debug.Log("Commande complétée : " + commande);
+                commandeFulfilled = true;
                 barmanController.TraiterCommandes();
             }
         }
+    }
+
+    public void SetCommande(string nomBoisson)
+    {
+        commande = nomBoisson;
     }
 
     public bool EstCommandeFulfilled()
