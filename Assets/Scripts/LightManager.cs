@@ -37,9 +37,6 @@ public class LightManager : MonoBehaviour
                 hasStarted = true;
             }  
         }
-            // Variation de couleur au fil du temps (comme avant)
-            //float t = Mathf.PingPong(Time.time, 1.0f) / 1.0f;
-            //myLight.color = Color.Lerp(Color.red, Color.blue, t);
 
             // Variation sinusoïdale de l'intensité
             float intensityFactor = Mathf.Sin(Time.time * intensitySpeed);

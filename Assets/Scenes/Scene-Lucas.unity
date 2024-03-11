@@ -796,9 +796,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1388226015}
+      - m_Target: {fileID: 1388226016}
         m_TargetAssemblyTypeName: JukeboxManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: PlayTrack
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -808,9 +808,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: 2ad268f123798ce49a90dba0e19c801c, type: 3}
+      - m_Target: {fileID: 182228547}
         m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeColorHex
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -820,9 +820,9 @@ MonoBehaviour:
           m_StringArgument: '#7F7FFF'
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: 2ad268f123798ce49a90dba0e19c801c, type: 3}
+      - m_Target: {fileID: 182228547}
         m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeIntensitySpeed
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6113,9 +6113,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: c6c51305d9a161343a71a9fe76974fca, type: 3}
+      - m_Target: {fileID: 1388226016}
         m_TargetAssemblyTypeName: JukeboxManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: PlayTrack
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6125,9 +6125,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: 2ad268f123798ce49a90dba0e19c801c, type: 3}
+      - m_Target: {fileID: 182228547}
         m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeColorHex
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6137,9 +6137,9 @@ MonoBehaviour:
           m_StringArgument: '#FFEE00'
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: 2ad268f123798ce49a90dba0e19c801c, type: 3}
+      - m_Target: {fileID: 182228547}
         m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeIntensitySpeed
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7264,9 +7264,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: c6c51305d9a161343a71a9fe76974fca, type: 3}
+      - m_Target: {fileID: 1388226016}
         m_TargetAssemblyTypeName: JukeboxManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: PlayTrack
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7276,9 +7276,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: 2ad268f123798ce49a90dba0e19c801c, type: 3}
+      - m_Target: {fileID: 182228547}
         m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeColorHex
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7288,9 +7288,9 @@ MonoBehaviour:
           m_StringArgument: '#FF0000'
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: 2ad268f123798ce49a90dba0e19c801c, type: 3}
+      - m_Target: {fileID: 182228547}
         m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeIntensitySpeed
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8748,9 +8748,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: c6c51305d9a161343a71a9fe76974fca, type: 3}
+      - m_Target: {fileID: 1388226016}
         m_TargetAssemblyTypeName: JukeboxManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: PlayTrack
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8760,9 +8760,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: 2ad268f123798ce49a90dba0e19c801c, type: 3}
+      - m_Target: {fileID: 182228547}
         m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeColorHex
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8772,9 +8772,9 @@ MonoBehaviour:
           m_StringArgument: '#0006FF'
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: 2ad268f123798ce49a90dba0e19c801c, type: 3}
+      - m_Target: {fileID: 182228547}
         m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeIntensitySpeed
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10152,9 +10152,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: c6c51305d9a161343a71a9fe76974fca, type: 3}
+      - m_Target: {fileID: 1388226016}
         m_TargetAssemblyTypeName: JukeboxManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: PlayTrack
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10164,9 +10164,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: 2ad268f123798ce49a90dba0e19c801c, type: 3}
+      - m_Target: {fileID: 182228547}
         m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeColorHex
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10176,9 +10176,9 @@ MonoBehaviour:
           m_StringArgument: '#FF7E00'
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: 2ad268f123798ce49a90dba0e19c801c, type: 3}
+      - m_Target: {fileID: 182228547}
         m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeIntensitySpeed
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10309,9 +10309,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: c6c51305d9a161343a71a9fe76974fca, type: 3}
+      - m_Target: {fileID: 1388226016}
         m_TargetAssemblyTypeName: JukeboxManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: PlayTrack
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10321,9 +10321,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: 2ad268f123798ce49a90dba0e19c801c, type: 3}
+      - m_Target: {fileID: 182228547}
         m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeColorHex
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10333,9 +10333,9 @@ MonoBehaviour:
           m_StringArgument: '#00FFF1'
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: 2ad268f123798ce49a90dba0e19c801c, type: 3}
+      - m_Target: {fileID: 182228547}
         m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeIntensitySpeed
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12835,9 +12835,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: c6c51305d9a161343a71a9fe76974fca, type: 3}
+      - m_Target: {fileID: 1388226016}
         m_TargetAssemblyTypeName: JukeboxManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: PlayTrack
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12847,9 +12847,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: 2ad268f123798ce49a90dba0e19c801c, type: 3}
+      - m_Target: {fileID: 182228547}
         m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeColorHex
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12859,9 +12859,9 @@ MonoBehaviour:
           m_StringArgument: '#0CFF00'
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: 2ad268f123798ce49a90dba0e19c801c, type: 3}
+      - m_Target: {fileID: 182228547}
         m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeIntensitySpeed
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21183,9 +21183,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: c6c51305d9a161343a71a9fe76974fca, type: 3}
+      - m_Target: {fileID: 1388226016}
         m_TargetAssemblyTypeName: JukeboxManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: PlayTrack
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21195,9 +21195,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: 2ad268f123798ce49a90dba0e19c801c, type: 3}
+      - m_Target: {fileID: 182228547}
         m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeColorHex
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21207,9 +21207,9 @@ MonoBehaviour:
           m_StringArgument: '#FF00F9'
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: 2ad268f123798ce49a90dba0e19c801c, type: 3}
+      - m_Target: {fileID: 182228547}
         m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeIntensitySpeed
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
