@@ -159,19 +159,19 @@ public class RandomNavMeshMovement : MonoBehaviour
     {
         QueueManager queueScript = file.GetComponent<QueueManager>();
         queueScript.numberOfPeopleInQueue += 1;
-        if (queueScript.numberOfPeopleInQueue == 1)
+        if (queueScript.numberOfPeopleInQueue == 0)
         {
             navMeshAgent.SetDestination(queueLast);
         }
-        if (queueScript.numberOfPeopleInQueue == 2)
+        if (queueScript.numberOfPeopleInQueue == 1)
         {
             navMeshAgent.SetDestination(queueThird);
         }
-        if (queueScript.numberOfPeopleInQueue == 3)
+        if (queueScript.numberOfPeopleInQueue == 2)
         {
             navMeshAgent.SetDestination(queueSecond);
         }
-        if (queueScript.numberOfPeopleInQueue == 4)
+        if (queueScript.numberOfPeopleInQueue == 3)
         {
             navMeshAgent.SetDestination(queueStart);
         }

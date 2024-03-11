@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] pnjPrefabs; // Tableau contenant vos préfabs avec le tag "PNJ"
-    public float spawnInterval = 4f; // Intervalle entre chaque spawn en secondes
+    public float spawnInterval = 10f; // Intervalle entre chaque spawn en secondes
 
     void Start()
     {

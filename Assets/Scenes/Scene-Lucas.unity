@@ -17109,6 +17109,7 @@ MonoBehaviour:
   mainCamera: {fileID: 1592362479}
   mainSceneManager: {fileID: 1396442795}
   cameraRotation: {fileID: 113777587}
+  son: {fileID: 0}
 --- !u!114 &1572198028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23799,7 +23800,7 @@ PrefabInstance:
     - target: {fileID: 6458245419137963256, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
