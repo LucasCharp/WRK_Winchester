@@ -960,6 +960,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58952592}
   m_Mesh: {fileID: 2954858793080512207, guid: 49ae11f85f7bb2741ad77f60c6569336, type: 3}
+--- !u!1 &61474533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1161802658005508566, guid: 49ce29c6353cc5f46870257a41066ef8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1673962771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &61684901
 GameObject:
   m_ObjectHideFlags: 0
@@ -2257,7 +2263,7 @@ GameObject:
   - component: {fileID: 178456389}
   m_Layer: 5
   m_Name: Button_Banq_Yellow
-  m_TagString: Untagged
+  m_TagString: Banquette
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2375,16 +2381,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178456386}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.599945}
-  m_LocalScale: {x: 0.21802592, y: 1.161071, z: 1.161071}
+  m_LocalRotation: {x: -0, y: 0.24138846, z: -0, w: 0.97042865}
+  m_LocalPosition: {x: 0, y: 0, z: 53.61901}
+  m_LocalScale: {x: 0.17485897, y: 0.9311905, z: 0.9311905}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1780183506}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 27.937, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24.000036, y: -55.300014}
+  m_AnchoredPosition: {x: 17.412958, y: -77.647}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &182228545
@@ -4632,7 +4638,7 @@ GameObject:
   - component: {fileID: 361538769}
   m_Layer: 5
   m_Name: Button_Banq_Green
-  m_TagString: Untagged
+  m_TagString: Banquette
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4750,16 +4756,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361538766}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.599945}
-  m_LocalScale: {x: 0.21802592, y: 1.161071, z: 1.161071}
+  m_LocalRotation: {x: -0, y: 0.24138846, z: -0, w: 0.97042865}
+  m_LocalPosition: {x: 0, y: 0, z: 73.27101}
+  m_LocalScale: {x: 0.17485897, y: 0.9311905, z: 0.9311905}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1780183506}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 27.937, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -28.299969, y: -55.300014}
+  m_AnchoredPosition: {x: -19.644043, y: -77.647}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &361715349
@@ -5568,7 +5574,7 @@ GameObject:
   - component: {fileID: 465845177}
   m_Layer: 5
   m_Name: Button_Banq_Red
-  m_TagString: Untagged
+  m_TagString: Banquette
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5624,6 +5630,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1572198027}
+        m_TargetAssemblyTypeName: UpgradeButtons, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 465845175}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5686,16 +5704,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465845174}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.599945}
-  m_LocalScale: {x: 0.21802592, y: 1.161071, z: 1.161071}
+  m_LocalRotation: {x: -0, y: 0.24138846, z: -0, w: 0.97042865}
+  m_LocalPosition: {x: 0, y: 0, z: 31.3}
+  m_LocalScale: {x: 0.17485897, y: 0.9311905, z: 0.9311905}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1780183506}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 27.937, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 83.40002, y: -55.300014}
+  m_AnchoredPosition: {x: 59.5, y: -77.647}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &470578757
@@ -8093,6 +8111,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682057053}
   m_Mesh: {fileID: 2969732625113774183, guid: 49ae11f85f7bb2741ad77f60c6569336, type: 3}
+--- !u!1 &688830986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1161802658005508566, guid: 49ce29c6353cc5f46870257a41066ef8,
+    type: 3}
+  m_PrefabInstance: {fileID: 822325719}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &716868104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11134,6 +11158,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004708528}
   m_CullTransparentMesh: 1
+--- !u!1 &1005211664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1161802658005508566, guid: 49ce29c6353cc5f46870257a41066ef8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1865867781}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1021933831
 GameObject:
   m_ObjectHideFlags: 0
@@ -12050,6 +12080,12 @@ Transform:
   - {fileID: 113612833}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1099902028 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1161802658005508566, guid: 49ce29c6353cc5f46870257a41066ef8,
+    type: 3}
+  m_PrefabInstance: {fileID: 883541183}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1106465492
 GameObject:
   m_ObjectHideFlags: 0
@@ -14520,6 +14556,12 @@ Transform:
   - {fileID: 117889708}
   m_Father: {fileID: 113612833}
   m_LocalEulerAnglesHint: {x: -1.764, y: 0, z: 0}
+--- !u!1 &1253775794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1161802658005508566, guid: 49ce29c6353cc5f46870257a41066ef8,
+    type: 3}
+  m_PrefabInstance: {fileID: 270130764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1255522977
 GameObject:
   m_ObjectHideFlags: 0
@@ -15455,6 +15497,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336229667}
   m_Mesh: {fileID: 6715375062900545627, guid: 49ae11f85f7bb2741ad77f60c6569336, type: 3}
+--- !u!1 &1369996750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1161802658005508566, guid: 49ce29c6353cc5f46870257a41066ef8,
+    type: 3}
+  m_PrefabInstance: {fileID: 119069688}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1383320119
 GameObject:
   m_ObjectHideFlags: 0
@@ -15843,6 +15891,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1398501310 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1161802658005508566, guid: 49ce29c6353cc5f46870257a41066ef8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1966018249}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1439144722
 GameObject:
   m_ObjectHideFlags: 0
@@ -17100,6 +17154,20 @@ MonoBehaviour:
   - {fileID: 1026423817}
   - {fileID: 1221295086}
   - {fileID: 1036374858}
+  banquettes:
+  - {fileID: 2125396517}
+  - {fileID: 61474533}
+  - {fileID: 2051016329}
+  - {fileID: 1915191285}
+  - {fileID: 1005211664}
+  - {fileID: 1919857125}
+  - {fileID: 1398501310}
+  - {fileID: 1723253474}
+  - {fileID: 688830986}
+  - {fileID: 1253775794}
+  - {fileID: 1099902028}
+  - {fileID: 1369996750}
+  chaises: []
   redMat: {fileID: 2100000, guid: 8aade21a35a89584da64218d7aa93814, type: 2}
   yellowMat: {fileID: 2100000, guid: 5ad4373a54cfee5418cb5c39a2738bee, type: 2}
   blueMat: {fileID: 2100000, guid: b2356c25e2057504683dc854973700e9, type: 2}
@@ -18889,6 +18957,12 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1723253474 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1161802658005508566, guid: 49ce29c6353cc5f46870257a41066ef8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1164599989}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1727979015
 GameObject:
   m_ObjectHideFlags: 0
@@ -20010,7 +20084,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1572198027}
         m_TargetAssemblyTypeName: UpgradeButtons, Assembly-CSharp
-        m_MethodName: OnTableCliqued
+        m_MethodName: OnBanquetteCliqued
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21692,6 +21766,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903138605}
   m_Mesh: {fileID: 5139442083506219791, guid: 485cbd1a1eab8c64486230c0daea0f45, type: 3}
+--- !u!1 &1915191285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1161802658005508566, guid: 49ce29c6353cc5f46870257a41066ef8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1785936892}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1919857125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1161802658005508566, guid: 49ce29c6353cc5f46870257a41066ef8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1785687244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1966018249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21915,7 +22001,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1572198027}
         m_TargetAssemblyTypeName: UpgradeButtons, Assembly-CSharp
-        m_MethodName: OnTableCliqued
+        m_MethodName: OnBarstoolCliqued
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22706,18 +22792,24 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045576059}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.599945}
-  m_LocalScale: {x: 0.21802592, y: 1.161071, z: 1.161071}
+  m_LocalRotation: {x: -0, y: 0.24138846, z: -0, w: 0.97042865}
+  m_LocalPosition: {x: 0, y: 0, z: 63.05001}
+  m_LocalScale: {x: 0.17485897, y: 0.9311905, z: 0.9311905}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1780183506}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 27.937, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.0999699, y: -18.400013}
+  m_AnchoredPosition: {x: -0.37142208, y: -48.053}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2051016329 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1161802658005508566, guid: 49ce29c6353cc5f46870257a41066ef8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1740336654}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2051042697
 GameObject:
   m_ObjectHideFlags: 0
@@ -22733,7 +22825,7 @@ GameObject:
   - component: {fileID: 2051042700}
   m_Layer: 5
   m_Name: Button_Banq_Blue
-  m_TagString: Untagged
+  m_TagString: Banquette
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22851,16 +22943,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051042697}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.599945}
-  m_LocalScale: {x: 0.21802592, y: 1.161071, z: 1.161071}
+  m_LocalRotation: {x: -0, y: 0.24138846, z: -0, w: 0.97042865}
+  m_LocalPosition: {x: 0, y: 0, z: 91.64501}
+  m_LocalScale: {x: 0.17485897, y: 0.9311905, z: 0.9311905}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1780183506}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 27.937, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -77.19996, y: -55.300014}
+  m_AnchoredPosition: {x: -54.29199, y: -77.64707}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2056965229
