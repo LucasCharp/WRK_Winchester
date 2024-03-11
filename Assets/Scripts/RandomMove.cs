@@ -21,7 +21,6 @@ public class RandomNavMeshMovement : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private float moveDelayTimer;
     private Vector3 randomDestination;
-    private Vector3 lastDestination;
     private Animator animator;
     public Vector3 EndZonePosition;
     private Vector3 PubOpposite;
@@ -130,7 +129,7 @@ public class RandomNavMeshMovement : MonoBehaviour
                     {
                         // Déclencher votre code ici
                         animator.SetBool("isWalking", true);
-                        navMeshAgent.SetDestination(lastDestination);
+                        SetRandomDestination();
                     }
                 }
             }
@@ -143,7 +142,6 @@ public class RandomNavMeshMovement : MonoBehaviour
         
         if (animator.GetBool("isDancing") == false)
         {
-            lastDestination = randomDestination;
             animator.SetBool("isWalking", true);
             Vector3 randomDirection = Random.insideUnitSphere * 5f; // Rayon de 10 unités
             randomDirection += transform.position;
