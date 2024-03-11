@@ -29,6 +29,20 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     public Button buttonTableGreen;
     public Button buttonTableRetour;
 
+    public Button buttonBanquette;
+    public Button buttonBanqRed;
+    public Button buttonBanqYellow;
+    public Button buttonBanqBlue;
+    public Button buttonBanqGreen;
+    public Button buttonBanqRetour;
+
+    public Button buttonChaise;
+    public Button buttonChaiseRed;
+    public Button buttonChaiseYellow;
+    public Button buttonChaiseBlue;
+    public Button buttonChaiseGreen;
+    public Button buttonChaiseRetour;
+
     public Color redColor;
     public Color brownColor;
     public Color whiteColor;
@@ -43,6 +57,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public Transform targetBar;
     public Transform targetTable;
+    public Transform targetChaise;
+    public Transform targetBanquette;
     public Camera mainCamera;
     public MainSceneManager mainSceneManager;
     public CameraRotation cameraRotation;
@@ -81,6 +97,18 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         buttonTableGreen.gameObject.SetActive(false);
         buttonTableBlue.gameObject.SetActive(false);
         buttonTableRetour.gameObject.SetActive(false);
+
+        buttonBanqRed.gameObject.SetActive(false);
+        buttonBanqYellow.gameObject.SetActive(false);
+        buttonBanqGreen.gameObject.SetActive(false);
+        buttonBanqBlue.gameObject.SetActive(false);
+        buttonBanqRetour.gameObject.SetActive(false);
+
+        buttonChaiseRed.gameObject.SetActive(false);
+        buttonChaiseYellow.gameObject.SetActive(false);
+        buttonChaiseGreen.gameObject.SetActive(false);
+        buttonChaiseBlue.gameObject.SetActive(false);
+        buttonChaiseRetour.gameObject.SetActive(false);
     }
 
 
@@ -183,6 +211,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         }
         else if (wallCliqued == true)
         {
+            cameraRotation.canRotate = true;
             buttonBar.gameObject.SetActive(true);
             buttonWall.gameObject.SetActive(true);
             buttonFloor.gameObject.SetActive(true);
@@ -240,6 +269,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         buttonFloorWhite.gameObject.SetActive(true);
         buttonFloorRetour.gameObject.SetActive(true);
 
+        buttonTable.gameObject.SetActive(false);
         buttonBar.gameObject.SetActive(false);
         buttonWall.gameObject.SetActive(false);
     }
