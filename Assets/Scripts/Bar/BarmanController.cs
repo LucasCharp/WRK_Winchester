@@ -11,12 +11,12 @@ public class BarmanController : MonoBehaviour
 
     private void Start()
     {
-        menuPanel.SetActive(false);
+        //menuPanel.SetActive(false);
     }
 
     private void OnMouseDown()
     {
-        menuPanel.SetActive(true);
+        //menuPanel.SetActive(true);
     }
 
     public void AjouterCommande(ClientController client)
