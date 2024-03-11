@@ -26,7 +26,7 @@ public class DoorLeft : MonoBehaviour
         }
 
         // Mettez à jour le NavMesh au démarrage
-        UpdateNavMesh();
+        //UpdateNavMesh();
     }
 
     void Update()
