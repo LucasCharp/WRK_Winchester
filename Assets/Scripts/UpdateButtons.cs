@@ -74,6 +74,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     private float moveSpeed = 5f;
     private float rotationSpeed = 5f;
 
+    public AudioClip son;
+
 
 
 
@@ -116,6 +118,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnBarCliqued()
     {
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+
         buttonWall.gameObject.SetActive(false);
         buttonTable.gameObject.SetActive(false);
         buttonFloor.gameObject.SetActive(false);
@@ -207,6 +211,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnRetourCLiqued()
     {
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+
         cameraRotation.canRotate = false;
         if (floorCliqued == true)
         {
@@ -269,11 +275,15 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnRefillCliqued()
     {
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+
         mainSceneManager.SetEtagere();
     }
 
     public void OnFloorCliqued()
     {
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+
         floorCliqued = true;
         cameraRotation.canRotate = false;
         buttonFloor.gameObject.SetActive(false);
@@ -289,6 +299,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnRedFloorCliqued()
     {
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+
         Renderer renderer = floor.GetComponent<Renderer>();
         if (renderer != null)
         {
@@ -302,6 +314,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnBrownFloorCliqued()
     {
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+
         Renderer renderer = floor.GetComponent<Renderer>();
         if (renderer != null)
         {
@@ -315,6 +329,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnWhiteFloorCliqued()
     {
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+
         Renderer renderer = floor.GetComponent<Renderer>();
         if (renderer != null)
         {
@@ -331,6 +347,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnWallCliqued()
     {
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+
         wallCliqued = true;
         buttonBar.gameObject.SetActive(false);
         buttonFloor.gameObject.SetActive(false);
@@ -345,6 +363,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnRedWallCliqued()
     {
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+
         foreach (GameObject wall in walls)
         {
             Renderer renderer = wall.GetComponent<Renderer>();
@@ -361,6 +381,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnBrownWallCliqued()
     {
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+
         foreach (GameObject wall in walls)
         {
             Renderer renderer = wall.GetComponent<Renderer>();
@@ -377,6 +399,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnWhiteWallCliqued()
     {
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+
         foreach (GameObject wall in walls)
         {
             Renderer renderer = wall.GetComponent<Renderer>();
@@ -398,6 +422,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnTableCliqued()
     {
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+
         initialCameraPosition = mainCamera.transform.position; // récupère les valeurs de la caméra avant de la faire bouger pour la remettre en place à la fin
         initialCameraRotation = mainCamera.transform.rotation;
 
@@ -414,6 +440,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnPrefabRed()
     {
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+
         foreach (GameObject table in tables)
         {
             if (table != null)
@@ -442,6 +470,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnPrefabGreen()
     {
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+
         foreach (GameObject table in tables)
         {
             if (table != null)
@@ -470,6 +500,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnPrefabYellow()
     {
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+
         foreach (GameObject table in tables)
         {
             if (table != null)
@@ -498,6 +530,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnPrefabBlue()
     {
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+
         foreach (GameObject table in tables)
         {
             if (table != null)
@@ -525,6 +559,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     }
     public void OnBanquetteCliqued()
     {
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+
         StartCoroutine(MoveAndRotateCamera(targetBanquette.position, targetBanquette.rotation));
         banqCliqued = true;
         initialCameraPosition = mainCamera.transform.position; // récupère les valeurs de la caméra avant de la faire bouger pour la remettre en place à la fin
@@ -540,6 +576,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnBarstoolCliqued()
     {
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+
         Debug.Log("Je clique");
     }
 }
