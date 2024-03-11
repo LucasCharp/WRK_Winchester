@@ -18,6 +18,7 @@ TagManager:
   - Door
   - Bar
   - Floor
+  - Banquette
   layers:
   - Default
   - TransparentFX

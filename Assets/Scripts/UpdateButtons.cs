@@ -49,6 +49,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     public GameObject floor;
     public List<GameObject> tables;
     public List<GameObject> walls;
+    public List<GameObject> banquettes;
+    public List<GameObject> chaises;
 
     public Material redMat;
     public Material yellowMat;
@@ -70,6 +72,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     private bool wallCliqued;
     private bool tableCliqued;
     private bool banqCliqued;
+    private bool chaiseCliqued;
 
     private float moveSpeed = 5f;
     private float rotationSpeed = 5f;
@@ -123,6 +126,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         buttonWall.gameObject.SetActive(false);
         buttonTable.gameObject.SetActive(false);
         buttonFloor.gameObject.SetActive(false);
+        buttonBanquette.gameObject.SetActive(false);
+        buttonChaise.gameObject.SetActive(false);
 
         initialCameraPosition = mainCamera.transform.position; // récupère les valeurs de la caméra avant de la faire bouger pour la remettre en place à la fin
         initialCameraRotation = mainCamera.transform.rotation;
@@ -162,6 +167,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 buttonFloor.gameObject.SetActive(true);
                 buttonWall.gameObject.SetActive(true);
                 buttonTable.gameObject.SetActive(true);
+                buttonBanquette.gameObject.SetActive(true);
+                buttonChaise.gameObject.SetActive(true);
                 goToBar = false;
             }
 
@@ -174,6 +181,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 buttonBar.gameObject.SetActive(false);
                 buttonWall.gameObject.SetActive(false);
                 buttonFloor.gameObject.SetActive(false);
+                buttonChaise.gameObject.SetActive(false);
 
                 buttonTable.gameObject.SetActive(false);
                 buttonTableRed.gameObject.SetActive(true);
@@ -184,26 +192,62 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             }
             else if (!buttonTable.gameObject.activeSelf)
             {
-                buttonTable.gameObject.SetActive(true);
+                buttonBanquette.gameObject.SetActive(true);
                 buttonBar.gameObject.SetActive(true);
                 buttonWall.gameObject.SetActive(true);
                 buttonFloor.gameObject.SetActive(true);
+                buttonChaise.gameObject.SetActive(true);
 
                 buttonTable.gameObject.SetActive(true);
                 tableCliqued = false;
 
             }
-            if (banqCliqued == true)
+        }
+        if (banqCliqued == true)
+        {
+            if (buttonBanquette.gameObject.activeSelf)
             {
-                if (!buttonBanquette.gameObject.activeSelf)
-                {
-                    Debug.Log("Je suis acitvééééé");
-                    buttonBanqRed.gameObject.SetActive(true);
-                    buttonBanqGreen.gameObject.SetActive(true);
-                    buttonBanqYellow.gameObject.SetActive(true);
-                    buttonBanqBlue.gameObject.SetActive(true);
-                    buttonBanqRetour.gameObject.SetActive(true);
-                }
+                buttonBanqRed.gameObject.SetActive(true);
+                buttonBanqGreen.gameObject.SetActive(true);
+                buttonBanqYellow.gameObject.SetActive(true);
+                buttonBanqBlue.gameObject.SetActive(true);
+                buttonBanqRetour.gameObject.SetActive(true);
+                buttonBanquette.gameObject.SetActive(false);
+            }
+             else if (!buttonBanquette.gameObject.activeSelf)
+            {
+                buttonBanquette.gameObject.SetActive(true);
+                buttonBar.gameObject.SetActive(true);
+                buttonWall.gameObject.SetActive(true);
+                buttonFloor.gameObject.SetActive(true);
+                buttonTable.gameObject.SetActive(true);
+                buttonChaise.gameObject.SetActive(true);
+
+                banqCliqued = false;
+            }
+        }
+        if (chaiseCliqued == true)
+        {
+            if (buttonChaise.gameObject.activeSelf)
+            {
+                buttonChaiseRed.gameObject.SetActive(true);
+                buttonChaiseGreen.gameObject.SetActive(true);
+                buttonChaiseYellow.gameObject.SetActive(true);
+                buttonChaiseBlue.gameObject.SetActive(true);
+                buttonChaiseRetour.gameObject.SetActive(true);
+
+                buttonChaise.gameObject.SetActive(false);
+            }
+            else if (!buttonChaise.gameObject.activeSelf)
+            {
+                buttonBanquette.gameObject.SetActive(true);
+                buttonBar.gameObject.SetActive(true);
+                buttonWall.gameObject.SetActive(true);
+                buttonFloor.gameObject.SetActive(true);
+                buttonTable.gameObject.SetActive(true);
+                buttonChaise.gameObject.SetActive(true);
+
+                chaiseCliqued = false;
             }
         }
     }
@@ -213,7 +257,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
 
-        cameraRotation.canRotate = false;
+        cameraRotation.canRotate = true;
         if (floorCliqued == true)
         {
             cameraRotation.canRotate = true;
@@ -223,9 +267,11 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             buttonFloorRetour.gameObject.SetActive(false);
 
             buttonTable.gameObject.SetActive(true);
+            buttonBanquette.gameObject.SetActive(true);
             buttonBar.gameObject.SetActive(true);
             buttonWall.gameObject.SetActive(true);
             buttonFloor.gameObject.SetActive(true);
+            buttonChaise.gameObject.SetActive(true);
             floorCliqued = false;
         }
         else if (wallCliqued == true)
@@ -235,6 +281,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             buttonWall.gameObject.SetActive(true);
             buttonFloor.gameObject.SetActive(true);
             buttonTable.gameObject.SetActive(true);
+            buttonChaise.gameObject.SetActive(true);
+            buttonBanquette.gameObject.SetActive(true);
 
             buttonWallRed.gameObject.SetActive(false);
             buttonWallBrown.gameObject.SetActive(false);
@@ -242,6 +290,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             buttonWallRetour.gameObject.SetActive(false);
             wallCliqued = false;
         }
+
         else StartCoroutine(MoveAndRotateCamera(initialCameraPosition, initialCameraRotation));
 
         if (goToBar == true)
@@ -249,9 +298,17 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             buttonRefill.gameObject.SetActive(false);
             buttonRetourBar.gameObject.SetActive(false);
         }
+        if (banqCliqued == true)
+        {
+            buttonBanqRed.gameObject.SetActive(false);
+            buttonBanqGreen.gameObject.SetActive(false);
+            buttonBanqYellow.gameObject.SetActive(false);
+            buttonBanqBlue.gameObject.SetActive(false);
+            buttonBanqRetour.gameObject.SetActive(false);
+        }
         if (wallCliqued == true)
         {
-            wallCliqued = true;
+            wallCliqued = false;
             buttonBar.gameObject.SetActive(false);
             buttonFloor.gameObject.SetActive(false);
             buttonWall.gameObject.SetActive(false);
@@ -260,6 +317,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             buttonWallBrown.gameObject.SetActive(true);
             buttonWallWhite.gameObject.SetActive(true);
             buttonWallRetour.gameObject.SetActive(true);
+            buttonChaise.gameObject.SetActive(true);
 
         }
         if (tableCliqued)
@@ -270,6 +328,14 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             buttonTableBlue.gameObject.SetActive(false);
             buttonTableRetour.gameObject.SetActive(false);
 
+        }
+        if (chaiseCliqued)
+        {
+            buttonChaiseRed.gameObject.SetActive(false);
+            buttonChaiseGreen.gameObject.SetActive(false);
+            buttonChaiseYellow.gameObject.SetActive(false);
+            buttonChaiseBlue.gameObject.SetActive(false);
+            buttonChaiseRetour.gameObject.SetActive(false);
         }
     }
 
@@ -295,6 +361,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         buttonTable.gameObject.SetActive(false);
         buttonBar.gameObject.SetActive(false);
         buttonWall.gameObject.SetActive(false);
+        buttonBanquette.gameObject.SetActive(false);
+        buttonChaise.gameObject.SetActive(false);
     }
 
     public void OnRedFloorCliqued()
@@ -349,16 +417,19 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
 
+        cameraRotation.canRotate = false;
         wallCliqued = true;
         buttonBar.gameObject.SetActive(false);
         buttonFloor.gameObject.SetActive(false);
         buttonWall.gameObject.SetActive(false);
         buttonTable.gameObject.SetActive(false);
+        buttonBanquette.gameObject.SetActive(false);
 
         buttonWallRed.gameObject.SetActive(true);
         buttonWallBrown.gameObject.SetActive(true);
         buttonWallWhite.gameObject.SetActive(true);
         buttonWallRetour.gameObject.SetActive(true);
+        buttonChaise.gameObject.SetActive(false);
     }
 
     public void OnRedWallCliqued()
@@ -432,67 +503,186 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         buttonBar.gameObject.SetActive(false);
         buttonWall.gameObject.SetActive(false);
         buttonFloor.gameObject.SetActive(false);
+        buttonBanquette.gameObject.SetActive(false);
+        buttonChaise.gameObject.SetActive(false);
 
         cameraRotation.canRotate = false;
 
         tableCliqued = true;
     }
+ 
+    
 
     public void OnPrefabRed()
     {
         SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
 
-        foreach (GameObject table in tables)
+        if (tableCliqued == true)
         {
-            if (table != null)
+            foreach (GameObject table in tables)
             {
-                // Obtenez tous les renderers de l'objet
-                Renderer[] renderers = table.GetComponentsInChildren<Renderer>();
-
-                // Parcourez tous les renderers et changez leurs matériaux
-                foreach (Renderer renderer in renderers)
+                if (table != null)
                 {
-                    // Obtenez tous les matériaux actuels du Renderer
-                    Material[] materials = renderer.sharedMaterials;
+                    // Obtenez tous les renderers de l'objet
+                    Renderer[] renderers = table.GetComponentsInChildren<Renderer>();
 
-                    // Changez chaque matériau dans la liste de rendu pour le matériau cible
-                    for (int i = 0; i < materials.Length; i++)
+                    // Parcourez tous les renderers et changez leurs matériaux
+                    foreach (Renderer renderer in renderers)
                     {
-                        materials[i] = redMat;
-                    }
+                        // Obtenez tous les matériaux actuels du Renderer
+                        Material[] materials = renderer.sharedMaterials;
 
-                    // Appliquez les nouveaux matériaux au Renderer
-                    renderer.sharedMaterials = materials;
+                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                        for (int i = 0; i < materials.Length; i++)
+                        {
+                            materials[i] = redMat;
+                        }
+
+                        // Appliquez les nouveaux matériaux au Renderer
+                        renderer.sharedMaterials = materials;
+                    }
                 }
             }
         }
+        else if (banqCliqued == true)
+        {
+            foreach (GameObject banquette in banquettes)
+            {
+                if (banquette != null)
+                {
+                    // Obtenez tous les renderers de l'objet
+                    Renderer[] renderers = banquette.GetComponentsInChildren<Renderer>();
+
+                    // Parcourez tous les renderers et changez leurs matériaux
+                    foreach (Renderer renderer in renderers)
+                    {
+                        // Obtenez tous les matériaux actuels du Renderer
+                        Material[] materials = renderer.sharedMaterials;
+
+                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                        for (int i = 0; i < materials.Length; i++)
+                        {
+                            materials[i] = redMat;
+                        }
+
+                        // Appliquez les nouveaux matériaux au Renderer
+                        renderer.sharedMaterials = materials;
+                    }
+                }
+            }
+        }
+        else if (chaiseCliqued == true)
+        {
+            foreach (GameObject chaise in chaises)
+            {
+                if (chaise != null)
+                {
+                    // Obtenez tous les renderers de l'objet
+                    Renderer[] renderers = chaise.GetComponentsInChildren<Renderer>();
+
+                    // Parcourez tous les renderers et changez leurs matériaux
+                    foreach (Renderer renderer in renderers)
+                    {
+                        // Obtenez tous les matériaux actuels du Renderer
+                        Material[] materials = renderer.sharedMaterials;
+
+                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                        for (int i = 0; i < materials.Length; i++)
+                        {
+                            materials[i] = redMat;
+                        }
+
+                        // Appliquez les nouveaux matériaux au Renderer
+                        renderer.sharedMaterials = materials;
+                    }
+                }
+            }
+        }
+
     }
 
     public void OnPrefabGreen()
     {
         SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
 
-        foreach (GameObject table in tables)
+        if (tableCliqued == true)
         {
-            if (table != null)
+            foreach (GameObject table in tables)
             {
-                // Obtenez tous les renderers de l'objet
-                Renderer[] renderers = table.GetComponentsInChildren<Renderer>();
-
-                // Parcourez tous les renderers et changez leurs matériaux
-                foreach (Renderer renderer in renderers)
+                if (table != null)
                 {
-                    // Obtenez tous les matériaux actuels du Renderer
-                    Material[] materials = renderer.sharedMaterials;
+                    // Obtenez tous les renderers de l'objet
+                    Renderer[] renderers = table.GetComponentsInChildren<Renderer>();
 
-                    // Changez chaque matériau dans la liste de rendu pour le matériau cible
-                    for (int i = 0; i < materials.Length; i++)
+                    // Parcourez tous les renderers et changez leurs matériaux
+                    foreach (Renderer renderer in renderers)
                     {
-                        materials[i] = greenMat;
-                    }
+                        // Obtenez tous les matériaux actuels du Renderer
+                        Material[] materials = renderer.sharedMaterials;
 
-                    // Appliquez les nouveaux matériaux au Renderer
-                    renderer.sharedMaterials = materials;
+                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                        for (int i = 0; i < materials.Length; i++)
+                        {
+                            materials[i] = greenMat;
+                        }
+
+                        // Appliquez les nouveaux matériaux au Renderer
+                        renderer.sharedMaterials = materials;
+                    }
+                }
+            }
+        }
+        else if (banqCliqued == true)
+        {
+            foreach (GameObject banquette in banquettes)
+            {
+                if (banquette != null)
+                {
+                    // Obtenez tous les renderers de l'objet
+                    Renderer[] renderers = banquette.GetComponentsInChildren<Renderer>();
+
+                    // Parcourez tous les renderers et changez leurs matériaux
+                    foreach (Renderer renderer in renderers)
+                    {
+                        // Obtenez tous les matériaux actuels du Renderer
+                        Material[] materials = renderer.sharedMaterials;
+
+                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                        for (int i = 0; i < materials.Length; i++)
+                        {
+                            materials[i] = greenMat;
+                        }
+
+                        // Appliquez les nouveaux matériaux au Renderer
+                        renderer.sharedMaterials = materials;
+                    }
+                }
+            }
+        }
+        else if (chaiseCliqued == true)
+        {
+            foreach (GameObject chaise in chaises)
+            {
+                if (chaise != null)
+                {
+                    // Obtenez tous les renderers de l'objet
+                    Renderer[] renderers = chaise.GetComponentsInChildren<Renderer>();
+
+                    // Parcourez tous les renderers et changez leurs matériaux
+                    foreach (Renderer renderer in renderers)
+                    {
+                        // Obtenez tous les matériaux actuels du Renderer
+                        Material[] materials = renderer.sharedMaterials;
+
+                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                        for (int i = 0; i < materials.Length; i++)
+                        {
+                            materials[i] = greenMat;
+                        }
+
+                        // Appliquez les nouveaux matériaux au Renderer
+                        renderer.sharedMaterials = materials;
+                    }
                 }
             }
         }
@@ -502,27 +692,84 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
 
-        foreach (GameObject table in tables)
+        if (tableCliqued == true)
         {
-            if (table != null)
+            foreach (GameObject table in tables)
             {
-                // Obtenez tous les renderers de l'objet
-                Renderer[] renderers = table.GetComponentsInChildren<Renderer>();
-
-                // Parcourez tous les renderers et changez leurs matériaux
-                foreach (Renderer renderer in renderers)
+                if (table != null)
                 {
-                    // Obtenez tous les matériaux actuels du Renderer
-                    Material[] materials = renderer.sharedMaterials;
+                    // Obtenez tous les renderers de l'objet
+                    Renderer[] renderers = table.GetComponentsInChildren<Renderer>();
 
-                    // Changez chaque matériau dans la liste de rendu pour le matériau cible
-                    for (int i = 0; i < materials.Length; i++)
+                    // Parcourez tous les renderers et changez leurs matériaux
+                    foreach (Renderer renderer in renderers)
                     {
-                        materials[i] = yellowMat;
-                    }
+                        // Obtenez tous les matériaux actuels du Renderer
+                        Material[] materials = renderer.sharedMaterials;
 
-                    // Appliquez les nouveaux matériaux au Renderer
-                    renderer.sharedMaterials = materials;
+                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                        for (int i = 0; i < materials.Length; i++)
+                        {
+                            materials[i] = yellowMat;
+                        }
+
+                        // Appliquez les nouveaux matériaux au Renderer
+                        renderer.sharedMaterials = materials;
+                    }
+                }
+            }
+        }
+        else if (banqCliqued == true)
+        {
+            foreach (GameObject banquette in banquettes)
+            {
+                if (banquette != null)
+                {
+                    // Obtenez tous les renderers de l'objet
+                    Renderer[] renderers = banquette.GetComponentsInChildren<Renderer>();
+
+                    // Parcourez tous les renderers et changez leurs matériaux
+                    foreach (Renderer renderer in renderers)
+                    {
+                        // Obtenez tous les matériaux actuels du Renderer
+                        Material[] materials = renderer.sharedMaterials;
+
+                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                        for (int i = 0; i < materials.Length; i++)
+                        {
+                            materials[i] = yellowMat;
+                        }
+
+                        // Appliquez les nouveaux matériaux au Renderer
+                        renderer.sharedMaterials = materials;
+                    }
+                }
+            }
+        }
+        else if (chaiseCliqued == true)
+        {
+            foreach (GameObject chaise in chaises)
+            {
+                if (chaise != null)
+                {
+                    // Obtenez tous les renderers de l'objet
+                    Renderer[] renderers = chaise.GetComponentsInChildren<Renderer>();
+
+                    // Parcourez tous les renderers et changez leurs matériaux
+                    foreach (Renderer renderer in renderers)
+                    {
+                        // Obtenez tous les matériaux actuels du Renderer
+                        Material[] materials = renderer.sharedMaterials;
+
+                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                        for (int i = 0; i < materials.Length; i++)
+                        {
+                            materials[i] = yellowMat;
+                        }
+
+                        // Appliquez les nouveaux matériaux au Renderer
+                        renderer.sharedMaterials = materials;
+                    }
                 }
             }
         }
@@ -532,52 +779,118 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
 
-        foreach (GameObject table in tables)
+        if (tableCliqued == true)
         {
-            if (table != null)
+            foreach (GameObject table in tables)
             {
-                // Obtenez tous les renderers de l'objet
-                Renderer[] renderers = table.GetComponentsInChildren<Renderer>();
-
-                // Parcourez tous les renderers et changez leurs matériaux
-                foreach (Renderer renderer in renderers)
+                if (table != null)
                 {
-                    // Obtenez tous les matériaux actuels du Renderer
-                    Material[] materials = renderer.sharedMaterials;
+                    // Obtenez tous les renderers de l'objet
+                    Renderer[] renderers = table.GetComponentsInChildren<Renderer>();
 
-                    // Changez chaque matériau dans la liste de rendu pour le matériau cible
-                    for (int i = 0; i < materials.Length; i++)
+                    // Parcourez tous les renderers et changez leurs matériaux
+                    foreach (Renderer renderer in renderers)
                     {
-                        materials[i] = blueMat;
-                    }
+                        // Obtenez tous les matériaux actuels du Renderer
+                        Material[] materials = renderer.sharedMaterials;
 
-                    // Appliquez les nouveaux matériaux au Renderer
-                    renderer.sharedMaterials = materials;
+                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                        for (int i = 0; i < materials.Length; i++)
+                        {
+                            materials[i] = blueMat;
+                        }
+
+                        // Appliquez les nouveaux matériaux au Renderer
+                        renderer.sharedMaterials = materials;
+                    }
+                }
+            }
+        }
+        else if (banqCliqued == true)
+        {
+            foreach (GameObject banquette in banquettes)
+            {
+                if (banquette != null)
+                {
+                    // Obtenez tous les renderers de l'objet
+                    Renderer[] renderers = banquette.GetComponentsInChildren<Renderer>();
+
+                    // Parcourez tous les renderers et changez leurs matériaux
+                    foreach (Renderer renderer in renderers)
+                    {
+                        // Obtenez tous les matériaux actuels du Renderer
+                        Material[] materials = renderer.sharedMaterials;
+
+                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                        for (int i = 0; i < materials.Length; i++)
+                        {
+                            materials[i] = blueMat;
+                        }
+
+                        // Appliquez les nouveaux matériaux au Renderer
+                        renderer.sharedMaterials = materials;
+                    }
+                }
+            }
+        }
+        else if (chaiseCliqued == true)
+        {
+            foreach (GameObject chaise in chaises)
+            {
+                if (chaise != null)
+                {
+                    // Obtenez tous les renderers de l'objet
+                    Renderer[] renderers = chaise.GetComponentsInChildren<Renderer>();
+
+                    // Parcourez tous les renderers et changez leurs matériaux
+                    foreach (Renderer renderer in renderers)
+                    {
+                        // Obtenez tous les matériaux actuels du Renderer
+                        Material[] materials = renderer.sharedMaterials;
+
+                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                        for (int i = 0; i < materials.Length; i++)
+                        {
+                            materials[i] = blueMat;
+                        }
+
+                        // Appliquez les nouveaux matériaux au Renderer
+                        renderer.sharedMaterials = materials;
+                    }
                 }
             }
         }
     }
     public void OnBanquetteCliqued()
     {
-        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
-
-        StartCoroutine(MoveAndRotateCamera(targetBanquette.position, targetBanquette.rotation));
-        banqCliqued = true;
         initialCameraPosition = mainCamera.transform.position; // récupère les valeurs de la caméra avant de la faire bouger pour la remettre en place à la fin
         initialCameraRotation = mainCamera.transform.rotation;
+
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+        banqCliqued = true;
+        StartCoroutine(MoveAndRotateCamera(targetBanquette.position, targetBanquette.rotation));
 
         buttonBar.gameObject.SetActive(false);
         buttonWall.gameObject.SetActive(false);
         buttonFloor.gameObject.SetActive(false);
-        buttonBanquette.gameObject.SetActive(false);
+        buttonTable.gameObject.SetActive(false);
+        buttonChaise.gameObject.SetActive(false);
 
         cameraRotation.canRotate = false;
+        
     }
 
     public void OnBarstoolCliqued()
     {
         SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+        StartCoroutine(MoveAndRotateCamera(targetChaise.position, targetChaise.rotation));
+        cameraRotation.canRotate = false;
+        buttonBar.gameObject.SetActive(false);
+        buttonWall.gameObject.SetActive(false);
+        buttonFloor.gameObject.SetActive(false);
+        buttonTable.gameObject.SetActive(false);
+        buttonBanquette.gameObject.SetActive(false);
 
-        Debug.Log("Je clique");
+        chaiseCliqued = true;
     }
 }
