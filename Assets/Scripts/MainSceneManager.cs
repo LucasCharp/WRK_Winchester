@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MainSceneManager : MonoBehaviour
@@ -9,7 +10,14 @@ public class MainSceneManager : MonoBehaviour
     public GameObject etagereHalf;
     public GameObject etagereQuarter;
     public GameObject etagereEmpty;
+    public List<Canvas> canvasList;
+    public Canvas startCanvas;
+    public Canvas pauseCanvas;
+    public AudioClip son;
+
     private int barLevel = 0;
+    private bool isPaused;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +26,24 @@ public class MainSceneManager : MonoBehaviour
         etagereHalf.SetActive(false);
         etagereQuarter.SetActive(false);
         etagereEmpty.SetActive(true);
+
+        pauseCanvas.gameObject.SetActive(false);
+        foreach (Canvas canvas in canvasList)
+        {
+            canvas.gameObject.SetActive(false); 
+        }
     }
 
-    // Update is called once per frame
+    private void Update()
+    {
+        if (startGame == true)
+        {
+            foreach (Canvas canvas in canvasList)
+            {
+                canvas.gameObject.SetActive(true);
+            }
+        }
+    }
     public void SetEtagere()
     {
         if (barLevel == 0)
@@ -48,4 +71,38 @@ public class MainSceneManager : MonoBehaviour
             etagereEmpty.SetActive(false);
         }
     }
+
+    public void OnStartCliqued()
+    {
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+        startGame = true;
+
+        startCanvas.gameObject.SetActive(false);
+    }
+
+    public void OnPauseCliqued()
+    {
+        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+        if (isPaused == false)
+        {
+            if (startGame == false)
+            {
+                startCanvas.gameObject.SetActive(false);
+            }
+            pauseCanvas.gameObject.SetActive(true);
+            Time.timeScale = 0f;
+            isPaused = true;
+        }
+       else if (isPaused == true)
+        {
+            if (startGame == false)
+            {
+                startCanvas.gameObject.SetActive(true);
+            }
+            pauseCanvas.gameObject.SetActive(false);
+            Time.timeScale = 1f;
+            isPaused = false;
+        }
+    }
+
 }

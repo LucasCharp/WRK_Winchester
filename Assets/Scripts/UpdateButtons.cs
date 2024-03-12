@@ -43,6 +43,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     public Button buttonChaiseGreen;
     public Button buttonChaiseRetour;
 
+    public Button startButton;
+
     public Color redColor;
     public Color brownColor;
     public Color whiteColor;
@@ -131,6 +133,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
 
+        startButton.gameObject.SetActive(false);
+        buttonBar.interactable = false;
         buttonWall.gameObject.SetActive(false);
         buttonTable.gameObject.SetActive(false);
         buttonFloor.gameObject.SetActive(false);
@@ -149,6 +153,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         // Tant que la distance entre la caméra et la position cible est supérieure à une petite marge
         while (Vector3.Distance(mainCamera.transform.position, targetPosition) > 0.1f)
         {
+            Debug.Log("Je bouge tagadi tagada");
             // Déplace la caméra progressivement vers la position cible
             mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
@@ -157,6 +162,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
             yield return null; // Attend une frame
         }
+        Debug.Log("Je suis arrivée la team");
         if (Vector3.Equals(targetPosition, initialCameraPosition))
         {
             cameraRotation.canRotate = true; // rétablit le fait de pouvoir touner la caméra
@@ -178,6 +184,9 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 buttonBanquette.gameObject.SetActive(true);
                 buttonChaise.gameObject.SetActive(true);
                 goToBar = false;
+                startButton.gameObject.SetActive(true);
+                buttonBar.interactable = true;
+                cameraRotation.canRotate = true;
             }
 
         }
@@ -197,6 +206,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 buttonTableGreen.gameObject.SetActive(true);
                 buttonTableBlue.gameObject.SetActive(true);
                 buttonTableRetour.gameObject.SetActive(true);
+                
             }
             else if (!buttonTable.gameObject.activeSelf)
             {
@@ -208,7 +218,9 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
                 buttonTable.gameObject.SetActive(true);
                 tableCliqued = false;
-
+                startButton.gameObject.SetActive(true);
+                buttonTable.interactable = true;
+                cameraRotation.canRotate = true;
             }
         }
         if (banqCliqued == true)
@@ -230,8 +242,10 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 buttonFloor.gameObject.SetActive(true);
                 buttonTable.gameObject.SetActive(true);
                 buttonChaise.gameObject.SetActive(true);
-
+                startButton.gameObject.SetActive(true);
                 banqCliqued = false;
+                buttonBanquette.interactable = true;
+                cameraRotation.canRotate = true;
             }
         }
         if (chaiseCliqued == true)
@@ -254,10 +268,13 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 buttonFloor.gameObject.SetActive(true);
                 buttonTable.gameObject.SetActive(true);
                 buttonChaise.gameObject.SetActive(true);
-
+                startButton.gameObject.SetActive(true);
                 chaiseCliqued = false;
+                buttonChaise.interactable = true;
+                cameraRotation.canRotate = true;
             }
         }
+        
     }
 
 
@@ -265,7 +282,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
 
-        cameraRotation.canRotate = true;
+        
         if (floorCliqued == true)
         {
             cameraRotation.canRotate = true;
@@ -281,6 +298,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             buttonFloor.gameObject.SetActive(true);
             buttonChaise.gameObject.SetActive(true);
             floorCliqued = false;
+
         }
         else if (wallCliqued == true)
         {
@@ -371,6 +389,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         buttonWall.gameObject.SetActive(false);
         buttonBanquette.gameObject.SetActive(false);
         buttonChaise.gameObject.SetActive(false);
+        
     }
 
     public void OnRedFloorCliqued()
@@ -513,10 +532,11 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         buttonFloor.gameObject.SetActive(false);
         buttonBanquette.gameObject.SetActive(false);
         buttonChaise.gameObject.SetActive(false);
-
+        startButton.gameObject.SetActive(false);
         cameraRotation.canRotate = false;
 
         tableCliqued = true;
+        buttonTable.interactable = false;
     }
  
     
@@ -883,9 +903,9 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         buttonFloor.gameObject.SetActive(false);
         buttonTable.gameObject.SetActive(false);
         buttonChaise.gameObject.SetActive(false);
-
+        startButton.gameObject.SetActive(false);
         cameraRotation.canRotate = false;
-        
+        buttonBanquette.interactable = false;
     }
 
     public void OnBarstoolCliqued()
@@ -901,7 +921,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         buttonFloor.gameObject.SetActive(false);
         buttonTable.gameObject.SetActive(false);
         buttonBanquette.gameObject.SetActive(false);
-
+        startButton.gameObject.SetActive(false);
         chaiseCliqued = true;
+        buttonChaise.interactable = false;
     }
 }
