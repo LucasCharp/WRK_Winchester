@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BoutonBoisson : MonoBehaviour
@@ -9,7 +7,6 @@ public class BoutonBoisson : MonoBehaviour
 
     public void ServirBoisson()
     {
-        // Appel de la méthode pour servir la boisson dans BarmanController
         barmanController.ServirBoisson(nomBoisson);
     }
 }

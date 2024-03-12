@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ClientController : MonoBehaviour
@@ -22,6 +20,7 @@ public class ClientController : MonoBehaviour
             if (barmanController != null)
             {
                 barmanController.AjouterCommande(this);
+                DemanderBoisson();
             }
         }
     }
@@ -34,22 +33,40 @@ public class ClientController : MonoBehaviour
         }
     }
 
-    public void LivrerBoisson(string nomBoisson)
+    private void DemanderBoisson()
     {
-        if (inBarZone && !commandeFulfilled)
+        if (!commandeFulfilled)
         {
-            if (nomBoisson == commande)
-            {
-                Debug.Log("Commande complétée : " + commande);
-                commandeFulfilled = true;
-                barmanController.TraiterCommandes();
-            }
+            string[] boissons = { "t'es qui la", "vaux 2 k", "Rome", "Mot riz tôt", "abe-sainte" };
+            commande = boissons[Random.Range(0, boissons.Length)];
+            Debug.Log("Commande reçue : " + commande);
+            Invoke("SimulerAttente", 10f);
         }
     }
 
-    public void SetCommande(string nomBoisson)
+    private void SimulerAttente()
     {
-        commande = nomBoisson;
+        if (!commandeFulfilled)
+        {
+            Debug.Log("Client insatisfait.");
+            LivrerBoisson(false);
+        }
+    }
+
+    public void LivrerBoisson(bool reponse)
+    {
+        if (inBarZone && !commandeFulfilled)
+        {
+            if (reponse)
+            {
+                Debug.Log("Merci !");
+            }
+            else
+            {
+                Debug.Log("Nul !");
+            }
+            commandeFulfilled = true;
+        }
     }
 
     public bool EstCommandeFulfilled()
