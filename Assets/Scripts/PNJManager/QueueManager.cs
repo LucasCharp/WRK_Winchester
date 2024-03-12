@@ -22,5 +22,12 @@ public class QueueManager : MonoBehaviour
             numberOfPeopleInQueue += 1;
         }
     }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("PNJ"))
+        {
+            numberOfPeopleInQueue -= 1;
+        }
+    }
 
 }
