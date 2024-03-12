@@ -24,4 +24,17 @@ public class JukeboxManager : MonoBehaviour
             Debug.LogError("Invalid track index");
         }
     }
+
+    public void TogglePause()
+    {
+        // Vérifiez si la musique est en pause ou en lecture et inversez son état
+        if (audioSource.isPlaying)
+        {
+            audioSource.Pause();
+        }
+        else
+        {
+            audioSource.UnPause();
+        }
+    }
 }
