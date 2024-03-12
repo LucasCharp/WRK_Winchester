@@ -61,7 +61,7 @@ PrefabInstance:
     - target: {fileID: 2985048825378386881, guid: bdee36b3a92336b4baf705269272d3cf,
         type: 3}
       propertyPath: m_Name
-      value: Etagere_Half Variant
+      value: Etagere_Half
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
