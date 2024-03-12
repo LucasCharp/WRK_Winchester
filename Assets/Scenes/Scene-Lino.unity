@@ -16345,6 +16345,8 @@ GameObject:
   - component: {fileID: 1388226018}
   - component: {fileID: 1388226016}
   - component: {fileID: 1388226017}
+  - component: {fileID: 1388226019}
+  - component: {fileID: 1388226020}
   m_Layer: 0
   m_Name: Jukebox
   m_TagString: Untagged
@@ -16382,7 +16384,8 @@ AudioSource:
   m_GameObject: {fileID: 1388226015}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1176361883368946050, guid: b3027e68bee6c604daeb462311d54a99,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -16485,6 +16488,33 @@ Transform:
   - {fileID: 1299325305}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1388226019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388226015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08ec80c6fac39d84291d16fd5e114e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: b3027e68bee6c604daeb462311d54a99, type: 2}
+--- !u!114 &1388226020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388226015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8d75823a43f3bb4db02716fdba18e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundSFXObject: {fileID: 2559301586855325902, guid: d70b99d323600774fb06bdc6d45f093b,
+    type: 3}
 --- !u!1 &1391113446
 GameObject:
   m_ObjectHideFlags: 0
@@ -19769,10 +19799,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1388226019}
         m_TargetAssemblyTypeName: AudioMixerManager, Assembly-CSharp
         m_MethodName: SetMusicVolume
-        m_Mode: 0
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -23492,12 +23522,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioMixerManager, Assembly-CSharp
-        m_MethodName: SetSoundFXVolume
-        m_Mode: 0
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

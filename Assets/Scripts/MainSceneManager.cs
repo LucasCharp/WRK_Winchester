@@ -82,6 +82,7 @@ public class MainSceneManager : MonoBehaviour
 
     public void OnPauseCliqued()
     {
+        
         SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
         if (isPaused == false)
         {
