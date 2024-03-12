@@ -10637,74 +10637,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 88.474}
---- !u!1001 &984051676
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6044607115264270994, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.5304717
-      objectReference: {fileID: 0}
-    - target: {fileID: 6044607115264270994, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.089509964
-      objectReference: {fileID: 0}
-    - target: {fileID: 6044607115264270994, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.45028186
-      objectReference: {fileID: 0}
-    - target: {fileID: 6044607115264270994, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6044607115264270994, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6044607115264270994, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6044607115264270994, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6044607115264270994, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6044607115264270994, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6044607115264270994, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6388657929554262056, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_Name
-      value: SM_David@Snake Hip Hop Dance
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ef944a99cec47b04b9146287b3c6f9b4, type: 3}
 --- !u!1 &987974706
 GameObject:
   m_ObjectHideFlags: 0
@@ -17179,6 +17111,8 @@ MonoBehaviour:
   mainCamera: {fileID: 1592362479}
   mainSceneManager: {fileID: 1396442795}
   cameraRotation: {fileID: 113777587}
+  mainSceneManagerRef: {fileID: 0}
+  upgradeCanvas: {fileID: 0}
   son: {fileID: 0}
 --- !u!114 &1572198028
 MonoBehaviour:
@@ -24085,4 +24019,3 @@ SceneRoots:
   - {fileID: 1559160186}
   - {fileID: 1388226018}
   - {fileID: 176631187}
-  - {fileID: 984051676}
