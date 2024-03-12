@@ -15,9 +15,6 @@ public class RandomNavMeshMovement : MonoBehaviour
     public Vector3 queueThird;
     public Vector3 queueLast;
 
-    public GameObject file;
-
-
     private NavMeshAgent navMeshAgent;
     private float moveDelayTimer;
     private Vector3 randomDestination;
@@ -37,14 +34,13 @@ public class RandomNavMeshMovement : MonoBehaviour
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-
         //SetRandomDestination();
         InQueue();
     }
 
     void Update()
     {
-        if (animator.GetBool("hasEnterPub") == false)
+        if (animator.GetBool("hasEnterPub") == true)
         { 
             CheckCollisionWithOtherPNJs();
             if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.1f)
@@ -160,22 +156,33 @@ public class RandomNavMeshMovement : MonoBehaviour
 
     void InQueue()
     {
-        QueueManager queueScript = file.GetComponent<QueueManager>();
-        if (queueScript.numberOfPeopleInQueue == 0)
+        GameObject file = GameObject.Find("File");
+        QueueManager queueManager = file.GetComponent<QueueManager>();
+        Debug.Log("va dans la queue");
+        Debug.Log(queueManager.numberOfPeopleInQueue);
+        if (queueManager.numberOfPeopleInQueue == 0)
         {
+            Debug.Log(queueManager.numberOfPeopleInQueue + "0");
             navMeshAgent.SetDestination(queueLast);
+            animator.SetBool("isWalking", false);
         }
-        if (queueScript.numberOfPeopleInQueue == 1)
+        if (queueManager.numberOfPeopleInQueue == 1)
         {
+            Debug.Log(queueManager.numberOfPeopleInQueue + "1");
             navMeshAgent.SetDestination(queueThird);
+            animator.SetBool("isWalking", false);
         }
-        if (queueScript.numberOfPeopleInQueue == 2)
+        if (queueManager.numberOfPeopleInQueue == 2)
         {
+            Debug.Log(queueManager.numberOfPeopleInQueue + "2");
             navMeshAgent.SetDestination(queueSecond);
+            animator.SetBool("isWalking", false);
         }
-        if (queueScript.numberOfPeopleInQueue == 3)
+        if (queueManager.numberOfPeopleInQueue == 3)
         {
+            Debug.Log(queueManager.numberOfPeopleInQueue + "3");
             navMeshAgent.SetDestination(queueStart);
+            animator.SetBool("isWalking", false);
         }
     }
 }

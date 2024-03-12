@@ -23,5 +23,6 @@ public class SpawnManager : MonoBehaviour
 
         // Instancier le préfab à la position du GameObject
         Instantiate(selectedPrefab, spawnPosition, Quaternion.identity);
+
     }
 }
