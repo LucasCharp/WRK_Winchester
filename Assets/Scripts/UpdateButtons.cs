@@ -882,6 +882,9 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnBarstoolCliqued()
     {
+        initialCameraPosition = mainCamera.transform.position; // récupère les valeurs de la caméra avant de la faire bouger pour la remettre en place à la fin
+        initialCameraRotation = mainCamera.transform.rotation;
+
         SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
         StartCoroutine(MoveAndRotateCamera(targetChaise.position, targetChaise.rotation));
         cameraRotation.canRotate = false;
