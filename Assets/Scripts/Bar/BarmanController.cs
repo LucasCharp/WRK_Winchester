@@ -7,12 +7,12 @@ public class BarmanController : MonoBehaviour
     private Queue<ClientController> commandesEnAttente = new Queue<ClientController>();
     private ClientController commandePrioritaire;
 
-    private void Start()
+    public void Start()
     {
         menuPanel.SetActive(false);
     }
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         menuPanel.SetActive(true);
         Debug.Log("true");
@@ -45,20 +45,32 @@ public class BarmanController : MonoBehaviour
 
     public void ServirBoisson(string nomBoisson)
     {
-        if (commandePrioritaire != null && !commandePrioritaire.EstCommandeFulfilled())
+        Debug.Log("Boisson vendue : " + nomBoisson);
+
+        if (commandePrioritaire != null)
         {
-            if (commandePrioritaire.commande == nomBoisson)
+            // Code pour vérifier si la boisson est correcte ou non
+            if (nomBoisson == commandePrioritaire.commande)
             {
                 Debug.Log("Bonne commande !");
-                commandePrioritaire.LivrerBoisson(true);
             }
             else
             {
                 Debug.Log("Mauvaise réponse !");
-                commandePrioritaire.LivrerBoisson(false);
             }
-            commandePrioritaire = null;
-            menuPanel.SetActive(false);
         }
+        else
+        {
+            Debug.Log("Aucune commande prioritaire en attente !");
+        }
+
+        // Fermer le menu de boissons
+        menuPanel.SetActive(false);
+        commandePrioritaire.QuitterZoneBarman(); 
+        // Fait sortir le client de la zone du barman
+
+        // Réinitialiser la commande prioritaire et passer à la suivante dans la file d'attente
+        commandePrioritaire = null;
+        TraiterCommandes();
     }
 }

@@ -6,6 +6,7 @@ public class ClientController : MonoBehaviour
     public string commande = "";
     private bool commandeFulfilled = false;
     private BarmanController barmanController;
+    private bool satisfait = false;
 
     private void Start()
     {
@@ -24,6 +25,17 @@ public class ClientController : MonoBehaviour
             }
         }
     }
+    public void QuitterZoneBarman()
+    {
+        // Sortir de la zone du barman
+        // Par exemple, désactiver le gameObject du client
+        Destroy(gameObject);
+        //gameObject.SetActive(false);
+        // Arrêter la simulation d'attente si elle est en cours
+        StopCoroutine("SimulerAttente");
+        satisfait = true;
+        Destroy(gameObject);
+    }
 
     private void OnTriggerExit(Collider other)
     {
@@ -40,7 +52,7 @@ public class ClientController : MonoBehaviour
             string[] boissons = { "t'es qui la", "vaux 2 k", "Rome", "Mot riz tôt", "abe-sainte" };
             commande = boissons[Random.Range(0, boissons.Length)];
             Debug.Log("Commande reçue : " + commande);
-            Invoke("SimulerAttente", 10f);
+            Invoke("SimulerAttente", 40f);
         }
     }
 
@@ -48,8 +60,9 @@ public class ClientController : MonoBehaviour
     {
         if (!commandeFulfilled)
         {
-            Debug.Log("Client insatisfait.");
-            LivrerBoisson(false);
+            if (satisfait == false)
+                Debug.Log("Client insatisfait.");
+                LivrerBoisson(false);
         }
     }
 
