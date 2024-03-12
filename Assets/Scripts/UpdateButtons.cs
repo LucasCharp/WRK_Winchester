@@ -64,6 +64,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     public Camera mainCamera;
     public MainSceneManager mainSceneManager;
     public CameraRotation cameraRotation;
+    public MainSceneManager mainSceneManagerRef;
+    public Canvas upgradeCanvas;
 
     private Vector3 initialCameraPosition;
     private Quaternion initialCameraRotation;
@@ -80,7 +82,13 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     public AudioClip son;
 
 
-
+    private void Update()
+    {
+        if (mainSceneManager.startGame == true)
+        {
+            upgradeCanvas.gameObject.SetActive(false);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
