@@ -44,7 +44,8 @@ public class RandomNavMeshMovement : MonoBehaviour
 
     void Update()
     {
-        // Si le NavMeshAgent a atteint sa destination ou s'il est bloqué, choisir une nouvelle destination aléatoire
+        if (animator.GetBool("hasEnterPub") == false)
+        { 
             CheckCollisionWithOtherPNJs();
             if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.1f)
             {
@@ -91,16 +92,18 @@ public class RandomNavMeshMovement : MonoBehaviour
                 animator.SetBool("isWalking", true);
                 if (animator.GetBool("isOutOfWall") == true) 
                 {
-                    PubOpposite = new Vector3(Random.Range(0f, 2.3f), 0.08950949f, Random.Range(2.5f, 4f));
+                    PubOpposite = new Vector3(Random.Range(0f, 2.3f), 0f, Random.Range(2.5f, 4f));
                     navMeshAgent.SetDestination(PubOpposite);
+                    animator.SetBool("isOutOfWall", false);
                 }
                 else
                 {
-                    PubOpposite = new Vector3(Random.Range(-3f, -0.8f), 0.08950949f, Random.Range(-2f, 1.5f));
+                    PubOpposite = new Vector3(Random.Range(-3f, -0.8f), 0f, Random.Range(-2f, 1.5f));
                     navMeshAgent.SetDestination(PubOpposite);
                 }
                 animator.SetBool("shouldGoIn", false);
             }
+        }
     }
 
     void CheckCollisionWithOtherPNJs()
@@ -158,7 +161,6 @@ public class RandomNavMeshMovement : MonoBehaviour
     void InQueue()
     {
         QueueManager queueScript = file.GetComponent<QueueManager>();
-        queueScript.numberOfPeopleInQueue += 1;
         if (queueScript.numberOfPeopleInQueue == 0)
         {
             navMeshAgent.SetDestination(queueLast);

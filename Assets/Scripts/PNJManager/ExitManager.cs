@@ -18,6 +18,7 @@ public class ExitManager : MonoBehaviour
     {
         if (other.CompareTag("PNJ"))
         {
+            animator.SetBool("hasEnterPub", true);
             GoBackInPub(other);
         }
     }
