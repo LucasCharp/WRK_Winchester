@@ -66,7 +66,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     public Camera mainCamera;
     public MainSceneManager mainSceneManager;
     public CameraRotation cameraRotation;
-    public MainSceneManager mainSceneManagerRef;
     public CameraColliderDetection cameraCollider;
     public Canvas upgradeCanvas;
 
