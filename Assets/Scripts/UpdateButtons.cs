@@ -67,16 +67,17 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     public MainSceneManager mainSceneManager;
     public CameraRotation cameraRotation;
     public MainSceneManager mainSceneManagerRef;
+    public CameraColliderDetection cameraCollider;
     public Canvas upgradeCanvas;
 
     private Vector3 initialCameraPosition;
     private Quaternion initialCameraRotation;
-    private bool goToBar;
-    private bool floorCliqued;
-    private bool wallCliqued;
-    private bool tableCliqued;
-    private bool banqCliqued;
-    private bool chaiseCliqued;
+    private bool goToBar = false;
+    private bool floorCliqued = false;
+    private bool wallCliqued = false;
+    private bool tableCliqued = false;
+    private bool banqCliqued = false;
+    private bool chaiseCliqued = false;
 
     private float moveSpeed = 5f;
     private float rotationSpeed = 5f;
@@ -153,7 +154,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         // Tant que la distance entre la caméra et la position cible est supérieure à une petite marge
         while (Vector3.Distance(mainCamera.transform.position, targetPosition) > 0.1f)
         {
-            Debug.Log("Je bouge tagadi tagada");
             // Déplace la caméra progressivement vers la position cible
             mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
@@ -162,7 +162,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
             yield return null; // Attend une frame
         }
-        Debug.Log("Je suis arrivée la team");
+
         if (Vector3.Equals(targetPosition, initialCameraPosition))
         {
             cameraRotation.canRotate = true; // rétablit le fait de pouvoir touner la caméra
@@ -177,12 +177,18 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             }
             else if (!buttonBar.gameObject.activeSelf)
             {
+                Debug.Log("Coucou je suis le bar, et je remet les boutons en visible");
                 buttonBar.gameObject.SetActive(true);
                 buttonFloor.gameObject.SetActive(true);
-                buttonWall.gameObject.SetActive(true);
                 buttonTable.gameObject.SetActive(true);
                 buttonBanquette.gameObject.SetActive(true);
                 buttonChaise.gameObject.SetActive(true);
+                buttonWall.gameObject.SetActive(true);
+                
+                //if (cameraCollider.hideWall == false)
+                //{
+                    //buttonWall.gameObject.SetActive(true);
+                //}
                 goToBar = false;
                 startButton.gameObject.SetActive(true);
                 buttonBar.interactable = true;
@@ -211,16 +217,25 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             else if (!buttonTable.gameObject.activeSelf)
             {
                 buttonBanquette.gameObject.SetActive(true);
-                buttonBar.gameObject.SetActive(true);
-                buttonWall.gameObject.SetActive(true);
+               
                 buttonFloor.gameObject.SetActive(true);
                 buttonChaise.gameObject.SetActive(true);
-
                 buttonTable.gameObject.SetActive(true);
                 tableCliqued = false;
                 startButton.gameObject.SetActive(true);
                 buttonTable.interactable = true;
                 cameraRotation.canRotate = true;
+                buttonBar.gameObject.SetActive(true);
+                buttonWall.gameObject.SetActive(true);
+
+                //if (cameraCollider.hideBar == false)
+                //{
+                    //buttonBar.gameObject.SetActive(true);
+                //}
+                //if (cameraCollider.hideWall == false)
+                //{
+                   // buttonWall.gameObject.SetActive(true);
+                //}
             }
         }
         if (banqCliqued == true)
@@ -237,8 +252,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
              else if (!buttonBanquette.gameObject.activeSelf)
             {
                 buttonBanquette.gameObject.SetActive(true);
-                buttonBar.gameObject.SetActive(true);
-                buttonWall.gameObject.SetActive(true);
                 buttonFloor.gameObject.SetActive(true);
                 buttonTable.gameObject.SetActive(true);
                 buttonChaise.gameObject.SetActive(true);
@@ -246,6 +259,16 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 banqCliqued = false;
                 buttonBanquette.interactable = true;
                 cameraRotation.canRotate = true;
+                buttonBar.gameObject.SetActive(true);
+                buttonWall.gameObject.SetActive(true);
+                //if (cameraCollider.hideBar == false)
+                //{
+                    //buttonBar.gameObject.SetActive(true);
+                //}
+                //if (cameraCollider.hideWall == false)
+                //{
+                    //buttonWall.gameObject.SetActive(true);
+                //}
             }
         }
         if (chaiseCliqued == true)
@@ -263,8 +286,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             else if (!buttonChaise.gameObject.activeSelf)
             {
                 buttonBanquette.gameObject.SetActive(true);
-                buttonBar.gameObject.SetActive(true);
-                buttonWall.gameObject.SetActive(true);
                 buttonFloor.gameObject.SetActive(true);
                 buttonTable.gameObject.SetActive(true);
                 buttonChaise.gameObject.SetActive(true);
@@ -272,6 +293,16 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 chaiseCliqued = false;
                 buttonChaise.interactable = true;
                 cameraRotation.canRotate = true;
+                buttonBar.gameObject.SetActive(true);
+                buttonWall.gameObject.SetActive(true);
+                //if (cameraCollider.hideBar == false)
+                //{
+                    //buttonBar.gameObject.SetActive(true);
+                //}
+                //if (cameraCollider.hideWall == false)
+                //{
+                    //buttonWall.gameObject.SetActive(true);
+                //}
             }
         }
         
@@ -290,31 +321,43 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             buttonFloorBrown.gameObject.SetActive(false);
             buttonFloorWhite.gameObject.SetActive(false);
             buttonFloorRetour.gameObject.SetActive(false);
-
-            buttonTable.gameObject.SetActive(true);
-            buttonBanquette.gameObject.SetActive(true);
             buttonBar.gameObject.SetActive(true);
             buttonWall.gameObject.SetActive(true);
+            //if (cameraCollider.hideBar == false)
+            //{
+                //buttonBar.gameObject.SetActive(true);
+            //}
+            //if (cameraCollider.hideWall == false)
+            //{
+                //buttonWall.gameObject.SetActive(true);
+            //}
+            buttonTable.gameObject.SetActive(true);
+            buttonBanquette.gameObject.SetActive(true);
             buttonFloor.gameObject.SetActive(true);
             buttonChaise.gameObject.SetActive(true);
             floorCliqued = false;
-
+            
         }
         else if (wallCliqued == true)
         {
             cameraRotation.canRotate = true;
-            buttonBar.gameObject.SetActive(true);
-            buttonWall.gameObject.SetActive(true);
             buttonFloor.gameObject.SetActive(true);
             buttonTable.gameObject.SetActive(true);
             buttonChaise.gameObject.SetActive(true);
             buttonBanquette.gameObject.SetActive(true);
+            buttonWall.gameObject.SetActive(true);
+            buttonBar.gameObject.SetActive(true);
+            //if (cameraCollider.hideBar == false)
+            //{
+                //buttonBar.gameObject.SetActive(true);
+            //}
 
             buttonWallRed.gameObject.SetActive(false);
             buttonWallBrown.gameObject.SetActive(false);
             buttonWallWhite.gameObject.SetActive(false);
             buttonWallRetour.gameObject.SetActive(false);
             wallCliqued = false;
+            
         }
 
         else StartCoroutine(MoveAndRotateCamera(initialCameraPosition, initialCameraRotation));

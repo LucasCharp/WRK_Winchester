@@ -12,7 +12,8 @@ public class CameraColliderDetection : MonoBehaviour
     public Renderer[] djRenderer;
     public Renderer[] videurRenderer;
     public Renderer[] toilettesRenderer;
-
+    public bool hideBar;
+    public bool hideWall;
 
 
     //objectRenderer.enabled = !objectRenderer.enabled;
@@ -23,6 +24,8 @@ public class CameraColliderDetection : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Box11")) // Videur
         {
+           // wallButton.gameObject.SetActive(true);
+            //hideWall = false;
             Debug.Log("La caméra est entrée dans la Box 1");
 
             if (videurRenderer != null)
@@ -37,21 +40,17 @@ public class CameraColliderDetection : MonoBehaviour
             {
                 foreach (Renderer rend in djRenderer)
                 {
-                    rend.enabled = rend.enabled; // Inverser la visibilité
+                    rend.enabled = true;// Inverser la visibilité
                 }
             }
             if (toilettesRenderer != null)
             {
                 foreach (Renderer rend in toilettesRenderer)
                 {
-                    rend.enabled = rend.enabled; // Inverser la visibilité
+                    rend.enabled = true; // Inverser la visibilité
                 }
             }
         }
-
-
-
-        //J'en suis là
 
 
 
@@ -59,7 +58,8 @@ public class CameraColliderDetection : MonoBehaviour
         else if (other.gameObject.layer == LayerMask.NameToLayer("Box12")) // DJ
         {
             Debug.Log("La caméra est entrée dans la Box 2");
-
+            //barButton.gameObject.SetActive(true);
+            //hideBar = false;
             if (djRenderer != null)
             {
                 foreach (Renderer rend in djRenderer)
@@ -72,14 +72,14 @@ public class CameraColliderDetection : MonoBehaviour
             {
                 foreach (Renderer rend in videurRenderer)
                 {
-                    rend.enabled = !rend.enabled; // Inverser la visibilité
+                    rend.enabled = true; // Inverser la visibilité
                 }
             }
             if (barRenderer != null)
             {
                 foreach (Renderer rend in barRenderer)
                 {
-                    rend.enabled = !rend.enabled; // Inverser la visibilité
+                    rend.enabled = true; // Inverser la visibilité
                 }
             }
         }
@@ -87,12 +87,13 @@ public class CameraColliderDetection : MonoBehaviour
 
 
 
-
-
-
-
         else if (other.gameObject.layer == LayerMask.NameToLayer("Box13")) // Bar
         {
+            //wallButton.gameObject.SetActive(true);
+            //barButton.gameObject.SetActive(false);
+
+            //hideBar = true;
+            //hideWall = false;
             if (barRenderer != null)
             {
                 foreach (Renderer rend in barRenderer)
@@ -105,30 +106,29 @@ public class CameraColliderDetection : MonoBehaviour
             {
                 foreach (Renderer rend in toilettesRenderer)
                 {
-                    rend.enabled = !rend.enabled; // Inverser la visibilité
+                    rend.enabled = true; // Inverser la visibilité
                 }
             }
             if (djRenderer != null)
             {
                 foreach (Renderer rend in djRenderer)
                 {
-                    rend.enabled = !rend.enabled; // Inverser la visibilité
+                    rend.enabled = true; // Inverser la visibilité
                 }
             }
-            barButton.gameObject.SetActive(false);
+            
             Debug.Log("La caméra est entrée dans la Box 3");
         }
 
 
 
 
-
-
-
-
         else if (other.gameObject.layer == LayerMask.NameToLayer("Box14")) // Toilettes
         {
-            wallButton.gameObject.SetActive(false);
+            //wallButton.gameObject.SetActive(false);
+            //barButton.gameObject.SetActive(true);
+            //hideWall = true;
+            //hideBar = false;
             Debug.Log("La caméra est entrée dans la Box 4");
             if (videurRenderer != null)
             {
@@ -144,14 +144,14 @@ public class CameraColliderDetection : MonoBehaviour
                 {
                     foreach (Renderer rend in videurRenderer)
                     {
-                        rend.enabled = !rend.enabled; // Inverser la visibilité
+                        rend.enabled = true; // Inverser la visibilité
                     }
                 }
                 if (barRenderer != null)
                 {
                     foreach (Renderer rend in barRenderer)
                     {
-                        rend.enabled = !rend.enabled; // Inverser la visibilité
+                        rend.enabled = true; // Inverser la visibilité
                     }
                 }
             }

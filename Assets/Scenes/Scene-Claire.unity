@@ -7922,6 +7922,12 @@ MonoBehaviour:
   rotationSpeed: 80
   rotationAmount: -100
   mainSceneManager: {fileID: 1396442795}
+--- !u!23 &648065973 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1460954580618046686, guid: b749a3ab589c35c44921fb6d37bd9add,
+    type: 3}
+  m_PrefabInstance: {fileID: 648065964}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &674252047
 GameObject:
   m_ObjectHideFlags: 0
@@ -8250,6 +8256,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 716868107}
   mainSceneManager: {fileID: 1396442795}
+--- !u!23 &717270749 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7338422106699361120, guid: 28a17664bb78a1e489af9c0d13adc399,
+    type: 3}
+  m_PrefabInstance: {fileID: 169210507}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &728224441
 GameObject:
   m_ObjectHideFlags: 0
@@ -17770,6 +17782,7 @@ MonoBehaviour:
   mainSceneManager: {fileID: 1396442795}
   cameraRotation: {fileID: 113777587}
   mainSceneManagerRef: {fileID: 1396442795}
+  cameraCollider: {fileID: 1592362476}
   upgradeCanvas: {fileID: 1572198030}
   son: {fileID: 8300000, guid: 1f9a7794e86cb5c41ba79a80326483dd, type: 3}
 --- !u!114 &1572198028
@@ -18266,12 +18279,21 @@ MonoBehaviour:
   - {fileID: 1851859913}
   - {fileID: 1488375278}
   - {fileID: 328177472}
+  - {fileID: 366135656}
+  - {fileID: 648065973}
+  - {fileID: 717270749}
+  - {fileID: 2018814317}
+  - {fileID: 117889709}
+  - {fileID: 1228334922}
   videurRenderer:
   - {fileID: 1646423194}
   - {fileID: 809308964}
   - {fileID: 1038499150}
+  - {fileID: 436428592}
   toilettesRenderer:
   - {fileID: 1119492283}
+  hideBar: 0
+  hideWall: 0
 --- !u!114 &1592362477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23761,7 +23783,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 54.2, y: -53.3}
+  m_AnchoredPosition: {x: -69.3, y: -53.3}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2005871744 stripped
