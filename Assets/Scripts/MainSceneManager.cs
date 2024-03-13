@@ -34,16 +34,7 @@ public class MainSceneManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (startGame == true)
-        {
-            foreach (Canvas canvas in canvasList)
-            {
-                canvas.gameObject.SetActive(true);
-            }
-        }
-    }
+    
     public void SetEtagere()
     {
         if (barLevel == 0)

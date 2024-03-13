@@ -12,16 +12,23 @@ public class CameraColliderDetection : MonoBehaviour
     public Renderer[] djRenderer;
     public Renderer[] videurRenderer;
     public Renderer[] toilettesRenderer;
+
+    public Collider djBox;
+
     public bool hideBar;
     public bool hideWall;
 
 
-    //objectRenderer.enabled = !objectRenderer.enabled;
-
+    private void Start()
+    {
+        djBox = GetComponent<Collider>();
+        djBox.enabled = false;
+    }
 
 
     private void OnTriggerEnter(Collider other)
     {
+        djBox.enabled = (false);
         if (other.gameObject.layer == LayerMask.NameToLayer("Box11")) // Videur
         {
            // wallButton.gameObject.SetActive(true);
@@ -57,6 +64,7 @@ public class CameraColliderDetection : MonoBehaviour
 
         else if (other.gameObject.layer == LayerMask.NameToLayer("Box12")) // DJ
         {
+            djBox.enabled = (true);
             Debug.Log("La caméra est entrée dans la Box 2");
             //barButton.gameObject.SetActive(true);
             //hideBar = false;
@@ -89,6 +97,7 @@ public class CameraColliderDetection : MonoBehaviour
 
         else if (other.gameObject.layer == LayerMask.NameToLayer("Box13")) // Bar
         {
+            djBox.enabled = (false);
             //wallButton.gameObject.SetActive(true);
             //barButton.gameObject.SetActive(false);
 
