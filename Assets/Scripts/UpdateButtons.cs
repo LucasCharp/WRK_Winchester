@@ -82,6 +82,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     private float moveSpeed = 5f;
     private float rotationSpeed = 5f;
 
+
     public AudioClip son;
 
 
@@ -162,6 +163,12 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
             yield return null; // Attend une frame
         }
+        mainCamera.transform.position = targetPosition;
+        mainCamera.transform.rotation = targetRotation;
+
+        // Assurez-vous que la position et la rotation finales soient exactes
+        mainCamera.transform.position = targetPosition;
+        mainCamera.transform.rotation = targetRotation;
 
         if (Vector3.Equals(targetPosition, initialCameraPosition))
         {
@@ -183,7 +190,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 buttonTable.gameObject.SetActive(true);
                 buttonBanquette.gameObject.SetActive(true);
                 buttonChaise.gameObject.SetActive(true);
-                buttonWall.gameObject.SetActive(true);
+                 buttonWall.gameObject.SetActive(true);
                 
                 //if (cameraCollider.hideWall == false)
                 //{
