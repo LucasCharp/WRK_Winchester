@@ -12629,6 +12629,52 @@ Transform:
   - {fileID: 1962135990}
   m_Father: {fileID: 849477392}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &794524387
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 794524389}
+  - component: {fileID: 794524388}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &794524388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794524387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3caca4df1e629f4fa74d81cc2fd18b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  boxNumber: 0
+--- !u!4 &794524389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794524387}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.008112, y: 22.33005, z: -6.6091814}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2115009281}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &796123593
 GameObject:
   m_ObjectHideFlags: 0
@@ -12781,7 +12827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nomBoisson: 
-  barmanController: {fileID: 6840898269718991549}
+  barmanController: {fileID: 0}
 --- !u!1001 &804269257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20576,6 +20622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 804236809}
+  gameManager: {fileID: 794524388}
 --- !u!1001 &1250672616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25151,6 +25198,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxNumber: 0
+  barButton: {fileID: 0}
+  wallButton: {fileID: 0}
+  barRenderer: []
+  djRenderer: []
+  videurRenderer: []
+  toilettesRenderer: []
 --- !u!114 &1592362477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32684,6 +32737,7 @@ Transform:
   - {fileID: 597999608}
   - {fileID: 270871313}
   - {fileID: 182228546}
+  - {fileID: 794524389}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2119316418
@@ -35006,7 +35060,6 @@ GameObject:
   - component: {fileID: 3564631742679543267}
   - component: {fileID: 229293987698167095}
   - component: {fileID: 6840898269718991550}
-  - component: {fileID: 6840898269718991549}
   m_Layer: 0
   m_Name: Barman
   m_TagString: PNJ
@@ -35014,19 +35067,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!114 &6840898269718991549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6840898269718991548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaab1abb272263547a0eef37e5918ced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuPanel: {fileID: 804236809}
 --- !u!65 &6840898269718991550
 BoxCollider:
   m_ObjectHideFlags: 0

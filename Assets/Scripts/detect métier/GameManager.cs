@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
+    public int score = 0;
     public int boxNumber;
 
     private void Awake()
@@ -20,4 +18,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Méthode pour augmenter le score
+    public void AugmenterScore(int points)
+    {
+        score += points;
+        Debug.Log("Score augmenté de " + points + " points. Nouveau score : " + score);
+    }
+
+    // Méthode pour décrémenter le score
+    public void DiminuerScore(int points)
+    {
+        score -= points;
+        Debug.Log("Score diminué de " + points + " points. Nouveau score : " + score);
+    }
 }
