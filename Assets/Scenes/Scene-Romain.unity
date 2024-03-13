@@ -24938,7 +24938,6 @@ MonoBehaviour:
   mainCamera: {fileID: 1592362479}
   mainSceneManager: {fileID: 1396442795}
   cameraRotation: {fileID: 113777587}
-  mainSceneManagerRef: {fileID: 0}
   cameraCollider: {fileID: 0}
   upgradeCanvas: {fileID: 0}
   son: {fileID: 8300000, guid: 1f9a7794e86cb5c41ba79a80326483dd, type: 3}
@@ -25429,6 +25428,7 @@ MonoBehaviour:
   djRenderer: []
   videurRenderer: []
   toilettesRenderer: []
+  djBox: {fileID: 0}
   hideBar: 0
   hideWall: 0
 --- !u!114 &1592362477
@@ -34418,8 +34418,8 @@ Transform:
   m_GameObject: {fileID: 6840898269718991548}
   serializedVersion: 2
   m_LocalRotation: {x: -0.000000037748947, y: -1.110223e-16, z: 6.938894e-17, w: 1}
-  m_LocalPosition: {x: -1.1, y: 0.166, z: -4.7899165}
-  m_LocalScale: {x: 0.19594327, y: 0.19594327, z: 0.19594327}
+  m_LocalPosition: {x: -1.5055379, y: 0, z: -0.75999916}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3190733795575213189}
@@ -34427,7 +34427,7 @@ Transform:
   - {fileID: 8051967001333791362}
   - {fileID: 8668273341043781749}
   - {fileID: 1314485360749092323}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 6064766641626344604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3618846890780935864
 GameObject:
@@ -35057,6 +35057,7 @@ Transform:
   m_LocalScale: {x: 0.19594327, y: 0.19594327, z: 0.19594327}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3564631742679543267}
   - {fileID: 767719381}
   - {fileID: 1670516597}
   - {fileID: 291122843}
@@ -36437,6 +36438,5 @@ SceneRoots:
   - {fileID: 1388226018}
   - {fileID: 176631187}
   - {fileID: 1660313805}
-  - {fileID: 3564631742679543267}
   - {fileID: 6064766641626344604}
   - {fileID: 1542439591}
