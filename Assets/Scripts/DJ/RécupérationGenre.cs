@@ -1,25 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class MusicGenrePointCollector : MonoBehaviour
 {
-    public GameObject PNJ;
-    public MusicGenreAnalyzer scriptAffiche;
-    // Référence à la boîte de collision (trigger box)
-    public Collider triggerCollider;
-    
-
     // Dictionnaire pour stocker les compteurs de genres musicaux de chaque PNJ
     private Dictionary<Collider, CharacterMusicCounter> pnjCounters = new Dictionary<Collider, CharacterMusicCounter>();
 
-    
+    public MusicGenreAnalyzer scriptAffiche; // Assurez-vous d'assigner cette référence dans l'inspecteur Unity
+
     void OnTriggerEnter(Collider PNJ)
     {
         // Vérifier si le collider est un PNJ et s'il possède un composant CharacterMusicCounter
         CharacterMusicCounter musicCounter = PNJ.GetComponent<CharacterMusicCounter>();
-        Animator animator = PNJ.GetComponent<Animator>();
         if (musicCounter != null)
         {
             // Ajouter le PNJ au dictionnaire s'il n'est pas déjà présent
@@ -27,8 +19,7 @@ public class MusicGenrePointCollector : MonoBehaviour
             {
                 pnjCounters.Add(PNJ, musicCounter);
                 var totalPoints = CalculateTotalPoints();
-                scriptAffiche.DisplayResult(totalPoints, scriptAffiche.GetFavoriteGenre(totalPoints));
-                animator.SetBool("willDance", true);
+                scriptAffiche.DisplayResult(totalPoints, scriptAffiche.GetFavoriteGenres(totalPoints));
             }
         }
     }
@@ -36,14 +27,12 @@ public class MusicGenrePointCollector : MonoBehaviour
     void OnTriggerExit(Collider PNJ)
     {
         // Retirer le PNJ du dictionnaire lorsqu'il quitte la boîte de collision
-        Animator animator = PNJ.GetComponent<Animator>();
         if (pnjCounters.ContainsKey(PNJ))
         {
             pnjCounters.Remove(PNJ);
             var totalPoints = CalculateTotalPoints();
-            scriptAffiche.DisplayResult(totalPoints, scriptAffiche.GetFavoriteGenre(totalPoints));
+            scriptAffiche.DisplayResult(totalPoints, scriptAffiche.GetFavoriteGenres(totalPoints));
         }
-        animator.SetBool("willDance", false);
     }
 
     // Fonction pour calculer le total des points pour chaque genre musical parmi tous les PNJ présents
@@ -67,7 +56,7 @@ public class MusicGenrePointCollector : MonoBehaviour
             totalPoints["Electronic"] += pair.Value.electronicCounter;
             totalPoints["Classical"] += pair.Value.classicalCounter;
         }
-        foreach (var tab in totalPoints){}
+
         return totalPoints;
     }
 }

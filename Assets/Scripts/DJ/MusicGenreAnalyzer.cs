@@ -23,34 +23,39 @@ public class MusicGenreAnalyzer : MonoBehaviour
         // Calculer le total des points pour chaque genre musical
         Dictionary<string, int> totalPoints = pointCollector.CalculateTotalPoints();
 
-        // Déterminer le genre musical préféré (celui avec le plus de points)
-        string favoriteGenre = GetFavoriteGenre(totalPoints);
+        // Déterminer le(s) genre(s) musical(aux) préféré(s) (celui/celleux avec le plus de points)
+        List<string> favoriteGenres = GetFavoriteGenres(totalPoints);
 
         // Afficher le résultat dans le texte
-        DisplayResult(totalPoints, favoriteGenre);
+        DisplayResult(totalPoints, favoriteGenres);
     }
 
-    // Fonction pour déterminer le genre musical préféré
-    public string GetFavoriteGenre(Dictionary<string, int> totalPoints)
+    // Fonction pour déterminer le(s) genre(s) musical(aux) préféré(s)
+    public List<string> GetFavoriteGenres(Dictionary<string, int> totalPoints)
     {
-        string favoriteGenre = "";
+        List<string> favoriteGenres = new List<string>();
         int maxPoints = 0;
 
-        // Parcourir chaque genre musical pour trouver celui avec le plus de points
+        // Parcourir chaque genre musical pour trouver le(s) genre(s) avec le plus de points
         foreach (KeyValuePair<string, int> pair in totalPoints)
         {
             if (pair.Value > maxPoints)
             {
                 maxPoints = pair.Value;
-                favoriteGenre = pair.Key;
+                favoriteGenres.Clear();
+                favoriteGenres.Add(pair.Key);
+            }
+            else if (pair.Value == maxPoints)
+            {
+                favoriteGenres.Add(pair.Key);
             }
         }
 
-        return favoriteGenre;
+        return favoriteGenres;
     }
 
     // Fonction pour afficher le résultat dans le texte
-    public void DisplayResult(Dictionary<string, int> totalPoints, string favoriteGenre)
+    public void DisplayResult(Dictionary<string, int> totalPoints, List<string> favoriteGenres)
     {
         // Créer une chaîne de texte contenant les résultats
         string resultString = "Résultats :\n\n";
@@ -59,7 +64,12 @@ public class MusicGenreAnalyzer : MonoBehaviour
             resultString += pair.Key + " : " + pair.Value + " points\n";
         }
 
-        resultString += "\nLe genre musical préféré est : " + favoriteGenre;
+        // Ajouter les genres préférés à la chaîne de texte
+        resultString += "\nGenre(s) musical(aux) préféré(s) :\n";
+        foreach (string genre in favoriteGenres)
+        {
+            resultString += genre + "\n";
+        }
 
         // Afficher le texte dans l'UI
         resultText.text = resultString;
