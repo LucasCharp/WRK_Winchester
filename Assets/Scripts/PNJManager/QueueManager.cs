@@ -7,6 +7,7 @@ public class QueueManager : MonoBehaviour
 {
     Animator animator;
     public float numberOfPeopleInQueue;
+    public bool isFull = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class QueueManager : MonoBehaviour
         if (other.CompareTag("PNJ"))
         {
             numberOfPeopleInQueue -= 1;
+            isFull = false;
         }
     }
 

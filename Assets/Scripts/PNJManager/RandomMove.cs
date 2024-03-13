@@ -40,9 +40,7 @@ public class RandomNavMeshMovement : MonoBehaviour
 
     void Update()
     {
-        if (animator.GetBool("hasEnterPub") == true)
-        { 
-            CheckCollisionWithOtherPNJs();
+
             if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.1f)
             {
                 if (moveDelayTimer <= 0f)
@@ -60,7 +58,9 @@ public class RandomNavMeshMovement : MonoBehaviour
                     }
                 }
             }
-
+        if (animator.GetBool("hasEnterPub") == true)
+        { 
+            CheckCollisionWithOtherPNJs();
             //Si le PNJ a réalisé 3 actions, il s'en va du pub
             if (animator.GetInteger("actions") == 3)
             {
@@ -137,20 +137,23 @@ public class RandomNavMeshMovement : MonoBehaviour
 
     void SetRandomDestination()
     {
-        // Générer une destination aléatoire à l'intérieur du NavMesh
-        
-        if (animator.GetBool("isDancing") == false)
+        if (animator.GetBool("hasEnterPub") == true)
         {
-            animator.SetBool("isWalking", true);
-            Vector3 randomDirection = Random.insideUnitSphere * 5f; // Rayon de 10 unités
-            randomDirection += transform.position;
-            randomDirection.y = 0;
-            NavMeshHit hit;
-            NavMesh.SamplePosition(randomDirection, out hit, 5f, NavMesh.AllAreas);
-            randomDestination = hit.position;
+            // Générer une destination aléatoire à l'intérieur du NavMesh
 
-            // Définir la destination pour le NavMeshAgent
-            navMeshAgent.SetDestination(randomDestination);
+            if (animator.GetBool("isDancing") == false)
+            {
+                animator.SetBool("isWalking", true);
+                Vector3 randomDirection = Random.insideUnitSphere * 5f; // Rayon de 10 unités
+                randomDirection += transform.position;
+                randomDirection.y = 0;
+                NavMeshHit hit;
+                NavMesh.SamplePosition(randomDirection, out hit, 5f, NavMesh.AllAreas);
+                randomDestination = hit.position;
+
+                // Définir la destination pour le NavMeshAgent
+                navMeshAgent.SetDestination(randomDestination);
+            }
         }
     }
 
@@ -158,31 +161,21 @@ public class RandomNavMeshMovement : MonoBehaviour
     {
         GameObject file = GameObject.Find("File");
         QueueManager queueManager = file.GetComponent<QueueManager>();
-        Debug.Log("va dans la queue");
-        Debug.Log(queueManager.numberOfPeopleInQueue);
         if (queueManager.numberOfPeopleInQueue == 0)
         {
-            Debug.Log(queueManager.numberOfPeopleInQueue + "0");
             navMeshAgent.SetDestination(queueLast);
-            animator.SetBool("isWalking", false);
         }
         if (queueManager.numberOfPeopleInQueue == 1)
         {
-            Debug.Log(queueManager.numberOfPeopleInQueue + "1");
             navMeshAgent.SetDestination(queueThird);
-            animator.SetBool("isWalking", false);
         }
         if (queueManager.numberOfPeopleInQueue == 2)
         {
-            Debug.Log(queueManager.numberOfPeopleInQueue + "2");
             navMeshAgent.SetDestination(queueSecond);
-            animator.SetBool("isWalking", false);
         }
         if (queueManager.numberOfPeopleInQueue == 3)
         {
-            Debug.Log(queueManager.numberOfPeopleInQueue + "3");
             navMeshAgent.SetDestination(queueStart);
-            animator.SetBool("isWalking", false);
         }
     }
 }
