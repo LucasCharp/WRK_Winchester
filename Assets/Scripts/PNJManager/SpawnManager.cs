@@ -9,27 +9,27 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
-        GameObject file = GameObject.Find("File");
-        QueueManager queueManager = file.GetComponent<QueueManager>();
         // Appeler la fonction SpawnRandomPNJ au démarrage
-        if (queueManager.isFull == false)
-        {
-            InvokeRepeating("SpawnRandomPNJ", 0f, spawnInterval);
-       }        
+        InvokeRepeating("SpawnRandomPNJ", 2f, spawnInterval);     
     }
 
     void SpawnRandomPNJ()
     {
-        // Sélectionner un préfab de manière aléatoire
-        GameObject selectedPrefab = pnjPrefabs[Random.Range(0, pnjPrefabs.Length)];
+        GameObject file = GameObject.Find("File");
+        QueueManager queueManager = file.GetComponent<QueueManager>();
+        if (queueManager.isFull == false)
+        {
+            // Sélectionner un préfab de manière aléatoire
+            GameObject selectedPrefab = pnjPrefabs[Random.Range(0, pnjPrefabs.Length)];
 
-        // Utiliser la position du GameObject qui détient le script comme position de spawn
-        Vector3 spawnPosition = transform.position;
+            // Utiliser la position du GameObject qui détient le script comme position de spawn
+            Vector3 spawnPosition = transform.position;
 
-        // Créer une rotation de 90 degrés autour de l'axe Y
-        Quaternion spawnRotation = Quaternion.Euler(0f, 90f, 0f);
+            // Créer une rotation de 90 degrés autour de l'axe Y
+            Quaternion spawnRotation = Quaternion.Euler(0f, 90f, 0f);
 
-        // Instancier le préfab avec la position et la rotation spécifiées
-        Instantiate(selectedPrefab, spawnPosition, spawnRotation);
+            // Instancier le préfab avec la position et la rotation spécifiées
+            Instantiate(selectedPrefab, spawnPosition, spawnRotation);
+        }
     }
 }

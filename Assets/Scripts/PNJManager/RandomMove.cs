@@ -41,23 +41,23 @@ public class RandomNavMeshMovement : MonoBehaviour
     void Update()
     {
 
-            if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.1f)
+        if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.1f)
+        {
+            if (moveDelayTimer <= 0f)
             {
-                if (moveDelayTimer <= 0f)
+                SetRandomDestination();
+                moveDelayTimer = Random.Range(minMoveDelay, maxMoveDelay);
+            }
+            else
+            {
+                moveDelayTimer -= Time.deltaTime;
+                animator.SetBool("isWalking", false);
+                if (animator.GetBool("willDance") == true )
                 {
-                    SetRandomDestination();
-                    moveDelayTimer = Random.Range(minMoveDelay, maxMoveDelay);
-                }
-                else
-                {
-                    moveDelayTimer -= Time.deltaTime;
-                    animator.SetBool("isWalking", false);
-                    if (animator.GetBool("willDance") == true )
-                    {
-                        animator.SetBool("isDancing", true);
-                    }
+                    animator.SetBool("isDancing", true);
                 }
             }
+        }
         if (animator.GetBool("hasEnterPub") == true)
         { 
             CheckCollisionWithOtherPNJs();
@@ -176,6 +176,10 @@ public class RandomNavMeshMovement : MonoBehaviour
         if (queueManager.numberOfPeopleInQueue == 3)
         {
             navMeshAgent.SetDestination(queueStart);
+        }
+        if (queueManager.numberOfPeopleInQueue == 4)
+        {
+            queueManager.isFull = true;
         }
     }
 }

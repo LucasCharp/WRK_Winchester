@@ -27,9 +27,9 @@ public class QueueManager : MonoBehaviour
     {
         if (other.CompareTag("PNJ"))
         {
+            Debug.Log("il quitte la queue");
             numberOfPeopleInQueue -= 1;
             isFull = false;
         }
     }
-
 }
