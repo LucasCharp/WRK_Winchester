@@ -7,6 +7,9 @@ public class ClientController : MonoBehaviour
     private bool commandeFulfilled = false;
     private BarmanController barmanController;
     private bool satisfait = false;
+    private float tempsInitial;
+    public GameManager gameManager;
+    private bool tropAttendu = false;
 
     private void Start()
     {
@@ -20,19 +23,13 @@ public class ClientController : MonoBehaviour
             inBarZone = true;
             if (barmanController != null)
             {
-                barmanController.AjouterCommande(this);
+                barmanController.AjouterCommande(this, commande);
                 DemanderBoisson();
             }
         }
     }
     public void QuitterZoneBarman()
     {
-        // Sortir de la zone du barman
-        // Par exemple, désactiver le gameObject du client
-        Destroy(gameObject);
-        //gameObject.SetActive(false);
-        // Arrêter la simulation d'attente si elle est en cours
-        StopCoroutine("SimulerAttente");
         satisfait = true;
         Destroy(gameObject);
     }
@@ -42,6 +39,8 @@ public class ClientController : MonoBehaviour
         if (other.CompareTag("BarmanZone"))
         {
             inBarZone = false;
+            satisfait = true;
+            Destroy(gameObject);
         }
     }
 
@@ -52,6 +51,7 @@ public class ClientController : MonoBehaviour
             string[] boissons = { "t'es qui la", "vaux 2 k", "Rome", "Mot riz tôt", "abe-sainte" };
             commande = boissons[Random.Range(0, boissons.Length)];
             Debug.Log("Commande reçue : " + commande);
+            tempsInitial = Time.time; // Stocker le temps initial
             Invoke("SimulerAttente", 40f);
         }
     }
@@ -61,22 +61,43 @@ public class ClientController : MonoBehaviour
         if (!commandeFulfilled)
         {
             if (satisfait == false)
+            {
                 Debug.Log("Client insatisfait.");
-                LivrerBoisson(false);
+                tropAttendu = true;
+                LivrerBoisson(false); // Passer false pour indiquer que la boisson n'a pas été correctement servie
+            }
         }
     }
 
+    // Modifier la signature pour accepter un booléen
     public void LivrerBoisson(bool reponse)
     {
         if (inBarZone && !commandeFulfilled)
         {
             if (reponse)
             {
-                Debug.Log("Merci !");
+                float duree = Time.time - tempsInitial; // Calculer la durée écoulée
+                float TimePoint = 40 - (Time.time - tempsInitial);
+                Debug.Log(TimePoint + " s restante");
+                int multiplicateur = Mathf.FloorToInt(TimePoint / 10f); // Utiliser la durée comme multiplicateur (par exemple, 1 point pour chaque tranche de 10 secondes)
+                int scoreGagne = 10 * (multiplicateur + 1); // Calculer le score gagné en fonction du multiplicateur
+                gameManager.AugmenterScore(scoreGagne); // Accéder à la méthode AugmenterScore à partir de l'instance de GameManager
+                Debug.Log("Merci ! Score gagné : ");
             }
             else
             {
-                Debug.Log("Nul !");
+                if (tropAttendu == true)
+                {
+                    int scoreGagne = 20;
+                    gameManager.DiminuerScore(scoreGagne); // Accéder à la méthode AugmenterScore à partir de l'instance de GameManager
+                    Debug.Log("Trop Lent");
+                }
+                else 
+                {
+                    int scoreGagne = 10;
+                    gameManager.DiminuerScore(scoreGagne); // Accéder à la méthode AugmenterScore à partir de l'instance de GameManager
+                    Debug.Log("t'es con?");
+                }
             }
             commandeFulfilled = true;
         }

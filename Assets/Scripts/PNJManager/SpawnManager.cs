@@ -9,8 +9,13 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
+        GameObject file = GameObject.Find("File");
+        QueueManager queueManager = file.GetComponent<QueueManager>();
         // Appeler la fonction SpawnRandomPNJ au démarrage
-        InvokeRepeating("SpawnRandomPNJ", 0f, spawnInterval);
+        if (queueManager.isFull == false)
+        {
+            InvokeRepeating("SpawnRandomPNJ", 0f, spawnInterval);
+       }        
     }
 
     void SpawnRandomPNJ()
@@ -21,8 +26,10 @@ public class SpawnManager : MonoBehaviour
         // Utiliser la position du GameObject qui détient le script comme position de spawn
         Vector3 spawnPosition = transform.position;
 
-        // Instancier le préfab à la position du GameObject
-        Instantiate(selectedPrefab, spawnPosition, Quaternion.identity);
+        // Créer une rotation de 90 degrés autour de l'axe Y
+        Quaternion spawnRotation = Quaternion.Euler(0f, 90f, 0f);
 
+        // Instancier le préfab avec la position et la rotation spécifiées
+        Instantiate(selectedPrefab, spawnPosition, spawnRotation);
     }
 }

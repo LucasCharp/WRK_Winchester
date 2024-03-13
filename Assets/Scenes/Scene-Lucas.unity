@@ -12629,6 +12629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfPeopleInQueue: 0
+  isFull: 0
 --- !u!1001 &1156525961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15828,6 +15829,10 @@ MonoBehaviour:
   etagereHalf: {fileID: 1241321677}
   etagereQuarter: {fileID: 247792350}
   etagereEmpty: {fileID: 240054697}
+  canvasList: []
+  startCanvas: {fileID: 0}
+  pauseCanvas: {fileID: 0}
+  son: {fileID: 0}
 --- !u!4 &1396442796
 Transform:
   m_ObjectHideFlags: 0
@@ -17084,6 +17089,7 @@ MonoBehaviour:
   buttonChaiseBlue: {fileID: 2102286724}
   buttonChaiseGreen: {fileID: 546579150}
   buttonChaiseRetour: {fileID: 1173032620}
+  startButton: {fileID: 0}
   redColor: {r: 0.509434, g: 0.12591669, b: 0.12591669, a: 0}
   brownColor: {r: 0.42352945, g: 0.2509804, b: 0, a: 0}
   whiteColor: {r: 0.3056603, g: 0.3056603, b: 0.3056603, a: 0}
@@ -17112,6 +17118,7 @@ MonoBehaviour:
   mainSceneManager: {fileID: 1396442795}
   cameraRotation: {fileID: 113777587}
   mainSceneManagerRef: {fileID: 0}
+  cameraCollider: {fileID: 0}
   upgradeCanvas: {fileID: 0}
   son: {fileID: 0}
 --- !u!114 &1572198028
@@ -17420,6 +17427,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxNumber: 0
+  barButton: {fileID: 0}
+  wallButton: {fileID: 0}
+  barRenderer: []
+  djRenderer: []
+  videurRenderer: []
+  toilettesRenderer: []
+  hideBar: 0
+  hideWall: 0
 --- !u!114 &1592362477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23769,22 +23784,22 @@ PrefabInstance:
     - target: {fileID: 3709558500135542500, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 3709558500135542500, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3709558500135542500, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 3709558500135542500, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3709558500135542500, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
@@ -23794,7 +23809,7 @@ PrefabInstance:
     - target: {fileID: 3709558500135542500, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3709558500135542500, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
@@ -23804,7 +23819,7 @@ PrefabInstance:
     - target: {fileID: 3869771317271978990, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: spawnInterval
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3869771317271978990, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
@@ -23815,97 +23830,97 @@ PrefabInstance:
         type: 3}
       propertyPath: pnjPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 6388657929554262056, guid: ef944a99cec47b04b9146287b3c6f9b4,
+      objectReference: {fileID: 536721060909074957, guid: ef944a99cec47b04b9146287b3c6f9b4,
         type: 3}
     - target: {fileID: 3869771317271978990, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: pnjPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 2381390984494092609, guid: 5dcf31f30381c7e4ba7019eb76f3a563,
+      objectReference: {fileID: 454843690414200377, guid: 5dcf31f30381c7e4ba7019eb76f3a563,
         type: 3}
     - target: {fileID: 3869771317271978990, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: pnjPrefabs.Array.data[2]
       value: 
-      objectReference: {fileID: 1438082984218703662, guid: a2b8a1d19a9579944a08741d6d8d586c,
+      objectReference: {fileID: 3103463668985692157, guid: a2b8a1d19a9579944a08741d6d8d586c,
         type: 3}
     - target: {fileID: 3869771317271978990, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: pnjPrefabs.Array.data[3]
       value: 
-      objectReference: {fileID: 2261621761981182630, guid: 3fabbf7df874ca3409c3c5494ffeb752,
+      objectReference: {fileID: 3516930310241067489, guid: 3fabbf7df874ca3409c3c5494ffeb752,
         type: 3}
     - target: {fileID: 3869771317271978990, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: pnjPrefabs.Array.data[4]
       value: 
-      objectReference: {fileID: 4216738624232351034, guid: 20d9fbd9fd346604a852bcd3c579cf23,
+      objectReference: {fileID: 3309485225980853356, guid: 20d9fbd9fd346604a852bcd3c579cf23,
         type: 3}
     - target: {fileID: 3869771317271978990, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: pnjPrefabs.Array.data[5]
       value: 
-      objectReference: {fileID: 2262723663621921628, guid: 74595d08393c43a4d9d357df8f78cf33,
+      objectReference: {fileID: 8081415053164089732, guid: 74595d08393c43a4d9d357df8f78cf33,
         type: 3}
     - target: {fileID: 3869771317271978990, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: pnjPrefabs.Array.data[6]
       value: 
-      objectReference: {fileID: 2164893824241895579, guid: 5563d173a0ba3c2409ae4bd6298a7980,
+      objectReference: {fileID: 3845422202990093143, guid: 5563d173a0ba3c2409ae4bd6298a7980,
         type: 3}
     - target: {fileID: 3869771317271978990, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: pnjPrefabs.Array.data[7]
       value: 
-      objectReference: {fileID: 2808948087944609516, guid: 4e669a0f11dd64843baa2e4744076828,
+      objectReference: {fileID: 2282162213019212693, guid: 4e669a0f11dd64843baa2e4744076828,
         type: 3}
     - target: {fileID: 3869771317271978990, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: pnjPrefabs.Array.data[8]
       value: 
-      objectReference: {fileID: 2932002072401497946, guid: 5ebc83c9142b28a42a3bfe25aa013d5e,
+      objectReference: {fileID: 7427238800222348463, guid: 5ebc83c9142b28a42a3bfe25aa013d5e,
         type: 3}
     - target: {fileID: 3869771317271978990, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: pnjPrefabs.Array.data[9]
       value: 
-      objectReference: {fileID: 178126627667079724, guid: 1fb0cc56ca9fdb34ea044857cda97fc6,
+      objectReference: {fileID: 745132452211318578, guid: 1fb0cc56ca9fdb34ea044857cda97fc6,
         type: 3}
     - target: {fileID: 3869771317271978990, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: pnjPrefabs.Array.data[10]
       value: 
-      objectReference: {fileID: 5931324452399860141, guid: f2a8287982969f64a8e4894be6d108e4,
+      objectReference: {fileID: 1875328867118287488, guid: f2a8287982969f64a8e4894be6d108e4,
         type: 3}
     - target: {fileID: 3869771317271978990, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: pnjPrefabs.Array.data[11]
       value: 
-      objectReference: {fileID: 3214832859401734237, guid: 03d867097bcdec84ea1f3fd76bd9be8f,
+      objectReference: {fileID: 8895556041553521195, guid: 03d867097bcdec84ea1f3fd76bd9be8f,
         type: 3}
     - target: {fileID: 3869771317271978990, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: pnjPrefabs.Array.data[12]
       value: 
-      objectReference: {fileID: 7951423240549723455, guid: 4b085bb5d3e1bba468fda29a0badee08,
+      objectReference: {fileID: 3060741065757732770, guid: 4b085bb5d3e1bba468fda29a0badee08,
         type: 3}
     - target: {fileID: 3869771317271978990, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: pnjPrefabs.Array.data[13]
       value: 
-      objectReference: {fileID: 614179344291567975, guid: ecaa0106e51d38641a5a425e1eb6e503,
+      objectReference: {fileID: 1896183862614440991, guid: ecaa0106e51d38641a5a425e1eb6e503,
         type: 3}
     - target: {fileID: 3869771317271978990, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: pnjPrefabs.Array.data[14]
       value: 
-      objectReference: {fileID: 345358771004676978, guid: 5f1d94f07ec4f1e4b91b651718d33711,
+      objectReference: {fileID: 6448677401656317145, guid: 5f1d94f07ec4f1e4b91b651718d33711,
         type: 3}
     - target: {fileID: 3869771317271978990, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
       propertyPath: pnjPrefabs.Array.data[15]
       value: 
-      objectReference: {fileID: 2818207359461508766, guid: 46aa1a373f6bbe04b86d10aac10be3f7,
+      objectReference: {fileID: 5067805845640410625, guid: 46aa1a373f6bbe04b86d10aac10be3f7,
         type: 3}
     - target: {fileID: 3869771317271978990, guid: 5d056bcc03dd05c489ef3fa2fa7c265f,
         type: 3}
