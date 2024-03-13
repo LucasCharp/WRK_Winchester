@@ -5366,6 +5366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commande: 
+  gameManager: {fileID: 794524388}
 --- !u!54 &291122845
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12072,6 +12073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commande: 
+  gameManager: {fileID: 794524388}
 --- !u!54 &767719383
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24715,6 +24717,7 @@ MonoBehaviour:
   mainSceneManager: {fileID: 1396442795}
   cameraRotation: {fileID: 113777587}
   mainSceneManagerRef: {fileID: 0}
+  cameraCollider: {fileID: 0}
   upgradeCanvas: {fileID: 0}
   son: {fileID: 8300000, guid: 1f9a7794e86cb5c41ba79a80326483dd, type: 3}
 --- !u!114 &1572198028
@@ -25204,6 +25207,8 @@ MonoBehaviour:
   djRenderer: []
   videurRenderer: []
   toilettesRenderer: []
+  hideBar: 0
+  hideWall: 0
 --- !u!114 &1592362477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26689,6 +26694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commande: 
+  gameManager: {fileID: 794524388}
 --- !u!54 &1670516599
 Rigidbody:
   m_ObjectHideFlags: 0

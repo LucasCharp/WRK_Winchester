@@ -19,7 +19,7 @@ public class BarmanController : MonoBehaviour
         Debug.Log("Menu de boissons ouvert");
     }
 
-    public void AjouterCommande(ClientController client)
+    public void AjouterCommande(ClientController client, string commande)
     {
         if (commandePrioritaire == null)
         {
@@ -54,13 +54,13 @@ public class BarmanController : MonoBehaviour
             if (nomBoisson == commandePrioritaire.commande)
             {
                 Debug.Log("Bonne commande !");
-                gameManager.AugmenterScore(10); // Augmente le score de 10 points pour une bonne commande
             }
             else
             {
                 Debug.Log("Mauvaise réponse !");
-                gameManager.DiminuerScore(5); // Diminue le score de 5 points pour une mauvaise commande
             }
+            // Modifier l'appel à LivrerBoisson pour passer un booléen
+            commandePrioritaire.LivrerBoisson(nomBoisson == commandePrioritaire.commande);
         }
         else
         {
