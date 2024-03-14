@@ -55,7 +55,7 @@ public class RotateLight : MonoBehaviour
         if (transform.rotation == targetRotation)
         {
             Invoke("ReturnToStartRotation", Time.deltaTime);
-            Debug.Log("Je suis arrivé");
+            //Debug.Log("Je suis arrivé");
         }
         else
         {

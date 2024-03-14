@@ -3,58 +3,78 @@ using System.Collections.Generic;
 
 public class MusicGenrePointCollector : MonoBehaviour
 {
-    // Dictionnaire pour stocker les compteurs de genres musicaux de chaque PNJ
-    private Dictionary<Collider, CharacterMusicCounter> pnjCounters = new Dictionary<Collider, CharacterMusicCounter>();
+    public GameObject PNJ;
+    public MusicGenreAnalyzer scriptAffiche;
+    public Collider triggerCollider;
+    public List<GameObject> genreButtons; // Liste des boutons de genre musical
 
-    public MusicGenreAnalyzer scriptAffiche; // Assurez-vous d'assigner cette référence dans l'inspecteur Unity
+    private Dictionary<Collider, CharacterMusicCounter> pnjCounters = new Dictionary<Collider, CharacterMusicCounter>();
 
     void OnTriggerEnter(Collider PNJ)
     {
-        // Vérifier si le collider est un PNJ et s'il possède un composant CharacterMusicCounter
         CharacterMusicCounter musicCounter = PNJ.GetComponent<CharacterMusicCounter>();
+        Animator animator = PNJ.GetComponent<Animator>();
         if (musicCounter != null)
         {
-            // Ajouter le PNJ au dictionnaire s'il n'est pas déjà présent
             if (!pnjCounters.ContainsKey(PNJ))
             {
                 pnjCounters.Add(PNJ, musicCounter);
                 var totalPoints = CalculateTotalPoints();
-                scriptAffiche.DisplayResult(totalPoints, scriptAffiche.GetFavoriteGenres(totalPoints));
+                string[] favoriteGenres = scriptAffiche.GetFavoriteGenres(totalPoints); // Utiliser GetFavoriteGenres ici
+                scriptAffiche.DisplayResult(totalPoints, favoriteGenres);
+                //animator.SetBool("willDance", true);
+
+                // Associer les préférences musicales du PNJ aux boutons de genre
+                for (int i = 0; i < genreButtons.Count; i++)
+                {
+                    ButtonGenre buttonGenre = genreButtons[i].GetComponent<ButtonGenre>();
+                    if (buttonGenre != null)
+                    {
+                        buttonGenre.SetGenrePreference(musicCounter.GetGenrePreference(i));
+                    }
+                }
             }
         }
     }
 
     void OnTriggerExit(Collider PNJ)
     {
-        // Retirer le PNJ du dictionnaire lorsqu'il quitte la boîte de collision
+        Animator animator = PNJ.GetComponent<Animator>();
         if (pnjCounters.ContainsKey(PNJ))
         {
             pnjCounters.Remove(PNJ);
             var totalPoints = CalculateTotalPoints();
-            scriptAffiche.DisplayResult(totalPoints, scriptAffiche.GetFavoriteGenres(totalPoints));
+            string[] favoriteGenres = scriptAffiche.GetFavoriteGenres(totalPoints); // Utiliser GetFavoriteGenres ici
+            scriptAffiche.DisplayResult(totalPoints, favoriteGenres);
         }
+        animator.SetBool("willDance", false);
     }
 
-    // Fonction pour calculer le total des points pour chaque genre musical parmi tous les PNJ présents
     public Dictionary<string, int> CalculateTotalPoints()
     {
         Dictionary<string, int> totalPoints = new Dictionary<string, int>();
 
-        // Initialiser les compteurs totaux à zéro
-        totalPoints["Rock"] = 0;
-        totalPoints["Pop"] = 0;
+        // Ajouter les nouveaux genres musicaux
+        totalPoints["Afro"] = 0;
+        totalPoints["Drill"] = 0;
         totalPoints["Jazz"] = 0;
-        totalPoints["Electronic"] = 0;
-        totalPoints["Classical"] = 0;
+        totalPoints["Country"] = 0;
+        totalPoints["Brasil"] = 0;
+        totalPoints["Rock"] = 0;
+        totalPoints["Disco"] = 0;
+        totalPoints["Metal"] = 0;
 
-        // Parcourir tous les PNJ présents dans la boîte de collision et ajouter leurs points au total
         foreach (var pair in pnjCounters)
         {
-            totalPoints["Rock"] += pair.Value.rockCounter;
-            totalPoints["Pop"] += pair.Value.popCounter;
+            // Ajouter les nouveaux genres musicaux
+            totalPoints["Afro"] += pair.Value.afroCounter;
+            totalPoints["Drill"] += pair.Value.drillCounter;
             totalPoints["Jazz"] += pair.Value.jazzCounter;
-            totalPoints["Electronic"] += pair.Value.electronicCounter;
-            totalPoints["Classical"] += pair.Value.classicalCounter;
+            totalPoints["Country"] += pair.Value.countryCounter;
+            totalPoints["Brasil"] += pair.Value.brasilCounter;
+            totalPoints["Rock"] += pair.Value.rockCounter;
+            totalPoints["Disco"] += pair.Value.discoCounter;
+            totalPoints["Metal"] += pair.Value.metalCounter;
         }
 
         return totalPoints;
