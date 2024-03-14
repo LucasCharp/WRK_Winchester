@@ -19,6 +19,8 @@ TagManager:
   - Bar
   - Floor
   - Banquette
+  - Btn
+  - Zombie
   layers:
   - Default
   - TransparentFX

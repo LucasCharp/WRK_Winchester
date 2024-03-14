@@ -14,14 +14,14 @@ public class CameraColliderDetection : MonoBehaviour
     public Renderer[] toilettesRenderer;
 
     public GameObject djBox;
-
-    public bool hideBar;
-    public bool hideWall;
-
+    public GameObject barBox;
+    public GameObject videurBox;
 
     private void Start()
     {
         djBox.SetActive(false);
+        barBox.SetActive(false);
+        videurBox.SetActive(false);
     }
 
 
@@ -30,9 +30,9 @@ public class CameraColliderDetection : MonoBehaviour
         
         if (other.gameObject.layer == LayerMask.NameToLayer("Box11")) // Videur
         {
+            videurBox.SetActive(true);
             djBox.SetActive(false);
-            // wallButton.gameObject.SetActive(true);
-            //hideWall = false;
+
             Debug.Log("La caméra est entrée dans la Box 1");
 
             if (videurRenderer != null)
@@ -64,10 +64,11 @@ public class CameraColliderDetection : MonoBehaviour
 
         else if (other.gameObject.layer == LayerMask.NameToLayer("Box12")) // DJ
         {
-            
+            barBox.SetActive(false);
+            djBox.SetActive(true);
+            videurBox.SetActive(false);
             Debug.Log("La caméra est entrée dans la Box 2");
-            //barButton.gameObject.SetActive(true);
-            //hideBar = false;
+
             if (djRenderer != null)
             {
                 foreach (Renderer rend in djRenderer)
@@ -97,12 +98,9 @@ public class CameraColliderDetection : MonoBehaviour
 
         else if (other.gameObject.layer == LayerMask.NameToLayer("Box13")) // Bar
         {
+            barBox.SetActive(true);
             djBox.SetActive(false);
-            //wallButton.gameObject.SetActive(true);
-            //barButton.gameObject.SetActive(false);
 
-            //hideBar = true;
-            //hideWall = false;
             if (barRenderer != null)
             {
                 foreach (Renderer rend in barRenderer)
@@ -134,11 +132,9 @@ public class CameraColliderDetection : MonoBehaviour
 
         else if (other.gameObject.layer == LayerMask.NameToLayer("Box14")) // Toilettes
         {
-            djBox.SetActive(true);
-            //wallButton.gameObject.SetActive(false);
-            //barButton.gameObject.SetActive(true);
-            //hideWall = true;
-            //hideBar = false;
+            barBox.SetActive(false);
+            videurBox.SetActive(false);
+
             Debug.Log("La caméra est entrée dans la Box 4");
             if (videurRenderer != null)
             {
@@ -167,5 +163,4 @@ public class CameraColliderDetection : MonoBehaviour
             }
         }
     }
-
 }

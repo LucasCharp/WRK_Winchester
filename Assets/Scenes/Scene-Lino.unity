@@ -13038,6 +13038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfPeopleInQueue: 0
+  isFull: 0
 --- !u!1001 &1156525961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16016,6 +16017,7 @@ MonoBehaviour:
   PNJ: {fileID: 0}
   scriptAffiche: {fileID: 541798860}
   triggerCollider: {fileID: 1324719313}
+  genreButtons: []
 --- !u!114 &1324719312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16375,6 +16377,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: af977af9cb5669d48b83242666f0d675, type: 3}
   - {fileID: 8300000, guid: a58dee9e0e6924144be0320b75ca78b2, type: 3}
   - {fileID: 8300000, guid: 3011af99a6f0da24bb5ebf093d138582, type: 3}
+  - {fileID: 8300000, guid: 004065d5ed8dbc14880fc64e6b303902, type: 3}
+  - {fileID: 8300000, guid: 11ccd5570098b76429939866085a5371, type: 3}
+  - {fileID: 8300000, guid: 5696b1946e7c28f42894bb587324d35c, type: 3}
+  - {fileID: 8300000, guid: 42e235cb3c6128941af0818e5d81e99a, type: 3}
+  - {fileID: 8300000, guid: 242b9cca391cf7046b817ca6782338e7, type: 3}
+  - {fileID: 8300000, guid: e04f30dfc6b12c5478e85c3a473b820a, type: 3}
+  - {fileID: 8300000, guid: 85bd7425dad5e8a4d9ee1866923e0bb0, type: 3}
+  - {fileID: 8300000, guid: 9fd91d48517c38b498389cf917742614, type: 3}
 --- !u!82 &1388226017
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16396,8 +16406,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 10
+  MaxDistance: 15
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -16432,7 +16442,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -16481,7 +16491,7 @@ Transform:
   m_GameObject: {fileID: 1388226015}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 80.09365, y: 65.81416, z: 337.7332}
+  m_LocalPosition: {x: 4.68, y: 0.55, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18083,7 +18093,7 @@ MonoBehaviour:
   mainCamera: {fileID: 1592362479}
   mainSceneManager: {fileID: 1396442795}
   cameraRotation: {fileID: 113777587}
-  mainSceneManagerRef: {fileID: 1396442795}
+  cameraCollider: {fileID: 0}
   upgradeCanvas: {fileID: 1572198030}
   son: {fileID: 8300000, guid: 1f9a7794e86cb5c41ba79a80326483dd, type: 3}
 --- !u!114 &1572198028
@@ -18503,6 +18513,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxNumber: 0
+  barButton: {fileID: 0}
+  wallButton: {fileID: 0}
+  barRenderer: []
+  djRenderer: []
+  videurRenderer: []
+  toilettesRenderer: []
+  djBox: {fileID: 0}
+  barBox: {fileID: 0}
+  videurBox: {fileID: 0}
 --- !u!114 &1592362477
 MonoBehaviour:
   m_ObjectHideFlags: 0
