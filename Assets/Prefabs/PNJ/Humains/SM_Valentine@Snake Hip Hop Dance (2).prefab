@@ -633,10 +633,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minMoveDelay: 1
   maxMoveDelay: 3
-  queueStart: {x: -5, y: 0, z: 7.4}
-  queueSecond: {x: -3.8, y: 0, z: 7.4}
-  queueThird: {x: -2.6, y: 0, z: 7.4}
-  queueLast: {x: -1.4, y: 0, z: 7.4}
+  placeInQueue: 0
+  queueStart: {x: -1.4, y: 0, z: 7.4}
+  queueSecond: {x: -2.6, y: 0, z: 7.4}
+  queueThird: {x: -3.8, y: 0, z: 7.4}
+  queueLast: {x: -5, y: 0, z: 7.4}
   EndZonePosition: {x: 3.03, y: 1.86, z: 10}
 --- !u!114 &7806564411227657953
 MonoBehaviour:
@@ -651,10 +652,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockCounter: 0
-  popCounter: 0
+  afroCounter: 0
   jazzCounter: 0
-  electronicCounter: 0
-  classicalCounter: 0
+  drillCounter: 0
+  countryCounter: 0
+  discoCounter: 0
+  brasilCounter: 0
+  metalCounter: 0
 --- !u!95 &6823206382800046715
 Animator:
   serializedVersion: 5
