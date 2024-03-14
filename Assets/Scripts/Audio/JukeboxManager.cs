@@ -10,6 +10,7 @@ public class JukeboxManager : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        
     }
 
     public void PlayTrack(int trackIndex)

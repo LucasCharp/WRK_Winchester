@@ -4,32 +4,47 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject[] pnjPrefabs; // Tableau contenant vos préfabs avec le tag "PNJ"
-    public float spawnInterval; // Intervalle entre chaque spawn en secondes
+    public GameObject[] pnjPrefabs;
+    public float spawnInterval;
+    public float numberOfPeopleInQueue;
+    public int maxQueueSize = 5;
+    public bool isFull = false;
 
     void Start()
     {
-        // Appeler la fonction SpawnRandomPNJ au démarrage
-        InvokeRepeating("SpawnRandomPNJ", 2f, spawnInterval);     
+        InvokeRepeating("SpawnRandomPNJ", 2f, spawnInterval);
     }
 
     void SpawnRandomPNJ()
     {
-        GameObject file = GameObject.Find("File");
-        QueueManager queueManager = file.GetComponent<QueueManager>();
-        if (queueManager.isFull == false)
+        // Vérifiez si la file d'attente est pleine avant de spawn un nouveau PNJ
+        if (!isFull)
         {
-            // Sélectionner un préfab de manière aléatoire
             GameObject selectedPrefab = pnjPrefabs[Random.Range(0, pnjPrefabs.Length)];
-
-            // Utiliser la position du GameObject qui détient le script comme position de spawn
             Vector3 spawnPosition = transform.position;
-
-            // Créer une rotation de 90 degrés autour de l'axe Y
             Quaternion spawnRotation = Quaternion.Euler(0f, 90f, 0f);
-
-            // Instancier le préfab avec la position et la rotation spécifiées
             Instantiate(selectedPrefab, spawnPosition, spawnRotation);
         }
+    }
+
+    public void StartQueue()
+    {
+        numberOfPeopleInQueue += 1;
+
+        // Vérifiez si la file d'attente est pleine
+        if (numberOfPeopleInQueue >= maxQueueSize)
+        {
+            isFull = true;
+            Debug.Log("File d'attente pleine !");
+        }
+    }
+
+    public void QuitQueue()
+    {
+        Debug.Log("Il quitte la queue");
+        numberOfPeopleInQueue -= 1;
+
+        // Réinitialisez la condition de file d'attente pleine
+        isFull = false;
     }
 }

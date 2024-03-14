@@ -9,7 +9,7 @@ public class RandomNavMeshMovement : MonoBehaviour
 {
     public float minMoveDelay = 1f; // Délai minimum entre chaque déplacement
     public float maxMoveDelay = 3f; // Délai maximum entre chaque déplacement
-
+    public float placeInQueue = 0f;
     public Vector3 queueStart;
     public Vector3 queueSecond;
     public Vector3 queueThird;
@@ -52,14 +52,17 @@ public class RandomNavMeshMovement : MonoBehaviour
             {
                 moveDelayTimer -= Time.deltaTime;
                 animator.SetBool("isWalking", false);
-                if (animator.GetBool("willDance") == true )
+                if (animator.GetBool("willDance") == true)
                 {
                     animator.SetBool("isDancing", true);
                 }
             }
         }
+
+
+
         if (animator.GetBool("hasEnterPub") == true)
-        { 
+        {
             CheckCollisionWithOtherPNJs();
             //Si le PNJ a réalisé 3 actions, il s'en va du pub
             if (animator.GetInteger("actions") == 3)
@@ -74,7 +77,7 @@ public class RandomNavMeshMovement : MonoBehaviour
                         if (doorScript.howManyPnjUseDoors == 1)
                         {
                             doorScript.OpenDoor();
-                        }                         
+                        }
                     }
                     // Mettez à jour la variable pour indiquer que ManageDoor() a été appelé
                     hasManagedDoor = true;
@@ -86,7 +89,7 @@ public class RandomNavMeshMovement : MonoBehaviour
             if (animator.GetBool("shouldGoIn") == true)
             {
                 animator.SetBool("isWalking", true);
-                if (animator.GetBool("isOutOfWall") == true) 
+                if (animator.GetBool("isOutOfWall") == true)
                 {
                     PubOpposite = new Vector3(Random.Range(0f, 2.3f), 0f, Random.Range(2.5f, 4f));
                     navMeshAgent.SetDestination(PubOpposite);
@@ -159,27 +162,40 @@ public class RandomNavMeshMovement : MonoBehaviour
 
     void InQueue()
     {
-        GameObject file = GameObject.Find("File");
-        QueueManager queueManager = file.GetComponent<QueueManager>();
-        if (queueManager.numberOfPeopleInQueue == 0)
+        GameObject spawner = GameObject.Find("Spawner");
+        SpawnManager spawnManager = spawner.GetComponent<SpawnManager>();
+        if (spawnManager.isFull == false)
         {
-            navMeshAgent.SetDestination(queueLast);
-        }
-        if (queueManager.numberOfPeopleInQueue == 1)
-        {
-            navMeshAgent.SetDestination(queueThird);
-        }
-        if (queueManager.numberOfPeopleInQueue == 2)
-        {
-            navMeshAgent.SetDestination(queueSecond);
-        }
-        if (queueManager.numberOfPeopleInQueue == 3)
-        {
-            navMeshAgent.SetDestination(queueStart);
-        }
-        if (queueManager.numberOfPeopleInQueue == 4)
-        {
-            queueManager.isFull = true;
-        }
+            spawnManager.StartQueue();
+            if (spawnManager.numberOfPeopleInQueue == 1)
+            {
+                navMeshAgent.SetDestination(queueStart);
+                placeInQueue = 1;
+            }
+            else if (spawnManager.numberOfPeopleInQueue == 2)
+            {
+                navMeshAgent.SetDestination(queueSecond);
+                placeInQueue = 2;
+            }
+            else if (spawnManager.numberOfPeopleInQueue == 3)
+            {
+                navMeshAgent.SetDestination(queueThird);
+                placeInQueue = 3;
+            }
+            else if (spawnManager.numberOfPeopleInQueue == 4)
+            {
+                navMeshAgent.SetDestination(queueLast);
+                placeInQueue = 4;
+            }
+            else if (spawnManager.numberOfPeopleInQueue == 5)
+            {
+                placeInQueue = 5;
+            }
+        }           
+    }
+
+    void SomeoneQuit()
+    {
+        print("qqch");
     }
 }
