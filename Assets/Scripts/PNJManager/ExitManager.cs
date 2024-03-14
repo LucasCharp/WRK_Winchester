@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class ExitManager : MonoBehaviour
 {
     Animator animator;
+
+    private GameObject[] doors;
+
+    private void Awake()
+    {
+        doors = GameObject.FindGameObjectsWithTag("Door");
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +26,20 @@ public class ExitManager : MonoBehaviour
     {
         if (other.CompareTag("PNJ"))
         {
-            animator.SetBool("hasEnterPub", true);
-            GoBackInPub(other);
+            if (animator.GetBool("hasEnterPub") == false)
+            {
+                foreach (GameObject door in doors)
+                {
+                    DoorLeft doorScript = door.GetComponent<DoorLeft>();
+                    doorScript.howManyPnjUseDoors -= 1;
+                    if (doorScript.howManyPnjUseDoors == 0)
+                    {
+                        doorScript.CloseDoor();
+                    }
+                }
+                animator.SetBool("hasEnterPub", true);
+                GoBackInPub(other);
+            }
         }
     }
 

@@ -4,6 +4,7 @@ using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Windows;
+using UnityEngine.InputSystem.Controls;
 
 public class RandomNavMeshMovement : MonoBehaviour
 {
@@ -40,8 +41,13 @@ public class RandomNavMeshMovement : MonoBehaviour
 
     void Update()
     {
+        //if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        //{
+        //    Debug.Log("oui");
+        //    QuitQueue();
+        //}
 
-        if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.1f)
+            if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.1f)
         {
             if (moveDelayTimer <= 0f)
             {
@@ -194,8 +200,54 @@ public class RandomNavMeshMovement : MonoBehaviour
         }           
     }
 
-    void SomeoneQuit()
+    void QuitQueue()
     {
-        print("qqch");
+        GameObject spawner = GameObject.Find("Spawner");
+        SpawnManager spawnManager = spawner.GetComponent<SpawnManager>();
+        Debug.Log("Il quitte la queue");
+        spawnManager.numberOfPeopleInQueue -= 1;
+
+        if (placeInQueue == 1)
+        {
+            foreach (GameObject door in doors)
+            {
+                DoorLeft doorScript = door.GetComponent<DoorLeft>();
+                doorScript.howManyPnjUseDoors += 1;
+                if (doorScript.howManyPnjUseDoors == 1)
+                {
+                    doorScript.OpenDoor();
+                }
+            }
+            PubOpposite = new Vector3(Random.Range(0f, 2.3f), 0f, Random.Range(2.5f, 4f));
+            navMeshAgent.SetDestination(PubOpposite);
+        }
+        else if (placeInQueue == 2)
+        {
+            navMeshAgent.SetDestination(queueStart);
+            placeInQueue = 1;
+        }
+        else if (placeInQueue == 3)
+        {
+            navMeshAgent.SetDestination(queueSecond);
+            placeInQueue = 2;
+        }
+        else if (placeInQueue == 4)
+        {
+            navMeshAgent.SetDestination(queueThird);
+            placeInQueue = 3;
+        }
+        else if (placeInQueue == 5)
+        {
+            navMeshAgent.SetDestination(queueLast);
+            placeInQueue = 4;
+        }
+
+
+
+        // Réinitialisez la condition de file d'attente pleine
+        if (spawnManager.numberOfPeopleInQueue < spawnManager.maxQueueSize)
+        {
+            spawnManager.isFull = false;
+        }
     }
 }

@@ -15,6 +15,18 @@ public class SpawnManager : MonoBehaviour
         InvokeRepeating("SpawnRandomPNJ", 2f, spawnInterval);
     }
 
+    private void Update()
+    {
+        if (numberOfPeopleInQueue == maxQueueSize)
+        {
+            isFull = true;
+        }
+        else
+        {
+            isFull = true;
+        }
+    }
+
     void SpawnRandomPNJ()
     {
         // Vérifiez si la file d'attente est pleine avant de spawn un nouveau PNJ
@@ -37,14 +49,5 @@ public class SpawnManager : MonoBehaviour
             isFull = true;
             Debug.Log("File d'attente pleine !");
         }
-    }
-
-    public void QuitQueue()
-    {
-        Debug.Log("Il quitte la queue");
-        numberOfPeopleInQueue -= 1;
-
-        // Réinitialisez la condition de file d'attente pleine
-        isFull = false;
     }
 }
