@@ -14,6 +14,7 @@ public class CameraColliderDetection : MonoBehaviour
     public Renderer[] toilettesRenderer;
 
     public GameObject djBox;
+    public GameObject barBox;
 
     public bool hideBar;
     public bool hideWall;
@@ -22,6 +23,7 @@ public class CameraColliderDetection : MonoBehaviour
     private void Start()
     {
         djBox.SetActive(false);
+        barBox.SetActive(false);
     }
 
 
@@ -64,7 +66,8 @@ public class CameraColliderDetection : MonoBehaviour
 
         else if (other.gameObject.layer == LayerMask.NameToLayer("Box12")) // DJ
         {
-            
+            barBox.SetActive(false);
+            djBox.SetActive(true);
             Debug.Log("La caméra est entrée dans la Box 2");
             //barButton.gameObject.SetActive(true);
             //hideBar = false;
@@ -97,6 +100,7 @@ public class CameraColliderDetection : MonoBehaviour
 
         else if (other.gameObject.layer == LayerMask.NameToLayer("Box13")) // Bar
         {
+            barBox.SetActive(true);
             djBox.SetActive(false);
             //wallButton.gameObject.SetActive(true);
             //barButton.gameObject.SetActive(false);
@@ -134,7 +138,7 @@ public class CameraColliderDetection : MonoBehaviour
 
         else if (other.gameObject.layer == LayerMask.NameToLayer("Box14")) // Toilettes
         {
-            djBox.SetActive(true);
+            barBox.SetActive(false);
             //wallButton.gameObject.SetActive(false);
             //barButton.gameObject.SetActive(true);
             //hideWall = true;
