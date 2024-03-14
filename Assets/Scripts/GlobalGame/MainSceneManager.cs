@@ -14,6 +14,7 @@ public class MainSceneManager : MonoBehaviour
     public Canvas startCanvas;
     public Canvas pauseCanvas;
     public AudioClip son;
+    public AudioClip[] audioTracks;
 
     private int barLevel = 0;
     private bool isPaused;
@@ -31,6 +32,13 @@ public class MainSceneManager : MonoBehaviour
         foreach (Canvas canvas in canvasList)
         {
             canvas.gameObject.SetActive(false); 
+        }
+
+        // Charger tous les clips audio dans la liste
+        foreach (AudioClip clip in audioTracks)
+        {
+            // Charger le clip audio dans la mémoire
+            Resources.Load<AudioClip>(clip.name);
         }
     }
 

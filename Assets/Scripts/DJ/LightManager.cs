@@ -25,21 +25,21 @@ public class LightManager : MonoBehaviour
 
     void Update()
     {
-        if (mainSceneManager.startGame == false)
+        if (!hasStarted && mainSceneManager.startGame)
         {
-            intensitySpeed = 0;
-        }
-        else if (mainSceneManager.startGame == true)
-        {
-            if (hasStarted == false)
-            {
-                intensitySpeed = 1;
-                hasStarted = true;
-            }  
+            // Si le jeu démarre et que ce n'est pas déjà fait, initialiser la vitesse d'intensité
+            intensitySpeed = 1;
+            hasStarted = true;
         }
 
-            // Variation sinusoïdale de l'intensité
-            float intensityFactor = Mathf.Sin(Time.time * intensitySpeed);
+        if (!mainSceneManager.startGame)
+        {
+            // Si le jeu n'a pas encore démarré, arrêter la fluctuation de l'intensité
+            intensitySpeed = 0;
+        }
+
+        // Variation sinusoïdale de l'intensité
+        float intensityFactor = Mathf.Sin(Time.time * intensitySpeed);
         myLight.intensity = initialIntensity + intensityRange * intensityFactor;
     }
 
