@@ -21,6 +21,7 @@ TagManager:
   - Banquette
   - Btn
   - Zombie
+  - Humain
   layers:
   - Default
   - TransparentFX
