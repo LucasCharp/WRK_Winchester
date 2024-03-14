@@ -18,7 +18,7 @@ public class ExitManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -26,6 +26,7 @@ public class ExitManager : MonoBehaviour
     {
         if (other.CompareTag("PNJ"))
         {
+            animator = other.GetComponent<Animator>();
             if (animator.GetBool("hasEnterPub") == false)
             {
                 foreach (GameObject door in doors)
