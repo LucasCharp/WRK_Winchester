@@ -24,7 +24,6 @@ public class RatioBar : MonoBehaviour
                 }
                 else 
                 {
-                    Debug.Log("Zombies touvésss");
                     activeZombies++;
                 }
             }

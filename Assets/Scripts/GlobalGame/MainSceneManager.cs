@@ -13,6 +13,7 @@ public class MainSceneManager : MonoBehaviour
     public List<Canvas> canvasList;
     public Canvas startCanvas;
     public Canvas pauseCanvas;
+    public Canvas playCanvas;
     public AudioClip son;
     public AudioClip[] audioTracks;
 
@@ -77,6 +78,7 @@ public class MainSceneManager : MonoBehaviour
         startGame = true;
 
         startCanvas.gameObject.SetActive(false);
+        playCanvas.gameObject.SetActive(true);
     }
 
     public void OnPauseCliqued()
