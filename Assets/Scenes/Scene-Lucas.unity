@@ -15828,7 +15828,9 @@ MonoBehaviour:
   canvasList: []
   startCanvas: {fileID: 0}
   pauseCanvas: {fileID: 0}
+  playCanvas: {fileID: 0}
   son: {fileID: 0}
+  audioTracks: []
 --- !u!4 &1396442796
 Transform:
   m_ObjectHideFlags: 0
@@ -17427,8 +17429,8 @@ MonoBehaviour:
   videurRenderer: []
   toilettesRenderer: []
   djBox: {fileID: 0}
-  hideBar: 0
-  hideWall: 0
+  barBox: {fileID: 0}
+  videurBox: {fileID: 0}
 --- !u!114 &1592362477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23868,6 +23870,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4262749698308463234, guid: 8add604f58760854e9fcbdf865e46ee7,
         type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.77317
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262749698308463234, guid: 8add604f58760854e9fcbdf865e46ee7,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.6170392
       objectReference: {fileID: 0}
@@ -23879,7 +23886,7 @@ PrefabInstance:
     - target: {fileID: 4262749698308463234, guid: 8add604f58760854e9fcbdf865e46ee7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.257061
+      value: -6.349
       objectReference: {fileID: 0}
     - target: {fileID: 4262749698308463234, guid: 8add604f58760854e9fcbdf865e46ee7,
         type: 3}

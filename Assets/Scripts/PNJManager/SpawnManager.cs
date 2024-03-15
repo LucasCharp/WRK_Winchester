@@ -23,7 +23,7 @@ public class SpawnManager : MonoBehaviour
         }
         else
         {
-            isFull = true;
+            isFull = false;
         }
     }
 

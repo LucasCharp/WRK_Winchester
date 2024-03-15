@@ -14,8 +14,7 @@ public class MainSceneManager : MonoBehaviour
     public Canvas startCanvas;
     public Canvas pauseCanvas;
     public Canvas playCanvas;
-    public AudioClip son;
-    public AudioClip[] audioTracks;
+    public AudioClip[] son;
 
     private int barLevel = 0;
     private bool isPaused;
@@ -34,20 +33,17 @@ public class MainSceneManager : MonoBehaviour
         {
             canvas.gameObject.SetActive(false); 
         }
-
-        // Charger tous les clips audio dans la liste
-        foreach (AudioClip clip in audioTracks)
-        {
-            // Charger le clip audio dans la mémoire
-            Resources.Load<AudioClip>(clip.name);
-        }
     }
 
     
     public void SetEtagere()
     {
+
+
         if (barLevel == 0)
         {
+            SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
+
             barLevel = 1;
             etagereFull.SetActive(false); 
             etagereHalf.SetActive(false);
@@ -56,6 +52,8 @@ public class MainSceneManager : MonoBehaviour
         }
         else if (barLevel == 1)
         {
+            SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
+
             barLevel = 2;
             etagereFull.SetActive(false);
             etagereHalf.SetActive(true);
@@ -64,6 +62,8 @@ public class MainSceneManager : MonoBehaviour
         }
         else if (barLevel == 2)
         {
+            SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
+
             barLevel = 3;
             etagereFull.SetActive(true);
             etagereHalf.SetActive(false);
@@ -74,7 +74,8 @@ public class MainSceneManager : MonoBehaviour
 
     public void OnStartCliqued()
     {
-        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+        SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+
         startGame = true;
 
         startCanvas.gameObject.SetActive(false);
@@ -83,12 +84,13 @@ public class MainSceneManager : MonoBehaviour
 
     public void OnPauseCliqued()
     {
-        
-        SFXManager.instance.PlaySoundFXClip(son, transform, 1f);
+
         if (isPaused == false)
         {
             if (startGame == false)
             {
+                SFXManager.instance.PlaySoundFXClip(son[2], transform, 1f);
+
                 startCanvas.gameObject.SetActive(false);
             }
             pauseCanvas.gameObject.SetActive(true);
@@ -99,6 +101,8 @@ public class MainSceneManager : MonoBehaviour
         {
             if (startGame == false)
             {
+                SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+
                 startCanvas.gameObject.SetActive(true);
             }
             pauseCanvas.gameObject.SetActive(false);
