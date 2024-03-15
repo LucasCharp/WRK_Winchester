@@ -13,23 +13,6 @@ public class ShowResultOnClick : MonoBehaviour
         // Assurez-vous que le canvas est désactivé au démarrage du jeu
         resultCanvas.SetActive(false);
     }
-
-    // Fonction appelée lorsqu'un bouton de genre musical est cliqué
-    public void OnGenreButtonClicked(string genre)
-    {
-        if (IsGenreFavorite(genre) && isPlayingFavoriteMusic)
-        {
-            // Augmenter le score si le genre correspond au genre préféré et que la musique est en cours
-            gameManager.IncreaseScoreContinuous(10);
-        }
-        else
-        {
-            // Réinitialiser le score continu si le genre ne correspond pas ou si la musique est différente
-            gameManager.ResetContinuousScore();
-        }
-    }
-
-    // Fonction appelée lors du changement de musique dans la zone de danse
     public void OnMusicChanged(bool isFavoriteMusic)
     {
         // Mettre à jour l'indicateur pour indiquer si la musique correspond au genre préféré

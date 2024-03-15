@@ -55,21 +55,4 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    // Coroutine pour augmenter le score de manière continue
-    private IEnumerator IncreaseScoreCoroutine(int points)
-    {
-        while (true)
-        {
-            // Augmenter le score de points
-            AugmenterScore(points);
-
-            // Attendre un court instant (par exemple, 1 seconde) avant d'augmenter à nouveau le score
-            yield return new WaitForSeconds(1f);
-        }
-    }
-    public void ResetContinuousScore()
-    {
-        // Implémentez ici la logique pour réinitialiser le score continu
-        Debug.Log("Continuous score reset.");
-    }
 }

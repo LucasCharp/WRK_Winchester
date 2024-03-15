@@ -7,8 +7,9 @@ public class MusicGenrePointCollector : MonoBehaviour
     public MusicGenreAnalyzer scriptAffiche;
     public Collider triggerCollider;
     public List<GameObject> genreButtons; // Liste des boutons de genre musical
-
     private Dictionary<Collider, CharacterMusicCounter> pnjCounters = new Dictionary<Collider, CharacterMusicCounter>();
+    int maxPoints = 0;
+    string favoriteGenre = "";
 
     void OnTriggerEnter(Collider PNJ)
     {
@@ -20,19 +21,9 @@ public class MusicGenrePointCollector : MonoBehaviour
             {
                 pnjCounters.Add(PNJ, musicCounter);
                 var totalPoints = CalculateTotalPoints();
-                string[] favoriteGenres = scriptAffiche.GetFavoriteGenres(totalPoints); // Utiliser GetFavoriteGenres ici
-                scriptAffiche.DisplayResult(totalPoints, favoriteGenres);
+                string favoriteGenre = GetFavoriteGenre(totalPoints);
+                // Utilisez le genre préféré récupéré ici
                 //animator.SetBool("willDance", true);
-
-                // Associer les préférences musicales du PNJ aux boutons de genre
-                for (int i = 0; i < genreButtons.Count; i++)
-                {
-                    ButtonGenre buttonGenre = genreButtons[i].GetComponent<ButtonGenre>();
-                    if (buttonGenre != null)
-                    {
-                        buttonGenre.SetGenrePreference(musicCounter.GetGenrePreference(i));
-                    }
-                }
             }
         }
     }
@@ -44,8 +35,8 @@ public class MusicGenrePointCollector : MonoBehaviour
         {
             pnjCounters.Remove(PNJ);
             var totalPoints = CalculateTotalPoints();
-            string[] favoriteGenres = scriptAffiche.GetFavoriteGenres(totalPoints); // Utiliser GetFavoriteGenres ici
-            scriptAffiche.DisplayResult(totalPoints, favoriteGenres);
+            string favoriteGenre = GetFavoriteGenre(totalPoints);
+            // Utilisez le genre préféré récupéré ici
         }
         animator.SetBool("willDance", false);
     }
@@ -78,5 +69,21 @@ public class MusicGenrePointCollector : MonoBehaviour
         }
 
         return totalPoints;
+    }
+
+    // Méthode pour récupérer le genre préféré des PNJ
+    public string GetFavoriteGenre(Dictionary<string, int> totalPoints)
+    {
+
+        foreach (KeyValuePair<string, int> pair in totalPoints)
+        {
+            if (pair.Value > maxPoints)
+            {
+                maxPoints = pair.Value;
+                favoriteGenre = pair.Key;
+            }
+        }
+        Debug.Log(GetFavoriteGenre(totalPoints));
+        return favoriteGenre;
     }
 }
