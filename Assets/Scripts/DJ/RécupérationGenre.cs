@@ -5,6 +5,7 @@ public class MusicGenrePointCollector : MonoBehaviour
 {
     public GameObject PNJ;
     public MusicGenreAnalyzer scriptAffiche;
+    public MusicGenreAnalyzer reloadFavoriteGenres;
     public Collider triggerCollider;
     public List<GameObject> genreButtons; // Liste des boutons de genre musical
     private Dictionary<Collider, CharacterMusicCounter> pnjCounters = new Dictionary<Collider, CharacterMusicCounter>();
@@ -30,10 +31,7 @@ public class MusicGenrePointCollector : MonoBehaviour
         {
             pnjCounters.Remove(PNJ);
             var totalPoints = CalculateTotalPoints();
-            //string favoriteGenre = GetFavoriteGenre(totalPoints);
-            // Utilisez le genre préféré récupéré ici
         }
-        animator.SetBool("willDance", false);
     }
 
     public Dictionary<string, int> CalculateTotalPoints()

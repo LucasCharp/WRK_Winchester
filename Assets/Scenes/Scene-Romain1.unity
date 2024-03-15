@@ -7021,9 +7021,9 @@ GameObject:
   - component: {fileID: 369080031}
   - component: {fileID: 369080037}
   - component: {fileID: 369080036}
+  - component: {fileID: 369080038}
   - component: {fileID: 369080035}
   - component: {fileID: 369080034}
-  - component: {fileID: 369080033}
   - component: {fileID: 369080032}
   m_Layer: 0
   m_Name: PNJ2
@@ -7075,26 +7075,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &369080033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 369080030}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 539da9f10dd146042a0f1c921757685c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minMoveDelay: 1
-  maxMoveDelay: 3
-  placeInQueue: 0
-  queueStart: {x: 0, y: 0, z: 0}
-  queueSecond: {x: 0, y: 0, z: 0}
-  queueThird: {x: 0, y: 0, z: 0}
-  queueLast: {x: 0, y: 0, z: 0}
-  EndZonePosition: {x: 0, y: 0, z: 0}
 --- !u!114 &369080034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7177,6 +7157,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &369080038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369080030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad518085e58b7f40b22b29d4c65523a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minMoveDelay: 1
+  maxMoveDelay: 3
+  placeInQueue: 0
+  queueStart: {x: 0, y: 0, z: 0}
+  queueSecond: {x: 0, y: 0, z: 0}
+  queueThird: {x: 0, y: 0, z: 0}
+  queueLast: {x: 0, y: 0, z: 0}
+  EndZonePosition: {x: 0, y: 0, z: 0}
 --- !u!23 &369153773 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 3161077239877590983, guid: bdee36b3a92336b4baf705269272d3cf,
@@ -10297,6 +10297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PNJ: {fileID: 6776321}
   scriptAffiche: {fileID: 637370758}
+  reloadFavoriteGenres: {fileID: 0}
   triggerCollider: {fileID: 594952449}
   genreButtons:
   - {fileID: 931967601}
@@ -11210,7 +11211,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 310.80002, y: 1006.25}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 1200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &637370758
@@ -18257,9 +18258,9 @@ GameObject:
   - component: {fileID: 1091422076}
   - component: {fileID: 1091422082}
   - component: {fileID: 1091422081}
+  - component: {fileID: 1091422083}
   - component: {fileID: 1091422080}
   - component: {fileID: 1091422079}
-  - component: {fileID: 1091422078}
   - component: {fileID: 1091422077}
   m_Layer: 0
   m_Name: PNJ3
@@ -18311,26 +18312,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1091422078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091422075}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 539da9f10dd146042a0f1c921757685c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minMoveDelay: 1
-  maxMoveDelay: 3
-  placeInQueue: 0
-  queueStart: {x: 0, y: 0, z: 0}
-  queueSecond: {x: 0, y: 0, z: 0}
-  queueThird: {x: 0, y: 0, z: 0}
-  queueLast: {x: 0, y: 0, z: 0}
-  EndZonePosition: {x: 0, y: 0, z: 0}
 --- !u!114 &1091422079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18413,6 +18394,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1091422083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091422075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad518085e58b7f40b22b29d4c65523a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minMoveDelay: 1
+  maxMoveDelay: 3
+  placeInQueue: 0
+  queueStart: {x: 0, y: 0, z: 0}
+  queueSecond: {x: 0, y: 0, z: 0}
+  queueThird: {x: 0, y: 0, z: 0}
+  queueLast: {x: 0, y: 0, z: 0}
+  EndZonePosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1096113336
 GameObject:
   m_ObjectHideFlags: 0
@@ -24116,9 +24117,9 @@ GameObject:
   - component: {fileID: 1411403776}
   - component: {fileID: 1411403782}
   - component: {fileID: 1411403781}
+  - component: {fileID: 1411403783}
   - component: {fileID: 1411403780}
   - component: {fileID: 1411403779}
-  - component: {fileID: 1411403778}
   - component: {fileID: 1411403777}
   m_Layer: 0
   m_Name: PNJ1
@@ -24170,26 +24171,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1411403778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1411403775}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 539da9f10dd146042a0f1c921757685c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minMoveDelay: 1
-  maxMoveDelay: 3
-  placeInQueue: 0
-  queueStart: {x: 0, y: 0, z: 0}
-  queueSecond: {x: 0, y: 0, z: 0}
-  queueThird: {x: 0, y: 0, z: 0}
-  queueLast: {x: 0, y: 0, z: 0}
-  EndZonePosition: {x: 0, y: 0, z: 0}
 --- !u!114 &1411403779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24272,6 +24253,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1411403783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411403775}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad518085e58b7f40b22b29d4c65523a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minMoveDelay: 1
+  maxMoveDelay: 3
+  placeInQueue: 0
+  queueStart: {x: 0, y: 0, z: 0}
+  queueSecond: {x: 0, y: 0, z: 0}
+  queueThird: {x: 0, y: 0, z: 0}
+  queueLast: {x: 0, y: 0, z: 0}
+  EndZonePosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1427782365
 GameObject:
   m_ObjectHideFlags: 0
@@ -25917,7 +25918,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.14999999
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 12cfa2f06d174d24393fd6bc108d6c5a, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 6c0099af44c2bf342859f0bd7f2b0fe5, type: 2}
   m_BuildHeightMesh: 0
 --- !u!23 &1533157145 stripped
 MeshRenderer:
@@ -26439,6 +26440,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1f9a7794e86cb5c41ba79a80326483dd, type: 3}
   - {fileID: 8300000, guid: 1a2b0fe9850513e4e852326d128ce561, type: 3}
   - {fileID: 8300000, guid: b54a9bd3b08caf14882fe2646435f28d, type: 3}
+  purchasedButtons: []
 --- !u!114 &1572198028
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -49,7 +49,7 @@ public class MusicGenreAnalyzer : MonoBehaviour
         return favoriteGenres;
     }
 
-    public void DisplayResult(Dictionary<string, int> totalPoints)
+    void DisplayResult(Dictionary<string, int> totalPoints)
     {
         foreach (KeyValuePair<string, int> pair in totalPoints)
         {
