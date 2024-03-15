@@ -14,7 +14,7 @@ public class MoneyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        moneyTotal = 1500;
+        moneyTotal = 10;
         OnMoneyChange();
     }
 

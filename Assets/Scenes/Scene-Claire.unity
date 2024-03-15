@@ -1509,7 +1509,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1572198027}
         m_TargetAssemblyTypeName: UpgradeButtons, Assembly-CSharp
-        m_MethodName: OnRedWallCliqued
+        m_MethodName: OnRedFloorCliqued
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18023,6 +18023,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1f9a7794e86cb5c41ba79a80326483dd, type: 3}
   - {fileID: 8300000, guid: 1a2b0fe9850513e4e852326d128ce561, type: 3}
   - {fileID: 8300000, guid: b54a9bd3b08caf14882fe2646435f28d, type: 3}
+  moneyTotal: 100
 --- !u!114 &1572198028
 MonoBehaviour:
   m_ObjectHideFlags: 0

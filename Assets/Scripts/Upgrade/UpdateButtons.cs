@@ -85,8 +85,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     private int refillCost = 50;
 
     public AudioClip[] son;
-
-
+    public List<string> purchasedButtons = new List<string>();
 
     private void Update()
     {
@@ -419,10 +418,9 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnRefillCliqued()
     {
-        SFXManager.instance.PlaySoundFXClip(son[0], transform, 1f);
-
         if (moneyManager.moneyTotal >= refillCost && mainSceneManager.barLevel != 3)
         {
+            SFXManager.instance.PlaySoundFXClip(son[0], transform, 1f);
             moneyManager.moneyChange = -refillCost;
             moneyManager.OnMoneyChange();
             mainSceneManager.SetEtagere();
@@ -431,6 +429,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnFloorCliqued()
     {
+
         SFXManager.instance.PlaySoundFXClip(son[0], transform, 1f);
 
         floorCliqued = true;
@@ -451,50 +450,85 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnRedFloorCliqued()
     {
-        SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
-        if (moneyManager.moneyTotal >= moneyCost)
+        if (!purchasedButtons.Contains("RedFloor"))
         {
-            Debug.Log("Je suis dans le if, et oui tu as de l'argent");
-            moneyManager.moneyChange = -moneyCost;
-            moneyManager.OnMoneyChange();
-        }
-        Renderer renderer = floor.GetComponent<Renderer>();
-        if (renderer != null)
-        {
-            // Changez la couleur de tous les matériaux du Renderer
-            foreach (Material material in renderer.materials)
+            if (moneyManager.moneyTotal >= moneyCost)
             {
-                material.color = redColor;
-            }
+                moneyManager.moneyChange = -moneyCost;
+                moneyManager.OnMoneyChange();
+
+                purchasedButtons.Add("RedFloor");
+            } 
         }
+        
+        if (purchasedButtons.Contains("RedFloor"))
+        {
+          Renderer renderer = floor.GetComponent<Renderer>();
+          if (renderer != null)
+          {
+             SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+             // Changez la couleur de tous les matériaux du Renderer
+             foreach (Material material in renderer.materials)
+             {
+                material.color = redColor;
+             }
+          }
+        }
+        
     }
 
     public void OnBrownFloorCliqued()
     {
-        SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
-
-        Renderer renderer = floor.GetComponent<Renderer>();
-        if (renderer != null)
+        if (!purchasedButtons.Contains("BrownFloor"))
         {
-            // Changez la couleur de tous les matériaux du Renderer
-            foreach (Material material in renderer.materials)
+            if (moneyManager.moneyTotal >= moneyCost)
             {
-                material.color = brownColor;
+                moneyManager.moneyChange = -moneyCost;
+                moneyManager.OnMoneyChange();
+
+                purchasedButtons.Add("BrownFloor");
+            }
+        }
+        if (purchasedButtons.Contains("BrownFloor"))
+        {
+            SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+
+            Renderer renderer = floor.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                // Changez la couleur de tous les matériaux du Renderer
+                foreach (Material material in renderer.materials)
+                {
+                    material.color = brownColor;
+                }
             }
         }
     }
 
     public void OnWhiteFloorCliqued()
     {
-        SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
-
-        Renderer renderer = floor.GetComponent<Renderer>();
-        if (renderer != null)
+        if (!purchasedButtons.Contains("WhiteFloor"))
         {
-            // Changez la couleur de tous les matériaux du Renderer
-            foreach (Material material in renderer.materials)
+            if (moneyManager.moneyTotal >= moneyCost)
             {
-                material.color = whiteColor;
+                moneyManager.moneyChange = -moneyCost;
+                moneyManager.OnMoneyChange();
+
+                purchasedButtons.Add("WhiteFloor");
+            }
+        }
+        if (purchasedButtons.Contains("WhiteFloor"))
+        {
+            SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+
+            Renderer renderer = floor.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                // Changez la couleur de tous les matériaux du Renderer
+                foreach (Material material in renderer.materials)
+                {
+                    material.color = whiteColor;
+                }
             }
         }
     }
@@ -523,17 +557,30 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnRedWallCliqued()
     {
-        SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
-
-        foreach (GameObject wall in walls)
+        if (!purchasedButtons.Contains("RedWall"))
         {
-            Renderer renderer = wall.GetComponent<Renderer>();
-            if (renderer != null)
+            if (moneyManager.moneyTotal >= moneyCost)
             {
-                // Changez la couleur de tous les matériaux du Renderer
-                foreach (Material material in renderer.materials)
+                moneyManager.moneyChange = -moneyCost;
+                moneyManager.OnMoneyChange();
+
+                purchasedButtons.Add("RedWall");
+            }
+        }
+
+        if (purchasedButtons.Contains("RedWall"))
+        {
+            SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+            foreach (GameObject wall in walls)
+            {
+                Renderer renderer = wall.GetComponent<Renderer>();
+                if (renderer != null)
                 {
-                    material.color = redColor;
+                    // Changez la couleur de tous les matériaux du Renderer
+                    foreach (Material material in renderer.materials)
+                    {
+                        material.color = redColor;
+                    }
                 }
             }
         }
@@ -541,17 +588,30 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnBrownWallCliqued()
     {
-        SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
-
-        foreach (GameObject wall in walls)
+        if (!purchasedButtons.Contains("BrownWall"))
         {
-            Renderer renderer = wall.GetComponent<Renderer>();
-            if (renderer != null)
+            if (moneyManager.moneyTotal >= moneyCost)
             {
-                // Changez la couleur de tous les matériaux du Renderer
-                foreach (Material material in renderer.materials)
+                moneyManager.moneyChange = -moneyCost;
+                moneyManager.OnMoneyChange();
+
+                purchasedButtons.Add("BrownWall");
+            }
+        }
+        if (purchasedButtons.Contains("BrownWall"))
+        {
+            SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+
+            foreach (GameObject wall in walls)
+            {
+                Renderer renderer = wall.GetComponent<Renderer>();
+                if (renderer != null)
                 {
-                    material.color = brownColor;
+                    // Changez la couleur de tous les matériaux du Renderer
+                    foreach (Material material in renderer.materials)
+                    {
+                        material.color = brownColor;
+                    }
                 }
             }
         }
@@ -559,17 +619,30 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnWhiteWallCliqued()
     {
-        SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
-
-        foreach (GameObject wall in walls)
+        if (!purchasedButtons.Contains("WhiteWall"))
         {
-            Renderer renderer = wall.GetComponent<Renderer>();
-            if (renderer != null)
+            if (moneyManager.moneyTotal >= moneyCost)
             {
-                // Changez la couleur de tous les matériaux du Renderer
-                foreach (Material material in renderer.materials)
+                moneyManager.moneyChange = -moneyCost;
+                moneyManager.OnMoneyChange();
+
+                purchasedButtons.Add("WhiteWall");
+            }
+        }
+        if (purchasedButtons.Contains("WhiteWall"))
+        {
+            SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+
+            foreach (GameObject wall in walls)
+            {
+                Renderer renderer = wall.GetComponent<Renderer>();
+                if (renderer != null)
                 {
-                    material.color = whiteColor;
+                    // Changez la couleur de tous les matériaux du Renderer
+                    foreach (Material material in renderer.materials)
+                    {
+                        material.color = whiteColor;
+                    }
                 }
             }
         }
@@ -605,173 +678,255 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnPrefabRed()
     {
-        SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+        
 
         if (tableCliqued == true)
         {
-            foreach (GameObject table in tables)
+            if (!purchasedButtons.Contains("RedTable"))
             {
-                if (table != null)
+                if (moneyManager.moneyTotal >= moneyCost)
                 {
-                    // Obtenez tous les renderers de l'objet
-                    Renderer[] renderers = table.GetComponentsInChildren<Renderer>();
+                    moneyManager.moneyChange = -moneyCost;
+                    moneyManager.OnMoneyChange();
 
-                    // Parcourez tous les renderers et changez leurs matériaux
-                    foreach (Renderer renderer in renderers)
+                    purchasedButtons.Add("RedTable");
+                }
+            }
+            if (purchasedButtons.Contains("RedTable"))
+            {
+                SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+                foreach (GameObject table in tables)
+                {
+                    if (table != null)
                     {
-                        // Obtenez tous les matériaux actuels du Renderer
-                        Material[] materials = renderer.sharedMaterials;
+                        // Obtenez tous les renderers de l'objet
+                        Renderer[] renderers = table.GetComponentsInChildren<Renderer>();
 
-                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
-                        for (int i = 0; i < materials.Length; i++)
+                        // Parcourez tous les renderers et changez leurs matériaux
+                        foreach (Renderer renderer in renderers)
                         {
-                            materials[i] = redMat;
-                        }
+                            // Obtenez tous les matériaux actuels du Renderer
+                            Material[] materials = renderer.sharedMaterials;
 
-                        // Appliquez les nouveaux matériaux au Renderer
-                        renderer.sharedMaterials = materials;
+                            // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                            for (int i = 0; i < materials.Length; i++)
+                            {
+                                materials[i] = redMat;
+                            }
+
+                            // Appliquez les nouveaux matériaux au Renderer
+                            renderer.sharedMaterials = materials;
+                        }
                     }
                 }
             }
+
         }
         else if (banqCliqued == true)
         {
-            foreach (GameObject banquette in banquettes)
+            if (!purchasedButtons.Contains("RedBanq"))
             {
-                if (banquette != null)
+                if (moneyManager.moneyTotal >= moneyCost)
                 {
-                    // Obtenez tous les renderers de l'objet
-                    Renderer[] renderers = banquette.GetComponentsInChildren<Renderer>();
+                    moneyManager.moneyChange = -moneyCost;
+                    moneyManager.OnMoneyChange();
 
-                    // Parcourez tous les renderers et changez leurs matériaux
-                    foreach (Renderer renderer in renderers)
+                    purchasedButtons.Add("RedBanq");
+                }
+            }
+            if (purchasedButtons.Contains("RedBanq"))
+            {
+                SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+                foreach (GameObject banquette in banquettes)
+                {
+                    if (banquette != null)
                     {
-                        // Obtenez tous les matériaux actuels du Renderer
-                        Material[] materials = renderer.sharedMaterials;
+                        // Obtenez tous les renderers de l'objet
+                        Renderer[] renderers = banquette.GetComponentsInChildren<Renderer>();
 
-                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
-                        for (int i = 0; i < materials.Length; i++)
+                        // Parcourez tous les renderers et changez leurs matériaux
+                        foreach (Renderer renderer in renderers)
                         {
-                            materials[i] = redMat;
-                        }
+                            // Obtenez tous les matériaux actuels du Renderer
+                            Material[] materials = renderer.sharedMaterials;
 
-                        // Appliquez les nouveaux matériaux au Renderer
-                        renderer.sharedMaterials = materials;
+                            // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                            for (int i = 0; i < materials.Length; i++)
+                            {
+                                materials[i] = redMat;
+                            }
+
+                            // Appliquez les nouveaux matériaux au Renderer
+                            renderer.sharedMaterials = materials;
+                        }
                     }
                 }
             }
         }
         else if (chaiseCliqued == true)
         {
-            foreach (GameObject chaise in chaises)
+            if (!purchasedButtons.Contains("RedChaise"))
             {
-                if (chaise != null)
+                if (moneyManager.moneyTotal >= moneyCost)
                 {
-                    // Obtenez tous les renderers de l'objet
-                    Renderer[] renderers = chaise.GetComponentsInChildren<Renderer>();
+                    moneyManager.moneyChange = -moneyCost;
+                    moneyManager.OnMoneyChange();
 
-                    // Parcourez tous les renderers et changez leurs matériaux
-                    foreach (Renderer renderer in renderers)
+                    purchasedButtons.Add("RedChaise");
+                }
+            }
+            if (purchasedButtons.Contains("RedChaise"))
+            {
+                SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+                foreach (GameObject chaise in chaises)
+                {
+                    if (chaise != null)
                     {
-                        // Obtenez tous les matériaux actuels du Renderer
-                        Material[] materials = renderer.sharedMaterials;
+                        // Obtenez tous les renderers de l'objet
+                        Renderer[] renderers = chaise.GetComponentsInChildren<Renderer>();
 
-                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
-                        for (int i = 0; i < materials.Length; i++)
+                        // Parcourez tous les renderers et changez leurs matériaux
+                        foreach (Renderer renderer in renderers)
                         {
-                            materials[i] = redMat;
-                        }
+                            // Obtenez tous les matériaux actuels du Renderer
+                            Material[] materials = renderer.sharedMaterials;
 
-                        // Appliquez les nouveaux matériaux au Renderer
-                        renderer.sharedMaterials = materials;
+                            // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                            for (int i = 0; i < materials.Length; i++)
+                            {
+                                materials[i] = redMat;
+                            }
+
+                            // Appliquez les nouveaux matériaux au Renderer
+                            renderer.sharedMaterials = materials;
+                        }
                     }
                 }
             }
         }
-
     }
 
     public void OnPrefabGreen()
     {
-        SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
-
         if (tableCliqued == true)
         {
-            foreach (GameObject table in tables)
+            if (!purchasedButtons.Contains("GreenTable"))
             {
-                if (table != null)
+                if (moneyManager.moneyTotal >= moneyCost)
                 {
-                    // Obtenez tous les renderers de l'objet
-                    Renderer[] renderers = table.GetComponentsInChildren<Renderer>();
+                    moneyManager.moneyChange = -moneyCost;
+                    moneyManager.OnMoneyChange();
 
-                    // Parcourez tous les renderers et changez leurs matériaux
-                    foreach (Renderer renderer in renderers)
+                    purchasedButtons.Add("GreenTable");
+                }
+            }
+            if (purchasedButtons.Contains("GreenTable"))
+            {
+                SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+                foreach (GameObject table in tables)
+                {
+                    if (table != null)
                     {
-                        // Obtenez tous les matériaux actuels du Renderer
-                        Material[] materials = renderer.sharedMaterials;
+                        // Obtenez tous les renderers de l'objet
+                        Renderer[] renderers = table.GetComponentsInChildren<Renderer>();
 
-                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
-                        for (int i = 0; i < materials.Length; i++)
+                        // Parcourez tous les renderers et changez leurs matériaux
+                        foreach (Renderer renderer in renderers)
                         {
-                            materials[i] = greenMat;
-                        }
+                            // Obtenez tous les matériaux actuels du Renderer
+                            Material[] materials = renderer.sharedMaterials;
 
-                        // Appliquez les nouveaux matériaux au Renderer
-                        renderer.sharedMaterials = materials;
+                            // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                            for (int i = 0; i < materials.Length; i++)
+                            {
+                                materials[i] = greenMat;
+                            }
+
+                            // Appliquez les nouveaux matériaux au Renderer
+                            renderer.sharedMaterials = materials;
+                        }
                     }
                 }
             }
         }
         else if (banqCliqued == true)
         {
-            foreach (GameObject banquette in banquettes)
+            if (!purchasedButtons.Contains("GreenBanq"))
             {
-                if (banquette != null)
+                if (moneyManager.moneyTotal >= moneyCost)
                 {
-                    // Obtenez tous les renderers de l'objet
-                    Renderer[] renderers = banquette.GetComponentsInChildren<Renderer>();
+                    moneyManager.moneyChange = -moneyCost;
+                    moneyManager.OnMoneyChange();
 
-                    // Parcourez tous les renderers et changez leurs matériaux
-                    foreach (Renderer renderer in renderers)
+                    purchasedButtons.Add("GreenBanq");
+                }
+            }
+            if (purchasedButtons.Contains("GreenBanq"))
+            {
+                SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+                foreach (GameObject banquette in banquettes)
+                {
+                    if (banquette != null)
                     {
-                        // Obtenez tous les matériaux actuels du Renderer
-                        Material[] materials = renderer.sharedMaterials;
+                        // Obtenez tous les renderers de l'objet
+                        Renderer[] renderers = banquette.GetComponentsInChildren<Renderer>();
 
-                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
-                        for (int i = 0; i < materials.Length; i++)
+                        // Parcourez tous les renderers et changez leurs matériaux
+                        foreach (Renderer renderer in renderers)
                         {
-                            materials[i] = greenMat;
-                        }
+                            // Obtenez tous les matériaux actuels du Renderer
+                            Material[] materials = renderer.sharedMaterials;
 
-                        // Appliquez les nouveaux matériaux au Renderer
-                        renderer.sharedMaterials = materials;
+                            // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                            for (int i = 0; i < materials.Length; i++)
+                            {
+                                materials[i] = greenMat;
+                            }
+
+                            // Appliquez les nouveaux matériaux au Renderer
+                            renderer.sharedMaterials = materials;
+                        }
                     }
                 }
             }
         }
         else if (chaiseCliqued == true)
         {
-            foreach (GameObject chaise in chaises)
+            if (!purchasedButtons.Contains("GreenChaise"))
             {
-                if (chaise != null)
+                if (moneyManager.moneyTotal >= moneyCost)
                 {
-                    // Obtenez tous les renderers de l'objet
-                    Renderer[] renderers = chaise.GetComponentsInChildren<Renderer>();
+                    moneyManager.moneyChange = -moneyCost;
+                    moneyManager.OnMoneyChange();
 
-                    // Parcourez tous les renderers et changez leurs matériaux
-                    foreach (Renderer renderer in renderers)
+                    purchasedButtons.Add("GreenChaise");
+                }
+            }
+            if (purchasedButtons.Contains("GreenChaise"))
+            {
+                SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+                foreach (GameObject chaise in chaises)
+                {
+                    if (chaise != null)
                     {
-                        // Obtenez tous les matériaux actuels du Renderer
-                        Material[] materials = renderer.sharedMaterials;
+                        // Obtenez tous les renderers de l'objet
+                        Renderer[] renderers = chaise.GetComponentsInChildren<Renderer>();
 
-                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
-                        for (int i = 0; i < materials.Length; i++)
+                        // Parcourez tous les renderers et changez leurs matériaux
+                        foreach (Renderer renderer in renderers)
                         {
-                            materials[i] = greenMat;
-                        }
+                            // Obtenez tous les matériaux actuels du Renderer
+                            Material[] materials = renderer.sharedMaterials;
 
-                        // Appliquez les nouveaux matériaux au Renderer
-                        renderer.sharedMaterials = materials;
+                            // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                            for (int i = 0; i < materials.Length; i++)
+                            {
+                                materials[i] = greenMat;
+                            }
+
+                            // Appliquez les nouveaux matériaux au Renderer
+                            renderer.sharedMaterials = materials;
+                        }
                     }
                 }
             }
@@ -780,85 +935,125 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnPrefabYellow()
     {
-        SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
-
         if (tableCliqued == true)
         {
-            foreach (GameObject table in tables)
+            if (!purchasedButtons.Contains("YellowTable"))
             {
-                if (table != null)
+                if (moneyManager.moneyTotal >= moneyCost)
                 {
-                    // Obtenez tous les renderers de l'objet
-                    Renderer[] renderers = table.GetComponentsInChildren<Renderer>();
+                    moneyManager.moneyChange = -moneyCost;
+                    moneyManager.OnMoneyChange();
 
-                    // Parcourez tous les renderers et changez leurs matériaux
-                    foreach (Renderer renderer in renderers)
+                    purchasedButtons.Add("YellowTable");
+                }
+            }
+            if (purchasedButtons.Contains("YellowTable"))
+            {
+                SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+                foreach (GameObject table in tables)
+                {
+                    if (table != null)
                     {
-                        // Obtenez tous les matériaux actuels du Renderer
-                        Material[] materials = renderer.sharedMaterials;
+                        // Obtenez tous les renderers de l'objet
+                        Renderer[] renderers = table.GetComponentsInChildren<Renderer>();
 
-                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
-                        for (int i = 0; i < materials.Length; i++)
+                        // Parcourez tous les renderers et changez leurs matériaux
+                        foreach (Renderer renderer in renderers)
                         {
-                            materials[i] = yellowMat;
-                        }
+                            // Obtenez tous les matériaux actuels du Renderer
+                            Material[] materials = renderer.sharedMaterials;
 
-                        // Appliquez les nouveaux matériaux au Renderer
-                        renderer.sharedMaterials = materials;
+                            // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                            for (int i = 0; i < materials.Length; i++)
+                            {
+                                materials[i] = yellowMat;
+                            }
+
+                            // Appliquez les nouveaux matériaux au Renderer
+                            renderer.sharedMaterials = materials;
+                        }
                     }
                 }
             }
         }
         else if (banqCliqued == true)
         {
-            foreach (GameObject banquette in banquettes)
+            if (!purchasedButtons.Contains("YellowBanq"))
             {
-                if (banquette != null)
+                if (moneyManager.moneyTotal >= moneyCost)
                 {
-                    // Obtenez tous les renderers de l'objet
-                    Renderer[] renderers = banquette.GetComponentsInChildren<Renderer>();
+                    moneyManager.moneyChange = -moneyCost;
+                    moneyManager.OnMoneyChange();
 
-                    // Parcourez tous les renderers et changez leurs matériaux
-                    foreach (Renderer renderer in renderers)
+                    purchasedButtons.Add("YellowBanq");
+                }
+            }
+            if (purchasedButtons.Contains("YellowBanq"))
+            {
+                SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+                foreach (GameObject banquette in banquettes)
+                {
+                    if (banquette != null)
                     {
-                        // Obtenez tous les matériaux actuels du Renderer
-                        Material[] materials = renderer.sharedMaterials;
+                        // Obtenez tous les renderers de l'objet
+                        Renderer[] renderers = banquette.GetComponentsInChildren<Renderer>();
 
-                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
-                        for (int i = 0; i < materials.Length; i++)
+                        // Parcourez tous les renderers et changez leurs matériaux
+                        foreach (Renderer renderer in renderers)
                         {
-                            materials[i] = yellowMat;
-                        }
+                            // Obtenez tous les matériaux actuels du Renderer
+                            Material[] materials = renderer.sharedMaterials;
 
-                        // Appliquez les nouveaux matériaux au Renderer
-                        renderer.sharedMaterials = materials;
+                            // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                            for (int i = 0; i < materials.Length; i++)
+                            {
+                                materials[i] = yellowMat;
+                            }
+
+                            // Appliquez les nouveaux matériaux au Renderer
+                            renderer.sharedMaterials = materials;
+                        }
                     }
                 }
             }
         }
         else if (chaiseCliqued == true)
         {
-            foreach (GameObject chaise in chaises)
+            if (!purchasedButtons.Contains("YellowChaise"))
             {
-                if (chaise != null)
+                if (moneyManager.moneyTotal >= moneyCost)
                 {
-                    // Obtenez tous les renderers de l'objet
-                    Renderer[] renderers = chaise.GetComponentsInChildren<Renderer>();
+                    moneyManager.moneyChange = -moneyCost;
+                    moneyManager.OnMoneyChange();
 
-                    // Parcourez tous les renderers et changez leurs matériaux
-                    foreach (Renderer renderer in renderers)
+                    purchasedButtons.Add("YellowChaise");
+                }
+            }
+            if (purchasedButtons.Contains("YellowChaise"))
+            {
+                SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+                foreach (GameObject chaise in chaises)
+                {
+                    if (chaise != null)
                     {
-                        // Obtenez tous les matériaux actuels du Renderer
-                        Material[] materials = renderer.sharedMaterials;
+                        // Obtenez tous les renderers de l'objet
+                        Renderer[] renderers = chaise.GetComponentsInChildren<Renderer>();
 
-                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
-                        for (int i = 0; i < materials.Length; i++)
+                        // Parcourez tous les renderers et changez leurs matériaux
+                        foreach (Renderer renderer in renderers)
                         {
-                            materials[i] = yellowMat;
-                        }
+                            // Obtenez tous les matériaux actuels du Renderer
+                            Material[] materials = renderer.sharedMaterials;
 
-                        // Appliquez les nouveaux matériaux au Renderer
-                        renderer.sharedMaterials = materials;
+                            // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                            for (int i = 0; i < materials.Length; i++)
+                            {
+                                materials[i] = yellowMat;
+                            }
+
+                            // Appliquez les nouveaux matériaux au Renderer
+                            renderer.sharedMaterials = materials;
+                        }
                     }
                 }
             }
@@ -867,85 +1062,125 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnPrefabBlue()
     {
-        SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
-
         if (tableCliqued == true)
         {
-            foreach (GameObject table in tables)
+            if (!purchasedButtons.Contains("BlueTable"))
             {
-                if (table != null)
+                if (moneyManager.moneyTotal >= moneyCost)
                 {
-                    // Obtenez tous les renderers de l'objet
-                    Renderer[] renderers = table.GetComponentsInChildren<Renderer>();
+                    moneyManager.moneyChange = -moneyCost;
+                    moneyManager.OnMoneyChange();
 
-                    // Parcourez tous les renderers et changez leurs matériaux
-                    foreach (Renderer renderer in renderers)
+                    purchasedButtons.Add("BlueTable");
+                }
+            }
+            if (purchasedButtons.Contains("BlueTable"))
+            {
+                SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+                foreach (GameObject table in tables)
+                {
+                    if (table != null)
                     {
-                        // Obtenez tous les matériaux actuels du Renderer
-                        Material[] materials = renderer.sharedMaterials;
+                        // Obtenez tous les renderers de l'objet
+                        Renderer[] renderers = table.GetComponentsInChildren<Renderer>();
 
-                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
-                        for (int i = 0; i < materials.Length; i++)
+                        // Parcourez tous les renderers et changez leurs matériaux
+                        foreach (Renderer renderer in renderers)
                         {
-                            materials[i] = blueMat;
-                        }
+                            // Obtenez tous les matériaux actuels du Renderer
+                            Material[] materials = renderer.sharedMaterials;
 
-                        // Appliquez les nouveaux matériaux au Renderer
-                        renderer.sharedMaterials = materials;
+                            // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                            for (int i = 0; i < materials.Length; i++)
+                            {
+                                materials[i] = blueMat;
+                            }
+
+                            // Appliquez les nouveaux matériaux au Renderer
+                            renderer.sharedMaterials = materials;
+                        }
                     }
                 }
             }
         }
         else if (banqCliqued == true)
         {
-            foreach (GameObject banquette in banquettes)
+            if (!purchasedButtons.Contains("BlueBanq"))
             {
-                if (banquette != null)
+                if (moneyManager.moneyTotal >= moneyCost)
                 {
-                    // Obtenez tous les renderers de l'objet
-                    Renderer[] renderers = banquette.GetComponentsInChildren<Renderer>();
+                    moneyManager.moneyChange = -moneyCost;
+                    moneyManager.OnMoneyChange();
 
-                    // Parcourez tous les renderers et changez leurs matériaux
-                    foreach (Renderer renderer in renderers)
+                    purchasedButtons.Add("BlueBanq");
+                }
+            }
+            if (purchasedButtons.Contains("BlueBanq"))
+            {
+                SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+                foreach (GameObject banquette in banquettes)
+                {
+                    if (banquette != null)
                     {
-                        // Obtenez tous les matériaux actuels du Renderer
-                        Material[] materials = renderer.sharedMaterials;
+                        // Obtenez tous les renderers de l'objet
+                        Renderer[] renderers = banquette.GetComponentsInChildren<Renderer>();
 
-                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
-                        for (int i = 0; i < materials.Length; i++)
+                        // Parcourez tous les renderers et changez leurs matériaux
+                        foreach (Renderer renderer in renderers)
                         {
-                            materials[i] = blueMat;
-                        }
+                            // Obtenez tous les matériaux actuels du Renderer
+                            Material[] materials = renderer.sharedMaterials;
 
-                        // Appliquez les nouveaux matériaux au Renderer
-                        renderer.sharedMaterials = materials;
+                            // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                            for (int i = 0; i < materials.Length; i++)
+                            {
+                                materials[i] = blueMat;
+                            }
+
+                            // Appliquez les nouveaux matériaux au Renderer
+                            renderer.sharedMaterials = materials;
+                        }
                     }
                 }
             }
         }
         else if (chaiseCliqued == true)
         {
-            foreach (GameObject chaise in chaises)
+            if (!purchasedButtons.Contains("BlueChaise"))
             {
-                if (chaise != null)
+                if (moneyManager.moneyTotal >= moneyCost)
                 {
-                    // Obtenez tous les renderers de l'objet
-                    Renderer[] renderers = chaise.GetComponentsInChildren<Renderer>();
+                    moneyManager.moneyChange = -moneyCost;
+                    moneyManager.OnMoneyChange();
 
-                    // Parcourez tous les renderers et changez leurs matériaux
-                    foreach (Renderer renderer in renderers)
+                    purchasedButtons.Add("BlueChaise");
+                }
+            }
+            if (purchasedButtons.Contains("BlueChaise"))
+            {
+                SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
+                foreach (GameObject chaise in chaises)
+                {
+                    if (chaise != null)
                     {
-                        // Obtenez tous les matériaux actuels du Renderer
-                        Material[] materials = renderer.sharedMaterials;
+                        // Obtenez tous les renderers de l'objet
+                        Renderer[] renderers = chaise.GetComponentsInChildren<Renderer>();
 
-                        // Changez chaque matériau dans la liste de rendu pour le matériau cible
-                        for (int i = 0; i < materials.Length; i++)
+                        // Parcourez tous les renderers et changez leurs matériaux
+                        foreach (Renderer renderer in renderers)
                         {
-                            materials[i] = blueMat;
-                        }
+                            // Obtenez tous les matériaux actuels du Renderer
+                            Material[] materials = renderer.sharedMaterials;
 
-                        // Appliquez les nouveaux matériaux au Renderer
-                        renderer.sharedMaterials = materials;
+                            // Changez chaque matériau dans la liste de rendu pour le matériau cible
+                            for (int i = 0; i < materials.Length; i++)
+                            {
+                                materials[i] = blueMat;
+                            }
+
+                            // Appliquez les nouveaux matériaux au Renderer
+                            renderer.sharedMaterials = materials;
+                        }
                     }
                 }
             }
