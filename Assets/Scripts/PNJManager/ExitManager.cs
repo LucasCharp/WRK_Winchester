@@ -39,8 +39,9 @@ public class ExitManager : MonoBehaviour
                     }
                 }
                 animator.SetBool("hasEnterPub", true);
-                GoBackInPub(other);
+
             }
+        GoBackInPub(other);
         }
     }
 

@@ -634,10 +634,10 @@ MonoBehaviour:
   minMoveDelay: 1
   maxMoveDelay: 3
   placeInQueue: 0
-  queueStart: {x: -1.4, y: 0, z: 7.4}
-  queueSecond: {x: -2.6, y: 0, z: 7.4}
-  queueThird: {x: -3.8, y: 0, z: 7.4}
-  queueLast: {x: -5, y: 0, z: 7.4}
+  queueStart: {x: -0.5, y: 0, z: 8}
+  queueSecond: {x: -1.9, y: 0, z: 8}
+  queueThird: {x: -3.3, y: 0, z: 8}
+  queueLast: {x: -4.7, y: 0, z: 8}
   EndZonePosition: {x: 3.03, y: 1.86, z: 10}
 --- !u!114 &7806564411227657953
 MonoBehaviour:

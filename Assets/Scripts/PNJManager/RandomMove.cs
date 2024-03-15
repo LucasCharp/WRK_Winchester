@@ -41,11 +41,11 @@ public class RandomNavMeshMovement : MonoBehaviour
 
     void Update()
     {
-        //if (UnityEngine.Input.touchCount > 0 && UnityEngine.Input.GetTouch(0).phase == TouchPhase.Began)
-        //{
-        //    Debug.Log("oui");
-        //    QuitQueue();
-        //}
+        if (UnityEngine.Input.touchCount > 0 && UnityEngine.Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            Debug.Log("oui");
+            QuitQueue();
+        }
 
             if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.1f)
         {
@@ -205,7 +205,7 @@ public class RandomNavMeshMovement : MonoBehaviour
         GameObject spawner = GameObject.Find("Spawner");
         SpawnManager spawnManager = spawner.GetComponent<SpawnManager>();
         Debug.Log("Il quitte la queue");
-
+        animator.SetBool("isWalking", true);
         if (placeInQueue == 1)
         {
             spawnManager.numberOfPeopleInQueue -= 1;
@@ -218,8 +218,9 @@ public class RandomNavMeshMovement : MonoBehaviour
                     doorScript.OpenDoor();
                 }
             }
-            PubOpposite = new Vector3(Random.Range(-3f, -0.8f), 0f, Random.Range(-2f, 1.5f));
+            PubOpposite = new Vector3(Random.Range(0f, 2.3f), 0f, Random.Range(2.5f, 4f));
             navMeshAgent.SetDestination(PubOpposite);
+            placeInQueue = 0;
         }
         else if (placeInQueue == 2)
         {
