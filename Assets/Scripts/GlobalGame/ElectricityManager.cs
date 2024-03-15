@@ -7,15 +7,12 @@ public class Electricity : MonoBehaviour
     private int waitTime;
     public GameObject[] lightsToOff;
     public bool lightsBackOn = false;
-
-    private void Start()
-    {
-        waitTime = Random.Range(20, 60);
-        StartCoroutine(TurnOffLights());
-    }
+    public MainSceneManager mainSceneManager;
+    private bool hasLaunched;
 
     IEnumerator TurnOffLights()
     {
+        waitTime = Random.Range(20, 60);
         // Attendre pendant le temps spécifié
         yield return new WaitForSeconds(waitTime);
 
@@ -29,6 +26,11 @@ public class Electricity : MonoBehaviour
 
     private void Update()
     {
+        if(mainSceneManager.startGame == true && hasLaunched == false)
+        {
+            StartCoroutine(TurnOffLights());
+            hasLaunched = true;
+        }
         if (lightsBackOn == true)
         {
             foreach (GameObject lightObject in lightsToOff)

@@ -5414,6 +5414,7 @@ MonoBehaviour:
   - {fileID: 169210509}
   - {fileID: 182228545}
   lightsBackOn: 0
+  mainSceneManager: {fileID: 1396442795}
 --- !u!1 &432749820
 GameObject:
   m_ObjectHideFlags: 0
@@ -18023,7 +18024,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1f9a7794e86cb5c41ba79a80326483dd, type: 3}
   - {fileID: 8300000, guid: 1a2b0fe9850513e4e852326d128ce561, type: 3}
   - {fileID: 8300000, guid: b54a9bd3b08caf14882fe2646435f28d, type: 3}
-  moneyTotal: 100
+  purchasedButtons: []
 --- !u!114 &1572198028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26597,6 +26598,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_ElectricMeter
       objectReference: {fileID: 0}
+    - target: {fileID: 4174498813889769234, guid: 6adc7446f84b8c7419c6ec5050d593a5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e798042d59f9dd498894a17af43788b, type: 2}
     - target: {fileID: 4430917299219183284, guid: 6adc7446f84b8c7419c6ec5050d593a5,
         type: 3}
       propertyPath: m_LocalPosition.x

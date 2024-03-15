@@ -9,7 +9,9 @@ public class ClientController : MonoBehaviour
     private bool satisfait = false;
     private float tempsInitial;
     public GameManager gameManager;
+    public MoneyManager moneyManager;
     private bool tropAttendu = false;
+    private int drinkCost = 25;
 
     private void Start()
     {
@@ -76,6 +78,8 @@ public class ClientController : MonoBehaviour
         {
             if (reponse)
             {
+                moneyManager.moneyChange = drinkCost;
+                moneyManager.OnMoneyChange();
                 float duree = Time.time - tempsInitial; // Calculer la durée écoulée
                 float TimePoint = 40 - (Time.time - tempsInitial);
                 Debug.Log(TimePoint + " s restante");
