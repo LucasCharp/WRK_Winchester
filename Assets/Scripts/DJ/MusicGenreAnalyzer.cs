@@ -1,12 +1,15 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 
 public class MusicGenreAnalyzer : MonoBehaviour
 {
     public TextMeshProUGUI resultText;
     public MusicGenrePointCollector pointCollector;
-
+    int maxPoints = 0;
+    string resultString = "Résultats :\n\n";
+    private static List<string> favoriteGenres;
     void Start()
     {
         pointCollector = FindObjectOfType<MusicGenrePointCollector>();
@@ -18,15 +21,14 @@ public class MusicGenreAnalyzer : MonoBehaviour
         }
 
         Dictionary<string, int> totalPoints = pointCollector.CalculateTotalPoints();
-        string[] favoriteGenres = GetFavoriteGenres(totalPoints);
+        reloadFavoriteGenres(totalPoints);
 
-        DisplayResult(totalPoints, favoriteGenres);
+        DisplayResult(totalPoints);
     }
 
-    public string[] GetFavoriteGenres(Dictionary<string, int> totalPoints)
+    public void reloadFavoriteGenres(Dictionary<string, int> totalPoints)
     {
-        List<string> favoriteGenres = new List<string>();
-        int maxPoints = 0;
+        favoriteGenres = new List<string>();
 
         foreach (KeyValuePair<string, int> pair in totalPoints)
         {
@@ -41,13 +43,14 @@ public class MusicGenreAnalyzer : MonoBehaviour
                 favoriteGenres.Add(pair.Key);
             }
         }
-
-        return favoriteGenres.ToArray();
+    }
+    public static List<string> getFavoriteGenres()
+    {
+        return favoriteGenres;
     }
 
-    public void DisplayResult(Dictionary<string, int> totalPoints, string[] favoriteGenres)
+    public void DisplayResult(Dictionary<string, int> totalPoints)
     {
-        string resultString = "Résultats :\n\n";
         foreach (KeyValuePair<string, int> pair in totalPoints)
         {
             resultString += pair.Key + " : " + pair.Value + " points\n";
@@ -58,7 +61,6 @@ public class MusicGenreAnalyzer : MonoBehaviour
         {
             resultString += "\n- " + genre;
         }
-
         resultText.text = resultString;
     }
 }

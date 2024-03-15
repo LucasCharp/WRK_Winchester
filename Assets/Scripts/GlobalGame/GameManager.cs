@@ -1,12 +1,13 @@
 using UnityEngine;
 using System.Collections;
+using UnityEditor.Timeline.Actions;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public int score = 0;
     public int boxNumber;
-    private bool isContinuousScoreIncreasing = false; // Indique si le score augmente continuellement
+    private bool jeGagneEnContinue = false;
 
     private void Awake()
     {
@@ -20,7 +21,30 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    private void Update()
+    {
+        if (ButtonGenre.getSelectedGenre() != null && MusicGenreAnalyzer.getFavoriteGenres() != null)
+        {
+            foreach (string genre in MusicGenreAnalyzer.getFavoriteGenres())
+            {
+                if (genre == ButtonGenre.getSelectedGenre())
+                {
+                    if (jeGagneEnContinue == false)
+                    {
+                        jeGagneEnContinue = true;
+                        Invoke("GainContinue", 2f);
+                        Debug.Log("bien joué");
+                    }
+                }
+                else if (jeGagneEnContinue == false)
+                {
+                    jeGagneEnContinue = true;
+                    Invoke("PerteContinue", 2f);
+                    Debug.Log("Dommage");
+                }
+            }
+        }
+    }
     // Méthode pour augmenter le score
     public void AugmenterScore(int points)
     {
@@ -34,25 +58,14 @@ public class GameManager : MonoBehaviour
         score -= points;
         Debug.Log("Score diminué de " + points + " points. Nouveau score : " + score);
     }
-
-    // Méthode pour augmenter le score de manière continue avec un délai
-    public void IncreaseScoreContinuous(int amount)
+    private void GainContinue()
     {
-        // Augmenter le score de façon continue
-        score += amount;
-        isContinuousScoreIncreasing = true;
+        AugmenterScore(7);
+        jeGagneEnContinue = false;
     }
-
-    public void DecreaseScoreContinuous(int amount)
+    private void PerteContinue()
     {
-        // Diminuer le score de façon continue
-        if (isContinuousScoreIncreasing)
-        {
-            score -= amount;
-            if (score < 0)
-            {
-                score = 0;
-            }
-        }
+        DiminuerScore(4);
+        jeGagneEnContinue = false;
     }
 }
