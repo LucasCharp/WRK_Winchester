@@ -9,7 +9,8 @@ public class ExitManager : MonoBehaviour
     Animator animator;
 
     private GameObject[] doors;
-
+    public MoneyManager moneyManager;
+    private int enterMoney = 25;
     private void Awake()
     {
         doors = GameObject.FindGameObjectsWithTag("Door");
@@ -39,7 +40,8 @@ public class ExitManager : MonoBehaviour
                     }
                 }
                 animator.SetBool("hasEnterPub", true);
-
+                moneyManager.moneyChange = enterMoney;
+                moneyManager.OnMoneyChange();
             }
         GoBackInPub(other);
         }
