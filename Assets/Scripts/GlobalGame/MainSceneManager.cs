@@ -16,7 +16,7 @@ public class MainSceneManager : MonoBehaviour
     public Canvas playCanvas;
     public AudioClip[] son;
 
-    private int barLevel = 0;
+    public int barLevel = 0;
     private bool isPaused;
 
     // Start is called before the first frame update

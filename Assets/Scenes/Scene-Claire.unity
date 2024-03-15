@@ -16494,8 +16494,12 @@ MonoBehaviour:
   startCanvas: {fileID: 359792878}
   pauseCanvas: {fileID: 1641543123}
   playCanvas: {fileID: 511433045}
-  son: {fileID: 8300000, guid: 1f9a7794e86cb5c41ba79a80326483dd, type: 3}
-  audioTracks: []
+  son:
+  - {fileID: 8300000, guid: 1f9a7794e86cb5c41ba79a80326483dd, type: 3}
+  - {fileID: 8300000, guid: 89feadd5b060b1d478bf6902e1078fc5, type: 3}
+  - {fileID: 8300000, guid: 8cd5dee2685976d4e93a0f31ca27dacf, type: 3}
+  - {fileID: 8300000, guid: c74cd96a2d861f54e83425a6db2470e9, type: 3}
+  - {fileID: 8300000, guid: b54a9bd3b08caf14882fe2646435f28d, type: 3}
   barLevel: 0
 --- !u!4 &1396442796
 Transform:
@@ -18015,7 +18019,10 @@ MonoBehaviour:
   cameraCollider: {fileID: 1592362476}
   moneyManager: {fileID: 1954402524}
   upgradeCanvas: {fileID: 1572198030}
-  son: {fileID: 8300000, guid: 1f9a7794e86cb5c41ba79a80326483dd, type: 3}
+  son:
+  - {fileID: 8300000, guid: 1f9a7794e86cb5c41ba79a80326483dd, type: 3}
+  - {fileID: 8300000, guid: 1a2b0fe9850513e4e852326d128ce561, type: 3}
+  - {fileID: 8300000, guid: b54a9bd3b08caf14882fe2646435f28d, type: 3}
 --- !u!114 &1572198028
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -67,6 +67,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     public MainSceneManager mainSceneManager;
     public CameraRotation cameraRotation;
     public CameraColliderDetection cameraCollider;
+    public MoneyManager moneyManager;
     public Canvas upgradeCanvas;
 
     private Vector3 initialCameraPosition;
@@ -80,7 +81,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     private float moveSpeed = 5f;
     private float rotationSpeed = 5f;
-
+    private int moneyCost = 100;
+    private int refillCost = 50;
 
     public AudioClip[] son;
 
@@ -419,7 +421,12 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         SFXManager.instance.PlaySoundFXClip(son[0], transform, 1f);
 
-        mainSceneManager.SetEtagere();
+        if (moneyManager.moneyTotal >= refillCost && mainSceneManager.barLevel != 3)
+        {
+            moneyManager.moneyChange = -refillCost;
+            moneyManager.OnMoneyChange();
+            mainSceneManager.SetEtagere();
+        }
     }
 
     public void OnFloorCliqued()
@@ -445,7 +452,12 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     public void OnRedFloorCliqued()
     {
         SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
-
+        if (moneyManager.moneyTotal >= moneyCost)
+        {
+            Debug.Log("Je suis dans le if, et oui tu as de l'argent");
+            moneyManager.moneyChange = -moneyCost;
+            moneyManager.OnMoneyChange();
+        }
         Renderer renderer = floor.GetComponent<Renderer>();
         if (renderer != null)
         {
