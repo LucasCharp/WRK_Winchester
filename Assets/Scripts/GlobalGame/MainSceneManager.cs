@@ -19,6 +19,9 @@ public class MainSceneManager : MonoBehaviour
     public int barLevel = 0;
     private bool isPaused;
 
+    public AudioClip pauseMusic;
+    public AudioClip pauseAmbience;
+
     // Start is called before the first frame update
     void Start()
     {

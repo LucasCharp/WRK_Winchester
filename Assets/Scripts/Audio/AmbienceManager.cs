@@ -35,4 +35,18 @@ public class SoundManager : MonoBehaviour
             yield return new WaitForSeconds(tempsAttente);
         }
     }
+
+    public void TogglePause()
+    {
+        // Vérifiez si la musique est en pause ou en lecture et inversez son état
+        if (ambianceAudioSource.isPlaying)
+        {
+            ambianceAudioSource.Pause();
+        }
+        else
+        {
+            ambianceAudioSource.UnPause();
+        }
+    }
+
 }
