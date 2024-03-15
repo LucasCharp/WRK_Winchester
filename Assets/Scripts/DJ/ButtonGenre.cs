@@ -4,19 +4,11 @@ using UnityEngine.UI;
 public class ButtonGenre : MonoBehaviour
 {
     public string genreName; // Le nom du genre musical associé à ce bouton
-    public GameManager gameManager; // Référence au script de gestion du score
-    private bool isPlayingFavoriteMusic; // Indique si la musique correspond au genre préféré
+    public MusicGenrePointCollector pointCollector; // Référence au script de collecte de points
+    public GameManager gameManager; // Référence au gestionnaire de jeu pour le score
 
-    // Méthode pour définir la préférence de genre
-    public void SetGenrePreference(int preference)
+    private void Start()
     {
-        // Implémentez ici la logique pour définir la préférence de genre
-        Debug.Log("Setting genre preference for " + genreName + " to " + preference);
-    }
-
-    void Start()
-    {
-        // Assurez-vous que le bouton est configuré pour appeler une méthode lorsque cliqué
         Button button = GetComponent<Button>();
         if (button != null)
         {
@@ -25,6 +17,16 @@ public class ButtonGenre : MonoBehaviour
         else
         {
             Debug.LogError("Le composant Button est manquant sur ce GameObject.");
+        }
+
+        // Trouver la référence du MusicGenrePointCollector si elle n'est pas déjà définie
+        if (pointCollector == null)
+        {
+            pointCollector = FindObjectOfType<MusicGenrePointCollector>();
+            if (pointCollector == null)
+            {
+                Debug.LogError("MusicGenrePointCollector non trouvé !");
+            }
         }
 
         // Trouver la référence du GameManager si elle n'est pas déjà définie
@@ -38,42 +40,21 @@ public class ButtonGenre : MonoBehaviour
         }
     }
 
-    // Méthode appelée lorsque le bouton est cliqué
-    void OnButtonClick()
+    private void OnButtonClick()
     {
-        // Appeler une méthode ou déclencher un événement pour gérer le clic du bouton
-        Debug.Log("Bouton " + genreName + " cliqué !");
-        // Ajoutez ici la logique pour gérer le clic du bouton
-        // Définir la préférence de genre pour ce bouton
-        SetGenrePreference(10); // Exemple : attribuer une note de 10 au genre associé à ce bouton
-    }
+        // Récupérer le genre préféré des PNJ
+        string favoriteGenre = pointCollector.GetFavoriteGenre();
 
-    void Update()
-    {
-        // Vérifier si la musique est en train de jouer et si elle correspond au genre préféré
-        if (IsMusicPlaying() && IsFavoriteMusic())
+        // Comparer le genre de musique du bouton avec le genre préféré des PNJ
+        if (genreName == favoriteGenre)
         {
-            // Augmenter le score de façon continue
+            // Le genre de musique du bouton correspond au genre préféré des PNJ
             gameManager.IncreaseScoreContinuous(10);
         }
         else
         {
-            // Diminuer le score de façon continue
+            // Le genre de musique du bouton ne correspond pas au genre préféré des PNJ
             gameManager.DecreaseScoreContinuous(5);
         }
-    }
-
-    // Méthode pour vérifier si la musique est en train de jouer
-    bool IsMusicPlaying()
-    {
-        // Implémentez ici la logique pour vérifier si la musique est en train de jouer
-        return true; // Par exemple, retourner vrai si la musique est en train de jouer, sinon faux
-    }
-
-    // Méthode pour vérifier si la musique correspond au genre préféré
-    bool IsFavoriteMusic()
-    {
-        // Implémentez ici la logique pour vérifier si la musique correspond au genre préféré
-        return true; // Par exemple, retourner vrai si la musique correspond au genre préféré, sinon faux
     }
 }

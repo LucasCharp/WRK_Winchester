@@ -5431,10 +5431,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockCounter: 0
-  popCounter: 0
+  afroCounter: 0
   jazzCounter: 0
-  electronicCounter: 0
-  classicalCounter: 0
+  drillCounter: 0
+  countryCounter: 0
+  discoCounter: 0
+  brasilCounter: 0
+  metalCounter: 0
 --- !u!114 &291122848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5449,6 +5452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minMoveDelay: 1
   maxMoveDelay: 3
+  placeInQueue: 0
   queueStart: {x: 0, y: 0, z: 0}
   queueSecond: {x: 0, y: 0, z: 0}
   queueThird: {x: 0, y: 0, z: 0}
@@ -12199,10 +12203,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockCounter: 0
-  popCounter: 0
+  afroCounter: 0
   jazzCounter: 0
-  electronicCounter: 0
-  classicalCounter: 0
+  drillCounter: 0
+  countryCounter: 0
+  discoCounter: 0
+  brasilCounter: 0
+  metalCounter: 0
 --- !u!114 &767719386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12217,6 +12224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minMoveDelay: 1
   maxMoveDelay: 3
+  placeInQueue: 0
   queueStart: {x: 0, y: 0, z: 0}
   queueSecond: {x: 0, y: 0, z: 0}
   queueThird: {x: 0, y: 0, z: 0}
@@ -18021,6 +18029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfPeopleInQueue: 0
   isFull: 0
+  maxQueueSize: 5
 --- !u!1 &1135450560
 GameObject:
   m_ObjectHideFlags: 0
@@ -21930,7 +21939,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52dff8655aeebfc4e9d72307d26d64e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PNJ: {fileID: 0}
   scriptAffiche: {fileID: 541798860}
+  triggerCollider: {fileID: 0}
+  genreButtons: []
 --- !u!114 &1324719312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22866,7 +22878,10 @@ MonoBehaviour:
   canvasList: []
   startCanvas: {fileID: 1542439590}
   pauseCanvas: {fileID: 1542439590}
-  son: {fileID: 0}
+  playCanvas: {fileID: 0}
+  son:
+  - {fileID: 0}
+  barLevel: 0
 --- !u!4 &1396442796
 Transform:
   m_ObjectHideFlags: 0
@@ -24939,8 +24954,12 @@ MonoBehaviour:
   mainSceneManager: {fileID: 1396442795}
   cameraRotation: {fileID: 113777587}
   cameraCollider: {fileID: 0}
+  moneyManager: {fileID: 0}
   upgradeCanvas: {fileID: 0}
-  son: {fileID: 8300000, guid: 1f9a7794e86cb5c41ba79a80326483dd, type: 3}
+  son:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1572198028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25429,8 +25448,8 @@ MonoBehaviour:
   videurRenderer: []
   toilettesRenderer: []
   djBox: {fileID: 0}
-  hideBar: 0
-  hideWall: 0
+  barBox: {fileID: 0}
+  videurBox: {fileID: 0}
 --- !u!114 &1592362477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26981,10 +27000,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockCounter: 0
-  popCounter: 0
+  afroCounter: 0
   jazzCounter: 0
-  electronicCounter: 0
-  classicalCounter: 0
+  drillCounter: 0
+  countryCounter: 0
+  discoCounter: 0
+  brasilCounter: 0
+  metalCounter: 0
 --- !u!114 &1670516602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26999,6 +27021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minMoveDelay: 1
   maxMoveDelay: 3
+  placeInQueue: 0
   queueStart: {x: 0, y: 0, z: 0}
   queueSecond: {x: 0, y: 0, z: 0}
   queueThird: {x: 0, y: 0, z: 0}

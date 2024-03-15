@@ -3657,6 +3657,12 @@ MonoBehaviour:
   etagereHalf: {fileID: 1004678734}
   etagereQuarter: {fileID: 1004422037}
   etagereEmpty: {fileID: 1013672391}
+  canvasList: []
+  startCanvas: {fileID: 0}
+  pauseCanvas: {fileID: 0}
+  playCanvas: {fileID: 0}
+  son: []
+  barLevel: 0
 --- !u!1001 &561480946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5695,7 +5701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 1781677702}
-  infoText: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!114 &852310198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14403,6 +14409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commande: 
+  gameManager: {fileID: 0}
 --- !u!114 &1781677705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16977,6 +16984,7 @@ MonoBehaviour:
   buttonChaiseBlue: {fileID: 1876446694}
   buttonChaiseGreen: {fileID: 16835638}
   buttonChaiseRetour: {fileID: 1160753594}
+  startButton: {fileID: 0}
   redColor: {r: 0.509434, g: 0.12591669, b: 0.12591669, a: 0}
   brownColor: {r: 0.42352945, g: 0.2509804, b: 0, a: 0}
   whiteColor: {r: 0.3056603, g: 0.3056603, b: 0.3056603, a: 0}
@@ -16991,6 +16999,8 @@ MonoBehaviour:
   - {fileID: 1881205}
   - {fileID: 3692032967310479657}
   - {fileID: 410874590807751234}
+  banquettes: []
+  chaises: []
   redMat: {fileID: 2100000, guid: 8aade21a35a89584da64218d7aa93814, type: 2}
   yellowMat: {fileID: 2100000, guid: 5ad4373a54cfee5418cb5c39a2738bee, type: 2}
   blueMat: {fileID: 2100000, guid: b2356c25e2057504683dc854973700e9, type: 2}
@@ -17002,6 +17012,10 @@ MonoBehaviour:
   mainCamera: {fileID: 1157511136}
   mainSceneManager: {fileID: 539335460}
   cameraRotation: {fileID: 1897481492}
+  cameraCollider: {fileID: 0}
+  moneyManager: {fileID: 0}
+  upgradeCanvas: {fileID: 0}
+  son: []
 --- !u!1 &1972135737 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4712644759545590337, guid: 0dc983345a7ca934383bfd2745dca8bb,
@@ -17939,6 +17953,7 @@ MonoBehaviour:
   PNJ: {fileID: 0}
   scriptAffiche: {fileID: 0}
   triggerCollider: {fileID: 2066820185}
+  genreButtons: []
 --- !u!114 &2066820184
 MonoBehaviour:
   m_ObjectHideFlags: 0
