@@ -12,7 +12,7 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("SpawnRandomPNJ", 5f, spawnInterval);
+        InvokeRepeating("SpawnRandomPNJ", 8f, spawnInterval);
     }
 
     private void Update()

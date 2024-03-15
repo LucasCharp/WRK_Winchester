@@ -166,7 +166,7 @@ public class RandomNavMeshMovement : MonoBehaviour
         }
     }
 
-    void InQueue()
+    public void InQueue()
     {
         GameObject spawner = GameObject.Find("Spawner");
         SpawnManager spawnManager = spawner.GetComponent<SpawnManager>();
@@ -200,7 +200,7 @@ public class RandomNavMeshMovement : MonoBehaviour
         }           
     }
 
-    void QuitQueue()
+    public void QuitQueue()
     {
         GameObject spawner = GameObject.Find("Spawner");
         SpawnManager spawnManager = spawner.GetComponent<SpawnManager>();
