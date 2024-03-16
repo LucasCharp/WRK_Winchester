@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CameraColliderDetection : MonoBehaviour
 {
-    public int boxNumber = 0; // Déclaration de boxNumber en tant que variable statique
+    public int boxNumber = 0;
     public Button barButton;
     public Button wallButton;
     public Renderer[] barRenderer;
@@ -16,7 +16,9 @@ public class CameraColliderDetection : MonoBehaviour
     public GameObject djBox;
     public GameObject barBox;
     public GameObject videurBox;
-
+    //public Camera mainCamera;
+    //public float increaseAmountY = 3f;
+    //public float increaseAmountX = 4f;
     private void Start()
     {
         djBox.SetActive(false);
@@ -134,6 +136,11 @@ public class CameraColliderDetection : MonoBehaviour
         {
             barBox.SetActive(false);
             videurBox.SetActive(false);
+            
+            //Vector3 newCameraPosition = mainCamera.transform.position;
+            //newCameraPosition.y += increaseAmountY;
+            //newCameraPosition.x += increaseAmountX;
+            //mainCamera.transform.position = newCameraPosition;
 
             Debug.Log("La caméra est entrée dans la Box 4");
             if (videurRenderer != null)
