@@ -5426,6 +5426,7 @@ MonoBehaviour:
   - {fileID: 169210509}
   - {fileID: 182228545}
   lightsBackOn: 0
+  mainSceneManager: {fileID: 0}
 --- !u!1 &432749820
 GameObject:
   m_ObjectHideFlags: 0
@@ -8927,6 +8928,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1341767187}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: TogglePause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1388226016}
+        m_TargetAssemblyTypeName: JukeboxManager, Assembly-CSharp
         m_MethodName: TogglePause
         m_Mode: 1
         m_Arguments:
@@ -15816,6 +15829,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PNJ: {fileID: 0}
   scriptAffiche: {fileID: 0}
+  reloadFavoriteGenres: {fileID: 0}
   triggerCollider: {fileID: 1324719313}
   genreButtons: []
 --- !u!114 &1324719312
@@ -26726,6 +26740,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1396442795}
         m_TargetAssemblyTypeName: MainSceneManager, Assembly-CSharp
         m_MethodName: OnPauseCliqued
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1388226016}
+        m_TargetAssemblyTypeName: JukeboxManager, Assembly-CSharp
+        m_MethodName: TogglePause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
