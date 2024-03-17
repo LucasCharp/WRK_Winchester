@@ -5,33 +5,64 @@ using UnityEngine;
 public class Electricity : MonoBehaviour
 {
     private int waitTime;
+    private bool hasLaunched;
+    private int cost = 200;
+
     public GameObject[] lightsToOff;
     public bool lightsBackOn = false;
     public MainSceneManager mainSceneManager;
-    private bool hasLaunched;
+    public MoneyManager moneyManager;
+    public List<GameObject> redLights;
+    public Collider boxCollider;
 
-    IEnumerator TurnOffLights()
+    private void Start()
     {
-        waitTime = Random.Range(20, 60);
-        // Attendre pendant le temps spécifié
-        yield return new WaitForSeconds(waitTime);
+        foreach (GameObject light in redLights)
+        {
+            light.gameObject.SetActive(false);
+        }
+        boxCollider.enabled = false;
+    }
 
-        // Boucler à travers tous les GameObjects des lumières dans la liste
+
+    private void OnMouseDown()
+    {
+         if (moneyManager.moneyTotal >= cost)
+         {
+            moneyManager.moneyChange = -cost;
+            moneyManager.OnMoneyChange();
+            lightsBackOn = true;
+            foreach (GameObject light in redLights)
+            {
+                light.gameObject.SetActive(false);
+            }
+            boxCollider.enabled = false;
+        }
+    }
+
+    IEnumerator TurnOffLights() //éteind les lights au bout d'un temps random
+    {
+        waitTime = Random.Range(20, 30);
+        yield return new WaitForSeconds(waitTime);
+        foreach (GameObject light in redLights)
+        {
+            light.gameObject.SetActive(true);
+        }
+        boxCollider.enabled = true;
         foreach (GameObject lightObject in lightsToOff)
         {
-            // Désactiver le GameObject de la lumière
             lightObject.SetActive(false);
         }
     }
 
     private void Update()
     {
-        if(mainSceneManager.startGame == true && hasLaunched == false)
+        if (mainSceneManager.startGame == true && hasLaunched == false) // ne se joue q"une fois, pour lancer la coupure dès que le startGame est en vrai
         {
             StartCoroutine(TurnOffLights());
             hasLaunched = true;
         }
-        if (lightsBackOn == true)
+        if (lightsBackOn == true)// allume les lights dès que la variable lightsBackOn est vraie, puis relance la coroutine
         {
             foreach (GameObject lightObject in lightsToOff)
             {
