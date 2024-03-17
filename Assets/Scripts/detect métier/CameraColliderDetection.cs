@@ -12,6 +12,8 @@ public class CameraColliderDetection : MonoBehaviour
     public Renderer[] djRenderer;
     public Renderer[] videurRenderer;
     public Renderer[] toilettesRenderer;
+    public string visibleUI;
+    public MainSceneManager mainSceneManager;
 
     public GameObject djBox;
     public GameObject barBox;
@@ -32,9 +34,12 @@ public class CameraColliderDetection : MonoBehaviour
         
         if (other.gameObject.layer == LayerMask.NameToLayer("Box11")) // Videur
         {
-            videurBox.SetActive(true);
-            djBox.SetActive(false);
-
+            if (mainSceneManager.startGame == true)
+            {
+                visibleUI = "Videur";
+                videurBox.SetActive(true);
+                djBox.SetActive(false);
+            }
             Debug.Log("La caméra est entrée dans la Box 1");
 
             if (videurRenderer != null)
@@ -66,9 +71,14 @@ public class CameraColliderDetection : MonoBehaviour
 
         else if (other.gameObject.layer == LayerMask.NameToLayer("Box12")) // DJ
         {
-            barBox.SetActive(false);
-            djBox.SetActive(true);
-            videurBox.SetActive(false);
+            if (mainSceneManager.startGame == true)
+            {
+                visibleUI = "DJ";
+                barBox.SetActive(false);
+                djBox.SetActive(true);
+                videurBox.SetActive(false);
+            }
+           
             Debug.Log("La caméra est entrée dans la Box 2");
 
             if (djRenderer != null)
@@ -100,8 +110,13 @@ public class CameraColliderDetection : MonoBehaviour
 
         else if (other.gameObject.layer == LayerMask.NameToLayer("Box13")) // Bar
         {
-            barBox.SetActive(true);
-            djBox.SetActive(false);
+            if (mainSceneManager.startGame == true)
+            {
+                visibleUI = "Bar";
+                barBox.SetActive(true);
+                djBox.SetActive(false);
+            }
+           
 
             if (barRenderer != null)
             {
@@ -134,13 +149,12 @@ public class CameraColliderDetection : MonoBehaviour
 
         else if (other.gameObject.layer == LayerMask.NameToLayer("Box14")) // Toilettes
         {
-            barBox.SetActive(false);
-            videurBox.SetActive(false);
-            
-            //Vector3 newCameraPosition = mainCamera.transform.position;
-            //newCameraPosition.y += increaseAmountY;
-            //newCameraPosition.x += increaseAmountX;
-            //mainCamera.transform.position = newCameraPosition;
+            if (mainSceneManager.startGame == true)
+            {
+                visibleUI = "Videur";
+                barBox.SetActive(false);
+                videurBox.SetActive(false);
+            }
 
             Debug.Log("La caméra est entrée dans la Box 4");
             if (videurRenderer != null)

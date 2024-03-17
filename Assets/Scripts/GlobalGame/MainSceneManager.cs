@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainSceneManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class MainSceneManager : MonoBehaviour
     public Canvas pauseCanvas;
     public Canvas playCanvas;
     public AudioClip[] son;
+    public CameraRotation cameraRotation;
+    public CameraColliderDetection cameraCollider;
 
     public int barLevel = 0;
     private bool isPaused;
@@ -99,7 +102,23 @@ public class MainSceneManager : MonoBehaviour
             pauseCanvas.gameObject.SetActive(true);
             Time.timeScale = 0f;
             isPaused = true;
+            cameraRotation.canRotate = false;
+            if (cameraCollider.visibleUI == "Videur")
+            {
+                cameraCollider.videurBox.SetActive(false);
+            }
+            else if (cameraCollider.visibleUI == "DJ")
+            {
+                cameraCollider.djBox.SetActive(false);
+            }
+            else if (cameraCollider.visibleUI == "Bar")
+            {
+                cameraCollider.barBox.SetActive(false);
+            }
         }
+
+
+
        else if (isPaused == true)
         {
             if (startGame == false)
@@ -111,7 +130,25 @@ public class MainSceneManager : MonoBehaviour
             pauseCanvas.gameObject.SetActive(false);
             Time.timeScale = 1f;
             isPaused = false;
+            cameraRotation.canRotate = true;
+
+            if (cameraCollider.visibleUI == "Videur")
+            {
+                cameraCollider.videurBox.SetActive(true);
+            }
+            else if (cameraCollider.visibleUI == "DJ")
+            {
+                cameraCollider.djBox.SetActive(true);
+            }
+            else if (cameraCollider.visibleUI == "Bar")
+            {
+                cameraCollider.barBox.SetActive(true);
+            }
         }
     }
 
+    public void OnQuitterCliqued()
+    {
+        SceneManager.LoadScene("MenuPrincipal");
+    }
 }
