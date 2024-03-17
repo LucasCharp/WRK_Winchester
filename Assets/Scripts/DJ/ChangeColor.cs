@@ -11,6 +11,7 @@ public class ChangeColor : MonoBehaviour
     private int maxTime = 2;
     private string[] hexColors = new string[4];
     public MainSceneManager mainSceneManager;
+    public bool canChangeColor = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -62,8 +63,15 @@ public class ChangeColor : MonoBehaviour
 
     Color HexToColor(string hex)
     {
-        Color color = new Color();
-        ColorUtility.TryParseHtmlString(hex, out color);
-        return color;
+        if(canChangeColor == true)
+        {
+            Color color = new Color();
+            ColorUtility.TryParseHtmlString(hex, out color);
+            return color;
+        }
+        else
+        {
+            return Color.grey; 
+        }
     }
 }

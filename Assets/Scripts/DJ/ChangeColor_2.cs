@@ -11,6 +11,7 @@ public class ChangeColor_2 : MonoBehaviour
     private int maxTime = 2;
     private string[] hexColors = new string[3];
     public MainSceneManager mainSceneManager;
+    public bool canChangeColor = true;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class ChangeColor_2 : MonoBehaviour
         hexColors[0] = "#FF0000"; // Rouge
         hexColors[1] = "#0000FF"; // Bleu
         hexColors[2] = "#00FF00"; // Vert
+        canChangeColor = true;
     }
 
     private void Update()
@@ -62,8 +64,16 @@ public class ChangeColor_2 : MonoBehaviour
 
     Color HexToColor(string hex)
     {
-        Color color = new Color();
-        ColorUtility.TryParseHtmlString(hex, out color);
-        return color;
+        if (canChangeColor == true)
+        {
+            Debug.Log("Je change la couleur");
+            Color color = new Color();
+            ColorUtility.TryParseHtmlString(hex, out color);
+            return color;
+        }
+        else
+        {
+            return Color.grey;
+        }
     }
 }

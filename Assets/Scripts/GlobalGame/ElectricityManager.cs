@@ -17,6 +17,7 @@ public class ElectricityManager : MonoBehaviour
     public List<GameObject> redLights;
     public Collider boxCollider;
     public JukeboxManager jukeboxManager;
+    
     private void Start()
     {
         foreach (GameObject light in redLights)
@@ -72,8 +73,24 @@ public class ElectricityManager : MonoBehaviour
             {
                 lightObject.SetActive(false);
             }
+            RotateLight[] scripts = FindObjectsOfType<RotateLight>();
+            foreach (RotateLight script in scripts)
+            {
+                script.canRotate = false;
+                script.rotating = false;
+            }
             jukeboxManager.TogglePause();
             electricityCut = true;
+            ChangeColor[] colors = FindObjectsOfType<ChangeColor>();
+            foreach (ChangeColor color in colors)
+            {
+                color.canChangeColor = false;
+            }
+            ChangeColor_2[] colors_2 = FindObjectsOfType<ChangeColor_2>();
+            foreach (ChangeColor_2 color in colors_2)
+            {
+                color.canChangeColor = false;
+            }
         }
     }
 
@@ -89,6 +106,22 @@ public class ElectricityManager : MonoBehaviour
             lightObject.SetActive(true);
             electricityCut = false;
             StartCoroutine(TurnOnRed());
+        }
+        RotateLight[] scripts = FindObjectsOfType<RotateLight>();
+        foreach (RotateLight script in scripts)
+        {
+            script.canRotate = true;
+            script.StartRotating();
+        }
+        ChangeColor[] colors = FindObjectsOfType<ChangeColor>();
+        foreach (ChangeColor color in colors)
+        {
+            color.canChangeColor = true;
+        }
+        ChangeColor_2[] colors_2 = FindObjectsOfType<ChangeColor_2>();
+        foreach (ChangeColor_2 color in colors_2)
+        {
+            color.canChangeColor = true;
         }
     }
 }

@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class RotateLight : MonoBehaviour
 {
-    private bool rotating = false;
+    public bool rotating = false;
     public float rotationSpeed;
     public float rotationAmount;
     private Quaternion startRotation;
     private Quaternion targetRotation;
     public MainSceneManager mainSceneManager;
     private bool hasStarted;
-
+    public bool canRotate = true;
     private void Start()
     {
         hasStarted = false;
@@ -38,17 +38,21 @@ public class RotateLight : MonoBehaviour
             }
         }
          else if (mainSceneManager.startGame == false)
-        {
+         {
             rotating = false;
-        }
+         }
     }
 
-     void RotateObject()
+    void RotateObject()
     {
-        Invoke("StartRotating",Time.deltaTime);
+        if (canRotate == true)
+        {
+            Invoke("StartRotating", Time.deltaTime);
+        }
+        
     }
 
-    void StartRotating()
+    public void StartRotating()
     {
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
