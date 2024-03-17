@@ -235,15 +235,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 cameraRotation.canRotate = true;
                 buttonBar.gameObject.SetActive(true);
                 buttonWall.gameObject.SetActive(true);
-
-                //if (cameraCollider.hideBar == false)
-                //{
-                    //buttonBar.gameObject.SetActive(true);
-                //}
-                //if (cameraCollider.hideWall == false)
-                //{
-                   // buttonWall.gameObject.SetActive(true);
-                //}
             }
         }
         if (banqCliqued == true)
@@ -269,14 +260,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 cameraRotation.canRotate = true;
                 buttonBar.gameObject.SetActive(true);
                 buttonWall.gameObject.SetActive(true);
-                //if (cameraCollider.hideBar == false)
-                //{
-                    //buttonBar.gameObject.SetActive(true);
-                //}
-                //if (cameraCollider.hideWall == false)
-                //{
-                    //buttonWall.gameObject.SetActive(true);
-                //}
             }
         }
         if (chaiseCliqued == true)
@@ -303,14 +286,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 cameraRotation.canRotate = true;
                 buttonBar.gameObject.SetActive(true);
                 buttonWall.gameObject.SetActive(true);
-                //if (cameraCollider.hideBar == false)
-                //{
-                    //buttonBar.gameObject.SetActive(true);
-                //}
-                //if (cameraCollider.hideWall == false)
-                //{
-                    //buttonWall.gameObject.SetActive(true);
-                //}
             }
         }
         
@@ -331,14 +306,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             buttonFloorRetour.gameObject.SetActive(false);
             buttonBar.gameObject.SetActive(true);
             buttonWall.gameObject.SetActive(true);
-            //if (cameraCollider.hideBar == false)
-            //{
-                //buttonBar.gameObject.SetActive(true);
-            //}
-            //if (cameraCollider.hideWall == false)
-            //{
-                //buttonWall.gameObject.SetActive(true);
-            //}
             buttonTable.gameObject.SetActive(true);
             buttonBanquette.gameObject.SetActive(true);
             buttonFloor.gameObject.SetActive(true);
@@ -355,10 +322,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             buttonBanquette.gameObject.SetActive(true);
             buttonWall.gameObject.SetActive(true);
             buttonBar.gameObject.SetActive(true);
-            //if (cameraCollider.hideBar == false)
-            //{
-                //buttonBar.gameObject.SetActive(true);
-            //}
 
             buttonWallRed.gameObject.SetActive(false);
             buttonWallBrown.gameObject.SetActive(false);
@@ -425,6 +388,10 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             moneyManager.OnMoneyChange();
             mainSceneManager.SetEtagere();
         }
+        else
+        {
+            SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+        }
     }
 
     public void OnFloorCliqued()
@@ -458,7 +425,11 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 moneyManager.OnMoneyChange();
 
                 purchasedButtons.Add("RedFloor");
-            } 
+            }
+            else
+            {
+                SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+            }
         }
         
         if (purchasedButtons.Contains("RedFloor"))
@@ -488,6 +459,10 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
                 purchasedButtons.Add("BrownFloor");
             }
+            else
+            {
+                SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+            }
         }
         if (purchasedButtons.Contains("BrownFloor"))
         {
@@ -515,6 +490,10 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 moneyManager.OnMoneyChange();
 
                 purchasedButtons.Add("WhiteFloor");
+            }
+            else
+            {
+                SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
             }
         }
         if (purchasedButtons.Contains("WhiteFloor"))
@@ -566,8 +545,12 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
                 purchasedButtons.Add("RedWall");
             }
+            else
+            {
+                SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+            }
         }
-
+       
         if (purchasedButtons.Contains("RedWall"))
         {
             SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
@@ -597,7 +580,12 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
                 purchasedButtons.Add("BrownWall");
             }
+            else
+            {
+                SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+            }
         }
+        
         if (purchasedButtons.Contains("BrownWall"))
         {
             SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
@@ -628,7 +616,12 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
                 purchasedButtons.Add("WhiteWall");
             }
+            else
+            {
+                SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+            }
         }
+        
         if (purchasedButtons.Contains("WhiteWall"))
         {
             SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
@@ -691,7 +684,12 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
                     purchasedButtons.Add("RedTable");
                 }
+                else
+                {
+                    SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+                }
             }
+            
             if (purchasedButtons.Contains("RedTable"))
             {
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
@@ -733,7 +731,12 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
                     purchasedButtons.Add("RedBanq");
                 }
+                else
+                {
+                    SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+                }
             }
+            
             if (purchasedButtons.Contains("RedBanq"))
             {
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
@@ -774,7 +777,12 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
                     purchasedButtons.Add("RedChaise");
                 }
+                else
+                {
+                    SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+                }
             }
+            
             if (purchasedButtons.Contains("RedChaise"))
             {
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
@@ -819,7 +827,12 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
                     purchasedButtons.Add("GreenTable");
                 }
+                else
+                {
+                    SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+                }
             }
+            
             if (purchasedButtons.Contains("GreenTable"))
             {
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
@@ -860,7 +873,12 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
                     purchasedButtons.Add("GreenBanq");
                 }
+                else
+                {
+                    SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+                }
             }
+           
             if (purchasedButtons.Contains("GreenBanq"))
             {
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
@@ -901,7 +919,12 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
                     purchasedButtons.Add("GreenChaise");
                 }
+                else
+                {
+                    SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+                }
             }
+            
             if (purchasedButtons.Contains("GreenChaise"))
             {
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
@@ -946,7 +969,12 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
                     purchasedButtons.Add("YellowTable");
                 }
+                else
+                {
+                    SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+                }
             }
+           
             if (purchasedButtons.Contains("YellowTable"))
             {
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
@@ -987,7 +1015,12 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
                     purchasedButtons.Add("YellowBanq");
                 }
+                else
+                {
+                    SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+                }
             }
+            
             if (purchasedButtons.Contains("YellowBanq"))
             {
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
@@ -1028,7 +1061,12 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
                     purchasedButtons.Add("YellowChaise");
                 }
+                else
+                {
+                    SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+                }
             }
+            
             if (purchasedButtons.Contains("YellowChaise"))
             {
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
@@ -1073,7 +1111,12 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
                     purchasedButtons.Add("BlueTable");
                 }
+                else
+                {
+                    SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+                }
             }
+           
             if (purchasedButtons.Contains("BlueTable"))
             {
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
@@ -1114,7 +1157,12 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
                     purchasedButtons.Add("BlueBanq");
                 }
+                else
+                {
+                    SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+                }
             }
+            
             if (purchasedButtons.Contains("BlueBanq"))
             {
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
@@ -1155,7 +1203,12 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
                     purchasedButtons.Add("BlueChaise");
                 }
+                else
+                {
+                    SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+                }
             }
+           
             if (purchasedButtons.Contains("BlueChaise"))
             {
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);

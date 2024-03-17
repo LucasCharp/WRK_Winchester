@@ -1891,6 +1891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 164016599}
   mainSceneManager: {fileID: 1396442795}
+  canChangeColor: 0
 --- !u!1001 &169210507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2887,6 +2888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 206198126}
   mainSceneManager: {fileID: 1396442795}
+  canChangeColor: 0
 --- !u!1 &210034367
 GameObject:
   m_ObjectHideFlags: 0
@@ -3111,6 +3113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 232705424}
   mainSceneManager: {fileID: 1396442795}
+  canChangeColor: 1
 --- !u!1 &235238082
 GameObject:
   m_ObjectHideFlags: 0
@@ -4318,6 +4321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 302677808}
   mainSceneManager: {fileID: 1396442795}
+  canChangeColor: 0
 --- !u!1 &303730897
 GameObject:
   m_ObjectHideFlags: 0
@@ -4812,6 +4816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 338968843}
   mainSceneManager: {fileID: 1396442795}
+  canChangeColor: 1
 --- !u!1 &344134247
 GameObject:
   m_ObjectHideFlags: 0
@@ -5685,7 +5690,6 @@ MonoBehaviour:
   - {fileID: 648065966}
   - {fileID: 169210509}
   - {fileID: 182228545}
-  lightsBackOn: 0
   mainSceneManager: {fileID: 1396442795}
   moneyManager: {fileID: 1954402524}
   redLights:
@@ -6356,6 +6360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 481338522}
   mainSceneManager: {fileID: 1396442795}
+  canChangeColor: 0
 --- !u!1 &481853121
 GameObject:
   m_ObjectHideFlags: 0
@@ -6590,6 +6595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 490129706}
   mainSceneManager: {fileID: 1396442795}
+  canChangeColor: 0
 --- !u!1 &498606684
 GameObject:
   m_ObjectHideFlags: 0
@@ -8364,6 +8370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 631785819}
   mainSceneManager: {fileID: 1396442795}
+  canChangeColor: 1
 --- !u!1001 &634622689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8653,9 +8660,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65f51ecca4641804cb629f32e18a7673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotating: 0
   rotationSpeed: 80
   rotationAmount: -100
   mainSceneManager: {fileID: 1396442795}
+  canRotate: 1
 --- !u!23 &648065973 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1460954580618046686, guid: b749a3ab589c35c44921fb6d37bd9add,
@@ -8990,6 +8999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 716868107}
   mainSceneManager: {fileID: 1396442795}
+  canChangeColor: 0
 --- !u!23 &717270749 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7338422106699361120, guid: 28a17664bb78a1e489af9c0d13adc399,
@@ -10149,6 +10159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 821047168}
   mainSceneManager: {fileID: 1396442795}
+  canChangeColor: 0
 --- !u!1001 &822325719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12685,6 +12696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 1063311413}
   mainSceneManager: {fileID: 1396442795}
+  canChangeColor: 1
 --- !u!1 &1064355426
 GameObject:
   m_ObjectHideFlags: 0
@@ -15360,6 +15372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 1250672619}
   mainSceneManager: {fileID: 1396442795}
+  canChangeColor: 1
 --- !u!1 &1252822769
 GameObject:
   m_ObjectHideFlags: 0
@@ -16741,6 +16754,7 @@ MonoBehaviour:
   metalAudioTracks: []
   rockAudioTracks: []
   transitions: []
+  isPlaying: 1
 --- !u!82 &1388226017
 AudioSource:
   m_ObjectHideFlags: 0
@@ -18160,6 +18174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 1492722315}
   mainSceneManager: {fileID: 1396442795}
+  canChangeColor: 1
 --- !u!23 &1500178580 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1125565315606280463, guid: bdee36b3a92336b4baf705269272d3cf,
@@ -18592,6 +18607,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1f9a7794e86cb5c41ba79a80326483dd, type: 3}
   - {fileID: 8300000, guid: 1a2b0fe9850513e4e852326d128ce561, type: 3}
   - {fileID: 8300000, guid: b54a9bd3b08caf14882fe2646435f28d, type: 3}
+  - {fileID: 8300000, guid: 132425f51ecd2e3459c2afe385dead66, type: 3}
   purchasedButtons: []
 --- !u!114 &1572198028
 MonoBehaviour:
@@ -21282,6 +21298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 1686992863}
   mainSceneManager: {fileID: 1396442795}
+  canChangeColor: 1
 --- !u!1 &1710171410
 GameObject:
   m_ObjectHideFlags: 0
@@ -22151,6 +22168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 1766024496}
   mainSceneManager: {fileID: 1396442795}
+  canChangeColor: 1
 --- !u!1 &1769072027
 GameObject:
   m_ObjectHideFlags: 0
@@ -26879,6 +26897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 2119316421}
   mainSceneManager: {fileID: 1396442795}
+  canChangeColor: 0
 --- !u!1001 &2125396515
 PrefabInstance:
   m_ObjectHideFlags: 0
