@@ -16212,6 +16212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PNJ: {fileID: 0}
   scriptAffiche: {fileID: 541798860}
+  reloadFavoriteGenres: {fileID: 0}
   triggerCollider: {fileID: 1324719313}
   genreButtons: []
 --- !u!114 &1324719312
@@ -16685,6 +16686,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: af977af9cb5669d48b83242666f0d675, type: 3}
   - {fileID: 8300000, guid: a58dee9e0e6924144be0320b75ca78b2, type: 3}
   - {fileID: 8300000, guid: 3011af99a6f0da24bb5ebf093d138582, type: 3}
+  afroAudioTracks: []
+  brazilAudioTracks: []
+  countryAudioTracks: []
+  discoAudioTracks: []
+  drillAudioTracks: []
+  jazzAudioTracks: []
+  metalAudioTracks: []
+  rockAudioTracks: []
+  transitions: []
 --- !u!82 &1388226017
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16943,6 +16953,8 @@ MonoBehaviour:
   son:
   - {fileID: 0}
   barLevel: 0
+  pauseMusic: {fileID: 0}
+  pauseAmbience: {fileID: 0}
 --- !u!4 &1396442796
 Transform:
   m_ObjectHideFlags: 0

@@ -41,12 +41,6 @@ public class RandomNavMeshMovement : MonoBehaviour
 
     void Update()
     {
-        if (UnityEngine.Input.touchCount > 0 && UnityEngine.Input.GetTouch(0).phase == TouchPhase.Began)
-        {
-            Debug.Log("oui");
-            QuitQueue();
-        }
-
             if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.1f)
         {
             if (moveDelayTimer <= 0f)

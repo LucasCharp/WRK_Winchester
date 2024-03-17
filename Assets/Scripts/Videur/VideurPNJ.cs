@@ -5,16 +5,17 @@ using UnityEngine;
 public class VideurPNJ : MonoBehaviour
 {
     public float entryInterval;
+    private Coroutine repeatingInvoke;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("InvokeInQueue", 15f, entryInterval);
+        StartRepeatingInvoke(entryInterval);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     void InvokeInQueue()
     {
@@ -42,5 +43,48 @@ public class VideurPNJ : MonoBehaviour
                 }
             }
         }
+    }
+
+    void StartRepeatingInvoke(float interval)
+    {
+        // Arrêter l'invocation répétée actuelle, s'il y en a une
+        StopRepeatingInvoke();
+
+        if (interval > 0)
+        {
+            // Démarrer une nouvelle invocation répétée avec l'intervalle donné
+            repeatingInvoke = StartCoroutine(RepeatInvoke(interval));
+        }
+    }
+
+    // Fonction pour arrêter l'invocation répétée
+    void StopRepeatingInvoke()
+    {
+        if (repeatingInvoke != null)
+        {
+            StopCoroutine(repeatingInvoke);
+            repeatingInvoke = null;
+        }
+    }
+
+    // Coroutine pour l'invocation répétée
+    IEnumerator RepeatInvoke(float interval)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(interval);
+
+            // Appeler la fonction InvokeInQueue
+            InvokeInQueue();
+
+            // Sortir de la coroutine si l'interval a changé
+            if (interval != entryInterval)
+            {
+                break;
+            }
+        }
+
+        // Redémarrer l'invocation répétée avec le nouvel intervalle
+        StartRepeatingInvoke(entryInterval);
     }
 }
