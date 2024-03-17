@@ -5680,6 +5680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 922b3364a113c9d44b8aea05c02b35e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  electricityCut: 0
   lightsToOff:
   - {fileID: 648065966}
   - {fileID: 169210509}
@@ -5691,6 +5692,7 @@ MonoBehaviour:
   - {fileID: 609515748}
   - {fileID: 1896486592}
   boxCollider: {fileID: 432255532}
+  jukeboxManager: {fileID: 1388226016}
 --- !u!65 &432255532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11076,8 +11078,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1388226016}
         m_TargetAssemblyTypeName: JukeboxManager, Assembly-CSharp
-        m_MethodName: PlayTrack
-        m_Mode: 3
+        m_MethodName: PlayTrackAfro
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -16727,16 +16729,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c51305d9a161343a71a9fe76974fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioTracks:
+  audioTracks: []
+  afroAudioTracks:
   - {fileID: 8300000, guid: f138f761a9d605e44930512e0b0f19f0, type: 3}
-  - {fileID: 8300000, guid: ca1559ade56942949a366c51795b9c01, type: 3}
-  - {fileID: 8300000, guid: a2d47debac917234ea2b4d3d34dacbf7, type: 3}
-  - {fileID: 8300000, guid: fe2e629f05af79a4e8a1ae22df06b66e, type: 3}
-  - {fileID: 8300000, guid: b7c86213a0bc3c44192f266400682c9c, type: 3}
-  - {fileID: 8300000, guid: af977af9cb5669d48b83242666f0d675, type: 3}
-  - {fileID: 8300000, guid: a58dee9e0e6924144be0320b75ca78b2, type: 3}
-  - {fileID: 8300000, guid: 3011af99a6f0da24bb5ebf093d138582, type: 3}
-  afroAudioTracks: []
+  - {fileID: 8300000, guid: 004065d5ed8dbc14880fc64e6b303902, type: 3}
   brazilAudioTracks: []
   countryAudioTracks: []
   discoAudioTracks: []
@@ -16754,7 +16750,8 @@ AudioSource:
   m_GameObject: {fileID: 1388226015}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1176361883368946050, guid: b3027e68bee6c604daeb462311d54a99,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -17014,6 +17011,7 @@ GameObject:
   - component: {fileID: 1396442796}
   - component: {fileID: 1396442795}
   - component: {fileID: 1396442798}
+  - component: {fileID: 1396442799}
   - component: {fileID: 1396442797}
   m_Layer: 0
   m_Name: MainSceneManager
@@ -17054,6 +17052,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b54a9bd3b08caf14882fe2646435f28d, type: 3}
   cameraRotation: {fileID: 113777587}
   cameraCollider: {fileID: 1592362476}
+  jukeboxManager: {fileID: 1388226016}
+  electricityManager: {fileID: 432255531}
   barLevel: 0
   pauseMusic: {fileID: 0}
   pauseAmbience: {fileID: 0}
@@ -17183,6 +17183,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundSFXObject: {fileID: 2559301586855325902, guid: d70b99d323600774fb06bdc6d45f093b,
     type: 3}
+--- !u!114 &1396442799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396442794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08ec80c6fac39d84291d16fd5e114e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: b3027e68bee6c604daeb462311d54a99, type: 2}
 --- !u!1 &1398501310 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1161802658005508566, guid: 49ce29c6353cc5f46870257a41066ef8,
@@ -20877,10 +20890,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1396442795}
-        m_TargetAssemblyTypeName: MainSceneManager, Assembly-CSharp
-        m_MethodName: OnQuitterCliqued
-        m_Mode: 1
+      - m_Target: {fileID: 1396442799}
+        m_TargetAssemblyTypeName: AudioMixerManager, Assembly-CSharp
+        m_MethodName: SetMusicVolume
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -24653,7 +24666,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1396442799}
         m_TargetAssemblyTypeName: AudioMixerManager, Assembly-CSharp
         m_MethodName: SetSoundFXVolume
         m_Mode: 0

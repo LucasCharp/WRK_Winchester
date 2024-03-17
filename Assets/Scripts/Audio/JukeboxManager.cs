@@ -16,6 +16,7 @@ public class JukeboxManager : MonoBehaviour
     public AudioClip[] transitions;
     private AudioSource audioSource;
 
+    public bool isPlaying = true; // j'en ai besoin dans le ElectricityManager pour arrêter ou pas la musique
 
     private void Start()
     {
@@ -83,15 +84,25 @@ public class JukeboxManager : MonoBehaviour
         if (audioSource.isPlaying)
         {
             audioSource.Pause();
+            isPlaying = false;
         }
         else
         {
             audioSource.UnPause();
+            isPlaying = true;
         }
     }
 
     public void TransitionNoise()
     {
         SFXManager.instance.PlaySoundFXClip(transitions[Random.Range(0, transitions.Length)], transform, 1f);
+    }
+    public void StopMusic()
+    {
+        // Vérifiez si la musique est en pause ou en lecture et inversez son état
+        if (audioSource.isPlaying)
+        {
+            audioSource.Pause();
+        }
     }
 }

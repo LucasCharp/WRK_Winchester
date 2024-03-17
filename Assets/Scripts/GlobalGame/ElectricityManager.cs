@@ -2,19 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Electricity : MonoBehaviour
+public class ElectricityManager : MonoBehaviour
 {
-    private int waitTime;
+    private int waitTime = 20;
     private bool hasLaunched;
     private int cost = 200;
+    private int preventTime = 10;
+    private bool canStop = true;
 
+    public bool electricityCut = false;
     public GameObject[] lightsToOff;
-    public bool lightsBackOn = false;
     public MainSceneManager mainSceneManager;
     public MoneyManager moneyManager;
     public List<GameObject> redLights;
     public Collider boxCollider;
-
+    public JukeboxManager jukeboxManager;
     private void Start()
     {
         foreach (GameObject light in redLights)
@@ -23,53 +25,71 @@ public class Electricity : MonoBehaviour
         }
         boxCollider.enabled = false;
     }
-
+    private void Update()
+    {
+        if (mainSceneManager.startGame == true && hasLaunched == false) // ne se joue q"une fois, pour lancer la coupure dès que le startGame est en vrai
+        {
+            StartCoroutine(TurnOnRed());
+            hasLaunched = true;
+        }
+    }
 
     private void OnMouseDown()
     {
-         if (moneyManager.moneyTotal >= cost)
-         {
+        if (moneyManager.moneyTotal >= cost)
+        {
             moneyManager.moneyChange = -cost;
             moneyManager.OnMoneyChange();
-            lightsBackOn = true;
             foreach (GameObject light in redLights)
             {
                 light.gameObject.SetActive(false);
             }
             boxCollider.enabled = false;
+            canStop = false;
+            LightsBackOn();
         }
     }
 
-    IEnumerator TurnOffLights() //éteind les lights au bout d'un temps random
+    IEnumerator TurnOnRed() //allume les lights rouges au bout de waitTime
     {
-        waitTime = Random.Range(20, 30);
         yield return new WaitForSeconds(waitTime);
+        canStop = true;
         foreach (GameObject light in redLights)
         {
             light.gameObject.SetActive(true);
         }
         boxCollider.enabled = true;
-        foreach (GameObject lightObject in lightsToOff)
+        yield return new WaitForSeconds(preventTime);//attends avant de lancer la fonction qui éteint les lumières
+        StopElectricity();
+    }
+
+    private void StopElectricity() // vérifie si on peut éteindre les lumières, et si oui alors piouf on éteint tout
+    { 
+        if (canStop == true)
         {
-            lightObject.SetActive(false);
+            Debug.Log("Je suis le temps complet et j'éteins tout");
+            foreach (GameObject lightObject in lightsToOff)
+            {
+                lightObject.SetActive(false);
+            }
+            jukeboxManager.TogglePause();
+            electricityCut = true;
         }
     }
 
-    private void Update()
+    private void LightsBackOn()
     {
-        if (mainSceneManager.startGame == true && hasLaunched == false) // ne se joue q"une fois, pour lancer la coupure dès que le startGame est en vrai
+        if (jukeboxManager.isPlaying == false)
         {
-            StartCoroutine(TurnOffLights());
-            hasLaunched = true;
+            jukeboxManager.TogglePause();
         }
-        if (lightsBackOn == true)// allume les lights dès que la variable lightsBackOn est vraie, puis relance la coroutine
+        
+        foreach (GameObject lightObject in lightsToOff)
         {
-            foreach (GameObject lightObject in lightsToOff)
-            {
-                lightObject.SetActive(true);
-                StartCoroutine(TurnOffLights());
-                lightsBackOn = false;
-            }
+            lightObject.SetActive(true);
+            electricityCut = false;
+            StartCoroutine(TurnOnRed());
         }
     }
 }
+        

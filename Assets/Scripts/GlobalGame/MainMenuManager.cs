@@ -359,7 +359,7 @@ public class MainMenuManager : MonoBehaviour
         }
         // Une fois que la caméra est revenue à la position cible, désactive le bouton retour, réactive le clic sur l'objet
        
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("Scene-Claire");
         isCameraClose = false;
         objectMenu.GetComponent<Collider>().enabled = true;
         playButton.gameObject.SetActive(true); 
