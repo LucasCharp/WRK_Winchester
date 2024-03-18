@@ -6,6 +6,7 @@ public class Toilet : MonoBehaviour
     public bool isOccupied = false;
     public bool isDirty = false;
     private int cleaningClicksRequired;
+    public GameManager gameManager;
 
     // Méthode appelée lorsque le toilette est utilisé
     public void UseToilet()
@@ -45,6 +46,7 @@ public class Toilet : MonoBehaviour
             {
                 isDirty = false; // Le toilette est maintenant propre
                 Debug.Log("Le toilette est propre !");
+                gameManager.AugmenterScore(30);
             }
             else
             {

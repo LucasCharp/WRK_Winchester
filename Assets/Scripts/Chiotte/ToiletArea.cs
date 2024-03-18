@@ -4,6 +4,7 @@ public class ToiletArea : MonoBehaviour
 {
     public Toilet[] toilets; // Tableau des toilettes dans la zone
     public GameObject[] npcs; // Tableau des PNJ qui peuvent utiliser les toilettes
+    public MoneyManager moneyManager;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -29,6 +30,8 @@ public class ToiletArea : MonoBehaviour
                 Toilet availableToilet = GetAvailableToilet();
                 if (availableToilet != null)
                 {
+                    moneyManager.moneyChange = (5);
+                    moneyManager.OnMoneyChange();
                     // Utiliser le toilette
                     availableToilet.UseToilet();
                     Debug.Log("toilette use");

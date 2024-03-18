@@ -7029,6 +7029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOccupied: 0
   isDirty: 0
+  gameManager: {fileID: 0}
 --- !u!65 &341868279
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12817,6 +12818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOccupied: 0
   isDirty: 0
+  gameManager: {fileID: 0}
 --- !u!65 &674252052
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21881,6 +21883,7 @@ MonoBehaviour:
   - {fileID: 341868278}
   npcs:
   - {fileID: 1411403775}
+  moneyManager: {fileID: 0}
 --- !u!1 &1216947785
 GameObject:
   m_ObjectHideFlags: 0
@@ -23772,6 +23775,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6255851109028482921, guid: 4a484d4f7306ed24ea4d88456b375c3c,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4920625407595641206, guid: 4a484d4f7306ed24ea4d88456b375c3c,
         type: 3}
       propertyPath: m_Name
@@ -23782,6 +23790,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: PNJ
       objectReference: {fileID: 0}
+    - target: {fileID: 5552207178980883293, guid: 4a484d4f7306ed24ea4d88456b375c3c,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
     - target: {fileID: 5693185516758868940, guid: 4a484d4f7306ed24ea4d88456b375c3c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25388,6 +25401,7 @@ MonoBehaviour:
   cameraCollider: {fileID: 0}
   jukeboxManager: {fileID: 0}
   electricityManager: {fileID: 0}
+  ambianceManager: {fileID: 0}
   barLevel: 0
   pauseMusic: {fileID: 0}
   pauseAmbience: {fileID: 0}
