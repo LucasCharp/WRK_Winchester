@@ -24,6 +24,8 @@ public class RandomNavMeshMovement : MonoBehaviour
     private Vector3 PubOpposite;
     bool hasManagedDoor = false;
 
+    public bool isDrunk = false;
+
     private GameObject[] doors;
 
     private void Awake()
@@ -107,7 +109,8 @@ public class RandomNavMeshMovement : MonoBehaviour
 
     void CheckCollisionWithOtherPNJs()
     {
-        if (animator.GetBool("isDancing") == false)
+        
+        if (animator.GetBool("isDancing") == false && animator.GetBool("isFighting") == false)
         {
             // Récupérer tous les PNJs avec le tag "PNJ"
             GameObject[] otherPNJs = GameObject.FindGameObjectsWithTag("PNJ");
@@ -117,6 +120,7 @@ public class RandomNavMeshMovement : MonoBehaviour
                 // Vérifier si c'est un autre PNJ et non le PNJ actuel
                 if (otherPNJ != gameObject)
                 {
+                    RandomNavMeshMovement scriptOtherPNJ = otherPNJ.GetComponent<RandomNavMeshMovement>();
                     // Obtenir le NavMeshAgent de l'autre PNJ
                     NavMeshAgent otherNavMeshAgent = otherPNJ.GetComponent<NavMeshAgent>();
 
@@ -129,9 +133,19 @@ public class RandomNavMeshMovement : MonoBehaviour
                     // Si les NavMeshAgents sont suffisamment proches
                     if (distance < triggerDistance)
                     {
-                        // Déclencher votre code ici
-                        animator.SetBool("isWalking", true);
-                        SetRandomDestination();
+                        if (isDrunk == false && animator.GetBool("isFighting") == false)
+                        {
+                            // Déclencher votre code ici
+                            animator.SetBool("isWalking", true);
+                            SetRandomDestination();
+                        }
+                        else
+                        {
+                            Fight();
+                            transform.LookAt(otherPNJ.transform.position);
+                            scriptOtherPNJ.Fight();
+                            otherPNJ.transform.LookAt(transform);
+                        }
                     }
                 }
             }
@@ -140,7 +154,7 @@ public class RandomNavMeshMovement : MonoBehaviour
 
     void SetRandomDestination()
     {
-        if (animator.GetBool("hasEnterPub") == true)
+        if (animator.GetBool("hasEnterPub") == true && animator.GetBool("isFighting") == false)
         {
             // Générer une destination aléatoire à l'intérieur du NavMesh
 
@@ -155,6 +169,7 @@ public class RandomNavMeshMovement : MonoBehaviour
                 randomDestination = hit.position;
 
                 // Définir la destination pour le NavMeshAgent
+                navMeshAgent.isStopped = false;
                 navMeshAgent.SetDestination(randomDestination);
             }
         }
@@ -244,5 +259,11 @@ public class RandomNavMeshMovement : MonoBehaviour
         {
             spawnManager.isFull = false;
         }
+    }
+
+    public void Fight()
+    {
+        navMeshAgent.isStopped = true;
+        animator.SetBool("isFighting", true);
     }
 }
