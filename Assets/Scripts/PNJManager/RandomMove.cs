@@ -133,7 +133,7 @@ public class RandomNavMeshMovement : MonoBehaviour
                     // Si les NavMeshAgents sont suffisamment proches
                     if (distance < triggerDistance)
                     {
-                        if (isDrunk == false && animator.GetBool("isFighting") == false)
+                        if (isDrunk == false)
                         {
                             // Déclencher votre code ici
                             animator.SetBool("isWalking", true);

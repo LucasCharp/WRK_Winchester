@@ -68,6 +68,7 @@ public class ElectricityManager : MonoBehaviour
     { 
         if (canStop == true)
         {
+            
             Debug.Log("Je suis le temps complet et j'éteins tout");
             foreach (GameObject lightObject in lightsToOff)
             {
@@ -79,7 +80,7 @@ public class ElectricityManager : MonoBehaviour
                 script.canRotate = false;
                 script.rotating = false;
             }
-            jukeboxManager.TogglePause();
+            jukeboxManager.gameObject.SetActive(false);
             electricityCut = true;
             ChangeColor[] colors = FindObjectsOfType<ChangeColor>();
             foreach (ChangeColor color in colors)
@@ -91,15 +92,14 @@ public class ElectricityManager : MonoBehaviour
             {
                 color.canChangeColor = false;
             }
+            
         }
     }
 
     private void LightsBackOn()
     {
-        if (jukeboxManager.isPlaying == false)
-        {
-            jukeboxManager.TogglePause();
-        }
+        
+            jukeboxManager.gameObject.SetActive(true);
         
         foreach (GameObject lightObject in lightsToOff)
         {

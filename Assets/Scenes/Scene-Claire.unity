@@ -6671,7 +6671,7 @@ MonoBehaviour:
   - {fileID: 609515748}
   - {fileID: 1896486592}
   boxCollider: {fileID: 432255532}
-  jukeboxManager: {fileID: 0}
+  jukeboxManager: {fileID: 1612696064}
 --- !u!65 &432255532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8679,7 +8679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 573777654}
   - component: {fileID: 573777656}
-  - component: {fileID: 573777655}
+  - component: {fileID: 573777657}
   m_Layer: 0
   m_Name: AmbienceManager
   m_TagString: Untagged
@@ -8702,22 +8702,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2136404877}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &573777655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573777653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c63033fdbea20dc46833d2a38aec32fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ambianceAudioSource: {fileID: 0}
-  sonsAmbiance: []
-  tempsEntreSonsMin: 10
-  tempsEntreSonsMax: 30
 --- !u!82 &573777656
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8815,6 +8799,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &573777657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573777653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb41724640b9b24e906eb468777ea63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ambianceAudioSource: {fileID: 573777656}
+  music: {fileID: 8300000, guid: 119895fd69f6bac41be5e7f71c239c96, type: 3}
 --- !u!1 &592610652
 GameObject:
   m_ObjectHideFlags: 0
@@ -19601,8 +19599,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b54a9bd3b08caf14882fe2646435f28d, type: 3}
   cameraRotation: {fileID: 113777587}
   cameraCollider: {fileID: 1592362476}
-  jukeboxManager: {fileID: 0}
+  jukeboxManager: {fileID: 1612696064}
   electricityManager: {fileID: 432255531}
+  ambianceManager: {fileID: 573777657}
   barLevel: 0
   pauseMusic: {fileID: 0}
   pauseAmbience: {fileID: 0}
@@ -24903,9 +24902,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 573777655}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: TogglePause
+      - m_Target: {fileID: 573777657}
+        m_TargetAssemblyTypeName: AmbianceUpgradeManager, Assembly-CSharp
+        m_MethodName: AutoDestroy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
