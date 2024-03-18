@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class JukeboxManager : MonoBehaviour
 {
-    public AudioClip[] audioTracks;
     public AudioClip[] afroAudioTracks;
     public AudioClip[] brazilAudioTracks;
     public AudioClip[] countryAudioTracks;
