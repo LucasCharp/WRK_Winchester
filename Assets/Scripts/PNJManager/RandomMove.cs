@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Windows;
 using UnityEngine.InputSystem.Controls;
+using UnityEngine.VFX;
 
 public class RandomNavMeshMovement : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class RandomNavMeshMovement : MonoBehaviour
     bool hasManagedDoor = false;
 
     public bool isDrunk = false;
+
+    public VisualEffect vfxPrefab;
+    public float yOffset = 1.0f;
 
     private GameObject[] doors;
 
@@ -145,6 +149,7 @@ public class RandomNavMeshMovement : MonoBehaviour
                             transform.LookAt(otherPNJ.transform.position);
                             scriptOtherPNJ.Fight();
                             otherPNJ.transform.LookAt(transform);
+
                         }
                     }
                 }
@@ -265,5 +270,16 @@ public class RandomNavMeshMovement : MonoBehaviour
     {
         navMeshAgent.isStopped = true;
         animator.SetBool("isFighting", true);
+        Smoke();
+    }
+
+    public void Smoke()
+    {
+        Vector3 spawnPosition = transform.position + Vector3.up * yOffset;
+
+        VisualEffect vfxInstance = Instantiate(vfxPrefab, spawnPosition, Quaternion.identity);
+
+        // Activer le VFX
+        vfxInstance.Play();
     }
 }

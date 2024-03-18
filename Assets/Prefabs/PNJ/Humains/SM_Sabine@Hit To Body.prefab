@@ -207,6 +207,8 @@ MonoBehaviour:
   queueLast: {x: -4.7, y: 0, z: 8}
   EndZonePosition: {x: 3.03, y: 1.86, z: 10}
   isDrunk: 0
+  vfxPrefab: {fileID: 5112664334339671290, guid: 9b33683b7729bac4ebf98ec1f11bcfd6,
+    type: 3}
 --- !u!114 &5551985900072822035
 MonoBehaviour:
   m_ObjectHideFlags: 0

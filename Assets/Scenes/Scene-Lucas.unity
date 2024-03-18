@@ -16926,6 +16926,7 @@ MonoBehaviour:
   cameraCollider: {fileID: 0}
   jukeboxManager: {fileID: 0}
   electricityManager: {fileID: 0}
+  ambianceManager: {fileID: 0}
   barLevel: 0
   pauseMusic: {fileID: 0}
   pauseAmbience: {fileID: 0}
