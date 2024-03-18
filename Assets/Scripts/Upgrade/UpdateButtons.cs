@@ -9,18 +9,21 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     public Button buttonRefill;
     public Button buttonBar;
     public Button buttonRetourBar;
+    public TextMeshProUGUI costBar;
 
     public Button buttonFloor;
     public Button buttonFloorRed;
     public Button buttonFloorBrown;
     public Button buttonFloorWhite;
     public Button buttonFloorRetour;
+    public TextMeshProUGUI costFloor;
 
     public Button buttonWall;
     public Button buttonWallRed;
     public Button buttonWallBrown;
     public Button buttonWallWhite;
     public Button buttonWallRetour;
+    public TextMeshProUGUI costWall;
 
     public Button buttonTable;
     public Button buttonTableRed;
@@ -28,6 +31,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     public Button buttonTableBlue;
     public Button buttonTableGreen;
     public Button buttonTableRetour;
+    public TextMeshProUGUI costTable;
 
     public Button buttonBanquette;
     public Button buttonBanqRed;
@@ -35,6 +39,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     public Button buttonBanqBlue;
     public Button buttonBanqGreen;
     public Button buttonBanqRetour;
+    public TextMeshProUGUI costBanq;
 
     public Button buttonChaise;
     public Button buttonChaiseRed;
@@ -42,6 +47,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     public Button buttonChaiseBlue;
     public Button buttonChaiseGreen;
     public Button buttonChaiseRetour;
+    public TextMeshProUGUI costChaise;
 
     public Button startButton;
 
@@ -100,40 +106,47 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         buttonRefill.gameObject.SetActive(false);
         buttonRetourBar.gameObject.SetActive(false);
+        costBar.gameObject.SetActive(false);
 
         buttonFloorRed.gameObject.SetActive(false);
         buttonFloorBrown.gameObject.SetActive(false);
         buttonFloorWhite.gameObject.SetActive(false);
         buttonFloorRetour.gameObject.SetActive(false);
+        costFloor.gameObject.SetActive(false);
 
         buttonWallRed.gameObject.SetActive(false);
         buttonWallBrown.gameObject.SetActive(false);
         buttonWallWhite.gameObject.SetActive(false);
         buttonWallRetour.gameObject.SetActive(false);
+        costWall.gameObject.SetActive(false);
 
         buttonTableRed.gameObject.SetActive(false);
         buttonTableYellow.gameObject.SetActive(false);
         buttonTableGreen.gameObject.SetActive(false);
         buttonTableBlue.gameObject.SetActive(false);
         buttonTableRetour.gameObject.SetActive(false);
+        costTable.gameObject.SetActive(false);
 
         buttonBanqRed.gameObject.SetActive(false);
         buttonBanqYellow.gameObject.SetActive(false);
         buttonBanqGreen.gameObject.SetActive(false);
         buttonBanqBlue.gameObject.SetActive(false);
         buttonBanqRetour.gameObject.SetActive(false);
+        costBanq.gameObject.SetActive(false);
 
         buttonChaiseRed.gameObject.SetActive(false);
         buttonChaiseYellow.gameObject.SetActive(false);
         buttonChaiseGreen.gameObject.SetActive(false);
         buttonChaiseBlue.gameObject.SetActive(false);
         buttonChaiseRetour.gameObject.SetActive(false);
+        costChaise.gameObject.SetActive(false);
     }
 
 
 
     public void OnBarCliqued()
     {
+        costBar.text = "£" + refillCost.ToString();
         SFXManager.instance.PlaySoundFXClip(son[0], transform, 1f);
 
         startButton.gameObject.SetActive(false);
@@ -182,6 +195,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 buttonBar.gameObject.SetActive(false);
                 buttonRefill.gameObject.SetActive(true);
                 buttonRetourBar.gameObject.SetActive(true);
+                costBar.gameObject.SetActive(true);
             }
             else if (!buttonBar.gameObject.activeSelf)
             {
@@ -220,7 +234,8 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 buttonTableGreen.gameObject.SetActive(true);
                 buttonTableBlue.gameObject.SetActive(true);
                 buttonTableRetour.gameObject.SetActive(true);
-                
+                costTable.gameObject.SetActive(true);
+
             }
             else if (!buttonTable.gameObject.activeSelf)
             {
@@ -246,6 +261,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 buttonBanqYellow.gameObject.SetActive(true);
                 buttonBanqBlue.gameObject.SetActive(true);
                 buttonBanqRetour.gameObject.SetActive(true);
+                costBanq.gameObject.SetActive(true);
                 buttonBanquette.gameObject.SetActive(false);
             }
              else if (!buttonBanquette.gameObject.activeSelf)
@@ -271,7 +287,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 buttonChaiseYellow.gameObject.SetActive(true);
                 buttonChaiseBlue.gameObject.SetActive(true);
                 buttonChaiseRetour.gameObject.SetActive(true);
-
+                costChaise.gameObject.SetActive(true);
                 buttonChaise.gameObject.SetActive(false);
             }
             else if (!buttonChaise.gameObject.activeSelf)
@@ -304,6 +320,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             buttonFloorBrown.gameObject.SetActive(false);
             buttonFloorWhite.gameObject.SetActive(false);
             buttonFloorRetour.gameObject.SetActive(false);
+            costFloor.gameObject.SetActive(false);
             buttonBar.gameObject.SetActive(true);
             buttonWall.gameObject.SetActive(true);
             buttonTable.gameObject.SetActive(true);
@@ -327,6 +344,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             buttonWallBrown.gameObject.SetActive(false);
             buttonWallWhite.gameObject.SetActive(false);
             buttonWallRetour.gameObject.SetActive(false);
+            costWall.gameObject.SetActive(false);
             wallCliqued = false;
             
         }
@@ -337,6 +355,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             buttonRefill.gameObject.SetActive(false);
             buttonRetourBar.gameObject.SetActive(false);
+            costBar.gameObject.SetActive(false);
         }
         if (banqCliqued == true)
         {
@@ -345,6 +364,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             buttonBanqYellow.gameObject.SetActive(false);
             buttonBanqBlue.gameObject.SetActive(false);
             buttonBanqRetour.gameObject.SetActive(false);
+            costBanq.gameObject.SetActive(false);
         }
         if (wallCliqued == true)
         {
@@ -367,6 +387,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             buttonTableGreen.gameObject.SetActive(false);
             buttonTableBlue.gameObject.SetActive(false);
             buttonTableRetour.gameObject.SetActive(false);
+            costTable.gameObject.SetActive(false);
 
         }
         if (chaiseCliqued)
@@ -376,6 +397,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             buttonChaiseYellow.gameObject.SetActive(false);
             buttonChaiseBlue.gameObject.SetActive(false);
             buttonChaiseRetour.gameObject.SetActive(false);
+            costChaise.gameObject.SetActive(false);
         }
     }
 
@@ -391,12 +413,13 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         else
         {
             SFXManager.instance.PlaySoundFXClip(son[3], transform, 1f);
+            costBar.gameObject.SetActive(false);
         }
     }
 
     public void OnFloorCliqued()
     {
-
+        costFloor.text = "£" + moneyCost.ToString();
         SFXManager.instance.PlaySoundFXClip(son[0], transform, 1f);
 
         floorCliqued = true;
@@ -406,6 +429,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         buttonFloorBrown.gameObject.SetActive(true);
         buttonFloorWhite.gameObject.SetActive(true);
         buttonFloorRetour.gameObject.SetActive(true);
+        costFloor.gameObject.SetActive(true);
 
         buttonTable.gameObject.SetActive(false);
         buttonBar.gameObject.SetActive(false);
@@ -517,6 +541,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnWallCliqued()
     {
+        costWall.text = "£" + moneyCost.ToString();
         SFXManager.instance.PlaySoundFXClip(son[0], transform, 1f);
 
         cameraRotation.canRotate = false;
@@ -531,6 +556,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         buttonWallBrown.gameObject.SetActive(true);
         buttonWallWhite.gameObject.SetActive(true);
         buttonWallRetour.gameObject.SetActive(true);
+        costWall.gameObject.SetActive(true);
         buttonChaise.gameObject.SetActive(false);
     }
 
@@ -648,6 +674,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnTableCliqued()
     {
+        costTable.text = "£" + moneyCost.ToString();
         SFXManager.instance.PlaySoundFXClip(son[0], transform, 1f);
 
         initialCameraPosition = mainCamera.transform.position; // récupère les valeurs de la caméra avant de la faire bouger pour la remettre en place à la fin
@@ -1241,6 +1268,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     }
     public void OnBanquetteCliqued()
     {
+        costBanq.text = "£" + moneyCost.ToString();
         initialCameraPosition = mainCamera.transform.position; // récupère les valeurs de la caméra avant de la faire bouger pour la remettre en place à la fin
         initialCameraRotation = mainCamera.transform.rotation;
 
@@ -1260,6 +1288,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnBarstoolCliqued()
     {
+        costChaise.text = "£" + moneyCost.ToString();
         initialCameraPosition = mainCamera.transform.position; // récupère les valeurs de la caméra avant de la faire bouger pour la remettre en place à la fin
         initialCameraRotation = mainCamera.transform.rotation;
 
