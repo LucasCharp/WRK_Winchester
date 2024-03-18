@@ -10,6 +10,7 @@ public class ToiletArea : MonoBehaviour
         // Vérifier si le PNJ entre dans la zone des toilettes
         if (IsNPC(other.gameObject))
         {
+            Debug.Log("il est entré");
             // Vérifier si au moins un toilette est disponible
             bool isAnyToiletAvailable = false;
             foreach (var toilet in toilets)
@@ -23,12 +24,14 @@ public class ToiletArea : MonoBehaviour
 
             if (isAnyToiletAvailable)
             {
+                Debug.Log("toilette avaible");
                 // Choisir un toilette disponible au hasard
                 Toilet availableToilet = GetAvailableToilet();
                 if (availableToilet != null)
                 {
                     // Utiliser le toilette
                     availableToilet.UseToilet();
+                    Debug.Log("toilette use");
                 }
             }
             else

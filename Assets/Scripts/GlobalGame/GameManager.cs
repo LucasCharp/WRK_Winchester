@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using UnityEditor.Timeline.Actions;
 
 public class GameManager : MonoBehaviour
 {

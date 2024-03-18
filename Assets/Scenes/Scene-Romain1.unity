@@ -6941,6 +6941,8 @@ GameObject:
   - component: {fileID: 341868277}
   - component: {fileID: 341868276}
   - component: {fileID: 341868278}
+  - component: {fileID: 341868280}
+  - component: {fileID: 341868279}
   m_Layer: 0
   m_Name: SM_Toilets (2)
   m_TagString: Untagged
@@ -7027,6 +7029,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOccupied: 0
   isDirty: 0
+--- !u!65 &341868279
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341868274}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.68638873, y: 0.9699957, z: 0.73310095}
+  m_Center: {x: 0.01666812, y: 0, z: -0.00000047683713}
+--- !u!54 &341868280
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341868274}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &344134247
 GameObject:
   m_ObjectHideFlags: 0
@@ -7604,7 +7654,6 @@ GameObject:
   - component: {fileID: 369080031}
   - component: {fileID: 369080037}
   - component: {fileID: 369080036}
-  - component: {fileID: 369080038}
   - component: {fileID: 369080035}
   - component: {fileID: 369080034}
   - component: {fileID: 369080032}
@@ -7672,7 +7721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commande: 
   gameManager: {fileID: 1973657576}
-  moneyManager: {fileID: 0}
+  moneyManager: {fileID: 1954402524}
 --- !u!114 &369080035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7741,26 +7790,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &369080038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 369080030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad518085e58b7f40b22b29d4c65523a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minMoveDelay: 1
-  maxMoveDelay: 3
-  placeInQueue: 0
-  queueStart: {x: 0, y: 0, z: 0}
-  queueSecond: {x: 0, y: 0, z: 0}
-  queueThird: {x: 0, y: 0, z: 0}
-  queueLast: {x: 0, y: 0, z: 0}
-  EndZonePosition: {x: 0, y: 0, z: 0}
 --- !u!23 &369153773 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 3161077239877590983, guid: bdee36b3a92336b4baf705269272d3cf,
@@ -8588,11 +8617,32 @@ MonoBehaviour:
   - {fileID: 648065966}
   - {fileID: 169210509}
   - {fileID: 182228545}
-  mainSceneManager: {fileID: 0}
-  moneyManager: {fileID: 0}
+  mainSceneManager: {fileID: 1396442795}
+  moneyManager: {fileID: 1954402524}
   redLights: []
-  boxCollider: {fileID: 0}
-  jukeboxManager: {fileID: 0}
+  boxCollider: {fileID: 432255534}
+  jukeboxManager: {fileID: 1388226016}
+--- !u!65 &432255534
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432255527}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1961927, y: 0.63660645, z: 1.3550454}
+  m_Center: {x: -0.007902145, y: 0.064341694, z: -0.0038385391}
 --- !u!1 &432749820
 GameObject:
   m_ObjectHideFlags: 0
@@ -12679,6 +12729,8 @@ GameObject:
   - component: {fileID: 674252050}
   - component: {fileID: 674252049}
   - component: {fileID: 674252051}
+  - component: {fileID: 674252053}
+  - component: {fileID: 674252052}
   m_Layer: 0
   m_Name: SM_Toilets
   m_TagString: Untagged
@@ -12765,6 +12817,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOccupied: 0
   isDirty: 0
+--- !u!65 &674252052
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674252047}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.71702, y: 0.9699957, z: 0.73310095}
+  m_Center: {x: 0.036253095, y: 0, z: 1.8066244e-16}
+--- !u!54 &674252053
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674252047}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &682057053
 GameObject:
   m_ObjectHideFlags: 0
@@ -19368,7 +19468,6 @@ GameObject:
   - component: {fileID: 1091422076}
   - component: {fileID: 1091422082}
   - component: {fileID: 1091422081}
-  - component: {fileID: 1091422083}
   - component: {fileID: 1091422080}
   - component: {fileID: 1091422079}
   - component: {fileID: 1091422077}
@@ -19436,7 +19535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commande: 
   gameManager: {fileID: 1973657576}
-  moneyManager: {fileID: 0}
+  moneyManager: {fileID: 1954402524}
 --- !u!114 &1091422080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19505,26 +19604,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1091422083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091422075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad518085e58b7f40b22b29d4c65523a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minMoveDelay: 1
-  maxMoveDelay: 3
-  placeInQueue: 0
-  queueStart: {x: 0, y: 0, z: 0}
-  queueSecond: {x: 0, y: 0, z: 0}
-  queueThird: {x: 0, y: 0, z: 0}
-  queueLast: {x: 0, y: 0, z: 0}
-  EndZonePosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1096113336
 GameObject:
   m_ObjectHideFlags: 0
@@ -21726,8 +21805,8 @@ GameObject:
   - component: {fileID: 1214608783}
   - component: {fileID: 1214608785}
   m_Layer: 0
-  m_Name: BoxBar (1)
-  m_TagString: BarmanZone
+  m_Name: BoxChiotte
+  m_TagString: ChiotteZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -21800,7 +21879,8 @@ MonoBehaviour:
   toilets:
   - {fileID: 674252051}
   - {fileID: 341868278}
-  npcs: []
+  npcs:
+  - {fileID: 1411403775}
 --- !u!1 &1216947785
 GameObject:
   m_ObjectHideFlags: 0
@@ -25588,9 +25668,7 @@ GameObject:
   - component: {fileID: 1411403776}
   - component: {fileID: 1411403782}
   - component: {fileID: 1411403781}
-  - component: {fileID: 1411403783}
   - component: {fileID: 1411403780}
-  - component: {fileID: 1411403779}
   - component: {fileID: 1411403777}
   m_Layer: 0
   m_Name: PNJ1
@@ -25608,7 +25686,7 @@ Transform:
   m_GameObject: {fileID: 1411403775}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.3, y: 0, z: 29.76}
+  m_LocalPosition: {x: -20.75, y: 0, z: 37.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25642,21 +25720,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1411403779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1411403775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ec5cad7550faca4ba50d48e83bd2f32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  commande: 
-  gameManager: {fileID: 1973657576}
-  moneyManager: {fileID: 0}
 --- !u!114 &1411403780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25725,26 +25788,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1411403783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1411403775}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad518085e58b7f40b22b29d4c65523a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minMoveDelay: 1
-  maxMoveDelay: 3
-  placeInQueue: 0
-  queueStart: {x: 0, y: 0, z: 0}
-  queueSecond: {x: 0, y: 0, z: 0}
-  queueThird: {x: 0, y: 0, z: 0}
-  queueLast: {x: 0, y: 0, z: 0}
-  EndZonePosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1427782365
 GameObject:
   m_ObjectHideFlags: 0
@@ -28731,7 +28774,7 @@ MonoBehaviour:
   toilettesRenderer:
   - {fileID: 1119492283}
   visibleUI: 
-  mainSceneManager: {fileID: 0}
+  mainSceneManager: {fileID: 1396442795}
   djBox: {fileID: 1584782962}
   barBox: {fileID: 724070584}
   videurBox: {fileID: 485040210}
@@ -39880,6 +39923,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 432255531}
+    - targetCorrespondingSourceObject: {fileID: 3672239972011735990, guid: 6adc7446f84b8c7419c6ec5050d593a5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 432255534}
   m_SourcePrefab: {fileID: 100100000, guid: 6adc7446f84b8c7419c6ec5050d593a5, type: 3}
 --- !u!1001 &2009969283228960006
 PrefabInstance:
@@ -40037,6 +40084,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1559160186}
     m_Modifications:
+    - target: {fileID: 6564169756870584295, guid: 3788eba26bd7a7a4aa531bb9b2a702eb,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.7124961
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564169756870584295, guid: 3788eba26bd7a7a4aa531bb9b2a702eb,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.143752
+      objectReference: {fileID: 0}
     - target: {fileID: 8266367399452085807, guid: 3788eba26bd7a7a4aa531bb9b2a702eb,
         type: 3}
       propertyPath: m_LocalPosition.x

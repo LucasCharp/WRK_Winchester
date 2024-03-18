@@ -14,6 +14,7 @@ public class Toilet : MonoBehaviour
         {
             isOccupied = true;
             StartCoroutine(UseToiletRoutine());
+            Debug.Log("maintenant il  chie");
         }
     }
 
@@ -23,11 +24,19 @@ public class Toilet : MonoBehaviour
         yield return new WaitForSeconds(6f); // Attendre 6 secondes
         isOccupied = false; // Le PNJ quitte le toilette
         isDirty = true; // Le toilette devient sale après utilisation
+        StartCleaning();
+        Debug.Log("la il à bien fait caca");
+    }
+
+    private void OnMouseDown()
+    {
+        CleanToilet();
     }
 
     // Méthode appelée lorsqu'on tente de nettoyer le toilette
     public void CleanToilet()
     {
+        Debug.Log("tu as lancé un clean");
         if (isDirty)
         {
             // Réduire le nombre de clics nécessaires pour le nettoyage

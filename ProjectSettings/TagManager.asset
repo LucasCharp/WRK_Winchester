@@ -22,6 +22,7 @@ TagManager:
   - Btn
   - Zombie
   - Humain
+  - ChiotteZone
   layers:
   - Default
   - TransparentFX
