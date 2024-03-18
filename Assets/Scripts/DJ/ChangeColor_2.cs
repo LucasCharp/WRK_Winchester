@@ -66,7 +66,7 @@ public class ChangeColor_2 : MonoBehaviour
     {
         if (canChangeColor == true)
         {
-            Debug.Log("Je change la couleur");
+            //Debug.Log("Je change la couleur");
             Color color = new Color();
             ColorUtility.TryParseHtmlString(hex, out color);
             return color;
