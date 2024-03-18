@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
@@ -9,14 +10,23 @@ public class SpawnManager : MonoBehaviour
     public float numberOfPeopleInQueue;
     public int maxQueueSize = 5;
     public bool isFull = false;
+    public GameObject Main;
+    public bool spawnerHasStart = false;
 
     void Start()
     {
-        InvokeRepeating("SpawnRandomPNJ", 8f, spawnInterval);
+
     }
 
     private void Update()
     {
+        MainSceneManager mainScene = Main.GetComponent<MainSceneManager>();
+        if (mainScene.startGame == true && spawnerHasStart == false)
+        {
+            InvokeRepeating("SpawnRandomPNJ", 8f, spawnInterval);
+            spawnerHasStart = true;
+        }
+
         if (numberOfPeopleInQueue == maxQueueSize)
         {
             isFull = true;

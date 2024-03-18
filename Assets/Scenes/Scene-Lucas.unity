@@ -18231,34 +18231,40 @@ MonoBehaviour:
   buttonRefill: {fileID: 2019324576}
   buttonBar: {fileID: 1584313772}
   buttonRetourBar: {fileID: 1267291258}
+  costBar: {fileID: 0}
   buttonFloor: {fileID: 1858058255}
   buttonFloorRed: {fileID: 144035874}
   buttonFloorBrown: {fileID: 728224442}
   buttonFloorWhite: {fileID: 235238083}
   buttonFloorRetour: {fileID: 1172600073}
+  costFloor: {fileID: 0}
   buttonWall: {fileID: 23348899}
   buttonWallRed: {fileID: 2056965234}
   buttonWallBrown: {fileID: 1321254232}
   buttonWallWhite: {fileID: 523988966}
   buttonWallRetour: {fileID: 1305860335}
+  costWall: {fileID: 0}
   buttonTable: {fileID: 1836551087}
   buttonTableRed: {fileID: 1799475384}
   buttonTableYellow: {fileID: 592610653}
   buttonTableBlue: {fileID: 987974707}
   buttonTableGreen: {fileID: 12639768}
   buttonTableRetour: {fileID: 315310620}
+  costTable: {fileID: 0}
   buttonBanquette: {fileID: 1797146325}
   buttonBanqRed: {fileID: 465845175}
   buttonBanqYellow: {fileID: 178456387}
   buttonBanqBlue: {fileID: 2051042698}
   buttonBanqGreen: {fileID: 361538767}
   buttonBanqRetour: {fileID: 2045576060}
+  costBanq: {fileID: 0}
   buttonChaise: {fileID: 1994444390}
   buttonChaiseRed: {fileID: 2011371551}
   buttonChaiseYellow: {fileID: 1784733118}
   buttonChaiseBlue: {fileID: 2102286724}
   buttonChaiseGreen: {fileID: 546579150}
   buttonChaiseRetour: {fileID: 1173032620}
+  costChaise: {fileID: 0}
   startButton: {fileID: 0}
   redColor: {r: 0.509434, g: 0.12591669, b: 0.12591669, a: 0}
   brownColor: {r: 0.42352945, g: 0.2509804, b: 0, a: 0}
@@ -25398,6 +25404,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 521194298473265333, guid: 19dd3b2a1eaa4f8489969f5963f403b6,
+        type: 3}
+      propertyPath: Main
+      value: 
+      objectReference: {fileID: 1396442794}
     - target: {fileID: 521194298473265333, guid: 19dd3b2a1eaa4f8489969f5963f403b6,
         type: 3}
       propertyPath: queueManager
