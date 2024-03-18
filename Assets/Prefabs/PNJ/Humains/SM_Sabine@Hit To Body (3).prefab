@@ -397,7 +397,7 @@ SkinnedMeshRenderer:
   m_RootBone: {fileID: 7881982867323917708}
   m_AABB:
     m_Center: {x: -0.14633876, y: 0.17388552, z: 0.12327099}
-    m_Extent: {x: 1.0358262, y: 1.8696959, z: 0.73910975}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_DirtyAABB: 0
 --- !u!1 &1470954477957575268
 GameObject:
@@ -646,7 +646,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3007708032907955449}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.047329202, y: 0.92700934, z: 0.01603629, w: 0.37169415}
+  m_LocalRotation: {x: -0.0447201, y: 0.389106, z: -0.022300871, w: 0.9198366}
   m_LocalPosition: {x: -0.0007853165, y: 1.4382293, z: -0.018687708}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -655,7 +655,7 @@ Transform:
   - {fileID: 6334308984940208819}
   - {fileID: 7569025398491899423}
   m_Father: {fileID: 2392044055098881304}
-  m_LocalEulerAnglesHint: {x: -3.722, y: 136.444, z: -4.358}
+  m_LocalEulerAnglesHint: {x: -3.722, y: 46, z: -4.358}
 --- !u!1 &3060741065757732770
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,7 +687,7 @@ Transform:
   m_GameObject: {fileID: 3060741065757732770}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0310646, y: 0.08950901, z: 8.993441}
+  m_LocalPosition: {x: -2.5781727, y: 0.08950949, z: 9.74664}
   m_LocalScale: {x: 0.5934484, y: 0.59344, z: 0.59344}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -764,6 +764,7 @@ MonoBehaviour:
   queueThird: {x: -3.3, y: 0, z: 8}
   queueLast: {x: -4.7, y: 0, z: 8}
   EndZonePosition: {x: 3.03, y: 1.86, z: 10}
+  isDrunk: 0
 --- !u!114 &4701262454234663767
 MonoBehaviour:
   m_ObjectHideFlags: 0
