@@ -96,10 +96,8 @@ public class ElectricityManager : MonoBehaviour
 
     private void LightsBackOn()
     {
-        if (jukeboxManager.isPlaying == false)
-        {
-            jukeboxManager.TogglePause();
-        }
+        
+            jukeboxManager.gameObject.SetActive(true);
         
         foreach (GameObject lightObject in lightsToOff)
         {

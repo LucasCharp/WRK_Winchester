@@ -20,6 +20,7 @@ public class MainSceneManager : MonoBehaviour
     public CameraColliderDetection cameraCollider;
     public JukeboxManager jukeboxManager;
     public ElectricityManager electricityManager;
+    public AmbianceUpgradeManager ambianceManager;
 
     public int barLevel = 0;
     private bool isPaused;
@@ -92,6 +93,7 @@ public class MainSceneManager : MonoBehaviour
 
     public void OnPauseCliqued()
     {
+        Debug.Log("PAuse");
         if (isPaused == false)
         {
             SFXManager.instance.PlaySoundFXClip(son[2], transform, 1f);
@@ -103,6 +105,9 @@ public class MainSceneManager : MonoBehaviour
             if (startGame == false)
             {
                 startCanvas.gameObject.SetActive(false);
+                
+                ambianceManager.TogglePause();
+
             }
             pauseCanvas.gameObject.SetActive(true);
             Time.timeScale = 0f;
@@ -134,6 +139,7 @@ public class MainSceneManager : MonoBehaviour
             if (startGame == false)
             {
                 startCanvas.gameObject.SetActive(true);
+                ambianceManager.TogglePause();
             }
             pauseCanvas.gameObject.SetActive(false);
             Time.timeScale = 1f;

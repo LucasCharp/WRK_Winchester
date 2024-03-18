@@ -10,4 +10,6 @@ public class BoutonBoisson : MonoBehaviour
         barmanController.ServirBoisson(nomBoisson);
         Debug.Log("J'ai cliqué");
     }
+
+    
 }

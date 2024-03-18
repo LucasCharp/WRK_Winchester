@@ -49,4 +49,9 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+
+    public void AutoDestroy()
+    { 
+        gameObject.SetActive(false);
+    }
 }
