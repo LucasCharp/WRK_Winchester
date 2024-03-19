@@ -19,7 +19,7 @@ public class MusicGenrePointCollector : MonoBehaviour
             if (!pnjCounters.ContainsKey(PNJ))
             {
                 pnjCounters.Add(PNJ, musicCounter);
-                var totalPoints = CalculateTotalPoints();
+                UpdateGenreAnalyzer();
             }
         }
     }
@@ -30,12 +30,20 @@ public class MusicGenrePointCollector : MonoBehaviour
         if (pnjCounters.ContainsKey(PNJ))
         {
             pnjCounters.Remove(PNJ);
-            var totalPoints = CalculateTotalPoints();
+            UpdateGenreAnalyzer();
         }
+    }
+
+    void UpdateGenreAnalyzer()
+    {
+        Dictionary<string, int> totalPoints = CalculateTotalPoints();
+        scriptAffiche.DisplayResult(totalPoints);
+        scriptAffiche.reloadFavoriteGenres(totalPoints);
     }
 
     public Dictionary<string, int> CalculateTotalPoints()
     {
+        Debug.Log("je calcule");
         Dictionary<string, int> totalPoints = new Dictionary<string, int>();
 
         // Ajouter les nouveaux genres musicaux

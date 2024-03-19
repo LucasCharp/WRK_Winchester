@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 
 public class MusicGenreAnalyzer : MonoBehaviour
 {
@@ -21,24 +20,34 @@ public class MusicGenreAnalyzer : MonoBehaviour
         }
 
         Dictionary<string, int> totalPoints = pointCollector.CalculateTotalPoints();
-        reloadFavoriteGenres(totalPoints);
+        if (favoriteGenres == null || favoriteGenres.Count == 0) // Ajout d'une vérification pour ne mettre à jour les genres préférés qu'une seule fois
+        {
+            reloadFavoriteGenres(totalPoints);
+        }
 
         DisplayResult(totalPoints);
     }
 
     public void reloadFavoriteGenres(Dictionary<string, int> totalPoints)
     {
-        favoriteGenres = new List<string>();
+        maxPoints = 0; // Réinitialiser maxPoints
 
+        // Trouver le nombre maximal de points
         foreach (KeyValuePair<string, int> pair in totalPoints)
         {
             if (pair.Value > maxPoints)
             {
                 maxPoints = pair.Value;
-                favoriteGenres.Clear();
-                favoriteGenres.Add(pair.Key);
             }
-            else if (pair.Value == maxPoints)
+        }
+
+        // Réinitialiser la liste des genres préférés
+        favoriteGenres = new List<string>();
+
+        // Ajouter tous les genres ayant le nombre maximal de points à la liste des genres préférés
+        foreach (KeyValuePair<string, int> pair in totalPoints)
+        {
+            if (pair.Value == maxPoints)
             {
                 favoriteGenres.Add(pair.Key);
             }
@@ -49,8 +58,10 @@ public class MusicGenreAnalyzer : MonoBehaviour
         return favoriteGenres;
     }
 
-    void DisplayResult(Dictionary<string, int> totalPoints)
+    public void DisplayResult(Dictionary<string, int> totalPoints)
     {
+        resultString = "Résultats :\n\n"; // Réinitialiser la chaîne de résultat
+
         foreach (KeyValuePair<string, int> pair in totalPoints)
         {
             resultString += pair.Key + " : " + pair.Value + " points\n";

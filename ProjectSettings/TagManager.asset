@@ -23,6 +23,7 @@ TagManager:
   - Zombie
   - Humain
   - ChiotteZone
+  - DanceFloor
   layers:
   - Default
   - TransparentFX
