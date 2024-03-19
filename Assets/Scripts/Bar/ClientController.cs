@@ -33,7 +33,6 @@ public class ClientController : MonoBehaviour
     public void QuitterZoneBarman()
     {
         satisfait = true;
-        Destroy(gameObject);
     }
 
     private void OnTriggerExit(Collider other)
@@ -42,7 +41,6 @@ public class ClientController : MonoBehaviour
         {
             inBarZone = false;
             satisfait = true;
-            Destroy(gameObject);
         }
     }
 
@@ -50,7 +48,7 @@ public class ClientController : MonoBehaviour
     {
         if (!commandeFulfilled)
         {
-            string[] boissons = { "t'es qui la", "vaux 2 k", "Rome", "Mot riz tôt", "abe-sainte" };
+            string[] boissons = { "Bière", "Vin", "Champagne", "Cognac", "Absynthe" };
             commande = boissons[Random.Range(0, boissons.Length)];
             Debug.Log("Commande reçue : " + commande);
             tempsInitial = Time.time; // Stocker le temps initial
@@ -78,8 +76,6 @@ public class ClientController : MonoBehaviour
         {
             if (reponse)
             {
-                moneyManager.moneyChange = drinkCost;
-                moneyManager.OnMoneyChange();
                 float duree = Time.time - tempsInitial; // Calculer la durée écoulée
                 float TimePoint = 40 - (Time.time - tempsInitial);
                 Debug.Log(TimePoint + " s restante");
@@ -87,6 +83,8 @@ public class ClientController : MonoBehaviour
                 int scoreGagne = 10 * (multiplicateur + 1); // Calculer le score gagné en fonction du multiplicateur
                 gameManager.AugmenterScore(scoreGagne); // Accéder à la méthode AugmenterScore à partir de l'instance de GameManager
                 Debug.Log("Merci ! Score gagné : ");
+                moneyManager.moneyChange = drinkCost;
+                moneyManager.OnMoneyChange();
             }
             else
             {

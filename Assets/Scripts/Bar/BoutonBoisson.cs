@@ -8,8 +8,5 @@ public class BoutonBoisson : MonoBehaviour
     public void ServirBoisson()
     {
         barmanController.ServirBoisson(nomBoisson);
-        Debug.Log("J'ai cliqué");
     }
-
-    
 }

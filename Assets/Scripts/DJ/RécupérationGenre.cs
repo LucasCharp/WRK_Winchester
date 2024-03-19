@@ -43,7 +43,7 @@ public class MusicGenrePointCollector : MonoBehaviour
 
     public Dictionary<string, int> CalculateTotalPoints()
     {
-        Debug.Log("je calcule");
+        //Debug.Log("je calcule");
         Dictionary<string, int> totalPoints = new Dictionary<string, int>();
 
         // Ajouter les nouveaux genres musicaux

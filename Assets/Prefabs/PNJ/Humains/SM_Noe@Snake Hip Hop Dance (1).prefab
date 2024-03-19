@@ -238,6 +238,7 @@ GameObject:
   - component: {fileID: 5716653625748506893}
   - component: {fileID: 3523405670327079882}
   - component: {fileID: 8203253194312583239}
+  - component: {fileID: -297228524941563623}
   - component: {fileID: 6113957866386739739}
   - component: {fileID: 165843431710119046}
   - component: {fileID: 7966689408902722830}
@@ -337,6 +338,22 @@ MonoBehaviour:
   isDrunk: 0
   vfxPrefab: {fileID: 5112664334339671290, guid: 9b33683b7729bac4ebf98ec1f11bcfd6,
     type: 3}
+  yOffset: 1
+--- !u!114 &-297228524941563623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2282162213019212693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec5cad7550faca4ba50d48e83bd2f32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commande: 
+  gameManager: {fileID: 0}
+  moneyManager: {fileID: 0}
 --- !u!114 &6113957866386739739
 MonoBehaviour:
   m_ObjectHideFlags: 0

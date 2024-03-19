@@ -107,6 +107,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b129d7aff4077634cb12fa1368f34447,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: 7204805852163571073}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b129d7aff4077634cb12fa1368f34447,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: -3590604345987912951}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b129d7aff4077634cb12fa1368f34447,
         type: 3}
@@ -193,6 +197,21 @@ MonoBehaviour:
   discoCounter: 0
   brasilCounter: 0
   metalCounter: 0
+--- !u!114 &7204805852163571073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889961989268698565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec5cad7550faca4ba50d48e83bd2f32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commande: 
+  gameManager: {fileID: 0}
+  moneyManager: {fileID: 0}
 --- !u!54 &-3590604345987912951
 Rigidbody:
   m_ObjectHideFlags: 0

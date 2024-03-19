@@ -1474,9 +1474,10 @@ GameObject:
   - component: {fileID: 92203403}
   - component: {fileID: 92203406}
   - component: {fileID: 92203405}
+  - component: {fileID: 92203407}
   - component: {fileID: 92203404}
   m_Layer: 5
-  m_Name: Btn_Absynthe
+  m_Name: Absynthe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1545,7 +1546,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 943741352}
+      - m_Target: {fileID: 92203407}
         m_TargetAssemblyTypeName: BoutonBoisson, Assembly-CSharp
         m_MethodName: ServirBoisson
         m_Mode: 1
@@ -1595,6 +1596,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92203402}
   m_CullTransparentMesh: 1
+--- !u!114 &92203407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92203402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab70a17395490c74fb57ddb73b56a7f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nomBoisson: Absynthe
+  barmanController: {fileID: 271344690}
 --- !u!1 &96258595
 GameObject:
   m_ObjectHideFlags: 0
@@ -5411,6 +5426,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 943741350}
   gameManager: {fileID: 529653008}
+  cameraRotation: {fileID: 0}
+  barBox: {fileID: 0}
 --- !u!114 &271344691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7022,9 +7039,10 @@ GameObject:
   - component: {fileID: 384083364}
   - component: {fileID: 384083367}
   - component: {fileID: 384083366}
+  - component: {fileID: 384083368}
   - component: {fileID: 384083365}
   m_Layer: 5
-  m_Name: Btn_Vin
+  m_Name: Vin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7093,7 +7111,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 943741352}
+      - m_Target: {fileID: 384083368}
         m_TargetAssemblyTypeName: BoutonBoisson, Assembly-CSharp
         m_MethodName: ServirBoisson
         m_Mode: 1
@@ -7143,6 +7161,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384083363}
   m_CullTransparentMesh: 1
+--- !u!114 &384083368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384083363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab70a17395490c74fb57ddb73b56a7f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nomBoisson: Vin
+  barmanController: {fileID: 271344690}
 --- !u!1 &395879294
 GameObject:
   m_ObjectHideFlags: 0
@@ -9885,7 +9917,7 @@ PrefabInstance:
     - target: {fileID: 521194298473265333, guid: 19dd3b2a1eaa4f8489969f5963f403b6,
         type: 3}
       propertyPath: spawnInterval
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 521194298473265333, guid: 19dd3b2a1eaa4f8489969f5963f403b6,
         type: 3}
@@ -15133,7 +15165,6 @@ GameObject:
   - component: {fileID: 943741355}
   - component: {fileID: 943741354}
   - component: {fileID: 943741353}
-  - component: {fileID: 943741352}
   m_Layer: 5
   m_Name: CanvasBar
   m_TagString: Untagged
@@ -15167,20 +15198,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &943741352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943741350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab70a17395490c74fb57ddb73b56a7f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nomBoisson: 
-  barmanController: {fileID: 0}
 --- !u!114 &943741353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22316,6 +22333,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4489184254222211845, guid: bd28318dde50eff48b0b3f0bd5c56089,
+        type: 3}
+      propertyPath: entryInterval
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25025,7 +25047,7 @@ BoxCollider:
     m_Bits: 32768
   m_LayerOverridePriority: 7
   m_IsTrigger: 1
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
@@ -26093,9 +26115,10 @@ GameObject:
   - component: {fileID: 1620794258}
   - component: {fileID: 1620794261}
   - component: {fileID: 1620794260}
+  - component: {fileID: 1620794262}
   - component: {fileID: 1620794259}
   m_Layer: 5
-  m_Name: Btn_Biere
+  m_Name: Biere
   m_TagString: Btn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26164,7 +26187,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 943741352}
+      - m_Target: {fileID: 1620794262}
         m_TargetAssemblyTypeName: BoutonBoisson, Assembly-CSharp
         m_MethodName: ServirBoisson
         m_Mode: 1
@@ -26214,6 +26237,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1620794257}
   m_CullTransparentMesh: 1
+--- !u!114 &1620794262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620794257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab70a17395490c74fb57ddb73b56a7f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nomBoisson: Biere
+  barmanController: {fileID: 271344690}
 --- !u!23 &1625213305 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 8949174538315143289, guid: 5da71a50c331bba4280f5266f72eeb1e,
@@ -26974,9 +27011,10 @@ GameObject:
   - component: {fileID: 1654947646}
   - component: {fileID: 1654947649}
   - component: {fileID: 1654947648}
+  - component: {fileID: 1654947650}
   - component: {fileID: 1654947647}
   m_Layer: 5
-  m_Name: Btn_Champagne
+  m_Name: Champagne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27045,7 +27083,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 943741352}
+      - m_Target: {fileID: 1654947650}
         m_TargetAssemblyTypeName: BoutonBoisson, Assembly-CSharp
         m_MethodName: ServirBoisson
         m_Mode: 1
@@ -27095,6 +27133,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1654947645}
   m_CullTransparentMesh: 1
+--- !u!114 &1654947650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654947645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab70a17395490c74fb57ddb73b56a7f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nomBoisson: Champagne
+  barmanController: {fileID: 271344690}
 --- !u!1 &1655654173
 GameObject:
   m_ObjectHideFlags: 0
@@ -28617,7 +28669,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729964588}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -33479,7 +33531,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2001891596}
   - component: {fileID: 2001891599}
-  - component: {fileID: 2001891598}
   - component: {fileID: 2001891600}
   m_Layer: 0
   m_Name: Barman
@@ -33508,27 +33559,6 @@ Transform:
   - {fileID: 80311783}
   m_Father: {fileID: 1855453885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2001891598
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001891595}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 10, y: 20, z: 10}
-  m_Center: {x: -0.5736929, y: 5.301435, z: -1.673001}
 --- !u!137 &2001891599
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -35900,9 +35930,10 @@ GameObject:
   - component: {fileID: 2137547741}
   - component: {fileID: 2137547744}
   - component: {fileID: 2137547743}
+  - component: {fileID: 2137547745}
   - component: {fileID: 2137547742}
   m_Layer: 5
-  m_Name: Btn_Cognac
+  m_Name: Cognac
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35971,7 +36002,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 943741352}
+      - m_Target: {fileID: 2137547745}
         m_TargetAssemblyTypeName: BoutonBoisson, Assembly-CSharp
         m_MethodName: ServirBoisson
         m_Mode: 1
@@ -36021,6 +36052,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137547740}
   m_CullTransparentMesh: 1
+--- !u!114 &2137547745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137547740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab70a17395490c74fb57ddb73b56a7f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nomBoisson: Cognac
+  barmanController: {fileID: 271344690}
 --- !u!1 &2139613112
 GameObject:
   m_ObjectHideFlags: 0

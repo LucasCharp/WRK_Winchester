@@ -38,6 +38,7 @@ public class MusicGenreAnalyzer : MonoBehaviour
             if (pair.Value > maxPoints)
             {
                 maxPoints = pair.Value;
+                //Debug.Log(maxPoints);
             }
         }
 

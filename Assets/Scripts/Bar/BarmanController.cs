@@ -6,18 +6,9 @@ public class BarmanController : MonoBehaviour
     public GameObject menuPanel;
     private Queue<ClientController> commandesEnAttente = new Queue<ClientController>();
     private ClientController commandePrioritaire;
-    public GameManager gameManager; // Assurez-vous de définir cette référence dans l'inspecteur Unity
-
-    public void Start()
-    {
-        menuPanel.SetActive(false);
-    }
-
-    public void OnMouseDown()
-    {
-        menuPanel.SetActive(true);
-        Debug.Log("Menu de boissons ouvert");
-    }
+    public GameManager gameManager; // Assurez-vous de définir cette référence dans l'inspecteur Unity-
+    public CameraRotation cameraRotation;
+    public GameObject barBox;
 
     public void AjouterCommande(ClientController client, string commande)
     {
@@ -60,7 +51,8 @@ public class BarmanController : MonoBehaviour
                 Debug.Log("Mauvaise réponse !");
             }
             // Modifier l'appel à LivrerBoisson pour passer un booléen
-            commandePrioritaire.LivrerBoisson(nomBoisson == commandePrioritaire.commande);
+        commandePrioritaire.LivrerBoisson(nomBoisson == commandePrioritaire.commande);
+            Debug.Log("ouiu");
         }
         else
         {
@@ -68,7 +60,10 @@ public class BarmanController : MonoBehaviour
         }
 
         // Fermer le menu de boissons
-        menuPanel.SetActive(false);
+        //menuPanel.SetActive(false);
+        //cameraRotation.canRotate = true;
+        //barBox.SetActive(true);
+
         if (commandePrioritaire != null)
             commandePrioritaire.QuitterZoneBarman();
         // Fait sortir le client de la zone du barman
