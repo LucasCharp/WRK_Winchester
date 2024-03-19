@@ -406,6 +406,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         if (moneyManager.moneyTotal >= refillCost && mainSceneManager.barLevel != 3)
         {
             SFXManager.instance.PlaySoundFXClip(son[0], transform, 1f);
+            SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
             moneyManager.moneyChange = -refillCost;
             moneyManager.OnMoneyChange();
             mainSceneManager.SetEtagere();
@@ -449,6 +450,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 moneyManager.OnMoneyChange();
 
                 purchasedButtons.Add("RedFloor");
+                SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
             }
             else
             {
@@ -482,6 +484,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 moneyManager.OnMoneyChange();
 
                 purchasedButtons.Add("BrownFloor");
+                SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
             }
             else
             {
@@ -514,6 +517,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 moneyManager.OnMoneyChange();
 
                 purchasedButtons.Add("WhiteFloor");
+                SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
             }
             else
             {
@@ -570,6 +574,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 moneyManager.OnMoneyChange();
 
                 purchasedButtons.Add("RedWall");
+                SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
             }
             else
             {
@@ -605,6 +610,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 moneyManager.OnMoneyChange();
 
                 purchasedButtons.Add("BrownWall");
+                SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
             }
             else
             {
@@ -641,6 +647,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                 moneyManager.OnMoneyChange();
 
                 purchasedButtons.Add("WhiteWall");
+                SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
             }
             else
             {
@@ -710,6 +717,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                     moneyManager.OnMoneyChange();
 
                     purchasedButtons.Add("RedTable");
+                    SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
                 }
                 else
                 {
@@ -757,6 +765,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                     moneyManager.OnMoneyChange();
 
                     purchasedButtons.Add("RedBanq");
+                    SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
                 }
                 else
                 {
@@ -803,6 +812,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                     moneyManager.OnMoneyChange();
 
                     purchasedButtons.Add("RedChaise");
+                    SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
                 }
                 else
                 {
@@ -899,6 +909,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                     moneyManager.OnMoneyChange();
 
                     purchasedButtons.Add("GreenBanq");
+                    SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
                 }
                 else
                 {
@@ -945,6 +956,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                     moneyManager.OnMoneyChange();
 
                     purchasedButtons.Add("GreenChaise");
+                    SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
                 }
                 else
                 {
@@ -995,6 +1007,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                     moneyManager.OnMoneyChange();
 
                     purchasedButtons.Add("YellowTable");
+                    SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
                 }
                 else
                 {
@@ -1041,6 +1054,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                     moneyManager.OnMoneyChange();
 
                     purchasedButtons.Add("YellowBanq");
+                    SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
                 }
                 else
                 {
@@ -1087,6 +1101,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                     moneyManager.OnMoneyChange();
 
                     purchasedButtons.Add("YellowChaise");
+                    SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
                 }
                 else
                 {
@@ -1137,6 +1152,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                     moneyManager.OnMoneyChange();
 
                     purchasedButtons.Add("BlueTable");
+                    SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
                 }
                 else
                 {
@@ -1183,6 +1199,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                     moneyManager.OnMoneyChange();
 
                     purchasedButtons.Add("BlueBanq");
+                    SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
                 }
                 else
                 {
@@ -1229,6 +1246,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
                     moneyManager.OnMoneyChange();
 
                     purchasedButtons.Add("BlueChaise");
+                    SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
                 }
                 else
                 {

@@ -49,6 +49,7 @@ public class ElectricityManager : MonoBehaviour
             }
             boxCollider.enabled = false;
             canStop = false;
+            SFXManager.instance.PlaySoundFXClip(sons[2], transform, 1f);
             LightsBackOn();
         }
     }

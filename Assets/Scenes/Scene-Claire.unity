@@ -6675,6 +6675,7 @@ MonoBehaviour:
   sons:
   - {fileID: 8300000, guid: 89feadd5b060b1d478bf6902e1078fc5, type: 3}
   - {fileID: 8300000, guid: eba9ba41c26bfcb44929213707fa58e7, type: 3}
+  - {fileID: 8300000, guid: 3ba0e76d501388d4482465ddc287c792, type: 3}
 --- !u!65 &432255532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21822,6 +21823,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1a2b0fe9850513e4e852326d128ce561, type: 3}
   - {fileID: 8300000, guid: b54a9bd3b08caf14882fe2646435f28d, type: 3}
   - {fileID: 8300000, guid: 132425f51ecd2e3459c2afe385dead66, type: 3}
+  - {fileID: 8300000, guid: 3ba0e76d501388d4482465ddc287c792, type: 3}
   purchasedButtons: []
 --- !u!114 &1572198028
 MonoBehaviour:
