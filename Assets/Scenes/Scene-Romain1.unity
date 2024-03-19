@@ -21883,7 +21883,7 @@ MonoBehaviour:
   - {fileID: 341868278}
   npcs:
   - {fileID: 1411403775}
-  moneyManager: {fileID: 0}
+  moneyManager: {fileID: 1954402524}
 --- !u!1 &1216947785
 GameObject:
   m_ObjectHideFlags: 0
@@ -25039,15 +25039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c51305d9a161343a71a9fe76974fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioTracks:
-  - {fileID: 8300000, guid: f138f761a9d605e44930512e0b0f19f0, type: 3}
-  - {fileID: 8300000, guid: ca1559ade56942949a366c51795b9c01, type: 3}
-  - {fileID: 8300000, guid: a2d47debac917234ea2b4d3d34dacbf7, type: 3}
-  - {fileID: 8300000, guid: fe2e629f05af79a4e8a1ae22df06b66e, type: 3}
-  - {fileID: 8300000, guid: b7c86213a0bc3c44192f266400682c9c, type: 3}
-  - {fileID: 8300000, guid: af977af9cb5669d48b83242666f0d675, type: 3}
-  - {fileID: 8300000, guid: a58dee9e0e6924144be0320b75ca78b2, type: 3}
-  - {fileID: 8300000, guid: 3011af99a6f0da24bb5ebf093d138582, type: 3}
   afroAudioTracks: []
   brazilAudioTracks: []
   countryAudioTracks: []
