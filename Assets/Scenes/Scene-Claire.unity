@@ -6580,7 +6580,7 @@ Transform:
   m_GameObject: {fileID: 429175008}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.000005900859, z: -0, w: -1}
-  m_LocalPosition: {x: 9.354868, y: 2.0273, z: -9.734535}
+  m_LocalPosition: {x: 9.35, y: 2.0273, z: -9.75}
   m_LocalScale: {x: 4.12042, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21775,6 +21775,14 @@ MonoBehaviour:
   - {fileID: 1026423817}
   - {fileID: 1221295086}
   - {fileID: 1036374858}
+  - {fileID: 80456776}
+  - {fileID: 1536845204}
+  - {fileID: 254060854}
+  - {fileID: 718457530}
+  - {fileID: 429175008}
+  - {fileID: 2061648763}
+  - {fileID: 1681407347}
+  - {fileID: 1739971122}
   banquettes:
   - {fileID: 2125396517}
   - {fileID: 61474533}
