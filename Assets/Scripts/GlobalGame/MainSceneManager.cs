@@ -84,10 +84,10 @@ public class MainSceneManager : MonoBehaviour
     public void OnStartCliqued()
     {
         SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
-
+        cameraRotation.canRotate = true;
         startGame = true;
 
-        startCanvas.gameObject.SetActive(false);
+        startCanvas.gameObject.SetActive(false) ;
         playCanvas.gameObject.SetActive(true);
     }
 

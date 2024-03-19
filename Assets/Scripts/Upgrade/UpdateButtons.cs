@@ -97,7 +97,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         if (mainSceneManager.startGame == true)
         {
-            upgradeCanvas.gameObject.SetActive(false);
+            Destroy(upgradeCanvas.gameObject);
         }
     }
 
