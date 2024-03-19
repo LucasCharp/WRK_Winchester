@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.AI.Navigation;
+
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Windows;
-using UnityEngine.InputSystem.Controls;
 using UnityEngine.VFX;
 
 public class RandomNavMeshMovement : MonoBehaviour
@@ -218,7 +214,6 @@ public class RandomNavMeshMovement : MonoBehaviour
     {
         GameObject spawner = GameObject.Find("Spawner");
         SpawnManager spawnManager = spawner.GetComponent<SpawnManager>();
-        Debug.Log("Il quitte la queue");
         animator.SetBool("isWalking", true);
         if (placeInQueue == 1)
         {

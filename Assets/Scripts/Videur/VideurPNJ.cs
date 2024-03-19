@@ -19,7 +19,6 @@ public class VideurPNJ : MonoBehaviour
     }
     void InvokeInQueue()
     {
-        print("je me lance");
         GameObject spawner = GameObject.Find("Spawner");
         SpawnManager spawnManager = spawner.GetComponent<SpawnManager>();
         if (spawnManager.numberOfPeopleInQueue > 0)
@@ -39,7 +38,6 @@ public class VideurPNJ : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("La référence au script RandomNavMeshMovement n'est pas définie dans le SpawnManager !");
                 }
             }
         }

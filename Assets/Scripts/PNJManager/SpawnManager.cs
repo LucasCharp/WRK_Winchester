@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
@@ -12,6 +9,7 @@ public class SpawnManager : MonoBehaviour
     public bool isFull = false;
     public GameObject Main;
     public bool spawnerHasStart = false;
+
 
     void Start()
     {

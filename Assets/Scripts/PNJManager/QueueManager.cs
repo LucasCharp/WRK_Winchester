@@ -28,7 +28,6 @@ public class QueueManager : MonoBehaviour
     {
         if (other.CompareTag("PNJ"))
         {
-            Debug.Log("Il quitte la queue");
             numberOfPeopleInQueue -= 1;
 
             // Réinitialisez la condition de file d'attente pleine

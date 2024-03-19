@@ -13,7 +13,6 @@ public class ButtonGenre : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(genreName);
         genreName = genreName.ToString();
         // Trouver la référence du MusicGenrePointCollector si elle n'est pas déjà définie
         if (pointCollector == null)

@@ -53,35 +53,27 @@ public class CharacterMusicCounter : MonoBehaviour
         {
             case 0:
                 afroCounter++;
-                Debug.Log("Un point ajouté au genre musical : Afro");
                 break;
             case 1:
                 drillCounter++;
-                Debug.Log("Un point ajouté au genre musical : Drill");
                 break;
             case 2:
                 jazzCounter++;
-                Debug.Log("Un point ajouté au genre musical : Jazz");
                 break;
             case 3:
                 countryCounter++;
-                Debug.Log("Un point ajouté au genre musical : Country");
                 break;
             case 4:
                 brasilCounter++;
-                Debug.Log("Un point ajouté au genre musical : Brasil");
                 break;
             case 5:
                 rockCounter++;
-                Debug.Log("Un point ajouté au genre musical : rock");
                 break;
             case 6:
                 discoCounter++;
-                Debug.Log("Un point ajouté au genre musical : Disco");
                 break;
             case 7:
                 metalCounter++;
-                Debug.Log("Un point ajouté au genre musical : Metal");
                 break;
             default:
                 Debug.LogWarning("Indice de genre musical invalide");
