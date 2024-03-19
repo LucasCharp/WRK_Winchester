@@ -83,6 +83,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Zelena@Zombie Punching (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b129d7aff4077634cb12fa1368f34447,
+        type: 3}
+      propertyPath: m_TagString
+      value: PNJ
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -111,6 +116,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1844084175574467430}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b129d7aff4077634cb12fa1368f34447,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1079128159873214887}
   m_SourcePrefab: {fileID: 100100000, guid: b129d7aff4077634cb12fa1368f34447, type: 3}
 --- !u!1 &6459621634646273567 stripped
 GameObject:
@@ -163,6 +172,7 @@ MonoBehaviour:
   isDrunk: 0
   vfxPrefab: {fileID: 5112664334339671290, guid: 9b33683b7729bac4ebf98ec1f11bcfd6,
     type: 3}
+  yOffset: 1
 --- !u!114 &-6181087450751726418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,3 +262,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-1079128159873214887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6459621634646273567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebdfdebebc0a81e4eb274ff1a9a7fa84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHuman: 0
+  isZombie: 1

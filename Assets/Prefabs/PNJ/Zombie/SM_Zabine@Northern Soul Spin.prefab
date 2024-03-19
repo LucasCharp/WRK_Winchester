@@ -81,7 +81,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 916c762f00d60554ca38002ed50a817c,
         type: 3}
       propertyPath: m_TagString
-      value: Zombie
+      value: PNJ
       objectReference: {fileID: 0}
     - target: {fileID: 1256301187135475344, guid: 916c762f00d60554ca38002ed50a817c,
         type: 3}
@@ -92,6 +92,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 916c762f00d60554ca38002ed50a817c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 856863779629660723}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 916c762f00d60554ca38002ed50a817c,
         type: 3}
       insertIndex: -1
@@ -116,6 +120,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: -6255851109028482921}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 916c762f00d60554ca38002ed50a817c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5290571480831577910}
   m_SourcePrefab: {fileID: 100100000, guid: 916c762f00d60554ca38002ed50a817c, type: 3}
 --- !u!1 &4920625407595641206 stripped
 GameObject:
@@ -123,6 +131,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5226703813946295335}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &856863779629660723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4920625407595641206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebdfdebebc0a81e4eb274ff1a9a7fa84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHuman: 0
+  isZombie: 1
 --- !u!195 &-5900201681355554201
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -168,6 +190,7 @@ MonoBehaviour:
   isDrunk: 0
   vfxPrefab: {fileID: 5112664334339671290, guid: 9b33683b7729bac4ebf98ec1f11bcfd6,
     type: 3}
+  yOffset: 1
 --- !u!114 &9178850039195727999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,3 +280,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-5290571480831577910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4920625407595641206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebdfdebebc0a81e4eb274ff1a9a7fa84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHuman: 0
+  isZombie: 0

@@ -18,7 +18,7 @@ public class RatioBar : MonoBehaviour
             PNJScript pnjScript = pnj.GetComponent<PNJScript>();
             if (pnjScript != null)
             {
-                if (pnjScript.isHuman)
+                if (pnjScript.isHuman  == true)
                 {
                     activeHumans++;
                 }
