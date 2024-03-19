@@ -19,8 +19,9 @@ public class RandomNavMeshMovement : MonoBehaviour
     private Animator animator;
     public Vector3 EndZonePosition;
     private Vector3 PubOpposite;
-    bool hasManagedDoor = false;
+    public int whatDance = 0;
 
+    bool hasManagedDoor = false;
     public bool isDrunk = false;
 
     public VisualEffect vfxPrefab;
@@ -34,10 +35,12 @@ public class RandomNavMeshMovement : MonoBehaviour
     }
 
     void Start()
-    {
+    {   
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        //SetRandomDestination();
+        whatDance = Random.Range(1, 6);
+        print(whatDance);
+        animator.SetInteger("Dances", whatDance);
         InQueue();
     }
 
