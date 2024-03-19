@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ElectricityManager : MonoBehaviour
 {
-    private int waitTime = 20;
+    private int waitTime = 10;
     private bool hasLaunched;
     private int cost = 200;
-    private int preventTime = 10;
+    private int preventTime = 5;
     private bool canStop = true;
+    private bool hasCutElectricity = false;
 
     public bool electricityCut = false;
     public GameObject[] lightsToOff;
@@ -17,6 +18,7 @@ public class ElectricityManager : MonoBehaviour
     public List<GameObject> redLights;
     public Collider boxCollider;
     public JukeboxManager jukeboxManager;
+    public AudioClip[] sons;
     
     private void Start()
     {
@@ -65,42 +67,50 @@ public class ElectricityManager : MonoBehaviour
     }
 
     private void StopElectricity() // vérifie si on peut éteindre les lumières, et si oui alors piouf on éteint tout
-    { 
-        if (canStop == true)
+    {
+        if(hasCutElectricity == false)
         {
-            
-            Debug.Log("Je suis le temps complet et j'éteins tout");
-            foreach (GameObject lightObject in lightsToOff)
+            Debug.Log("Je suis la coupure d'électricité");
+            if (canStop == true)
             {
-                lightObject.SetActive(false);
+                hasCutElectricity = true;
+                SFXManager.instance.PlaySoundFXClip(sons[1], transform, 1f);
+                Debug.Log("Je suis le temps complet et j'éteins tout");
+                foreach (GameObject lightObject in lightsToOff)
+                {
+                    lightObject.SetActive(false);
+                }
+                RotateLight[] scripts = FindObjectsOfType<RotateLight>();
+                foreach (RotateLight script in scripts)
+                {
+                    script.canRotate = false;
+                    script.rotating = false;
+                }
+                jukeboxManager.gameObject.SetActive(false);
+
+                electricityCut = true;
+                ChangeColor[] colors = FindObjectsOfType<ChangeColor>();
+                foreach (ChangeColor color in colors)
+                {
+                    color.canChangeColor = false;
+                }
+                ChangeColor_2[] colors_2 = FindObjectsOfType<ChangeColor_2>();
+                foreach (ChangeColor_2 color in colors_2)
+                {
+                    color.canChangeColor = false;
+                }
+
             }
-            RotateLight[] scripts = FindObjectsOfType<RotateLight>();
-            foreach (RotateLight script in scripts)
-            {
-                script.canRotate = false;
-                script.rotating = false;
-            }
-            jukeboxManager.gameObject.SetActive(false);
-            electricityCut = true;
-            ChangeColor[] colors = FindObjectsOfType<ChangeColor>();
-            foreach (ChangeColor color in colors)
-            {
-                color.canChangeColor = false;
-            }
-            ChangeColor_2[] colors_2 = FindObjectsOfType<ChangeColor_2>();
-            foreach (ChangeColor_2 color in colors_2)
-            {
-                color.canChangeColor = false;
-            }
-            
         }
+        
     }
 
     private void LightsBackOn()
     {
-        
-            jukeboxManager.gameObject.SetActive(true);
-        
+        hasCutElectricity = false;
+        jukeboxManager.gameObject.SetActive(true);
+        SFXManager.instance.PlaySoundFXClip(sons[0], transform, 1f);
+
         foreach (GameObject lightObject in lightsToOff)
         {
             lightObject.SetActive(true);
