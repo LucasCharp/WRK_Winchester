@@ -6672,6 +6672,9 @@ MonoBehaviour:
   - {fileID: 1896486592}
   boxCollider: {fileID: 432255532}
   jukeboxManager: {fileID: 1612696064}
+  sons:
+  - {fileID: 8300000, guid: 89feadd5b060b1d478bf6902e1078fc5, type: 3}
+  - {fileID: 8300000, guid: eba9ba41c26bfcb44929213707fa58e7, type: 3}
 --- !u!65 &432255532
 BoxCollider:
   m_ObjectHideFlags: 0
