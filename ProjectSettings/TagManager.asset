@@ -24,6 +24,7 @@ TagManager:
   - Humain
   - ChiotteZone
   - DanceFloor
+  - Entry
   layers:
   - Default
   - TransparentFX

@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.AI;
+
 
 public class ExitManager : MonoBehaviour
 {
@@ -39,9 +36,10 @@ public class ExitManager : MonoBehaviour
                         doorScript.CloseDoor();
                     }
                 }
-                animator.SetBool("hasEnterPub", true);
-                moneyManager.moneyChange = enterMoney;
-                moneyManager.OnMoneyChange();
+                if (gameObject.CompareTag("Entry"))
+                    animator.SetBool("hasEnterPub", true);
+                    moneyManager.moneyChange = enterMoney;
+                    moneyManager.OnMoneyChange();
             }
         GoBackInPub(other);
         }

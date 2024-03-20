@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ManageActors : MonoBehaviour
@@ -38,7 +36,7 @@ public class ManageActors : MonoBehaviour
                 }
             }
             Debug.Log("Il est entré");
-            Destroy(other.gameObject);
+            Destroy(other.gameObject, 1f);
         }
     }
 }

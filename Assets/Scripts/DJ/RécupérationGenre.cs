@@ -14,6 +14,7 @@ public class MusicGenrePointCollector : MonoBehaviour
     {
         CharacterMusicCounter musicCounter = PNJ.GetComponent<CharacterMusicCounter>();
         Animator animator = PNJ.GetComponent<Animator>();
+        animator.SetBool("willDance", true);
         if (musicCounter != null)
         {
             if (!pnjCounters.ContainsKey(PNJ))
@@ -26,12 +27,14 @@ public class MusicGenrePointCollector : MonoBehaviour
 
     void OnTriggerExit(Collider PNJ)
     {
+        print("il est sotrti");
         Animator animator = PNJ.GetComponent<Animator>();
+        animator.SetBool("willDance", false);
         if (pnjCounters.ContainsKey(PNJ))
         {
             pnjCounters.Remove(PNJ);
             UpdateGenreAnalyzer();
-        }
+        }        
     }
 
     void UpdateGenreAnalyzer()

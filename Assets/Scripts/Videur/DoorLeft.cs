@@ -1,8 +1,6 @@
 using System.Collections;
 using Unity.AI.Navigation;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.InputSystem.Controls;
 
 public class DoorLeft : MonoBehaviour
 {
