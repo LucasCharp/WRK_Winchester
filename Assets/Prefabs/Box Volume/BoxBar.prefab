@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1772488222718910470
+--- !u!1 &3968825580293823126
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8693404060102062186}
-  - component: {fileID: 738550382850880440}
-  - component: {fileID: 5989133686287914610}
-  - component: {fileID: 8039528110379686273}
+  - component: {fileID: 7868933355372692344}
+  - component: {fileID: 1728027664281643330}
+  - component: {fileID: 2197228305720128180}
+  - component: {fileID: 7085538876511622432}
   m_Layer: 0
   m_Name: BoxBar
   m_TagString: BarmanZone
@@ -19,28 +19,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!4 &8693404060102062186
+--- !u!4 &7868933355372692344
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772488222718910470}
+  m_GameObject: {fileID: 3968825580293823126}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 10.77, y: -7.11, z: -4.28}
-  m_LocalScale: {x: 6.15223, y: 5, z: 3.3697686}
+  m_LocalScale: {x: 6.15223, y: 5, z: 3.3697698}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &738550382850880440
+--- !u!65 &1728027664281643330
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772488222718910470}
+  m_GameObject: {fileID: 3968825580293823126}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -55,13 +55,13 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5989133686287914610
+--- !u!114 &2197228305720128180
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772488222718910470}
+  m_GameObject: {fileID: 3968825580293823126}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
@@ -72,13 +72,13 @@ MonoBehaviour:
   blendDistance: 1
   weight: 1
   sharedProfile: {fileID: 0}
---- !u!114 &8039528110379686273
+--- !u!114 &7085538876511622432
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772488222718910470}
+  m_GameObject: {fileID: 3968825580293823126}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eaab1abb272263547a0eef37e5918ced, type: 3}
@@ -86,5 +86,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 0}
   gameManager: {fileID: 0}
-  cameraRotation: {fileID: 0}
   barBox: {fileID: 0}

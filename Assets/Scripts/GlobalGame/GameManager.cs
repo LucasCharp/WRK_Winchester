@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public int score = 0;
     public int boxNumber;
     private bool jeGagneEnContinue = false;
+    public ToiletArea toiletArea;
 
     private void Awake()
     {

@@ -17,9 +17,11 @@ public class ClientChiotte : MonoBehaviour
             inChiotteZone = true;
             // Vérifier s'il y a un toilette disponible immédiatement
             bool toiletAvailable = toiletArea.IsToiletAvailable();
+            Debug.Log(toiletArea.IsToiletAvailable());
             if (toiletAvailable)
             {
                 UseToilet();
+                Debug.Log("toilette utilisées");
             }
             else
             {

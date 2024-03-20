@@ -880,6 +880,7 @@ GameObject:
   - component: {fileID: 8917463282121438772}
   - component: {fileID: 2140390585149647434}
   - component: {fileID: 7949097112527783965}
+  - component: {fileID: 3314575094837522675}
   - component: {fileID: -3988497039983905029}
   - component: {fileID: 1281959400949447169}
   - component: {fileID: 2217385114123309670}
@@ -983,6 +984,27 @@ MonoBehaviour:
   vfxPrefab: {fileID: 5112664334339671290, guid: 9b33683b7729bac4ebf98ec1f11bcfd6,
     type: 3}
   yOffset: 1
+--- !u!114 &3314575094837522675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3845422202990093143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 497d740f220a71a408007a52644a7c3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyManager: {fileID: 4200814716295636958, guid: 9d78af1d6edef984d9fbb7bc74d64397,
+    type: 3}
+  toilets:
+  - {fileID: 8757933926999701384, guid: 002c1be9dce680d44a29462f82366579, type: 3}
+  - {fileID: 6329305383735665579, guid: acc87edd60aa2d847b3c48605e86adb5, type: 3}
+  gameManager: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
+    type: 3}
+  toiletArea: {fileID: 8685911421937968491, guid: 66b3feb6f0e77834d98237ff02d9dbf2,
+    type: 3}
 --- !u!114 &-3988497039983905029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -996,8 +1018,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commande: 
-  gameManager: {fileID: 0}
-  moneyManager: {fileID: 0}
+  gameManager: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
+    type: 3}
+  moneyManager: {fileID: 4200814716295636958, guid: 9d78af1d6edef984d9fbb7bc74d64397,
+    type: 3}
   bulleCommande: {fileID: 3131483343617989582}
   boissonImages:
   - {fileID: 6749374768652874875}

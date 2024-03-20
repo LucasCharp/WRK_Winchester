@@ -39,8 +39,8 @@ public class MusicGenrePointCollector : MonoBehaviour
     void UpdateGenreAnalyzer()
     {
         Dictionary<string, int> totalPoints = CalculateTotalPoints();
-        scriptAffiche.DisplayResult(totalPoints);
         scriptAffiche.reloadFavoriteGenres(totalPoints);
+        scriptAffiche.DisplayResult(totalPoints);
     }
 
     public Dictionary<string, int> CalculateTotalPoints()

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7347738758047632023
+--- !u!1 &5384873899877072170
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1390131376394819993}
-  - component: {fileID: 519681338549599535}
-  - component: {fileID: 5386599692204604593}
-  - component: {fileID: 4912680457155549687}
+  - component: {fileID: 4679500618840482716}
+  - component: {fileID: 990901287632328519}
+  - component: {fileID: 6886594950457391155}
+  - component: {fileID: 7554678595991542042}
   m_Layer: 15
-  m_Name: BoxDance
+  m_Name: BoxDJ
   m_TagString: collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!4 &1390131376394819993
+--- !u!4 &4679500618840482716
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7347738758047632023}
+  m_GameObject: {fileID: 5384873899877072170}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.740738, y: -6.718, z: 0.26882562}
-  m_LocalScale: {x: 4.20925, y: 0.54002, z: 3.96504}
+  m_LocalPosition: {x: 12.740738, y: -6.499, z: 0.26882562}
+  m_LocalScale: {x: 4.209246, y: 1.466386, z: 3.96504}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &519681338549599535
+--- !u!65 &990901287632328519
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7347738758047632023}
+  m_GameObject: {fileID: 5384873899877072170}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -55,13 +55,13 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5386599692204604593
+--- !u!114 &6886594950457391155
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7347738758047632023}
+  m_GameObject: {fileID: 5384873899877072170}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
@@ -72,13 +72,13 @@ MonoBehaviour:
   blendDistance: 1
   weight: 1
   sharedProfile: {fileID: 0}
---- !u!114 &4912680457155549687
+--- !u!114 &7554678595991542042
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7347738758047632023}
+  m_GameObject: {fileID: 5384873899877072170}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52dff8655aeebfc4e9d72307d26d64e0, type: 3}
@@ -87,13 +87,5 @@ MonoBehaviour:
   PNJ: {fileID: 0}
   scriptAffiche: {fileID: 0}
   reloadFavoriteGenres: {fileID: 0}
-  triggerCollider: {fileID: 519681338549599535}
-  genreButtons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  triggerCollider: {fileID: 990901287632328519}
+  genreButtons: []

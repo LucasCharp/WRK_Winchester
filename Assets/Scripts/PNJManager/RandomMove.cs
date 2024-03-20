@@ -48,7 +48,6 @@ public class RandomNavMeshMovement : MonoBehaviour
             {
                 if (moveDelayTimer <= 0f)
                 {
-                print("move delay fibi");
                     SetRandomDestination();
                     moveDelayTimer = Random.Range(minMoveDelay, maxMoveDelay);
                 }
@@ -163,7 +162,6 @@ public class RandomNavMeshMovement : MonoBehaviour
 
             if (animator.GetBool("isDancing") == false)
             {
-                print("randomove");
                 animator.SetBool("isWalking", true);
                 Vector3 randomDirection = Random.insideUnitSphere * 5f; // Rayon de 10 unités
                 randomDirection += transform.position;

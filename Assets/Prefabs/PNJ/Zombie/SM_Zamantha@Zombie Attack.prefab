@@ -668,6 +668,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a3d7f91af8605094d90e7ef172af74c5,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: -8693536784207208034}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a3d7f91af8605094d90e7ef172af74c5,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: -7670505875236686035}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a3d7f91af8605094d90e7ef172af74c5,
         type: 3}
@@ -765,6 +769,27 @@ MonoBehaviour:
   discoCounter: 0
   brasilCounter: 0
   metalCounter: 0
+--- !u!114 &-8693536784207208034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6914438633581987138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 497d740f220a71a408007a52644a7c3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyManager: {fileID: 4200814716295636958, guid: 9d78af1d6edef984d9fbb7bc74d64397,
+    type: 3}
+  toilets:
+  - {fileID: 8757933926999701384, guid: 002c1be9dce680d44a29462f82366579, type: 3}
+  - {fileID: 6329305383735665579, guid: acc87edd60aa2d847b3c48605e86adb5, type: 3}
+  gameManager: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
+    type: 3}
+  toiletArea: {fileID: 8685911421937968491, guid: 66b3feb6f0e77834d98237ff02d9dbf2,
+    type: 3}
 --- !u!114 &-7670505875236686035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,8 +803,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commande: 
-  gameManager: {fileID: 0}
-  moneyManager: {fileID: 0}
+  gameManager: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
+    type: 3}
+  moneyManager: {fileID: 4200814716295636958, guid: 9d78af1d6edef984d9fbb7bc74d64397,
+    type: 3}
   bulleCommande: {fileID: 3766643953477218265}
   boissonImages:
   - {fileID: 8133093440906408964}
