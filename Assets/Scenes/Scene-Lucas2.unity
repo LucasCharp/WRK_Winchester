@@ -5716,7 +5716,7 @@ Transform:
   m_GameObject: {fileID: 310724679}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6671467, y: -0.06646967, z: 2.5420482}
+  m_LocalPosition: {x: -0.6671467, y: 0.39, z: 2.5420482}
   m_LocalScale: {x: 3.2388399, y: 1.6709, z: 2.56615}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -37580,6 +37580,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Box Volume
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579993840911760307, guid: 8add604f58760854e9fcbdf865e46ee7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Entry
       objectReference: {fileID: 0}
     - target: {fileID: 8973821836740383002, guid: 8add604f58760854e9fcbdf865e46ee7,
         type: 3}
