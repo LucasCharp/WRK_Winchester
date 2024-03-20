@@ -38,7 +38,6 @@ public class RandomNavMeshMovement : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         whatDance = Random.Range(1, 6);
-        print(whatDance);
         animator.SetInteger("Dances", whatDance);
         InQueue();
     }
@@ -46,22 +45,23 @@ public class RandomNavMeshMovement : MonoBehaviour
     void Update()
     {
             if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.1f)
-        {
-            if (moveDelayTimer <= 0f)
             {
-                SetRandomDestination();
-                moveDelayTimer = Random.Range(minMoveDelay, maxMoveDelay);
-            }
-            else
-            {
-                moveDelayTimer -= Time.deltaTime;
-                animator.SetBool("isWalking", false);
-                if (animator.GetBool("willDance") == true)
+                if (moveDelayTimer <= 0f)
                 {
-                    animator.SetBool("isDancing", true);
+                print("move delay fibi");
+                    SetRandomDestination();
+                    moveDelayTimer = Random.Range(minMoveDelay, maxMoveDelay);
+                }
+                else
+                {
+                    moveDelayTimer -= Time.deltaTime;
+                    animator.SetBool("isWalking", false);
+                    if (animator.GetBool("willDance") == true)
+                    {
+                        animator.SetBool("isDancing", true);
+                    }
                 }
             }
-        }
 
 
 
@@ -163,6 +163,7 @@ public class RandomNavMeshMovement : MonoBehaviour
 
             if (animator.GetBool("isDancing") == false)
             {
+                print("randomove");
                 animator.SetBool("isWalking", true);
                 Vector3 randomDirection = Random.insideUnitSphere * 5f; // Rayon de 10 unités
                 randomDirection += transform.position;

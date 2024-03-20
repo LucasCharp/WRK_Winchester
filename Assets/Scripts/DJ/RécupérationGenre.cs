@@ -27,7 +27,6 @@ public class MusicGenrePointCollector : MonoBehaviour
 
     void OnTriggerExit(Collider PNJ)
     {
-        print("il est sotrti");
         Animator animator = PNJ.GetComponent<Animator>();
         animator.SetBool("willDance", false);
         if (pnjCounters.ContainsKey(PNJ))
