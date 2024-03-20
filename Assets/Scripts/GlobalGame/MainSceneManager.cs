@@ -21,6 +21,7 @@ public class MainSceneManager : MonoBehaviour
     public JukeboxManager jukeboxManager;
     public ElectricityManager electricityManager;
     public AmbianceUpgradeManager ambianceManager;
+    public Animator djAnimator;
 
     public int barLevel = 0;
     private bool isPaused;
@@ -89,6 +90,8 @@ public class MainSceneManager : MonoBehaviour
 
         startCanvas.gameObject.SetActive(false) ;
         playCanvas.gameObject.SetActive(true);
+
+        djAnimator.SetBool("isDancing", true);
     }
 
     public void OnPauseCliqued()

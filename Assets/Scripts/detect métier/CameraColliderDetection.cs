@@ -35,8 +35,8 @@ public class CameraColliderDetection : MonoBehaviour
     private Transform target;
     private Vector3 initialCameraPosition;
     private Quaternion initialCameraRotation;
-    private int moveSpeed = 3;
-    private int rotationSpeed = 1;
+    private int moveSpeed = 5;
+    private int rotationSpeed = 5;
     private GameObject boxToHide;
 
     private void Start()
