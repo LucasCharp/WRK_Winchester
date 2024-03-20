@@ -20,7 +20,7 @@ public class MainMenuManager : MonoBehaviour
     public Button buttonDumpster;
     public Button buttonMenu;
     public Button playButton;
-
+    public Canvas creditsCanvas;
     public Camera mainCamera;
 
     public Transform targetDumpster;
@@ -45,6 +45,19 @@ public class MainMenuManager : MonoBehaviour
 
     //public Transform initialCameraPosition;
     private bool isCameraClose = false;
+
+
+
+    public void OnCreditsCliqued()
+    {
+        creditsCanvas.gameObject.SetActive(true);
+    }
+
+    public void OnRetourCreditsCliqued()
+    {
+        creditsCanvas.gameObject.SetActive(false);
+    }
+
 
     void Start()
     {
