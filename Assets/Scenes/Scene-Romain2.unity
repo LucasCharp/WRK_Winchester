@@ -5550,7 +5550,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 943741350}
   gameManager: {fileID: 529653008}
-  barBox: {fileID: 271344688}
 --- !u!114 &271344691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6068,6 +6067,7 @@ MonoBehaviour:
   - {fileID: 1656380704}
   - {fileID: 1093613181}
   gameManager: {fileID: 529653008}
+  inChiotteZone: 0
 --- !u!114 &310724682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24781,7 +24781,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.14999999
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: f0cd958e6523c514184a8e6d64671359, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 0bbf42c9503fb76469b0842addb21abe, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &1530753479
 GameObject:
