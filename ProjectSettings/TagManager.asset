@@ -25,6 +25,8 @@ TagManager:
   - ChiotteZone
   - DanceFloor
   - Entry
+  - GameManager
+  - MoneyManager
   layers:
   - Default
   - TransparentFX

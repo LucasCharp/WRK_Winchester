@@ -16,12 +16,23 @@ public class ClientController : MonoBehaviour
     private int drinkCost = 25;
 
     public Image bulleCommande;
-    public Image boisson;
+    //public Image boisson;
     public Image[] boissonImages;
     private Dictionary<string, Image> boissonsImages = new Dictionary<string, Image>();
 
     private void Start()
     {
+        GameObject gameManagerObject = GameObject.FindWithTag("GameManager");
+        if (gameManagerObject != null)
+        {
+            gameManager = gameManagerObject.GetComponent<GameManager>();
+        }
+        GameObject moneyManagerObject = GameObject.FindWithTag("MoneyManager");
+        if (gameManagerObject != null)
+        {
+            moneyManager = moneyManagerObject.GetComponent<MoneyManager>();
+        }
+
         boissonsImages.Add("Absynthe", boissonImages[0]);
         boissonsImages.Add("Bière", boissonImages[1]);
         boissonsImages.Add("Champagne", boissonImages[2]);
