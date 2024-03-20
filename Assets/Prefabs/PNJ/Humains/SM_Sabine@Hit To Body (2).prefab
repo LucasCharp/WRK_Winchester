@@ -1742,6 +1742,7 @@ GameObject:
   - component: {fileID: 5238861750366271499}
   - component: {fileID: 2950826778643484118}
   - component: {fileID: 5184963865714671615}
+  - component: {fileID: -3897556398963828112}
   m_Layer: 0
   m_Name: SM_Sabine@Hit To Body (2)
   m_TagString: PNJ
@@ -1948,3 +1949,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!114 &-3897556398963828112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8895556041553521195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebdfdebebc0a81e4eb274ff1a9a7fa84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHuman: 1
+  isZombie: 0

@@ -745,6 +745,7 @@ GameObject:
   - component: {fileID: 1511503663717760859}
   - component: {fileID: 8296972855420339890}
   - component: {fileID: 1532722010311349400}
+  - component: {fileID: -3547527768831381153}
   m_Layer: 0
   m_Name: SM_GREG@Hit To Body
   m_TagString: PNJ
@@ -951,6 +952,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!114 &-3547527768831381153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3516930310241067489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebdfdebebc0a81e4eb274ff1a9a7fa84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHuman: 1
+  isZombie: 0
 --- !u!1 &3677976580381524666
 GameObject:
   m_ObjectHideFlags: 0

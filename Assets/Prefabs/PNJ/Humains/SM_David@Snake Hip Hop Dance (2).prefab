@@ -812,6 +812,7 @@ GameObject:
   - component: {fileID: 2676920509799190383}
   - component: {fileID: 2895912621730653515}
   - component: {fileID: 4164285843168084232}
+  - component: {fileID: -6237111924868424539}
   m_Layer: 0
   m_Name: SM_David@Snake Hip Hop Dance (2)
   m_TagString: PNJ
@@ -1018,6 +1019,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!114 &-6237111924868424539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3103463668985692157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebdfdebebc0a81e4eb274ff1a9a7fa84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHuman: 1
+  isZombie: 0
 --- !u!1 &3632630272977350167
 GameObject:
   m_ObjectHideFlags: 0
