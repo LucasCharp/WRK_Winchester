@@ -160,7 +160,7 @@ public class RandomNavMeshMovement : MonoBehaviour
         {
             // Générer une destination aléatoire à l'intérieur du NavMesh
 
-            if (animator.GetBool("isDancing") == false)
+            if (animator.GetBool("isDancing") == false && animator.GetBool("willDrink") == false)
             {
                 animator.SetBool("isWalking", true);
                 Vector3 randomDirection = Random.insideUnitSphere * 5f; // Rayon de 10 unités

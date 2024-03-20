@@ -7,7 +7,6 @@ public class BarmanController : MonoBehaviour
     private Queue<ClientController> commandesEnAttente = new Queue<ClientController>();
     private ClientController commandePrioritaire;
     public GameManager gameManager; // Assurez-vous de définir cette référence dans l'inspecteur Unity-
-    public GameObject barBox;
 
     public void AjouterCommande(ClientController client, string commande)
     {

@@ -15,6 +15,8 @@ public class ClientController : MonoBehaviour
     private bool tropAttendu = false;
     private int drinkCost = 25;
 
+    private Animator animator;
+
     public Image bulleCommande;
     //public Image boisson;
     public Image[] boissonImages;
@@ -22,6 +24,7 @@ public class ClientController : MonoBehaviour
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         GameObject gameManagerObject = GameObject.FindWithTag("GameManager");
         if (gameManagerObject != null)
         {
@@ -45,6 +48,8 @@ public class ClientController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        animator.SetBool("willDrink", true);
+        animator.SetBool("isWalking", false);
         if (other.CompareTag("BarmanZone"))
         {
             inBarZone = true;
