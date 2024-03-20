@@ -3,61 +3,24 @@ using UnityEngine;
 public class ToiletArea : MonoBehaviour
 {
     public Toilet[] toilets; // Tableau des toilettes dans la zone
-    public GameObject[] npcs; // Tableau des PNJ qui peuvent utiliser les toilettes
-    public MoneyManager moneyManager;
+    public GameManager gameManager;
 
-    public void OnTriggerEnter(Collider other)
+    public bool IsToiletAvailable()
     {
-        // Vérifier si le PNJ entre dans la zone des toilettes
-        if (IsNPC(other.gameObject))
+        // Vérifier si au moins un toilette est disponible
+        foreach (var toilet in toilets)
         {
-            Debug.Log("il est entré");
-            // Vérifier si au moins un toilette est disponible
-            bool isAnyToiletAvailable = false;
-            foreach (var toilet in toilets)
+            if (!toilet.isOccupied && !toilet.isDirty)
             {
-                if (!toilet.isOccupied && !toilet.isDirty)
-                {
-                    isAnyToiletAvailable = true;
-                    break;
-                }
-            }
-
-            if (isAnyToiletAvailable)
-            {
-                Debug.Log("toilette avaible");
-                // Choisir un toilette disponible au hasard
-                Toilet availableToilet = GetAvailableToilet();
-                if (availableToilet != null)
-                {
-                    moneyManager.moneyChange = (5);
-                    moneyManager.OnMoneyChange();
-                    // Utiliser le toilette
-                    availableToilet.UseToilet();
-                    Debug.Log("toilette use");
-                }
-            }
-            else
-            {
-                Debug.Log("Tous les toilettes sont occupés ou sales.");
-            }
-        }
-    }
-
-    private bool IsNPC(GameObject obj)
-    {
-        // Vérifier si l'objet est un PNJ
-        foreach (var npc in npcs)
-        {
-            if (obj == npc)
-            {
+                Debug.Log("toilettesOK");
                 return true;
             }
         }
+        Debug.Log("toilettesPasOK");
         return false;
     }
 
-    private Toilet GetAvailableToilet()
+    public Toilet GetAvailableToilet()
     {
         // Récupérer un toilette disponible au hasard
         foreach (var toilet in toilets)

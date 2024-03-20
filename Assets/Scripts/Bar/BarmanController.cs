@@ -7,7 +7,6 @@ public class BarmanController : MonoBehaviour
     private Queue<ClientController> commandesEnAttente = new Queue<ClientController>();
     private ClientController commandePrioritaire;
     public GameManager gameManager; // Assurez-vous de définir cette référence dans l'inspecteur Unity-
-    public CameraRotation cameraRotation;
     public GameObject barBox;
 
     public void AjouterCommande(ClientController client, string commande)
@@ -58,11 +57,6 @@ public class BarmanController : MonoBehaviour
         {
             Debug.Log("Aucune commande prioritaire en attente !");
         }
-
-        // Fermer le menu de boissons
-        //menuPanel.SetActive(false);
-        //cameraRotation.canRotate = true;
-        //barBox.SetActive(true);
 
         if (commandePrioritaire != null)
             commandePrioritaire.QuitterZoneBarman();

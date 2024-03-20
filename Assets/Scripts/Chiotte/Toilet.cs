@@ -7,26 +7,23 @@ public class Toilet : MonoBehaviour
     public bool isDirty = false;
     private int cleaningClicksRequired;
     public GameManager gameManager;
+    public AudioClip ventouse;
 
-    // Méthode appelée lorsque le toilette est utilisé
     public void UseToilet()
     {
         if (!isOccupied && !isDirty)
         {
-            isOccupied = true;
             StartCoroutine(UseToiletRoutine());
-            Debug.Log("maintenant il  chie");
         }
     }
 
-    // Coroutine pour simuler le temps passé par le PNJ devant le toilette
     private IEnumerator UseToiletRoutine()
     {
-        yield return new WaitForSeconds(6f); // Attendre 6 secondes
-        isOccupied = false; // Le PNJ quitte le toilette
-        isDirty = true; // Le toilette devient sale après utilisation
+        isOccupied = true;
+        yield return new WaitForSeconds(8f); // Temps passé par le PNJ dans les toilettes
+        isOccupied = false;
+        isDirty = true;
         StartCleaning();
-        Debug.Log("la il à bien fait caca");
     }
 
     private void OnMouseDown()
@@ -34,35 +31,23 @@ public class Toilet : MonoBehaviour
         CleanToilet();
     }
 
-    // Méthode appelée lorsqu'on tente de nettoyer le toilette
     public void CleanToilet()
     {
-        Debug.Log("tu as lancé un clean");
         if (isDirty)
         {
-            // Réduire le nombre de clics nécessaires pour le nettoyage
+            SFXManager.instance.PlaySoundFXClip(ventouse, transform, 1f);
             cleaningClicksRequired--;
+            Debug.Log(cleaningClicksRequired);
             if (cleaningClicksRequired <= 0)
             {
-                isDirty = false; // Le toilette est maintenant propre
-                Debug.Log("Le toilette est propre !");
-                gameManager.AugmenterScore(30);
+                isDirty = false;
+                gameManager.AugmenterScore(25); // Gagner 25 points de score après avoir nettoyé le toilette
             }
-            else
-            {
-                Debug.Log("Encore " + cleaningClicksRequired + " clics pour nettoyer le toilette.");
-            }
-        }
-        else
-        {
-            Debug.Log("Le toilette n'est pas sale.");
         }
     }
 
-    // Méthode pour initialiser le nettoyage du toilette avec un nombre aléatoire de clics requis
     public void StartCleaning()
     {
-        cleaningClicksRequired = Random.Range(3, 8); // Nombre aléatoire de clics requis entre 3 et 7
-        Debug.Log("Commencer le nettoyage du toilette. " + cleaningClicksRequired + " clics nécessaires.");
+        cleaningClicksRequired = Random.Range(5, 10); // Nombre aléatoire de clics nécessaires entre 5 et 9 pour nettoyer le toilette
     }
 }
