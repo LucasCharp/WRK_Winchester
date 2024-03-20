@@ -9323,6 +9323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   boxNumber: 0
+  toiletArea: {fileID: 0}
 --- !u!1 &532153424
 GameObject:
   m_ObjectHideFlags: 0
@@ -9387,6 +9388,7 @@ Transform:
   - {fileID: 1729964589}
   - {fileID: 344134248}
   - {fileID: 943741351}
+  - {fileID: 1549248493}
   - {fileID: 1680446977}
   - {fileID: 1784388725}
   - {fileID: 1727285513}
@@ -16666,7 +16668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1026083802
 Transform:
   m_ObjectHideFlags: 0
@@ -25197,7 +25199,7 @@ RectTransform:
   - {fileID: 1642067323}
   - {fileID: 6889873}
   - {fileID: 1796337682}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 544143140}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -38594,4 +38596,3 @@ SceneRoots:
   - {fileID: 1184051940}
   - {fileID: 41129660}
   - {fileID: 714278223}
-  - {fileID: 1549248493}
