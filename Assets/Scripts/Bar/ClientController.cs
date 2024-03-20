@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClientController : MonoBehaviour
 {
@@ -13,8 +15,20 @@ public class ClientController : MonoBehaviour
     private bool tropAttendu = false;
     private int drinkCost = 25;
 
+    public Image bulleCommande;
+    public Image boisson;
+    public Image[] boissonImages;
+    private Dictionary<string, Image> boissonsImages = new Dictionary<string, Image>();
+
     private void Start()
     {
+        boissonsImages.Add("Absynthe", boissonImages[0]);
+        boissonsImages.Add("Bière", boissonImages[1]);
+        boissonsImages.Add("Champagne", boissonImages[2]);
+        boissonsImages.Add("Cognac", boissonImages[3]);
+        boissonsImages.Add("Vin", boissonImages[4]);
+
+        bulleCommande.gameObject.SetActive(false);
         barmanController = FindObjectOfType<BarmanController>();
     }
 
@@ -41,6 +55,7 @@ public class ClientController : MonoBehaviour
         {
             inBarZone = false;
             satisfait = true;
+            bulleCommande.gameObject.SetActive(false);
         }
     }
 
@@ -50,10 +65,18 @@ public class ClientController : MonoBehaviour
         {
             string[] boissons = { "Bière", "Vin", "Champagne", "Cognac", "Absynthe" };
             commande = boissons[Random.Range(0, boissons.Length)];
+            AfficherCommande();
             Debug.Log("Commande reçue : " + commande);
             tempsInitial = Time.time; // Stocker le temps initial
             Invoke("SimulerAttente", 40f);
         }
+    }
+
+    private void AfficherCommande()
+    {
+        bulleCommande.gameObject.SetActive(true);
+        Image imageBoisson = boissonsImages[commande];
+        imageBoisson.gameObject.SetActive(true);
     }
 
     private void SimulerAttente()
