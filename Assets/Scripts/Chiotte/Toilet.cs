@@ -8,6 +8,7 @@ public class Toilet : MonoBehaviour
     private int cleaningClicksRequired;
     public GameManager gameManager;
     public AudioClip ventouse;
+    public ToiletArea ZoneDesChiottes;
 
     public void UseToilet()
     {

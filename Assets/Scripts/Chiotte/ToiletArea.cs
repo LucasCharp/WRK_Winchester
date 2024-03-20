@@ -5,7 +5,7 @@ public class ToiletArea : MonoBehaviour
     public Toilet[] toilets; // Tableau des toilettes dans la zone
     public GameManager gameManager;
     private Coroutine waitingCoroutine;
-    private ClientChiotte lesClientsDesChiottes;
+    public ClientChiotte lesClientsDesChiottes;
     public bool inChiotteZone = false;
 
     private void OnTriggerEnter(Collider other)
