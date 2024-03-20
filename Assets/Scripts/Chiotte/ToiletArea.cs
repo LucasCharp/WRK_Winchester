@@ -19,7 +19,6 @@ public class ToiletArea : MonoBehaviour
             if (toiletAvailable)
             {
                 lesClientsDesChiottes.UseToilet();
-                Debug.Log("toilette utilisées");
             }
             else
             {
@@ -46,15 +45,11 @@ public class ToiletArea : MonoBehaviour
         // Vérifier si au moins un toilette est disponible
         foreach (var toilet in toilets)
         {
-            Debug.Log("oui" + toilet.isOccupied);
-            Debug.Log("oui" + toilet.isDirty);
             if (!toilet.isOccupied && !toilet.isDirty)
             {
-                Debug.Log("toilettesOK");
                 return true;
             }
         }
-        Debug.Log("toilettesPasOK");
         return false;
     }
 
