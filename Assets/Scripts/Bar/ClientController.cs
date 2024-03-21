@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -129,14 +130,14 @@ public class ClientController : MonoBehaviour
             {
                 if (tropAttendu == true)
                 {
-                    int scoreGagne = 20;
-                    gameManager.DiminuerScore(scoreGagne); // Accéder à la méthode AugmenterScore à partir de l'instance de GameManager
+                    int scoreGagne = -20;
+                    gameManager.AugmenterScore(scoreGagne); // Accéder à la méthode AugmenterScore à partir de l'instance de GameManager
                     Debug.Log("Trop Lent");
                 }
                 else 
                 {
-                    int scoreGagne = 10;
-                    gameManager.DiminuerScore(scoreGagne); // Accéder à la méthode AugmenterScore à partir de l'instance de GameManager
+                    int scoreGagne = -10;
+                    gameManager.AugmenterScore(scoreGagne); // Accéder à la méthode AugmenterScore à partir de l'instance de GameManager
                     Debug.Log("t'es con?");
                 }
             }
