@@ -26965,6 +26965,8 @@ MonoBehaviour:
   resultText: {fileID: 1552170179}
   pointCollector: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
     type: 3}
+  TotalValueGenre: 0
+  Info: {fileID: 0}
 --- !u!114 &1552170179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40044,9 +40046,19 @@ PrefabInstance:
       objectReference: {fileID: 861369887}
     - target: {fileID: 8757933926999701384, guid: 002c1be9dce680d44a29462f82366579,
         type: 3}
+      propertyPath: ToiletFree
+      value: 
+      objectReference: {fileID: 1865207143}
+    - target: {fileID: 8757933926999701384, guid: 002c1be9dce680d44a29462f82366579,
+        type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 529653008}
+    - target: {fileID: 8757933926999701384, guid: 002c1be9dce680d44a29462f82366579,
+        type: 3}
+      propertyPath: ToiletOccupied
+      value: 
+      objectReference: {fileID: 401654948}
     - target: {fileID: 8757933926999701384, guid: 002c1be9dce680d44a29462f82366579,
         type: 3}
       propertyPath: ZoneDesChiottes
@@ -40787,9 +40799,19 @@ PrefabInstance:
       objectReference: {fileID: 1381718916}
     - target: {fileID: 6329305383735665579, guid: acc87edd60aa2d847b3c48605e86adb5,
         type: 3}
+      propertyPath: ToiletFree
+      value: 
+      objectReference: {fileID: 752564248}
+    - target: {fileID: 6329305383735665579, guid: acc87edd60aa2d847b3c48605e86adb5,
+        type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 529653008}
+    - target: {fileID: 6329305383735665579, guid: acc87edd60aa2d847b3c48605e86adb5,
+        type: 3}
+      propertyPath: ToiletOccupied
+      value: 
+      objectReference: {fileID: 984429321}
     - target: {fileID: 6329305383735665579, guid: acc87edd60aa2d847b3c48605e86adb5,
         type: 3}
       propertyPath: ZoneDesChiottes
