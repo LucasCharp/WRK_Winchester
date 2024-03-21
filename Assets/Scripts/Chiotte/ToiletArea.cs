@@ -7,21 +7,23 @@ public class ToiletArea : MonoBehaviour
     private Coroutine waitingCoroutine;
     public ClientChiotte lesClientsDesChiottes;
     public bool inChiotteZone = false;
+    public Toilet[] TableauToilet; // Tableau des toilettes dans la zone
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("PNJ"))
         {
             inChiotteZone = true;
-            // Vérifier s'il y a un toilette disponible immédiatement
-            bool toiletAvailable = IsToiletAvailable();
-            Debug.Log(IsToiletAvailable());
-            if (toiletAvailable)
+            // Récupérer le script ClientChiotte attaché au PNJ
+            ClientChiotte clientChiotte = other.GetComponent<ClientChiotte>();
+            lesClientsDesChiottes = clientChiotte;
+            if (clientChiotte != null)
             {
                 lesClientsDesChiottes.UseToilet();
             }
             else
             {
+                Debug.LogWarning("Script ClientChiotte non trouvé sur le PNJ !");
                 // Si aucun toilette n'est disponible immédiatement, démarrer la coroutine d'attente
                 waitingCoroutine = StartCoroutine(lesClientsDesChiottes.WaitInToiletZone());
             }
@@ -55,6 +57,7 @@ public class ToiletArea : MonoBehaviour
 
     public Toilet GetAvailableToilet()
     {
+        Debug.Log("oui3");
         // Récupérer un toilette disponible au hasard
         foreach (var toilet in toilets)
         {

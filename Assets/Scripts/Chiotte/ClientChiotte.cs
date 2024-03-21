@@ -6,7 +6,7 @@ public class ClientChiotte : MonoBehaviour
     public Toilet[] toilets; // Tableau des toilettes dans la zone
     public GameManager gameManager;
     public ToiletArea toiletArea;
-    private int ChiotteCost = 15;
+    private int chiotteCost = 15;
 
     // Coroutine pour attendre dans la zone des toilettes
     public System.Collections.IEnumerator WaitInToiletZone()
@@ -42,7 +42,7 @@ public class ClientChiotte : MonoBehaviour
         Toilet availableToilet = toiletArea.GetAvailableToilet();
         if (availableToilet != null)
         {
-            moneyManager.moneyChange = ChiotteCost;
+            moneyManager.moneyChange = chiotteCost;
             moneyManager.OnMoneyChange();
             availableToilet.UseToilet(); // Utiliser le toilette disponible
         }

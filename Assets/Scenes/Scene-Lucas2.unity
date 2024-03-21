@@ -8254,10 +8254,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f64cd0fcbed4349b28644b27ada3e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRotation: {fileID: 0}
-  mainSceneManager: {fileID: 0}
-  videurBox: {fileID: 0}
-  videurCanvas: {fileID: 0}
+  cameraRotation: {fileID: 113777587}
+  mainSceneManager: {fileID: 1396442795}
+  videurBox: {fileID: 485040210}
+  videurCanvas: {fileID: 344134251}
 --- !u!1 &486368183
 GameObject:
   m_ObjectHideFlags: 0
@@ -10306,7 +10306,7 @@ PrefabInstance:
     - target: {fileID: 926856843976662428, guid: 19dd3b2a1eaa4f8489969f5963f403b6,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6747579338244648553, guid: 19dd3b2a1eaa4f8489969f5963f403b6,
         type: 3}
