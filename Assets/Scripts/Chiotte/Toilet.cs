@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.Analytics;
+using UnityEngine.UI;
 
 public class Toilet : MonoBehaviour
 {
@@ -11,6 +11,8 @@ public class Toilet : MonoBehaviour
     public AudioClip ventouse;
     public ToiletArea ZoneDesChiottes;
     public Renderer Caca;
+    public Button ToiletFree;
+    public Button ToiletOccupied;
 
     public void UseToilet()
     {
@@ -23,6 +25,8 @@ public class Toilet : MonoBehaviour
     private IEnumerator UseToiletRoutine()
     {
         isOccupied = true;
+        ToiletFree.gameObject.SetActive(false);
+        ToiletOccupied.gameObject.SetActive(true);
         yield return new WaitForSeconds(8f); // Temps passé par le PNJ dans les toilettes
         isOccupied = false;
         isDirty = true;
@@ -48,6 +52,8 @@ public class Toilet : MonoBehaviour
             {
                 isDirty = false;
                 Caca.gameObject.SetActive(false);
+                ToiletFree.gameObject.SetActive(true);
+                ToiletOccupied.gameObject.SetActive(false);
                 gameManager.AugmenterScore(25); // Gagner 25 points de score après avoir nettoyé le toilette
             }
         }

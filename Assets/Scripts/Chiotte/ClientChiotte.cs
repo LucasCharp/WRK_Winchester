@@ -33,7 +33,7 @@ public class ClientChiotte : MonoBehaviour
             }
         }
         // Aucun toilette disponible après 17 secondes, le PNJ part
-        gameManager.AugmenterScore(-20); // Perdre 20 points de score
+        gameManager.AugmenterScore(-12); // Perdre 20 points de score
     }
 
     // Méthode pour gérer l'utilisation des toilettes par le PNJ

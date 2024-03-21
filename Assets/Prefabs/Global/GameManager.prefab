@@ -46,3 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   boxNumber: 0
+  jeGagneEnContinue: 0
+  jeChieEnContinue: 0
+  toiletArea: {fileID: 0}
+  scoreText: {fileID: 0}
+  Multiplicateur: 0
+  UpdateButtons: {fileID: 0}
