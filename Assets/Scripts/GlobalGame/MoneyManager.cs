@@ -8,7 +8,8 @@ public class MoneyManager : MonoBehaviour
     public float moneyTotal;
     public TextMeshProUGUI moneyTextStart;
     public TextMeshProUGUI moneyTextPlay;
-    public float Multiplicatir = 1.5f;
+    public float Multiplicatir = 1f;
+    public UpgradeButtons UpdateButtons;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class MoneyManager : MonoBehaviour
     }
     public void AddMultiplicato()
     {
-        Multiplicatir += 0.5f;
+        Multiplicatir += 0.2f;
         Debug.Log(Multiplicatir);
     }
     public void OnMoneyChange()

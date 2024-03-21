@@ -81,7 +81,7 @@ public class MusiqueBar : MonoBehaviour
             if (TotalValueGenre > 0)
             {
                 float percentage = (genre.Value / TotalValueGenre) * 100f;
-                Debug.Log("Pourcentage de " + genre.Key + " : " + percentage + "%");
+                //Debug.Log("Pourcentage de " + genre.Key + " : " + percentage + "%");
 
                 if (percentage > maxPercentage)
                 {

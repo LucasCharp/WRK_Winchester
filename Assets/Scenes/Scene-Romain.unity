@@ -6650,6 +6650,79 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328740054}
   m_Mesh: {fileID: 5139442083506219791, guid: 485cbd1a1eab8c64486230c0daea0f45, type: 3}
+--- !u!1001 &333699222
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 536721060909074957, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_Name
+      value: SM_David@Snake Hip Hop Dance
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.08950949
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.0672561
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2155129761888403983, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef944a99cec47b04b9146287b3c6f9b4, type: 3}
 --- !u!1001 &338968840
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22927,7 +23000,7 @@ PrefabInstance:
     - target: {fileID: 536721060909074957, guid: ef944a99cec47b04b9146287b3c6f9b4,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
         type: 3}
@@ -27058,6 +27131,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3ba0e76d501388d4482465ddc287c792, type: 3}
   purchasedButtons: []
   gameManager: {fileID: 0}
+  MoneyManager: {fileID: 0}
 --- !u!114 &1572198028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40842,3 +40916,4 @@ SceneRoots:
   - {fileID: 714278223}
   - {fileID: 115403662}
   - {fileID: 1345763292}
+  - {fileID: 333699222}

@@ -4,9 +4,9 @@ public class ClientChiotte : MonoBehaviour
 {
     public MoneyManager moneyManager;
     public Toilet[] toilets; // Tableau des toilettes dans la zone
-    public GameManager gameManager;
     public ToiletArea toiletArea;
     private int chiotteCost = 15;
+    public static ClientChiotte instance;
 
     // Coroutine pour attendre dans la zone des toilettes
     public System.Collections.IEnumerator WaitInToiletZone()
@@ -33,7 +33,7 @@ public class ClientChiotte : MonoBehaviour
             }
         }
         // Aucun toilette disponible après 17 secondes, le PNJ part
-        gameManager.AugmenterScore(-12); // Perdre 20 points de score
+        GameManager.instance.AugmenterScore(-12); // Perdre 20 points de score
     }
 
     // Méthode pour gérer l'utilisation des toilettes par le PNJ

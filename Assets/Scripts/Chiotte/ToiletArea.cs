@@ -7,7 +7,6 @@ public class ToiletArea : MonoBehaviour
     private Coroutine waitingCoroutine;
     public ClientChiotte lesClientsDesChiottes;
     public bool inChiotteZone = false;
-    public Toilet[] TableauToilet; // Tableau des toilettes dans la zone
 
     private void OnTriggerEnter(Collider other)
     {
@@ -47,7 +46,7 @@ public class ToiletArea : MonoBehaviour
         // Vérifier si au moins un toilette est disponible
         foreach (var toilet in toilets)
         {
-            if (!toilet.isOccupied && !toilet.isDirty)
+            if (!Toilet.instance.isOccupied && !Toilet.instance.isDirty)
             {
                 return true;
             }
@@ -62,9 +61,9 @@ public class ToiletArea : MonoBehaviour
         foreach (var toilet in toilets)
         {
             print("ouiouiuiuiui");
-            print(toilet.isOccupied + "e");
-            print(toilet.isDirty + "o");
-            if (!toilet.isOccupied && !toilet.isDirty)
+            print(Toilet.instance.isOccupied + "e");
+            print(Toilet.instance.isDirty + "o");
+            if (!Toilet.instance.isOccupied && !Toilet.instance.isDirty)
             {
                 return toilet;
             }

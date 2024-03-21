@@ -13,6 +13,7 @@ public class Toilet : MonoBehaviour
     public Renderer Caca;
     public Button ToiletFree;
     public Button ToiletOccupied;
+    public static Toilet instance;
 
     public void UseToilet()
     {

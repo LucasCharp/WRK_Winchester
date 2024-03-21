@@ -121,7 +121,7 @@ public class ClientController : MonoBehaviour
                 Debug.Log(TimePoint + " s restante");
                 int multiplicateur = Mathf.FloorToInt(TimePoint / 10f); // Utiliser la durée comme multiplicateur (par exemple, 1 point pour chaque tranche de 10 secondes)
                 int scoreGagne = 10 * (multiplicateur + 1); // Calculer le score gagné en fonction du multiplicateur
-                gameManager.AugmenterScore(scoreGagne); // Accéder à la méthode AugmenterScore à partir de l'instance de GameManager
+                GameManager.instance.AugmenterScore(scoreGagne); // Accéder à la méthode AugmenterScore à partir de l'instance de GameManager
                 Debug.Log("Merci ! Score gagné : ");
                 moneyManager.moneyChange = drinkCost;
                 moneyManager.OnMoneyChange();
@@ -131,13 +131,13 @@ public class ClientController : MonoBehaviour
                 if (tropAttendu == true)
                 {
                     int scoreGagne = -20;
-                    gameManager.AugmenterScore(scoreGagne); // Accéder à la méthode AugmenterScore à partir de l'instance de GameManager
+                    GameManager.instance.AugmenterScore(scoreGagne); // Accéder à la méthode AugmenterScore à partir de l'instance de GameManager
                     Debug.Log("Trop Lent");
                 }
                 else 
                 {
                     int scoreGagne = -8;
-                    gameManager.AugmenterScore(scoreGagne); // Accéder à la méthode AugmenterScore à partir de l'instance de GameManager
+                    GameManager.instance.AugmenterScore(scoreGagne); // Accéder à la méthode AugmenterScore à partir de l'instance de GameManager
                     Debug.Log("t'es con?");
                 }
             }
