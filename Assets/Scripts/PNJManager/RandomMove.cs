@@ -110,8 +110,8 @@ public class RandomNavMeshMovement : MonoBehaviour
 
     void CheckCollisionWithOtherPNJs()
     {
-        
-        if (animator.GetBool("isDancing") == false && animator.GetBool("isFighting") == false && animator.GetBool("willDrink") == false)
+
+        if (animator.GetBool("isDancing") == false && animator.GetBool("isFighting") == false && animator.GetBool("willDrink") == false && animator.GetBool("shouldGoIn") == false && animator.GetBool("isShitting") == false)
         {
             // Récupérer tous les PNJs avec le tag "PNJ"
             GameObject[] otherPNJs = GameObject.FindGameObjectsWithTag("PNJ");
@@ -159,7 +159,7 @@ public class RandomNavMeshMovement : MonoBehaviour
         {
             // Générer une destination aléatoire à l'intérieur du NavMesh
 
-            if (animator.GetBool("isDancing") == false && animator.GetBool("willDrink") == false)
+            if (animator.GetBool("isDancing") == false && animator.GetBool("willDrink") == false && animator.GetBool("isShitting") == false)
             {
                 animator.SetBool("isWalking", true);
                 Vector3 randomDirection = Random.insideUnitSphere * 5f; // Rayon de 10 unités
@@ -182,7 +182,6 @@ public class RandomNavMeshMovement : MonoBehaviour
         SpawnManager spawnManager = spawner.GetComponent<SpawnManager>();
         if (spawnManager.isFull == false)
         {
-            print(gameObject);
             spawnManager.StartQueue();
             if (spawnManager.numberOfPeopleInQueue == 1)
             {

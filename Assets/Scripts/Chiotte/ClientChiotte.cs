@@ -40,6 +40,7 @@ public class ClientChiotte : MonoBehaviour
     public void UseToilet()
     {
         Toilet availableToilet = toiletArea.GetAvailableToilet();
+        print(availableToilet + "33333333");
         if (availableToilet != null)
         {
             moneyManager.moneyChange = chiotteCost;

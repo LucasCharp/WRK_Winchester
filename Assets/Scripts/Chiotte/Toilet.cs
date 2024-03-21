@@ -9,6 +9,7 @@ public class Toilet : MonoBehaviour
     public GameManager gameManager;
     public AudioClip ventouse;
     public ToiletArea ZoneDesChiottes;
+    public Renderer Caca;
 
     public void UseToilet()
     {
@@ -24,6 +25,9 @@ public class Toilet : MonoBehaviour
         yield return new WaitForSeconds(8f); // Temps passé par le PNJ dans les toilettes
         isOccupied = false;
         isDirty = true;
+        print(isDirty);
+        Caca.gameObject.SetActive(true);
+
         StartCleaning();
     }
 
@@ -42,6 +46,7 @@ public class Toilet : MonoBehaviour
             if (cleaningClicksRequired <= 0)
             {
                 isDirty = false;
+                Caca.gameObject.SetActive(false);
                 gameManager.AugmenterScore(25); // Gagner 25 points de score après avoir nettoyé le toilette
             }
         }

@@ -61,6 +61,9 @@ public class ToiletArea : MonoBehaviour
         // Récupérer un toilette disponible au hasard
         foreach (var toilet in toilets)
         {
+            print("ouiouiuiuiui");
+            print(toilet.isOccupied + "e");
+            print(toilet.isDirty + "o");
             if (!toilet.isOccupied && !toilet.isDirty)
             {
                 return toilet;
