@@ -1,8 +1,7 @@
-using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.LowLevel;
-using static UnityEngine.GridBrushBase;
+using UnityEngine.UI;
 
 public class CameraRotation : MonoBehaviour
 {
@@ -13,7 +12,7 @@ public class CameraRotation : MonoBehaviour
     private float rotationSpeed = 90f; // Vitesse de rotation de la caméra en degrés par seconde
     public bool canRotate;
     public GameObject jobCanvas;
-
+    public List<Button> buttonsToDisable;
     void Update()
     {
         // Vérifie si la rotation est autorisée et si un mouvement de glissement est détecté
@@ -40,6 +39,10 @@ public class CameraRotation : MonoBehaviour
                             float rotationDirection = Mathf.Sign(slideDistanceX);
                             targetRotation = (transform.rotation.eulerAngles.y + 90f * rotationDirection) % 360f;
                             rotationStarted = true;
+                            foreach (Button button in buttonsToDisable)
+                            {
+                                button.interactable = false;
+                            }
                         }
                     }
                     break;
@@ -61,17 +64,9 @@ public class CameraRotation : MonoBehaviour
             if (Mathf.Abs(Mathf.DeltaAngle(transform.rotation.eulerAngles.y, targetRotation)) < 0.01f)
 
             {
+                foreach (Button button in buttonsToDisable)
                 {
-                    {
-                        // Trouve tous les objets de type Canvas dans la scène
-                        //Canvas[] canvasJob = FindObjectsOfType<Canvas>();
-
-                        // Parcourt tous les canvas et les désactive
-                        //foreach (Canvas canvas in canvasJob)
-                        {
-                            //jobCanvas.SetActive(false);
-                        }
-                    }
+                    button.interactable = true;
                 }
                 rotationStarted = false;
             }
