@@ -8,21 +8,23 @@ public class TutorialMenuController : MonoBehaviour
     public GameObject tutoImage;
 
     // Méthode appelée lorsque le bouton est cliqué
-    public void OpenTutorialMenu()
+    public void OpenTutorialMenu(GameObject whichImage)
     {
+        tutoImage = whichImage;
         // Activer le menu du tutoriel
-        tutorialMenu.SetActive(true);
+        tutoImage.SetActive(true);
 
         // Mettre le jeu en pause
         Time.timeScale = 0f;
     }
 
-    public void QuitTutorialMenu()
+    public void QuitTutorialMenu(GameObject whichImage)
     {
-        // Activer le menu du tutoriel
-        tutorialMenu.SetActive(false);
+        tutoImage = whichImage;
+        // Désactiver le menu du tutoriel
+        tutoImage.SetActive(false);
 
-        // Mettre le jeu en pause
+        // Enlever la pause
         Time.timeScale = 1f;
     }
 }
