@@ -48,10 +48,10 @@ public class ClientController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        animator.SetBool("willDrink", true);
-        animator.SetBool("isWalking", false);
         if (other.CompareTag("BarmanZone"))
         {
+            animator.SetBool("willDrink", true);
+            animator.SetBool("isWalking", false);
             inBarZone = true;
             if (barmanController != null)
             {
