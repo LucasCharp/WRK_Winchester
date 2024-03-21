@@ -23,6 +23,10 @@ public class CameraColliderDetection : MonoBehaviour
     public GameObject barBox;
     public GameObject videurBox;
 
+    public Renderer djRend;
+    public Renderer videurRend;
+    public List<Renderer> barmanRends;
+
     public Transform barUpgradeTarget;
     public Transform djUpgradeTarget;
     public Transform videurUpgradeTarget;
@@ -116,6 +120,10 @@ private void OnTriggerEnter(Collider other)
 
             if (mainSceneManager.startGame == true)
             {
+                Color emissionColor = Color.white * 0.1f;
+                videurRend.material.EnableKeyword("_EMISSION");
+                videurRend.material.SetColor("_EmissionColor", emissionColor);
+
                 visibleUI = "Videur";
                 videurBox.SetActive(true);
                 djBox.SetActive(false);

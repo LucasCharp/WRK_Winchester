@@ -18194,9 +18194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73a05a8258599bc4281b5481a9e5c97f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfPeopleInQueue: 0
-  isFull: 0
-  maxQueueSize: 5
 --- !u!1 &1144751105
 GameObject:
   m_ObjectHideFlags: 0
@@ -19505,6 +19502,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_DJ@Silly Dancing
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264007048760305979, guid: bc309145c1f4f0b40afaed5e3df58167,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23837,6 +23839,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1653996589}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &1473773824 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -908503628284262766, guid: a67c6dd2e0705a84588cec31a9d310d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1178781965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1474889645
 GameObject:
   m_ObjectHideFlags: 0
@@ -25858,6 +25866,9 @@ MonoBehaviour:
   djBox: {fileID: 1584782962}
   barBox: {fileID: 724070584}
   videurBox: {fileID: 485040210}
+  djRend: {fileID: 0}
+  videurRend: {fileID: 1473773824}
+  barmanRends: []
   barUpgradeTarget: {fileID: 1279098737}
   djUpgradeTarget: {fileID: 2075783585}
   videurUpgradeTarget: {fileID: 1542528170}
