@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,18 +8,18 @@ public class GameManager : MonoBehaviour
     private bool jeGagneEnContinue = false;
     public ToiletArea toiletArea;
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    //private void Awake()
+    //{
+    //    if (instance == null)
+    //    {
+    //        instance = this;
+    //        DontDestroyOnLoad(gameObject);
+    //    }
+    //    else
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
     private void Update()
     {
         if (ButtonGenre.getSelectedGenre() != null && MusicGenreAnalyzer.getFavoriteGenres() != null)
