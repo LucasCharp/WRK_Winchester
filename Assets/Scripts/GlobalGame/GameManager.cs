@@ -11,7 +11,20 @@ public class GameManager : MonoBehaviour
     public ToiletArea toiletArea;
     public TextMeshProUGUI scoreText;
     string resultString = "score: ";
-    public float Multiplicateur = 2;
+    public float Multiplicateur = 0;
+    public UpgradeButtons UpdateButtons;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Update()
     {
         if (ButtonGenre.getSelectedGenre() != null && MusicGenreAnalyzer.getFavoriteGenres() != null)
@@ -55,12 +68,12 @@ public class GameManager : MonoBehaviour
     }
     private void GainContinue()
     {
-        AugmenterScore(7);
+        AugmenterScore(8);
         jeGagneEnContinue = false;
     }
     private void PerteContinue()
     {
-        AugmenterScore(-4);
+        AugmenterScore(-3);
         jeGagneEnContinue = false;
     }
     private void shitContinue()
@@ -71,5 +84,10 @@ public class GameManager : MonoBehaviour
     public void invokeRef()
     {
         Invoke("shitContinue", 1f);
+    }
+    public void AddMultiplicata()
+    {
+        Multiplicateur += 0.5f;
+        Debug.Log(Multiplicateur);
     }
 }

@@ -136,7 +136,7 @@ public class ClientController : MonoBehaviour
                 }
                 else 
                 {
-                    int scoreGagne = -10;
+                    int scoreGagne = -8;
                     gameManager.AugmenterScore(scoreGagne); // Accéder à la méthode AugmenterScore à partir de l'instance de GameManager
                     Debug.Log("t'es con?");
                 }
