@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Analytics;
 
 public class Toilet : MonoBehaviour
 {
@@ -52,6 +53,16 @@ public class Toilet : MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        if (isDirty == true)
+        {   if (gameManager.jeChieEnContinue == false)
+            {
+                gameManager.jeChieEnContinue = true;
+                gameManager.invokeRef();
+            }
+        }
+    }
     public void StartCleaning()
     {
         cleaningClicksRequired = Random.Range(5, 10); // Nombre aléatoire de clics nécessaires entre 5 et 9 pour nettoyer le toilette

@@ -1,25 +1,17 @@
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public int score = 0;
+    public float score = 0;
     public int boxNumber;
-    private bool jeGagneEnContinue = false;
+    public bool jeGagneEnContinue = false;
+    public bool jeChieEnContinue = false;
     public ToiletArea toiletArea;
-
-    //private void Awake()
-    //{
-    //    if (instance == null)
-    //    {
-    //        instance = this;
-    //        DontDestroyOnLoad(gameObject);
-    //    }
-    //    else
-    //    {
-    //        Destroy(gameObject);
-    //    }
-    //}
+    public TextMeshProUGUI scoreText;
+    string resultString = "score: ";
+    public float Multiplicateur = 2;
     private void Update()
     {
         if (ButtonGenre.getSelectedGenre() != null && MusicGenreAnalyzer.getFavoriteGenres() != null)
@@ -32,14 +24,12 @@ public class GameManager : MonoBehaviour
                     {
                         jeGagneEnContinue = true;
                         Invoke("GainContinue", 2f);
-                        Debug.Log("bien joué");
                     }
                 }
                 else if (jeGagneEnContinue == false)
                 {
                     jeGagneEnContinue = true;
                     Invoke("PerteContinue", 2f);
-                    Debug.Log("Dommage");
                 }
             }
         }
@@ -47,15 +37,21 @@ public class GameManager : MonoBehaviour
     // Méthode pour augmenter le score
     public void AugmenterScore(int points)
     {
-        score += points;
+        score += points * Multiplicateur;
         Debug.Log("Score augmenté de " + points + " points. Nouveau score : " + score);
+        resultString = null;
+        resultString += score;
+        scoreText.text = resultString;
     }
 
     // Méthode pour décrémenter le score
     public void DiminuerScore(int points)
     {
-        score -= points;
+        score -= points * Multiplicateur;
         Debug.Log("Score diminué de " + points + " points. Nouveau score : " + score);
+        resultString = null;
+        resultString += score;
+        scoreText.text = resultString;
     }
     private void GainContinue()
     {
@@ -64,7 +60,16 @@ public class GameManager : MonoBehaviour
     }
     private void PerteContinue()
     {
-        DiminuerScore(4);
+        AugmenterScore(-4);
         jeGagneEnContinue = false;
+    }
+    private void shitContinue()
+    {
+        AugmenterScore(-1);
+        jeChieEnContinue = false;
+    }
+    public void invokeRef()
+    {
+        Invoke("shitContinue", 1f);
     }
 }

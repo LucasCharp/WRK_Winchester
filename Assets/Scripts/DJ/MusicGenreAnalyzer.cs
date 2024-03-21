@@ -1,6 +1,6 @@
-using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 
 public class MusicGenreAnalyzer : MonoBehaviour
 {
@@ -9,6 +9,9 @@ public class MusicGenreAnalyzer : MonoBehaviour
     int maxPoints = 0;
     string resultString = "Résultats :\n\n";
     private static List<string> favoriteGenres;
+    public KeyValuePair<string, int> ValueGenre;
+    public float TotalValueGenre;
+    public MusiqueBar Info;
     void Start()
     {
         pointCollector = FindObjectOfType<MusicGenrePointCollector>();
@@ -62,10 +65,23 @@ public class MusicGenreAnalyzer : MonoBehaviour
     public void DisplayResult(Dictionary<string, int> totalPoints)
     {
         resultString = "Résultats :\n\n"; // Réinitialiser la chaîne de résultat
+        int totalValue = 0; // Variable pour stocker la somme des valeurs de genre
 
         foreach (KeyValuePair<string, int> pair in totalPoints)
         {
             resultString += pair.Key + " : " + pair.Value + " points\n";
+            totalValue += pair.Value; // Ajouter la valeur du genre à la somme totale
+            ValueGenre = pair;
+            TotalValueGenre = totalValue;
+            Info.InfoValueTotal();
+
+            if (ValueGenre.Value != 0)
+            {
+                // Appeler la méthode pour calculer le pourcentage de chaque musique préférée
+                float percentage = Info.CalculatePercentage();
+                Debug.Log("Pourcentage de " + pair.Key + " : " + percentage + "%");
+                Info.InfoValueGenre();
+            }
         }
 
         resultString += "\nLes genres musicaux préférés sont :";
