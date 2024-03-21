@@ -937,7 +937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   genreName: Drill
   pointCollector: {fileID: 0}
-  gameManager: {fileID: 529653008}
+  gameManager: {fileID: 2585372049679176793}
 --- !u!23 &54266605 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6444497817018159847, guid: a0299b5f3d7a4344c9cce2b6bc08eb9e,
@@ -9793,7 +9793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   genreName: Country
   pointCollector: {fileID: 0}
-  gameManager: {fileID: 529653008}
+  gameManager: {fileID: 2585372049679176793}
 --- !u!23 &502027018 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 3893165315923982730, guid: 61d117b8aca53c743ae0dfb3a0dde915,
@@ -10166,24 +10166,6 @@ MeshRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 1241321675}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &529653007 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5605843504577549236, guid: 19634d6e5a35825488394190d7639e57,
-    type: 3}
-  m_PrefabInstance: {fileID: 4215791264629639856}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &529653008 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
-    type: 3}
-  m_PrefabInstance: {fileID: 4215791264629639856}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3caca4df1e629f4fa74d81cc2fd18b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &544143139
 GameObject:
   m_ObjectHideFlags: 0
@@ -10841,6 +10823,94 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ambianceAudioSource: {fileID: 573777656}
   music: {fileID: 8300000, guid: 119895fd69f6bac41be5e7f71c239c96, type: 3}
+--- !u!1001 &576993734
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8163200936959427187, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -8163200936959427187, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: moneyManager
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -6503089585961827188, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -6503089585961827188, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: moneyManager
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 536721060909074957, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_Name
+      value: SM_David@Snake Hip Hop Dance
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.326
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.089509726
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.336969
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef944a99cec47b04b9146287b3c6f9b4, type: 3}
 --- !u!1 &592610652
 GameObject:
   m_ObjectHideFlags: 0
@@ -11972,7 +12042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   genreName: Metal
   pointCollector: {fileID: 0}
-  gameManager: {fileID: 529653008}
+  gameManager: {fileID: 2585372049679176793}
 --- !u!1 &628479741
 GameObject:
   m_ObjectHideFlags: 0
@@ -14667,7 +14737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   genreName: Rock
   pointCollector: {fileID: 0}
-  gameManager: {fileID: 529653008}
+  gameManager: {fileID: 2585372049679176793}
 --- !u!1 &773428731
 GameObject:
   m_ObjectHideFlags: 0
@@ -16288,7 +16358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   genreName: Jazz
   pointCollector: {fileID: 0}
-  gameManager: {fileID: 529653008}
+  gameManager: {fileID: 2585372049679176793}
 --- !u!1 &931967601
 GameObject:
   m_ObjectHideFlags: 0
@@ -16472,7 +16542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   genreName: Afro
   pointCollector: {fileID: 0}
-  gameManager: {fileID: 529653008}
+  gameManager: {fileID: 2585372049679176793}
 --- !u!1 &943741350
 GameObject:
   m_ObjectHideFlags: 0
@@ -20452,7 +20522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   genreName: Brazil
   pointCollector: {fileID: 0}
-  gameManager: {fileID: 529653008}
+  gameManager: {fileID: 2585372049679176793}
 --- !u!1001 &1164599989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27284,6 +27354,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 132425f51ecd2e3459c2afe385dead66, type: 3}
   - {fileID: 8300000, guid: 3ba0e76d501388d4482465ddc287c792, type: 3}
   purchasedButtons: []
+  gameManager: {fileID: 0}
 --- !u!114 &1572198028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35250,7 +35321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   genreName: Disco
   pointCollector: {fileID: 0}
-  gameManager: {fileID: 529653008}
+  gameManager: {fileID: 2585372049679176793}
 --- !u!1 &1873673507
 GameObject:
   m_ObjectHideFlags: 0
@@ -39272,7 +39343,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 529653007}
+  - {fileID: 8595835837398604036}
   - {fileID: 597999608}
   - {fileID: 270871313}
   - {fileID: 182228546}
@@ -40053,7 +40124,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 529653008}
+      objectReference: {fileID: 2585372049679176793}
     - target: {fileID: 8757933926999701384, guid: 002c1be9dce680d44a29462f82366579,
         type: 3}
       propertyPath: ToiletOccupied
@@ -40153,6 +40224,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2009969283228960006}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2585372049679176793 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
+    type: 3}
+  m_PrefabInstance: {fileID: 4215791264629639856}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3caca4df1e629f4fa74d81cc2fd18b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2784956750173702308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40243,7 +40326,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 529653008}
+      objectReference: {fileID: 2585372049679176793}
     - target: {fileID: 7868933355372692344, guid: c96a519b1a6f84947b683631ca3a9317,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40367,6 +40450,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 9200956836554306369, guid: 19634d6e5a35825488394190d7639e57,
+        type: 3}
+      propertyPath: m_TagString
+      value: GameManager
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -40443,6 +40531,11 @@ PrefabInstance:
     - target: {fileID: 4985194920793565229, guid: 9d78af1d6edef984d9fbb7bc74d64397,
         type: 3}
       propertyPath: m_Name
+      value: MoneyManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4985194920793565229, guid: 9d78af1d6edef984d9fbb7bc74d64397,
+        type: 3}
+      propertyPath: m_TagString
       value: MoneyManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -40645,7 +40738,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 529653008}
+      objectReference: {fileID: 2585372049679176793}
     - target: {fileID: 8685911421937968491, guid: 66b3feb6f0e77834d98237ff02d9dbf2,
         type: 3}
       propertyPath: lesClientsDesChiottes
@@ -40806,7 +40899,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 529653008}
+      objectReference: {fileID: 2585372049679176793}
     - target: {fileID: 6329305383735665579, guid: acc87edd60aa2d847b3c48605e86adb5,
         type: 3}
       propertyPath: ToiletOccupied
@@ -41045,6 +41138,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8066353338523795652}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &8595835837398604036 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5605843504577549236, guid: 19634d6e5a35825488394190d7639e57,
+    type: 3}
+  m_PrefabInstance: {fileID: 4215791264629639856}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -41067,3 +41166,4 @@ SceneRoots:
   - {fileID: 1319607539}
   - {fileID: 570157639}
   - {fileID: 1291840815}
+  - {fileID: 576993734}
