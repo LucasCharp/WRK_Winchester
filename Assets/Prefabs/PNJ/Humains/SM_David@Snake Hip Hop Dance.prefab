@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 7384521975072941786}
   - component: {fileID: 6968194318781054209}
   - component: {fileID: -5368232218066639975}
+  - component: {fileID: 3840910572527571633}
   m_Layer: 0
   m_Name: SM_David@Snake Hip Hop Dance
   m_TagString: PNJ
@@ -178,6 +179,7 @@ Transform:
   - {fileID: 3609271015328132278}
   - {fileID: 4641331696045322275}
   - {fileID: 6925083402712826429}
+  - {fileID: 2341280262259469519}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2659984084550441771
@@ -382,32 +384,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536721060909074957}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1829ea053f0d3cc4c9e7f69d4748a4a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLines:
-  - oui
-  - lucas
-  - nni
-  - salur
-  - fdghdh
-  - fhjklll
-  - ouauauauau
-  - woof
-  - yeah
-  - gogol
-  - moi
-  - lino
-  - romain
-  - claire
-  - zombie
-  - humain
-  - woaoaoaoao
-  - feur
-  minTimeBetweenDialogues: 5
-  maxTimeBetweenDialogues: 10
+  dialogueImages: []
+  dialogue: 
+--- !u!114 &3840910572527571633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536721060909074957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb9a2f9ccac73244f8462bfb617323a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &697102863224059162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,6 +1444,90 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.13412431, y: -0.29343247, z: 0.3082618}
     m_Extent: {x: 0, y: 0, z: 0}
   m_DirtyAABB: 0
+--- !u!1 &6577172763233591947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2341280262259469519}
+  - component: {fileID: 202149665265428772}
+  - component: {fileID: 7062061466728013415}
+  - component: {fileID: 2349277860608436118}
+  m_Layer: 0
+  m_Name: Box Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2341280262259469519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6577172763233591947}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.18, y: 1.67, z: 0.35}
+  m_LocalScale: {x: 1.6850665, y: 3.9314842, z: 1.6850903}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 880735590960894135}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &202149665265428772
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6577172763233591947}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7062061466728013415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6577172763233591947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 0
+  priority: 0
+  blendDistance: 1
+  weight: 1
+  sharedProfile: {fileID: 0}
+--- !u!114 &2349277860608436118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6577172763233591947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb9a2f9ccac73244f8462bfb617323a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6816620144785540055
 GameObject:
   m_ObjectHideFlags: 0
