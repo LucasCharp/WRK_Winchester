@@ -32,6 +32,90 @@ Transform:
   - {fileID: 2667548511373268939}
   m_Father: {fileID: 7253886175712500734}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &470773999863592223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 502014885392620349}
+  - component: {fileID: 2391572064402896939}
+  - component: {fileID: 2569603099242199004}
+  - component: {fileID: 3285143568019071762}
+  m_Layer: 0
+  m_Name: Box Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &502014885392620349
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470773999863592223}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.03, y: 1.67, z: -0.42}
+  m_LocalScale: {x: 1.6850665, y: 3.931484, z: 1.6850903}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 80201302702523784}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2391572064402896939
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470773999863592223}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2569603099242199004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470773999863592223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 0
+  priority: 0
+  blendDistance: 1
+  weight: 1
+  sharedProfile: {fileID: 0}
+--- !u!114 &3285143568019071762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470773999863592223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb9a2f9ccac73244f8462bfb617323a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &483788159985855642
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +200,6 @@ GameObject:
   - component: {fileID: 159370305334450907}
   - component: {fileID: 7818228278428623955}
   - component: {fileID: -3990750489186488193}
-  - component: {fileID: -6941740032701231019}
   m_Layer: 0
   m_Name: SM_Sabine@Hit To Body
   m_TagString: PNJ
@@ -137,6 +220,7 @@ Transform:
   m_LocalScale: {x: 0.5934484, y: 0.59344, z: 0.59344}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 502014885392620349}
   - {fileID: 2641588320482578562}
   - {fileID: 5570033978273293596}
   - {fileID: 3796595893174853917}
@@ -337,39 +421,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHuman: 1
   isZombie: 0
---- !u!114 &-6941740032701231019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745132452211318578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1829ea053f0d3cc4c9e7f69d4748a4a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueLines:
-  - oui
-  - lucas
-  - nni
-  - salur
-  - fdghdh
-  - fhjklll
-  - ouauauauau
-  - woof
-  - yeah
-  - gogol
-  - moi
-  - lino
-  - romain
-  - claire
-  - zombie
-  - humain
-  - woaoaoaoao
-  - feur
-  minTimeBetweenDialogues: 5
-  maxTimeBetweenDialogues: 10
 --- !u!1 &1382385438604791512
 GameObject:
   m_ObjectHideFlags: 0
