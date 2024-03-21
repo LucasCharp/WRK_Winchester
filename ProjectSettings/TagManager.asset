@@ -28,6 +28,7 @@ TagManager:
   - GameManager
   - MoneyManager
   - JobGuys
+  - Etagere
   layers:
   - Default
   - TransparentFX

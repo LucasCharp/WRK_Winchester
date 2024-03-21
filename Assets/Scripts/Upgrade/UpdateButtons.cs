@@ -160,7 +160,13 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         initialCameraPosition = mainCamera.transform.position; // récupère les valeurs de la caméra avant de la faire bouger pour la remettre en place à la fin
         initialCameraRotation = mainCamera.transform.rotation;
 
+        foreach (Renderer rend in cameraCollider.barRenderer)
+        {
+            rend.enabled = true; 
+        }
+
         StartCoroutine(MoveAndRotateCamera(targetBar.position, targetBar.rotation));
+        
         goToBar = true;
         cameraRotation.canRotate = false;
     }
@@ -353,6 +359,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
         if (goToBar == true)
         {
+
             buttonRefill.gameObject.SetActive(false);
             buttonRetourBar.gameObject.SetActive(false);
             costBar.gameObject.SetActive(false);
