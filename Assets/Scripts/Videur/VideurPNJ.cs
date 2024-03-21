@@ -28,6 +28,7 @@ public class VideurPNJ : MonoBehaviour
             // Boucler sur tous les GameObjects trouvés
             foreach (GameObject pnj in pnjArray)
             {
+                print(pnj);
                 // Récupérer le composant RandomNavMeshMovement attaché à chaque GameObject
                 RandomNavMeshMovement randomMove = pnj.GetComponent<RandomNavMeshMovement>();
                 if (randomMove != null)
@@ -37,6 +38,7 @@ public class VideurPNJ : MonoBehaviour
                 }
                 else
                 {
+
                 }
             }
         }

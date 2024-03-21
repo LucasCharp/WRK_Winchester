@@ -1151,6 +1151,7 @@ GameObject:
   - component: {fileID: 5389111716059168391}
   - component: {fileID: 4110140253184311137}
   - component: {fileID: 676799704770734853}
+  - component: {fileID: 8486314143865642011}
   m_Layer: 0
   m_Name: SM_Zavier@Northern Soul Spin (1)
   m_TagString: PNJ
@@ -1213,11 +1214,11 @@ MonoBehaviour:
   minMoveDelay: 1
   maxMoveDelay: 3
   placeInQueue: 0
-  queueStart: {x: 0, y: 0, z: 0}
-  queueSecond: {x: 0, y: 0, z: 0}
-  queueThird: {x: 0, y: 0, z: 0}
-  queueLast: {x: 0, y: 0, z: 0}
-  EndZonePosition: {x: 0, y: 0, z: 0}
+  queueStart: {x: -0.5, y: 0, z: 8}
+  queueSecond: {x: -1.9, y: 0, z: 8}
+  queueThird: {x: -3.3, y: 0, z: 8}
+  queueLast: {x: -4.7, y: 0, z: 8}
+  EndZonePosition: {x: 3.03, y: 1.86, z: 10}
   whatDance: 0
   isDrunk: 0
   vfxPrefab: {fileID: 5112664334339671290, guid: 9b33683b7729bac4ebf98ec1f11bcfd6,
@@ -1371,6 +1372,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHuman: 0
   isZombie: 1
+--- !u!114 &8486314143865642011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5508130972718961153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1829ea053f0d3cc4c9e7f69d4748a4a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - a
+  - fs
+  - bft
+  - bfdv
+  - sgergt
+  - fdgdhdh
+  - car
+  - ggggggg
+  - ouixr
+  - g
+  - hfghfjfjfjfjfjfj
+  minTimeBetweenDialogues: 5
+  maxTimeBetweenDialogues: 10
 --- !u!1 &5683482016004736549
 GameObject:
   m_ObjectHideFlags: 0

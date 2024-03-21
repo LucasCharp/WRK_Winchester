@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 5746058711317589433}
   - component: {fileID: 2448828817137367853}
   - component: {fileID: 5943066979722641721}
+  - component: {fileID: -779275709043772050}
   m_Layer: 0
   m_Name: SM_Valentine@Snake Hip Hop Dance
   m_TagString: PNJ
@@ -464,6 +465,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHuman: 1
   isZombie: 0
+--- !u!114 &-779275709043772050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896183862614440991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1829ea053f0d3cc4c9e7f69d4748a4a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - oui
+  - lucas
+  - nni
+  - salur
+  - fdghdh
+  - fhjklll
+  - ouauauauau
+  - woof
+  - yeah
+  - gogol
+  - moi
+  - lino
+  - romain
+  - claire
+  - zombie
+  - humain
+  - woaoaoaoao
+  - feur
+  minTimeBetweenDialogues: 5
+  maxTimeBetweenDialogues: 10
 --- !u!1 &2270331535936751010
 GameObject:
   m_ObjectHideFlags: 0

@@ -146,7 +146,6 @@ public class RandomNavMeshMovement : MonoBehaviour
                             transform.LookAt(otherPNJ.transform.position);
                             scriptOtherPNJ.Fight();
                             otherPNJ.transform.LookAt(transform);
-
                         }
                     }
                 }
@@ -183,6 +182,7 @@ public class RandomNavMeshMovement : MonoBehaviour
         SpawnManager spawnManager = spawner.GetComponent<SpawnManager>();
         if (spawnManager.isFull == false)
         {
+            print(gameObject);
             spawnManager.StartQueue();
             if (spawnManager.numberOfPeopleInQueue == 1)
             {

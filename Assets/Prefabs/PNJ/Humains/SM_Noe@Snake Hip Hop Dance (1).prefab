@@ -496,6 +496,7 @@ GameObject:
   - component: {fileID: 165843431710119046}
   - component: {fileID: 7966689408902722830}
   - component: {fileID: -5132829209851641083}
+  - component: {fileID: -2718099440579657507}
   m_Layer: 0
   m_Name: SM_Noe@Snake Hip Hop Dance (1)
   m_TagString: PNJ
@@ -716,6 +717,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHuman: 1
   isZombie: 0
+--- !u!114 &-2718099440579657507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2282162213019212693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1829ea053f0d3cc4c9e7f69d4748a4a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - oui
+  - lucas
+  - nni
+  - salur
+  - fdghdh
+  - fhjklll
+  - ouauauauau
+  - woof
+  - yeah
+  - gogol
+  - moi
+  - lino
+  - romain
+  - claire
+  - zombie
+  - humain
+  - woaoaoaoao
+  - feur
+  minTimeBetweenDialogues: 5
+  maxTimeBetweenDialogues: 10
 --- !u!1 &2396869714405086413
 GameObject:
   m_ObjectHideFlags: 0
