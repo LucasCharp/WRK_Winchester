@@ -23,10 +23,6 @@ public class CameraColliderDetection : MonoBehaviour
     public GameObject barBox;
     public GameObject videurBox;
 
-    public Renderer djRend;
-    public Renderer videurRend;
-    public List<Renderer> barmanRends;
-
     public Transform barUpgradeTarget;
     public Transform djUpgradeTarget;
     public Transform videurUpgradeTarget;
@@ -42,7 +38,7 @@ public class CameraColliderDetection : MonoBehaviour
     private int moveSpeed = 5;
     private int rotationSpeed = 5;
     private GameObject boxToHide;
-    private Material originalMaterial;
+ 
 
     private void Start()
     {
@@ -121,10 +117,6 @@ public class CameraColliderDetection : MonoBehaviour
 
             if (mainSceneManager.startGame == true)
             {
-                Color emissionColor = Color.green * 0.1f;
-                originalMaterial = videurRend.material;
-                videurRend.material.EnableKeyword("_EMISSION");
-                videurRend.material.SetColor("_EmissionColor", emissionColor);
 
                 visibleUI = "Videur";
                 videurBox.SetActive(true);
@@ -168,9 +160,6 @@ public class CameraColliderDetection : MonoBehaviour
 
             if (mainSceneManager.startGame == true)
             {
-                videurRend.material.DisableKeyword("_EMISSION");
-                videurRend.material = originalMaterial;
-                visibleUI = "DJ";
                 barBox.SetActive(true);
                 djBox.SetActive(true);
                 videurBox.SetActive(true);
@@ -252,8 +241,6 @@ public class CameraColliderDetection : MonoBehaviour
         {
             if (mainSceneManager.startGame == true)
             {
-                videurRend.material.DisableKeyword("_EMISSION");
-                videurRend.material = originalMaterial;
                 //Canvas desiredCanvas = canvasUpgradeManager.canvasList[3];
                 visibleUI = "Videur";
                 barBox.SetActive(true);

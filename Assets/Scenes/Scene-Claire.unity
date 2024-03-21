@@ -8993,7 +8993,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &485040211
 Transform:
   m_ObjectHideFlags: 0
@@ -9859,6 +9859,7 @@ MonoBehaviour:
   toiletArea: {fileID: 0}
   scoreText: {fileID: 0}
   Multiplicateur: 2
+  UpdateButtons: {fileID: 0}
 --- !u!1 &532153424
 GameObject:
   m_ObjectHideFlags: 0
@@ -13518,7 +13519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &724070586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26845,6 +26846,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 132425f51ecd2e3459c2afe385dead66, type: 3}
   - {fileID: 8300000, guid: 3ba0e76d501388d4482465ddc287c792, type: 3}
   purchasedButtons: []
+  gameManager: {fileID: 0}
+  MoneyManager: {fileID: 0}
 --- !u!114 &1572198028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27182,7 +27185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1584782963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36022,6 +36025,8 @@ MonoBehaviour:
   moneyTotal: 0
   moneyTextStart: {fileID: 1562374683}
   moneyTextPlay: {fileID: 1456283527}
+  Multiplicatir: 1
+  UpdateButtons: {fileID: 0}
 --- !u!4 &1954402525
 Transform:
   m_ObjectHideFlags: 0

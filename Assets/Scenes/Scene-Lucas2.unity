@@ -2022,7 +2022,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canRotate: 1
   jobCanvas: {fileID: 544143139}
-  buttonsToDisable: []
+  buttonsToDisable:
+  - {fileID: 1584313772}
+  - {fileID: 1858058255}
+  - {fileID: 23348899}
+  - {fileID: 1836551087}
+  - {fileID: 1797146325}
+  - {fileID: 1994444390}
 --- !u!4 &113777588
 Transform:
   m_ObjectHideFlags: 0
@@ -9991,7 +9997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &485040211
 Transform:
   m_ObjectHideFlags: 0
@@ -14791,7 +14797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &724070586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18568,7 +18574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &956458811
 Transform:
   m_ObjectHideFlags: 0
@@ -21904,7 +21910,7 @@ MonoBehaviour:
   - {fileID: 1694109089}
   retourButton: {fileID: 836669441}
   dialogueButton: {fileID: 2745560}
-  mainSceneManager: {fileID: 0}
+  mainSceneManager: {fileID: 1396442795}
 --- !u!114 &1155547402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29641,7 +29647,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1584782963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29983,9 +29989,6 @@ MonoBehaviour:
   djBox: {fileID: 1584782962}
   barBox: {fileID: 724070584}
   videurBox: {fileID: 485040210}
-  djRend: {fileID: 0}
-  videurRend: {fileID: 0}
-  barmanRends: []
   barUpgradeTarget: {fileID: 1279098737}
   djUpgradeTarget: {fileID: 2075783585}
   videurUpgradeTarget: {fileID: 1542528170}
