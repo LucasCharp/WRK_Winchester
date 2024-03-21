@@ -46,9 +46,9 @@ public class CameraColliderDetection : MonoBehaviour
 
     private void Start()
     {
-        djBox.SetActive(false);
-        barBox.SetActive(false);
-        videurBox.SetActive(false);
+        //djBox.SetActive(false);
+        //barBox.SetActive(false);
+        //videurBox.SetActive(false);
     }
 
 
@@ -128,7 +128,7 @@ public class CameraColliderDetection : MonoBehaviour
 
                 visibleUI = "Videur";
                 videurBox.SetActive(true);
-                djBox.SetActive(false);
+                djBox.SetActive(true);
                 
             }
             Debug.Log("La caméra est entrée dans la Box 1");
@@ -171,9 +171,9 @@ public class CameraColliderDetection : MonoBehaviour
                 videurRend.material.DisableKeyword("_EMISSION");
                 videurRend.material = originalMaterial;
                 visibleUI = "DJ";
-                barBox.SetActive(false);
+                barBox.SetActive(true);
                 djBox.SetActive(true);
-                videurBox.SetActive(false);
+                videurBox.SetActive(true);
             }
            
             Debug.Log("La caméra est entrée dans la Box 2");
@@ -215,7 +215,7 @@ public class CameraColliderDetection : MonoBehaviour
             {
                 visibleUI = "Bar";
                 barBox.SetActive(true);
-                djBox.SetActive(false);
+                djBox.SetActive(true);
             }
            
 
@@ -256,8 +256,8 @@ public class CameraColliderDetection : MonoBehaviour
                 videurRend.material = originalMaterial;
                 //Canvas desiredCanvas = canvasUpgradeManager.canvasList[3];
                 visibleUI = "Videur";
-                barBox.SetActive(false);
-                videurBox.SetActive(false);
+                barBox.SetActive(true);
+                videurBox.SetActive(true);
             }
 
             Debug.Log("La caméra est entrée dans la Box 4");
