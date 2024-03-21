@@ -1845,6 +1845,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canRotate: 1
   jobCanvas: {fileID: 544143139}
+  buttonsToDisable:
+  - {fileID: 1584313772}
+  - {fileID: 1858058255}
+  - {fileID: 23348899}
+  - {fileID: 1836551087}
+  - {fileID: 1797146325}
+  - {fileID: 1994444390}
 --- !u!4 &113777588
 Transform:
   m_ObjectHideFlags: 0
@@ -5431,8 +5438,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 943741350}
   gameManager: {fileID: 529653008}
-  cameraRotation: {fileID: 0}
-  barBox: {fileID: 0}
 --- !u!114 &271344691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9042,6 +9047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   boxNumber: 0
+  toiletArea: {fileID: 0}
 --- !u!1 &532153424
 GameObject:
   m_ObjectHideFlags: 0
@@ -24376,7 +24382,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.14999999
+  m_VoxelSize: 0.11666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: f0cd958e6523c514184a8e6d64671359, type: 2}
   m_BuildHeightMesh: 0
