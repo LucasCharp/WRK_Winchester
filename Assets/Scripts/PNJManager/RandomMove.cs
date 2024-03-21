@@ -111,7 +111,7 @@ public class RandomNavMeshMovement : MonoBehaviour
     void CheckCollisionWithOtherPNJs()
     {
         
-        if (animator.GetBool("isDancing") == false && animator.GetBool("isFighting") == false)
+        if (animator.GetBool("isDancing") == false && animator.GetBool("isFighting") == false && animator.GetBool("willDrink") == false)
         {
             // Récupérer tous les PNJs avec le tag "PNJ"
             GameObject[] otherPNJs = GameObject.FindGameObjectsWithTag("PNJ");
