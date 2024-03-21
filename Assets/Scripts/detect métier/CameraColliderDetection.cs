@@ -42,6 +42,7 @@ public class CameraColliderDetection : MonoBehaviour
     private int moveSpeed = 5;
     private int rotationSpeed = 5;
     private GameObject boxToHide;
+    private Material originalMaterial;
 
     private void Start()
     {
@@ -110,7 +111,7 @@ public class CameraColliderDetection : MonoBehaviour
         pauseButton.gameObject.SetActive(true);
     }
     
-private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Box11")) // Videur
         {
@@ -120,7 +121,8 @@ private void OnTriggerEnter(Collider other)
 
             if (mainSceneManager.startGame == true)
             {
-                Color emissionColor = Color.white * 0.1f;
+                Color emissionColor = Color.green * 0.1f;
+                originalMaterial = videurRend.material;
                 videurRend.material.EnableKeyword("_EMISSION");
                 videurRend.material.SetColor("_EmissionColor", emissionColor);
 
@@ -166,6 +168,8 @@ private void OnTriggerEnter(Collider other)
 
             if (mainSceneManager.startGame == true)
             {
+                videurRend.material.DisableKeyword("_EMISSION");
+                videurRend.material = originalMaterial;
                 visibleUI = "DJ";
                 barBox.SetActive(false);
                 djBox.SetActive(true);
@@ -248,6 +252,8 @@ private void OnTriggerEnter(Collider other)
         {
             if (mainSceneManager.startGame == true)
             {
+                videurRend.material.DisableKeyword("_EMISSION");
+                videurRend.material = originalMaterial;
                 //Canvas desiredCanvas = canvasUpgradeManager.canvasList[3];
                 visibleUI = "Videur";
                 barBox.SetActive(false);
