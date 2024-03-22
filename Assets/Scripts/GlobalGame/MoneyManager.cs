@@ -29,7 +29,7 @@ public class MoneyManager : MonoBehaviour
         if (moneyChange > 0)
         {
             moneyTotal = moneyTotal + moneyChange * Multiplicatir;
-            //moneyTextPlay.text = moneyTotal.ToString();
+            moneyTextPlay.text = moneyTotal.ToString();
         }
         else
         {
