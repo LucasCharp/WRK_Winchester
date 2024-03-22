@@ -10,6 +10,10 @@ public class TutorialMenuController : MonoBehaviour
 
     public AudioClip son;
 
+    public MainSceneManager mainSceneManager;
+    public GameObject startCanvas;
+    public GameObject playCanvas;
+
     // Méthode appelée lorsque le bouton est cliqué
     public void OpenTutorialMenu(GameObject whichImage)
     {
@@ -20,6 +24,15 @@ public class TutorialMenuController : MonoBehaviour
 
         // Mettre le jeu en pause
         Time.timeScale = 0f;
+
+        if (mainSceneManager.startGame == false)
+        {
+            startCanvas.SetActive(false);
+        }
+        else
+        {
+            playCanvas.SetActive(false);
+        }
     }
 
     public void QuitTutorialMenu(GameObject whichImage)
@@ -31,6 +44,15 @@ public class TutorialMenuController : MonoBehaviour
 
         // Enlever la pause
         Time.timeScale = 1f;
+
+        if (mainSceneManager.startGame==false)
+        {
+            startCanvas.SetActive(true);
+        }
+        else
+        {
+            playCanvas.SetActive(true);
+        }
     }
 
     public void OpenTutorialSlide(GameObject whichImage)

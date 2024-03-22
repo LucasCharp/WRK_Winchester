@@ -191,6 +191,9 @@ MonoBehaviour:
   tutorialMenu: {fileID: 171577129}
   tutoImage: {fileID: 0}
   son: {fileID: 8300000, guid: 1f9a7794e86cb5c41ba79a80326483dd, type: 3}
+  mainSceneManager: {fileID: 1396442795}
+  startCanvas: {fileID: 359792874}
+  playCanvas: {fileID: 511433041}
 --- !u!114 &2149276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14995,6 +14998,9 @@ MonoBehaviour:
   tutorialMenu: {fileID: 171577129}
   tutoImage: {fileID: 0}
   son: {fileID: 0}
+  mainSceneManager: {fileID: 0}
+  startCanvas: {fileID: 0}
+  playCanvas: {fileID: 0}
 --- !u!114 &606719494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23199,13 +23205,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2149273}
   - {fileID: 544143140}
   - {fileID: 1329721574}
   - {fileID: 1572198026}
   - {fileID: 359792875}
   - {fileID: 511433042}
   - {fileID: 1641543120}
+  - {fileID: 2149273}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1026423817
