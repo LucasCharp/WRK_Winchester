@@ -100,8 +100,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOccupied: 0
   isDirty: 0
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
+    type: 3}
   ventouse: {fileID: 8300000, guid: d0cb266a4d324314abb9cfdf9ea9aa02, type: 3}
+  ZoneDesChiottes: {fileID: 8685911421937968491, guid: 66b3feb6f0e77834d98237ff02d9dbf2,
+    type: 3}
+  Caca: {fileID: 0}
+  ToiletFree: {fileID: 0}
+  ToiletOccupied: {fileID: 0}
 --- !u!54 &8981638073875865035
 Rigidbody:
   m_ObjectHideFlags: 0
