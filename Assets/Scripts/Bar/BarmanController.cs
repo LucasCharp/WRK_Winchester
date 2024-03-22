@@ -36,6 +36,7 @@ public class BarmanController : MonoBehaviour
     public void ServirBoisson(string nomBoisson)
     {
         Debug.Log("Boisson vendue : " + nomBoisson);
+        Debug.Log(mainSceneManager.barLevel);
 
         if (commandePrioritaire != null && mainSceneManager.barLevel != 0)
         {
