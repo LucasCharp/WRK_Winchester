@@ -8,12 +8,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MenuPrincipal.unity
     guid: 347e393453887e843a7ec75f7de6ff28
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainScene.unity
     guid: f1a9374900832ea4abbd4c22a2e98d86
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scene-Claire.unity
     guid: daece12bd9f0b13499be7ef772671908
+  - enabled: 1
+    path: Assets/Scenes/Scene-Romain.unity
+    guid: 3cd41b77df32e8c4bb17577391f42c71
   m_configObjects:
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
+      guid: 70de52d4f7de72d448cca31cd1352e8d, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}
