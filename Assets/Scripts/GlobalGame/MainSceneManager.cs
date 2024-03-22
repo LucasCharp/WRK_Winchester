@@ -92,11 +92,21 @@ public class MainSceneManager : MonoBehaviour
         playCanvas.gameObject.SetActive(true);
 
         djAnimator.SetBool("isDancing", true);
+        StartCoroutine(EndGameTimer());
+    }
+
+
+    IEnumerator EndGameTimer()
+    {
+        yield return new WaitForSeconds(300);
+        Time.timeScale = 0f;
+        //jouer un son de victoire
+        yield return new WaitForSeconds(2);//attendre le temps du son
+        //faire apparaître le widget de victoire
     }
 
     public void OnPauseCliqued()
     {
-        Debug.Log("PAuse");
         if (isPaused == false)
         {
             SFXManager.instance.PlaySoundFXClip(son[2], transform, 1f);
