@@ -10,7 +10,7 @@ public class Toilet : MonoBehaviour
     public GameManager gameManager;
     public AudioClip ventouse;
     public ToiletArea ZoneDesChiottes;
-    public Renderer Caca;
+    public GameObject Caca;
     public Button ToiletFree;
     public Button ToiletOccupied;
     public static Toilet instance;
@@ -31,8 +31,6 @@ public class Toilet : MonoBehaviour
         yield return new WaitForSeconds(8f); // Temps passé par le PNJ dans les toilettes
         isOccupied = false;
         isDirty = true;
-        print(isDirty);
-        Caca.gameObject.SetActive(true);
 
         StartCleaning();
     }
@@ -72,6 +70,8 @@ public class Toilet : MonoBehaviour
     }
     public void StartCleaning()
     {
+        print(isDirty);
+        Caca.SetActive(true);
         cleaningClicksRequired = Random.Range(5, 10); // Nombre aléatoire de clics nécessaires entre 5 et 9 pour nettoyer le toilette
     }
 }

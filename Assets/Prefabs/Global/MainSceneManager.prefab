@@ -48,10 +48,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startGame: 0
-  etagereFull: {fileID: 0}
-  etagereHalf: {fileID: 0}
-  etagereQuarter: {fileID: 0}
-  etagereEmpty: {fileID: 0}
+  etagereFull: {fileID: 2985048825378386881, guid: bdee36b3a92336b4baf705269272d3cf,
+    type: 3}
+  etagereHalf: {fileID: 2438941627728689983, guid: 5da71a50c331bba4280f5266f72eeb1e,
+    type: 3}
+  etagereQuarter: {fileID: 2104708415374118349, guid: a0299b5f3d7a4344c9cce2b6bc08eb9e,
+    type: 3}
+  etagereEmpty: {fileID: 7616727644054760691, guid: 61d117b8aca53c743ae0dfb3a0dde915,
+    type: 3}
   canvasList:
   - {fileID: 0}
   - {fileID: 0}
@@ -65,11 +69,16 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8cd5dee2685976d4e93a0f31ca27dacf, type: 3}
   - {fileID: 8300000, guid: c74cd96a2d861f54e83425a6db2470e9, type: 3}
   - {fileID: 8300000, guid: b54a9bd3b08caf14882fe2646435f28d, type: 3}
-  cameraRotation: {fileID: 0}
-  cameraCollider: {fileID: 0}
-  jukeboxManager: {fileID: 0}
-  electricityManager: {fileID: 0}
-  ambianceManager: {fileID: 0}
+  cameraRotation: {fileID: 3680276509120478874, guid: 335f8c7246e5cae4298c42fc7267f0e4,
+    type: 3}
+  cameraCollider: {fileID: 86951541806688076, guid: 484a13f929a6e8a4698cec51609a09cd,
+    type: 3}
+  jukeboxManager: {fileID: 1740132206191334941, guid: 81eaa8985856acb4a83911ccf605b8e8,
+    type: 3}
+  electricityManager: {fileID: -7509605161308972306, guid: 6adc7446f84b8c7419c6ec5050d593a5,
+    type: 3}
+  ambianceManager: {fileID: 8490357008335713762, guid: f109ea7777093c04a86b3fbd5806d412,
+    type: 3}
   djAnimator: {fileID: 0}
   drinkCount: 0
   barLevel: 0

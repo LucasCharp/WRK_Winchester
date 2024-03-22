@@ -10,6 +10,7 @@ public class MoneyManager : MonoBehaviour
     public TextMeshProUGUI moneyTextPlay;
     public float Multiplicatir = 1f;
     public UpgradeButtons UpdateButtons;
+    public static MoneyManager instance;
 
     // Start is called before the first frame update
     void Start()
@@ -19,18 +20,22 @@ public class MoneyManager : MonoBehaviour
     }
     public void AddMultiplicato()
     {
-        Multiplicatir += 0.2f;
+        Multiplicatir += 0.1f;
         Debug.Log(Multiplicatir);
     }
     public void OnMoneyChange()
     {
-        if (moneyChange > 0 )
+        Debug.Log(moneyChange);
+        if (moneyChange > 0)
         {
             moneyTotal = moneyTotal + moneyChange * Multiplicatir;
+            //moneyTextPlay.text = moneyTotal.ToString();
         }
         else
-        moneyTotal = moneyTotal + moneyChange;
-        moneyTextStart.text = moneyTotal.ToString();
-        moneyTextPlay.text = moneyTotal.ToString();
+        {
+            moneyTotal = moneyTotal + moneyChange;
+            moneyTextStart.text = moneyTotal.ToString();
+            moneyTextPlay.text = moneyTotal.ToString();
+        }
     }
 }

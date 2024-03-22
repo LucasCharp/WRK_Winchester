@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ToiletArea : MonoBehaviour
@@ -5,20 +6,25 @@ public class ToiletArea : MonoBehaviour
     public Toilet[] toilets; // Tableau des toilettes dans la zone
     public GameManager gameManager;
     private Coroutine waitingCoroutine;
-    public ClientChiotte lesClientsDesChiottes;
     public bool inChiotteZone = false;
+    public GameObject PNJ;
+    private ClientChiotte lesClientsDesChiottes = new ClientChiotte();
+    public static ToiletArea instance;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider PNJ)
     {
-        if (other.CompareTag("PNJ"))
+        if (PNJ.CompareTag("PNJ"))
         {
+            Debug.Log("Jesuila");
             inChiotteZone = true;
             // Récupérer le script ClientChiotte attaché au PNJ
-            ClientChiotte clientChiotte = other.GetComponent<ClientChiotte>();
-            lesClientsDesChiottes = clientChiotte;
+            ClientChiotte clientChiotte = PNJ.GetComponent<ClientChiotte>();
+            Debug.Log(clientChiotte+ "je l'ai");
             if (clientChiotte != null)
             {
+                Debug.Log("la");
                 lesClientsDesChiottes.UseToilet();
+                Debug.Log("la2");
             }
             else
             {
@@ -61,10 +67,11 @@ public class ToiletArea : MonoBehaviour
         foreach (var toilet in toilets)
         {
             print("ouiouiuiuiui");
-            print(Toilet.instance.isOccupied + "e");
-            print(Toilet.instance.isDirty + "o");
-            if (!Toilet.instance.isOccupied && !Toilet.instance.isDirty)
+            print(toilet.isOccupied + "e"); // Utilisez toilet au lieu de Toilet.instance
+            print(toilet.isDirty + "o"); // Utilisez toilet au lieu de Toilet.instance
+            if (!toilet.isOccupied && !toilet.isDirty) // Utilisez toilet au lieu de Toilet.instance
             {
+                Debug.Log("il est libre");
                 return toilet;
             }
         }

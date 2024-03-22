@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4430917299219183284}
   - component: {fileID: 4626890412756182443}
+  - component: {fileID: -7509605161308972306}
   - component: {fileID: 4174498813889769234}
   m_Layer: 0
   m_Name: SM_ElectricMeter
@@ -41,6 +42,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3672239972011735990}
   m_Mesh: {fileID: -294775435377182401, guid: 136aed9c679c26c41a8f5f413b48c311, type: 3}
+--- !u!114 &-7509605161308972306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3672239972011735990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 922b3364a113c9d44b8aea05c02b35e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  electricityCut: 0
+  lightsToOff: []
+  mainSceneManager: {fileID: 0}
+  moneyManager: {fileID: 0}
+  redLights: []
+  boxCollider: {fileID: 0}
+  jukeboxManager: {fileID: 0}
+  sons: []
+  elecRed: {fileID: 0}
+  elecGreen: {fileID: 0}
 --- !u!23 &4174498813889769234
 MeshRenderer:
   m_ObjectHideFlags: 0

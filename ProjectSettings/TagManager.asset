@@ -29,6 +29,7 @@ TagManager:
   - MoneyManager
   - JobGuys
   - Etagere
+  - Caca
   layers:
   - Default
   - TransparentFX
