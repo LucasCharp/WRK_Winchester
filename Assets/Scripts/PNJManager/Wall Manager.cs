@@ -16,7 +16,7 @@ public class WallManager : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("PNJ"))
+        if (other.CompareTag("PNJ") && animator.GetBool("willDance") == false)
         {
             GoBackInPub(other);
         }
