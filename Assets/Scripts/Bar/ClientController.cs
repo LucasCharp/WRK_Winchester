@@ -23,6 +23,17 @@ public class ClientController : MonoBehaviour
     public Image[] boissonImages;
     private Dictionary<string, Image> boissonsImages = new Dictionary<string, Image>();
 
+
+
+    private void Update()
+    {
+        if(commandeFulfilled == true)
+        {
+            satisfait = true;
+            animator.SetBool("willDrink", false);
+            animator.SetBool("isWalking", true);
+        }
+    }
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -125,8 +136,7 @@ public class ClientController : MonoBehaviour
                 Debug.Log("Merci ! Score gagné : ");
                 moneyManager.moneyChange = drinkCost;
                 moneyManager.OnMoneyChange();
-                animator.SetBool("willDrink", false);
-                animator.SetBool("isWalking", true);
+                
             }
             else
             {
