@@ -47,7 +47,6 @@ public class MainSceneManager : MonoBehaviour
         }
     }
 
-
     public void RemoveDrink()
     {
         drinkCount = drinkCount - 1;
@@ -59,7 +58,7 @@ public class MainSceneManager : MonoBehaviour
             etagereQuarter.SetActive(false);
             etagereEmpty.SetActive(true);
         }
-        if (drinkCount <= 5)
+        if (drinkCount >0 && drinkCount <= 5)
         {
             barLevel = 1;
             etagereFull.SetActive(false);
@@ -67,7 +66,7 @@ public class MainSceneManager : MonoBehaviour
             etagereQuarter.SetActive(true);
             etagereEmpty.SetActive(false);
         }
-        if (drinkCount <= 10)
+        if (drinkCount <= 15 && drinkCount >5)
         {
             barLevel = 2;
             etagereFull.SetActive(false);
@@ -75,7 +74,7 @@ public class MainSceneManager : MonoBehaviour
             etagereQuarter.SetActive(false);
             etagereEmpty.SetActive(false);
         }
-        if (drinkCount <= 20)
+        if (drinkCount <= 30 && drinkCount >15)
         {
             barLevel = 3;
             etagereFull.SetActive(true);
@@ -107,7 +106,7 @@ public class MainSceneManager : MonoBehaviour
             etagereHalf.SetActive(true);
             etagereQuarter.SetActive(false);
             etagereEmpty.SetActive(false);
-            drinkCount = 10;
+            drinkCount = 15;
         }
         else if (barLevel == 2)
         {
@@ -118,7 +117,7 @@ public class MainSceneManager : MonoBehaviour
             etagereHalf.SetActive(false);
             etagereQuarter.SetActive(false);
             etagereEmpty.SetActive(false);
-            drinkCount = 20;
+            drinkCount = 30;
         }
     }
 
@@ -138,7 +137,7 @@ public class MainSceneManager : MonoBehaviour
 
     IEnumerator EndGameTimer()
     {
-        yield return new WaitForSeconds(300);
+        yield return new WaitForSeconds(420);
         Time.timeScale = 0f;
         //jouer un son de victoire
         yield return new WaitForSeconds(2);//attendre le temps du son

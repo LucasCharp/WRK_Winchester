@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public ToiletArea toiletArea;
     public TextMeshProUGUI scoreText;
     string resultString = "score: ";
-    public float Multiplicateur = 0;
+    public float Multiplicateur = 1;
     public UpgradeButtons UpdateButtons;
     public List<TextMeshProUGUI> scoreTexts;
     void Awake()
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Score augmenté de " + points + " points. Nouveau score : " + score);
         resultString = null;
         resultString += score;
-        scoreText.text = resultString;
+        //scoreText.text = resultString;
         foreach (TextMeshProUGUI scoreText in scoreTexts)
         {
             scoreText.text = score.ToString();
@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Score diminué de " + points + " points. Nouveau score : " + score);
         resultString = null;
         resultString += score;
-        scoreText.text = resultString;
+        //scoreText.text = resultString;
         foreach (TextMeshProUGUI scoreText in scoreTexts)
         {
             scoreText.text = score.ToString();

@@ -50,7 +50,7 @@ public class BarmanController : MonoBehaviour
                 Debug.Log("Mauvaise réponse !");
             }
             // Modifier l'appel à LivrerBoisson pour passer un booléen
-        commandePrioritaire.LivrerBoisson(nomBoisson == commandePrioritaire.commande);
+            commandePrioritaire.LivrerBoisson(nomBoisson == commandePrioritaire.commande);
             Debug.Log("ouiu");
         }
         else

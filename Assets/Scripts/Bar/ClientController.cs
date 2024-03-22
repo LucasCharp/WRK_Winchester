@@ -85,7 +85,7 @@ public class ClientController : MonoBehaviour
             AfficherCommande();
             Debug.Log("Commande reçue : " + commande);
             tempsInitial = Time.time; // Stocker le temps initial
-            Invoke("SimulerAttente", 40f);
+            Invoke("SimulerAttente", 7f);
         }
     }
 
@@ -125,6 +125,8 @@ public class ClientController : MonoBehaviour
                 Debug.Log("Merci ! Score gagné : ");
                 moneyManager.moneyChange = drinkCost;
                 moneyManager.OnMoneyChange();
+                animator.SetBool("willDrink", false);
+                animator.SetBool("isWalking", true);
             }
             else
             {
@@ -133,6 +135,8 @@ public class ClientController : MonoBehaviour
                     int scoreGagne = -20;
                     GameManager.instance.AugmenterScore(scoreGagne); // Accéder à la méthode AugmenterScore à partir de l'instance de GameManager
                     Debug.Log("Trop Lent");
+                    animator.SetBool("willDrink", false);
+                    animator.SetBool("isWalking", true);
                 }
                 else 
                 {
