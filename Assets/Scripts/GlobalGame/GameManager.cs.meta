@@ -3,7 +3,11 @@ guid: e3caca4df1e629f4fa74d81cc2fd18b8
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - toiletArea: {fileID: 8685911421937968491, guid: 66b3feb6f0e77834d98237ff02d9dbf2,
+      type: 3}
+  - scoreText: {instanceID: 0}
+  - UpdateButtons: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
