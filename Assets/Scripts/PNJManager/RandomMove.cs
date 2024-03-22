@@ -19,6 +19,7 @@ public class RandomNavMeshMovement : MonoBehaviour
     public Vector3 EndZonePosition;
     private Vector3 PubOpposite;
     public int whatDance = 0;
+    private ParticleSystem VFXSmoke;
 
     bool hasManagedDoor = false;
     public bool isDrunk = false;
@@ -27,6 +28,10 @@ public class RandomNavMeshMovement : MonoBehaviour
     public float yOffset = 1.0f;
 
     private GameObject[] doors;
+
+    private GameObject opponent;
+    private NavMeshAgent opponentNavMeshAgent;
+    private Animator opponentAnimator;
 
     private void Awake()
     {
@@ -110,7 +115,8 @@ public class RandomNavMeshMovement : MonoBehaviour
 
     void CheckCollisionWithOtherPNJs()
     {
-
+        GameObject videur = GameObject.Find("VideurEmploye");
+        VideurPNJ VideurCode = videur.GetComponent<VideurPNJ>();
         if (animator.GetBool("isDancing") == false && animator.GetBool("isFighting") == false && animator.GetBool("willDrink") == false && animator.GetBool("shouldGoIn") == false && animator.GetBool("isShitting") == false)
         {
             // Récupérer tous les PNJs avec le tag "PNJ"
@@ -146,6 +152,8 @@ public class RandomNavMeshMovement : MonoBehaviour
                             transform.LookAt(otherPNJ.transform.position);
                             scriptOtherPNJ.Fight();
                             otherPNJ.transform.LookAt(transform);
+                            VideurCode.ActivateButton(gameObject);
+                            opponent = otherPNJ;
                         }
                     }
                 }
@@ -266,6 +274,17 @@ public class RandomNavMeshMovement : MonoBehaviour
         navMeshAgent.isStopped = true;
         animator.SetBool("isFighting", true);
         Smoke();
+    }
+
+    public void StopFight()
+    {
+        animator.SetBool("isFighting", false);
+        navMeshAgent.isStopped = false;
+        opponentNavMeshAgent = GetComponent<NavMeshAgent>();
+        opponentAnimator = GetComponent<Animator>();
+        opponentAnimator.SetBool("isFighting", false);
+        opponentNavMeshAgent.isStopped = false;
+        vfxPrefab.Stop();
     }
 
     public void Smoke()

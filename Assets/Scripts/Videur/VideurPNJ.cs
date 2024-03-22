@@ -1,20 +1,34 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class VideurPNJ : MonoBehaviour
 {
     public float entryInterval;
     private Coroutine repeatingInvoke;
+    public Button buttonBagarre;
+    public Image imgBagarre;
+    public GameObject Fighter;
+    private NavMeshAgent navMeshAgent;
+    private Animator animator;
+    private bool hasSeparate = false;
+
     // Start is called before the first frame update
     void Start()
     {
         StartRepeatingInvoke(entryInterval);
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (animator.GetBool("isFighting") == true && hasSeparate == false)
+        {
+            SeparatePeople();
+        }
     }
     void InvokeInQueue()
     {
@@ -62,6 +76,40 @@ public class VideurPNJ : MonoBehaviour
         {
             StopCoroutine(repeatingInvoke);
             repeatingInvoke = null;
+        }
+    }
+
+    public void ActivateButton(GameObject fighter)
+    {
+        buttonBagarre.gameObject.SetActive(true);
+        imgBagarre.gameObject.SetActive(false);
+        Fighter = fighter;
+    }
+
+    public void GoToFighter()
+    {
+        animator.SetBool("isFighting", true);
+        navMeshAgent.SetDestination(Fighter.transform.position);
+        
+    }
+
+    public void SeparatePeople()
+    {
+        NavMeshAgent otherNavMeshAgent = Fighter.GetComponent<NavMeshAgent>();
+        RandomNavMeshMovement fighterScript = Fighter.GetComponent<RandomNavMeshMovement>();
+
+        float distance = Vector3.Distance(transform.position, Fighter.transform.position);
+
+
+        float triggerDistance = navMeshAgent.radius + otherNavMeshAgent.radius;
+
+        if (distance < triggerDistance)
+        {
+            animator.SetBool("isMenacing", true);
+            navMeshAgent.isStopped = true;
+            print("Il le menance");
+            fighterScript.StopFight();
+            hasSeparate = true;
         }
     }
 
