@@ -278,6 +278,7 @@ public class RandomNavMeshMovement : MonoBehaviour
 
     public void StopFight()
     {
+        print("stop");
         animator.SetBool("isFighting", false);
         navMeshAgent.isStopped = false;
         opponentNavMeshAgent = GetComponent<NavMeshAgent>();

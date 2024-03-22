@@ -105,11 +105,12 @@ public class VideurPNJ : MonoBehaviour
 
         if (distance < triggerDistance)
         {
+            print("touche");
             animator.SetBool("isMenacing", true);
-            navMeshAgent.isStopped = true;
             print("Il le menance");
             fighterScript.StopFight();
             hasSeparate = true;
+            navMeshAgent.isStopped = true;
         }
     }
 
