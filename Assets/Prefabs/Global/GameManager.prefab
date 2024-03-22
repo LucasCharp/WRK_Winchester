@@ -48,7 +48,10 @@ MonoBehaviour:
   boxNumber: 0
   jeGagneEnContinue: 0
   jeChieEnContinue: 0
-  toiletArea: {fileID: 0}
-  scoreText: {fileID: 0}
+  toiletArea: {fileID: 8685911421937968491, guid: 66b3feb6f0e77834d98237ff02d9dbf2,
+    type: 3}
+  scoreText: {fileID: 3641046227376719246, guid: 5e790d2cba16df24ea09587fb318cf0c,
+    type: 3}
   Multiplicateur: 0
   UpdateButtons: {fileID: 0}
+  scoreTexts: []
