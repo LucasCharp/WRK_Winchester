@@ -96,31 +96,36 @@ public class MainMenuManager : MonoBehaviour
 
     IEnumerator MoveAndRotateCamera(Vector3 targetPosition, Quaternion targetRotation)
     {
+        mainCamera = Camera.main;
         if (objectTouched.CompareTag("Dumpster"))
         {
-            StartCoroutine(RotateDumpLid());
-            Debug.Log("Je suis là aussi du con");
-            playButton.gameObject.SetActive(false);
-            Debug.Log("Je touche la poubelle");
-            //soundPlayer.clip = son[1];
-            //ClickSound();
-            SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
-
-            // Tant que la distance entre la caméra et la position cible est supérieure à une petite marge
-            while (Vector3.Distance(mainCamera.transform.position, targetPosition) > 0.1f)
+            if (mainCamera != null)
             {
-                // Déplace la caméra progressivement vers la position cible
-                mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, targetPosition, moveSpeed * Time.deltaTime);
+                StartCoroutine(RotateDumpLid());
+                Debug.Log("Je suis là aussi du con");
+                playButton.gameObject.SetActive(false);
+                Debug.Log("Je touche la poubelle");
+                //soundPlayer.clip = son[1];
+                //ClickSound();
+                SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
 
-                // Oriente la caméra progressivement vers la rotation cible
-                mainCamera.transform.rotation = Quaternion.Slerp(mainCamera.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+                // Tant que la distance entre la caméra et la position cible est supérieure à une petite marge
+                while (Vector3.Distance(mainCamera.transform.position, targetPosition) > 0.1f)
+                {
+                    // Déplace la caméra progressivement vers la position cible
+                    mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
-                yield return null; // Attend une frame
+                    // Oriente la caméra progressivement vers la rotation cible
+                    mainCamera.transform.rotation = Quaternion.Slerp(mainCamera.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-                objectDumpster.GetComponent<Collider>().enabled = false;
-                objectMenu.GetComponent<Collider>().enabled = false;
+                    yield return null; // Attend une frame
+
+                    objectDumpster.GetComponent<Collider>().enabled = false;
+                    objectMenu.GetComponent<Collider>().enabled = false;
+                }
+                buttonDumpster.gameObject.SetActive(true);// met le bouton en visible après que la caméra soit arrivée, pour pas spam dessus
             }
-            buttonDumpster.gameObject.SetActive(true);// met le bouton en visible après que la caméra soit arrivée, pour pas spam dessus
+            
         }
         if (objectTouched.CompareTag("Menu"))
         {

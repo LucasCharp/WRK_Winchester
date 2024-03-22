@@ -75,10 +75,10 @@ MonoBehaviour:
     type: 3}
   jukeboxManager: {fileID: 1740132206191334941, guid: 81eaa8985856acb4a83911ccf605b8e8,
     type: 3}
-  electricityManager: {fileID: -7509605161308972306, guid: 6adc7446f84b8c7419c6ec5050d593a5,
-    type: 3}
+  electricityManager: {fileID: 0}
   ambianceManager: {fileID: 8490357008335713762, guid: f109ea7777093c04a86b3fbd5806d412,
     type: 3}
+  spawnManager: {fileID: 0}
   djAnimator: {fileID: 0}
   drinkCount: 0
   barLevel: 0

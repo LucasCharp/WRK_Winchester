@@ -10,10 +10,14 @@ public class SpawnManager : MonoBehaviour
     public GameObject Main;
     public bool spawnerHasStart = false;
 
-
     void Start()
     {
 
+    }
+
+    public void DestroySpawner()
+    {
+        Destroy(gameObject);
     }
 
     private void Update()

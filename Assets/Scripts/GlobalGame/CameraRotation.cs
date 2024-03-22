@@ -69,9 +69,12 @@ public class CameraRotation : MonoBehaviour
             if (Mathf.Abs(Mathf.DeltaAngle(transform.rotation.eulerAngles.y, targetRotation)) < 0.01f)
 
             {
-                foreach (Button button in buttonsToDisable)
+                if (buttonsToDisable != null && mainSceneManager.startGame == false)
                 {
-                    button.interactable = true;
+                    foreach (Button button in buttonsToDisable)
+                    {
+                        button.interactable = true;
+                    }
                 }
                 rotationStarted = false;
             }
