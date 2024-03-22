@@ -1608,6 +1608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialMenu: {fileID: 1907438786}
   tutoImage: {fileID: 0}
+  son: {fileID: 8300000, guid: 1f9a7794e86cb5c41ba79a80326483dd, type: 3}
 --- !u!1 &92203402
 GameObject:
   m_ObjectHideFlags: 0
@@ -4012,7 +4013,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: QuitTutorialMenu
+        m_MethodName: QuitTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 643106396}
@@ -4024,7 +4025,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: OpenTutorialMenu
+        m_MethodName: OpenTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1907438786}
@@ -5512,7 +5513,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: OpenTutorialMenu
+        m_MethodName: OpenTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2144557502}
@@ -5524,7 +5525,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: QuitTutorialMenu
+        m_MethodName: QuitTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1907438786}
@@ -6383,7 +6384,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: OpenTutorialMenu
+        m_MethodName: OpenTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1901298683}
@@ -6395,7 +6396,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: QuitTutorialMenu
+        m_MethodName: QuitTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1907438786}
@@ -7620,7 +7621,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: QuitTutorialMenu
+        m_MethodName: QuitTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1095717529}
@@ -7632,7 +7633,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: OpenTutorialMenu
+        m_MethodName: OpenTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1907438786}
@@ -8272,7 +8273,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: QuitTutorialMenu
+        m_MethodName: QuitTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1595670979}
@@ -8284,7 +8285,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: OpenTutorialMenu
+        m_MethodName: OpenTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1907438786}
@@ -8740,7 +8741,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: OpenTutorialMenu
+        m_MethodName: OpenTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1274284162}
@@ -11286,7 +11287,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: QuitTutorialMenu
+        m_MethodName: QuitTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 336129758}
@@ -11298,7 +11299,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: OpenTutorialMenu
+        m_MethodName: OpenTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1907438786}
@@ -12020,6 +12021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialMenu: {fileID: 1907438786}
   tutoImage: {fileID: 0}
+  son: {fileID: 0}
 --- !u!1 &621559745
 GameObject:
   m_ObjectHideFlags: 0
@@ -14434,7 +14436,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: OpenTutorialMenu
+        m_MethodName: OpenTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1316913646}
@@ -14446,7 +14448,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: QuitTutorialMenu
+        m_MethodName: QuitTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1907438786}
@@ -15893,7 +15895,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: QuitTutorialMenu
+        m_MethodName: QuitTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1244908754}
@@ -15905,7 +15907,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: OpenTutorialMenu
+        m_MethodName: OpenTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1907438786}
@@ -18485,7 +18487,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: QuitTutorialMenu
+        m_MethodName: QuitTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1899988666}
@@ -18497,7 +18499,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: OpenTutorialMenu
+        m_MethodName: OpenTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1244908754}
@@ -22315,7 +22317,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: QuitTutorialMenu
+        m_MethodName: QuitTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2144557502}
@@ -22327,7 +22329,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: OpenTutorialMenu
+        m_MethodName: OpenTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1918110488}
@@ -22534,7 +22536,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: OpenTutorialMenu
+        m_MethodName: OpenTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 907130058}
@@ -22546,7 +22548,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: QuitTutorialMenu
+        m_MethodName: QuitTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1907438786}
@@ -26188,7 +26190,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: OpenTutorialMenu
+        m_MethodName: OpenTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1595670979}
@@ -26200,7 +26202,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: QuitTutorialMenu
+        m_MethodName: QuitTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1907438786}
@@ -27390,7 +27392,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: QuitTutorialMenu
+        m_MethodName: QuitTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1274284162}
@@ -27402,7 +27404,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: OpenTutorialMenu
+        m_MethodName: OpenTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1899988666}
@@ -27953,7 +27955,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: OpenTutorialMenu
+        m_MethodName: OpenTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 336129758}
@@ -27965,7 +27967,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: QuitTutorialMenu
+        m_MethodName: QuitTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1907438786}
@@ -28959,7 +28961,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: OpenTutorialMenu
+        m_MethodName: OpenTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1095717529}
@@ -28971,7 +28973,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: QuitTutorialMenu
+        m_MethodName: QuitTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1907438786}
@@ -31463,7 +31465,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: QuitTutorialMenu
+        m_MethodName: QuitTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1918110488}
@@ -31475,7 +31477,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: OpenTutorialMenu
+        m_MethodName: OpenTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 643106396}
@@ -35343,7 +35345,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: QuitTutorialMenu
+        m_MethodName: QuitTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 907130058}
@@ -35355,7 +35357,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: OpenTutorialMenu
+        m_MethodName: OpenTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1907438786}
@@ -37889,7 +37891,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1907438787
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38167,7 +38169,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: QuitTutorialMenu
+        m_MethodName: QuitTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1901298683}
@@ -38179,7 +38181,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: OpenTutorialMenu
+        m_MethodName: OpenTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1907438786}
@@ -39264,7 +39266,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: QuitTutorialMenu
+        m_MethodName: QuitTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1316913646}
@@ -39276,7 +39278,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 80790504}
         m_TargetAssemblyTypeName: TutorialMenuController, Assembly-CSharp
-        m_MethodName: OpenTutorialMenu
+        m_MethodName: OpenTutorialSlide
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1907438786}
