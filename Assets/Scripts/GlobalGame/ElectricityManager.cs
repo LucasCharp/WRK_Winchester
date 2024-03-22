@@ -22,7 +22,10 @@ public class ElectricityManager : MonoBehaviour
     public AudioClip[] sons;
     public Image elecRed;
     public Image elecGreen;
-    
+
+    public Canvas looseCanvas;
+    public List<Canvas> canvasToHide;
+
     private void Start()
     {
         foreach (GameObject light in redLights)
@@ -113,11 +116,16 @@ public class ElectricityManager : MonoBehaviour
 
     IEnumerator LooseGameTimer()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(20);
         if(electricityCut == true)
         {
             Time.timeScale = 0f;
-            //mettre musique et canvas de perte
+            SFXManager.instance.PlaySoundFXClip(sons[3], transform, 1f);
+            foreach (Canvas canvas in canvasToHide)
+            {
+                canvas.gameObject.SetActive(false);
+            }
+            looseCanvas.gameObject.SetActive(true);
         }
     }
 

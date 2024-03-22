@@ -22,7 +22,12 @@ public class MainSceneManager : MonoBehaviour
     public JukeboxManager jukeboxManager;
     public ElectricityManager electricityManager;
     public AmbianceUpgradeManager ambianceManager;
+    public SpawnManager spawnManager;
     public Animator djAnimator;
+    public VictoryManager victoryManager;
+
+    public Canvas victoryCanvas;
+    public List<Canvas> canvasToHide;
 
     public int drinkCount = 0;
     public int barLevel = 0;
@@ -137,11 +142,17 @@ public class MainSceneManager : MonoBehaviour
 
     IEnumerator EndGameTimer()
     {
-        yield return new WaitForSeconds(420);
+        yield return new WaitForSeconds(360);
+        spawnManager.DestroySpawner();
+        yield return new WaitForSeconds(60);
         Time.timeScale = 0f;
         //jouer un son de victoire
-        yield return new WaitForSeconds(2);//attendre le temps du son
-        //faire apparaître le widget de victoire
+        yield return new WaitForSeconds(1);//attendre le temps du son
+        foreach (Canvas canvas in canvasToHide)
+        {
+            canvas.gameObject.SetActive(false); 
+        }
+        victoryCanvas.gameObject.SetActive(true);
     }
 
     public void OnPauseCliqued()
