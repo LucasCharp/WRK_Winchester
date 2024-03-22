@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ElectricityManager : MonoBehaviour
 {
-    private int waitTime = 10;
+    private int waitTime = 120;
     private bool hasLaunched;
     private int cost = 200;
-    private int preventTime = 5;
+    private int preventTime = 7;
     private bool canStop = true;
     private bool hasCutElectricity = false;
 
@@ -19,6 +20,8 @@ public class ElectricityManager : MonoBehaviour
     public Collider boxCollider;
     public JukeboxManager jukeboxManager;
     public AudioClip[] sons;
+    public Image elecRed;
+    public Image elecGreen;
     
     private void Start()
     {
@@ -63,6 +66,7 @@ public class ElectricityManager : MonoBehaviour
             light.gameObject.SetActive(true);
         }
         boxCollider.enabled = true;
+        elecRed.gameObject.SetActive(true);
         yield return new WaitForSeconds(preventTime);//attends avant de lancer la fonction qui éteint les lumières
         StopElectricity();
     }
@@ -134,6 +138,15 @@ public class ElectricityManager : MonoBehaviour
         {
             color.canChangeColor = true;
         }
+        StartCoroutine(SetGreenIcon());
+    }
+
+    IEnumerator SetGreenIcon()
+    {
+        elecRed.gameObject.SetActive(false);
+        elecGreen.gameObject.SetActive(true);
+        yield return new WaitForSeconds (1f);
+        elecGreen.gameObject.SetActive(false);
     }
 }
         
