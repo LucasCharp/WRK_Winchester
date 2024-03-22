@@ -84,6 +84,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaab1abb272263547a0eef37e5918ced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuPanel: {fileID: 0}
-  gameManager: {fileID: 0}
-  barBox: {fileID: 0}
+  menuPanel: {fileID: 3968825580293823126}
+  gameManager: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
+    type: 3}
+  mainSceneManager: {fileID: 1087855769216320694, guid: c54f2f4e5814ddb4fa05811f0c036a2e,
+    type: 3}

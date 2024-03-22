@@ -85,6 +85,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toilets:
-  - {fileID: 0}
-  - {fileID: 0}
-  gameManager: {fileID: 0}
+  - {fileID: 8757933926999701384, guid: 002c1be9dce680d44a29462f82366579, type: 3}
+  - {fileID: 6329305383735665579, guid: acc87edd60aa2d847b3c48605e86adb5, type: 3}
+  gameManager: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
+    type: 3}
+  lesClientsDesChiottes: {fileID: 0}
+  inChiotteZone: 0

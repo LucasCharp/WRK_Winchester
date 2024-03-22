@@ -16,21 +16,7 @@ public class GameManager : MonoBehaviour
     public float Multiplicateur = 1;
     public UpgradeButtons UpdateButtons;
     public List<TextMeshProUGUI> scoreTexts;
-    void Awake()
-    {
-        foreach (TextMeshProUGUI scoreText in scoreTexts)
-        {
-            scoreText.text = score.ToString();
-        }
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+  
     private void Update()
     {
         if (ButtonGenre.getSelectedGenre() != null && MusicGenreAnalyzer.getFavoriteGenres() != null)
@@ -60,7 +46,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("Score augmenté de " + points + " points. Nouveau score : " + score);
         resultString = null;
         resultString += score;
-        //scoreText.text = resultString;
+        scoreText.text = resultString;
+        scoreText.text = score.ToString();
         foreach (TextMeshProUGUI scoreText in scoreTexts)
         {
             scoreText.text = score.ToString();
