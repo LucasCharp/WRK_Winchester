@@ -104,10 +104,21 @@ public class ElectricityManager : MonoBehaviour
                 {
                     color.canChangeColor = false;
                 }
-
+                StartCoroutine(LooseGameTimer());
             }
         }
         
+    }
+
+
+    IEnumerator LooseGameTimer()
+    {
+        yield return new WaitForSeconds(10);
+        if(electricityCut == true)
+        {
+            Time.timeScale = 0f;
+            //mettre musique et canvas de perte
+        }
     }
 
     private void LightsBackOn()
