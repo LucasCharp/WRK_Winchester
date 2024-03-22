@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 2149277}
   - component: {fileID: 2149276}
   - component: {fileID: 2149274}
-  - component: {fileID: 2149275}
   m_Layer: 0
   m_Name: TutorialCanvas
   m_TagString: Untagged
@@ -192,18 +191,6 @@ MonoBehaviour:
   tutorialMenu: {fileID: 171577129}
   tutoImage: {fileID: 0}
   son: {fileID: 8300000, guid: 1f9a7794e86cb5c41ba79a80326483dd, type: 3}
---- !u!114 &2149275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2149272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab4a1ed1bb3546d4ca349709784ce3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2149276
 MonoBehaviour:
   m_ObjectHideFlags: 0
