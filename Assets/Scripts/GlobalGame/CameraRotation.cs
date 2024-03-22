@@ -13,6 +13,7 @@ public class CameraRotation : MonoBehaviour
     public bool canRotate;
     public GameObject jobCanvas;
     public List<Button> buttonsToDisable;
+    public MainSceneManager mainSceneManager;
     void Update()
     {
         // Vérifie si la rotation est autorisée et si un mouvement de glissement est détecté
@@ -39,10 +40,14 @@ public class CameraRotation : MonoBehaviour
                             float rotationDirection = Mathf.Sign(slideDistanceX);
                             targetRotation = (transform.rotation.eulerAngles.y + 90f * rotationDirection) % 360f;
                             rotationStarted = true;
-                            foreach (Button button in buttonsToDisable)
+                            if(buttonsToDisable != null && mainSceneManager.startGame == false)
                             {
-                                button.interactable = false;
+                                foreach (Button button in buttonsToDisable)
+                                {
+                                    button.interactable = false;
+                                }
                             }
+                            
                         }
                     }
                     break;

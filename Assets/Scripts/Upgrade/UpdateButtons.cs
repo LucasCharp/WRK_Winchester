@@ -143,6 +143,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         buttonChaiseRetour.gameObject.SetActive(false);
         costChaise.gameObject.SetActive(false);
         gameManager = FindObjectOfType<GameManager>();
+        moneyManager = FindObjectOfType<MoneyManager>();
         if (gameManager == null)
         {
             Debug.LogWarning("GameManager instance not found.");
@@ -491,7 +492,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         
         if (purchasedButtons.Contains("RedFloor"))
         {
-            MoneyManager.AddMultiplicato();
+            moneyManager.AddMultiplicato();
             Renderer renderer = floor.GetComponent<Renderer>();
           if (renderer != null)
           {
@@ -524,7 +525,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         }
         if (purchasedButtons.Contains("BrownFloor"))
         {
-            MoneyManager.AddMultiplicato();
+            moneyManager.AddMultiplicato();
             SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
 
             Renderer renderer = floor.GetComponent<Renderer>();
@@ -558,7 +559,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         }
         if (purchasedButtons.Contains("WhiteFloor"))
         {
-            MoneyManager.AddMultiplicato();
+            moneyManager.AddMultiplicato();
             SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
 
             Renderer renderer = floor.GetComponent<Renderer>();
@@ -617,7 +618,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
        
         if (purchasedButtons.Contains("RedWall"))
         {
-            MoneyManager.AddMultiplicato();
+            moneyManager.AddMultiplicato();
             SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
             foreach (GameObject wall in walls)
             {
@@ -654,7 +655,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         
         if (purchasedButtons.Contains("BrownWall"))
         {
-            MoneyManager.AddMultiplicato();
+            moneyManager.AddMultiplicato();
             SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
 
             foreach (GameObject wall in walls)
@@ -692,7 +693,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         
         if (purchasedButtons.Contains("WhiteWall"))
         {
-            MoneyManager.AddMultiplicato();
+            moneyManager.AddMultiplicato();
             SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
 
             foreach (GameObject wall in walls)
@@ -749,6 +750,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             {
                 if (moneyManager.moneyTotal >= moneyCost)
                 {
+                    moneyManager.AddMultiplicato();
                     moneyManager.moneyChange = -moneyCost;
                     moneyManager.OnMoneyChange();
 
@@ -798,6 +800,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             {
                 if (moneyManager.moneyTotal >= moneyCost)
                 {
+                    moneyManager.AddMultiplicato();
                     moneyManager.moneyChange = -moneyCost;
                     moneyManager.OnMoneyChange();
 
@@ -846,6 +849,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             {
                 if (moneyManager.moneyTotal >= moneyCost)
                 {
+                    moneyManager.AddMultiplicato();
                     moneyManager.moneyChange = -moneyCost;
                     moneyManager.OnMoneyChange();
 
@@ -898,6 +902,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             {
                 if (moneyManager.moneyTotal >= moneyCost)
                 {
+                    moneyManager.AddMultiplicato();
                     moneyManager.moneyChange = -moneyCost;
                     moneyManager.OnMoneyChange();
 
@@ -945,6 +950,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             {
                 if (moneyManager.moneyTotal >= moneyCost)
                 {
+                    moneyManager.AddMultiplicato();
                     moneyManager.moneyChange = -moneyCost;
                     moneyManager.OnMoneyChange();
 
@@ -993,6 +999,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             {
                 if (moneyManager.moneyTotal >= moneyCost)
                 {
+                    moneyManager.AddMultiplicato();
                     moneyManager.moneyChange = -moneyCost;
                     moneyManager.OnMoneyChange();
 
@@ -1045,6 +1052,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             {
                 if (moneyManager.moneyTotal >= moneyCost)
                 {
+                    moneyManager.AddMultiplicato();
                     moneyManager.moneyChange = -moneyCost;
                     moneyManager.OnMoneyChange();
 
@@ -1093,6 +1101,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             {
                 if (moneyManager.moneyTotal >= moneyCost)
                 {
+                    moneyManager.AddMultiplicato();
                     moneyManager.moneyChange = -moneyCost;
                     moneyManager.OnMoneyChange();
 
@@ -1141,6 +1150,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             {
                 if (moneyManager.moneyTotal >= moneyCost)
                 {
+                    moneyManager.AddMultiplicato();
                     moneyManager.moneyChange = -moneyCost;
                     moneyManager.OnMoneyChange();
 
@@ -1193,6 +1203,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             {
                 if (moneyManager.moneyTotal >= moneyCost)
                 {
+                    moneyManager.AddMultiplicato();
                     moneyManager.moneyChange = -moneyCost;
                     moneyManager.OnMoneyChange();
 
@@ -1241,6 +1252,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             {
                 if (moneyManager.moneyTotal >= moneyCost)
                 {
+                    moneyManager.AddMultiplicato();
                     moneyManager.moneyChange = -moneyCost;
                     moneyManager.OnMoneyChange();
 
@@ -1289,6 +1301,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             {
                 if (moneyManager.moneyTotal >= moneyCost)
                 {
+                    moneyManager.AddMultiplicato();
                     moneyManager.moneyChange = -moneyCost;
                     moneyManager.OnMoneyChange();
 

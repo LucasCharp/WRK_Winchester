@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,9 +15,13 @@ public class GameManager : MonoBehaviour
     string resultString = "score: ";
     public float Multiplicateur = 0;
     public UpgradeButtons UpdateButtons;
-
+    public List<TextMeshProUGUI> scoreTexts;
     void Awake()
     {
+        foreach (TextMeshProUGUI scoreText in scoreTexts)
+        {
+            scoreText.text = score.ToString();
+        }
         if (instance == null)
         {
             instance = this;
@@ -55,6 +61,10 @@ public class GameManager : MonoBehaviour
         resultString = null;
         resultString += score;
         scoreText.text = resultString;
+        foreach (TextMeshProUGUI scoreText in scoreTexts)
+        {
+            scoreText.text = score.ToString();
+        }
     }
 
     // Méthode pour décrémenter le score
@@ -65,6 +75,10 @@ public class GameManager : MonoBehaviour
         resultString = null;
         resultString += score;
         scoreText.text = resultString;
+        foreach (TextMeshProUGUI scoreText in scoreTexts)
+        {
+            scoreText.text = score.ToString();
+        }
     }
     private void GainContinue()
     {

@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -23,6 +24,7 @@ public class MainSceneManager : MonoBehaviour
     public AmbianceUpgradeManager ambianceManager;
     public Animator djAnimator;
 
+    public int drinkCount = 0;
     public int barLevel = 0;
     private bool isPaused;
 
@@ -45,11 +47,46 @@ public class MainSceneManager : MonoBehaviour
         }
     }
 
+
+    public void RemoveDrink()
+    {
+        drinkCount = drinkCount - 1;
+        if (drinkCount == 0)
+        {
+            barLevel = 0;
+            etagereFull.SetActive(false);
+            etagereHalf.SetActive(false);
+            etagereQuarter.SetActive(false);
+            etagereEmpty.SetActive(true);
+        }
+        if (drinkCount <= 5)
+        {
+            barLevel = 1;
+            etagereFull.SetActive(false);
+            etagereHalf.SetActive(false);
+            etagereQuarter.SetActive(true);
+            etagereEmpty.SetActive(false);
+        }
+        if (drinkCount <= 10)
+        {
+            barLevel = 2;
+            etagereFull.SetActive(false);
+            etagereHalf.SetActive(true);
+            etagereQuarter.SetActive(false);
+            etagereEmpty.SetActive(false);
+        }
+        if (drinkCount <= 20)
+        {
+            barLevel = 3;
+            etagereFull.SetActive(true);
+            etagereHalf.SetActive(false);
+            etagereQuarter.SetActive(false);
+            etagereEmpty.SetActive(false);
+        }
+    }
     
     public void SetEtagere()
     {
-
-
         if (barLevel == 0)
         {
             SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
@@ -59,6 +96,7 @@ public class MainSceneManager : MonoBehaviour
             etagereHalf.SetActive(false);
             etagereQuarter.SetActive(true);
             etagereEmpty.SetActive(false);
+            drinkCount = 5;
         }
         else if (barLevel == 1)
         {
@@ -69,6 +107,7 @@ public class MainSceneManager : MonoBehaviour
             etagereHalf.SetActive(true);
             etagereQuarter.SetActive(false);
             etagereEmpty.SetActive(false);
+            drinkCount = 10;
         }
         else if (barLevel == 2)
         {
@@ -79,6 +118,7 @@ public class MainSceneManager : MonoBehaviour
             etagereHalf.SetActive(false);
             etagereQuarter.SetActive(false);
             etagereEmpty.SetActive(false);
+            drinkCount = 20;
         }
     }
 

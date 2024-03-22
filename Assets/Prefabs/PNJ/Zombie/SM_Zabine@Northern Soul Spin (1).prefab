@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 915210190736564843}
   - component: {fileID: 4417632370719866562}
   - component: {fileID: 4971414363466698200}
-  - component: {fileID: -2582861732521638549}
   m_Layer: 0
   m_Name: SM_Zabine@Northern Soul Spin (1)
   m_TagString: PNJ
@@ -128,8 +127,6 @@ MonoBehaviour:
   toilets:
   - {fileID: 8757933926999701384, guid: 002c1be9dce680d44a29462f82366579, type: 3}
   - {fileID: 6329305383735665579, guid: acc87edd60aa2d847b3c48605e86adb5, type: 3}
-  gameManager: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
-    type: 3}
   toiletArea: {fileID: 8685911421937968491, guid: 66b3feb6f0e77834d98237ff02d9dbf2,
     type: 3}
 --- !u!114 &6804849552163035670
@@ -239,32 +236,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHuman: 0
   isZombie: 1
---- !u!114 &-2582861732521638549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 21047004566423354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1829ea053f0d3cc4c9e7f69d4748a4a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueLines:
-  - a
-  - fs
-  - bft
-  - bfdv
-  - sgergt
-  - fdgdhdh
-  - car
-  - ggggggg
-  - ouixr
-  - g
-  - hfghfjfjfjfjfjfj
-  minTimeBetweenDialogues: 5
-  maxTimeBetweenDialogues: 10
 --- !u!1 &256335119053579361
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,8 +1119,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5373145516198243342}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.4106406}
-  m_LocalScale: {x: 0.0013986052, y: 0.0013986249, z: 0.0013986249}
+  m_LocalPosition: {x: 0, y: 0, z: 0.289}
+  m_LocalScale: {x: 0.0006234268, y: 0.0006234356, z: 0.0006234356}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 776108316629072389}
@@ -1157,7 +1128,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 4.0305753, y: 3.9769993}
+  m_AnchoredPosition: {x: -0.752, y: 1.555}
   m_SizeDelta: {x: 2340, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8397083340969865820

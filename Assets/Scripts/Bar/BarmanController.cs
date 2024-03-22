@@ -7,7 +7,7 @@ public class BarmanController : MonoBehaviour
     private Queue<ClientController> commandesEnAttente = new Queue<ClientController>();
     private ClientController commandePrioritaire;
     public GameManager gameManager; // Assurez-vous de définir cette référence dans l'inspecteur Unity-
-
+    public MainSceneManager mainSceneManager;
     public void AjouterCommande(ClientController client, string commande)
     {
         if (commandePrioritaire == null)
@@ -37,12 +37,13 @@ public class BarmanController : MonoBehaviour
     {
         Debug.Log("Boisson vendue : " + nomBoisson);
 
-        if (commandePrioritaire != null)
+        if (commandePrioritaire != null && mainSceneManager.barLevel != 0)
         {
             // Vérification si la boisson est correcte ou non
             if (nomBoisson == commandePrioritaire.commande)
             {
                 Debug.Log("Bonne commande !");
+                mainSceneManager.RemoveDrink();
             }
             else
             {
