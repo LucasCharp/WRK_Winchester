@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class VideurUIManager : MonoBehaviour
 {
@@ -8,6 +8,8 @@ public class VideurUIManager : MonoBehaviour
     public MainSceneManager mainSceneManager;
     public GameObject videurBox;
     public Canvas videurCanvas;
+    public Button buttonBagarre;
+    public bool someoneFight = false;
 
 
     // Start is called before the first frame update
