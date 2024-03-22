@@ -22756,6 +22756,9 @@ MonoBehaviour:
   retourButton: {fileID: 836669441}
   dialogueButton: {fileID: 2745560}
   mainSceneManager: {fileID: 1396442795}
+  gameManager: {fileID: 2585372049679176793}
+  audioClips:
+  - {fileID: 8300000, guid: bd14e90e98b22bb47b261d75a7d46073, type: 3}
 --- !u!114 &1155547402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27075,7 +27078,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dssfr
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f667841601c9f334295756289f446732, type: 2}
   m_sharedMaterial: {fileID: -5914313560220163783, guid: f667841601c9f334295756289f446732,
@@ -34516,7 +34519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f91ae7665f71ffb4dafb2053e49d0507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSources: []
   audioClips:
   - {fileID: 8300000, guid: 1c3f5fca31d3eb745895e2c615ceb9a2, type: 3}
   - {fileID: 8300000, guid: 823da721754d8724c9896ffb25114bab, type: 3}
@@ -42184,6 +42186,11 @@ PrefabInstance:
       objectReference: {fileID: 1241321677}
     - target: {fileID: 1087855769216320694, guid: c54f2f4e5814ddb4fa05811f0c036a2e,
         type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 2585372049679176793}
+    - target: {fileID: 1087855769216320694, guid: c54f2f4e5814ddb4fa05811f0c036a2e,
+        type: 3}
       propertyPath: pauseCanvas
       value: 
       objectReference: {fileID: 1641543123}
@@ -42204,6 +42211,11 @@ PrefabInstance:
       objectReference: {fileID: 1661603525}
     - target: {fileID: 1087855769216320694, guid: c54f2f4e5814ddb4fa05811f0c036a2e,
         type: 3}
+      propertyPath: victoryCanvas
+      value: 
+      objectReference: {fileID: 1246451061}
+    - target: {fileID: 1087855769216320694, guid: c54f2f4e5814ddb4fa05811f0c036a2e,
+        type: 3}
       propertyPath: cameraCollider
       value: 
       objectReference: {fileID: 6909658786502546354}
@@ -42222,6 +42234,11 @@ PrefabInstance:
       propertyPath: jukeboxManager
       value: 
       objectReference: {fileID: 1612696064}
+    - target: {fileID: 1087855769216320694, guid: c54f2f4e5814ddb4fa05811f0c036a2e,
+        type: 3}
+      propertyPath: scoreFinalText
+      value: 
+      objectReference: {fileID: 1332327446}
     - target: {fileID: 1087855769216320694, guid: c54f2f4e5814ddb4fa05811f0c036a2e,
         type: 3}
       propertyPath: victoryManager
@@ -43499,7 +43516,7 @@ PrefabInstance:
     - target: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
         type: 3}
       propertyPath: scoreTexts.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
         type: 3}
@@ -43511,6 +43528,11 @@ PrefabInstance:
       propertyPath: scoreTexts.Array.data[1]
       value: 
       objectReference: {fileID: 2114218599709936104}
+    - target: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
+        type: 3}
+      propertyPath: scoreTexts.Array.data[2]
+      value: 
+      objectReference: {fileID: 1332327446}
     - target: {fileID: 5605843504577549236, guid: 19634d6e5a35825488394190d7639e57,
         type: 3}
       propertyPath: m_LocalPosition.x

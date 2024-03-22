@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,8 +10,9 @@ public class Dialogues : MonoBehaviour
     public Button retourButton;
     public Button dialogueButton;
     public MainSceneManager mainSceneManager;
+    public GameManager gameManager;
     private bool doOnce = false;
-
+    public AudioClip[] audioClips;
     private void Update()
     {
         if (mainSceneManager.startGame == true && doOnce == false)
@@ -24,8 +26,9 @@ public class Dialogues : MonoBehaviour
     {
         float delay = Random.Range(30f, 60f);
         yield return new WaitForSeconds(delay);
-
+        SFXManager.instance.PlaySoundFXClip(audioClips[0], transform, 1f);
         dialogueButton.gameObject.SetActive(true);
+
         yield return new WaitForSeconds(7f); // Attendre 7 secondes
 
         if (!dialogueButton.GetComponent<DialogueButton>().clicked) // Vérifier si le bouton n'a pas été cliqué
@@ -41,7 +44,7 @@ public class Dialogues : MonoBehaviour
     {
         dialogueButton.gameObject.SetActive(false);
         retourButton.gameObject.SetActive(true);
-
+        gameManager.AugmenterScore(100);
         // Choisir un index de dialogue aléatoire
         int randomIndex = Random.Range(0, dialogueImages.Length);
 

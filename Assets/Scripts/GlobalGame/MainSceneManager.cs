@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -25,6 +26,9 @@ public class MainSceneManager : MonoBehaviour
     public SpawnManager spawnManager;
     public Animator djAnimator;
     public VictoryManager victoryManager;
+    public GameManager gameManager;
+    public TextMeshProUGUI scoreFinalText;
+
 
     public Canvas victoryCanvas;
     public List<Canvas> canvasToHide;
@@ -146,13 +150,15 @@ public class MainSceneManager : MonoBehaviour
         spawnManager.DestroySpawner();
         yield return new WaitForSeconds(60);
         Time.timeScale = 0f;
-        //jouer un son de victoire
-        yield return new WaitForSeconds(1);//attendre le temps du son
+        victoryManager.PlayVictorySound();
+        victoryCanvas.gameObject.SetActive(true);
+        scoreFinalText.text = gameManager.score.ToString();
         foreach (Canvas canvas in canvasToHide)
         {
             canvas.gameObject.SetActive(false); 
         }
-        victoryCanvas.gameObject.SetActive(true);
+        
+   
     }
 
     public void OnPauseCliqued()
