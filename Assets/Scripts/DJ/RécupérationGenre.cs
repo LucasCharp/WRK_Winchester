@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.UI;
 
 public class MusicGenrePointCollector : MonoBehaviour
 {
@@ -8,8 +9,17 @@ public class MusicGenrePointCollector : MonoBehaviour
     public MusicGenreAnalyzer scriptAffiche;
     public Collider triggerCollider;
     public List<GameObject> genreButtons; // Liste des boutons de genre musical
-    private Dictionary<string, int> genreValues = new Dictionary<string, int>(); // Déclaration et initialisation de genreValues
     private Dictionary<Collider, CharacterMusicCounter> pnjCounters = new Dictionary<Collider, CharacterMusicCounter>();
+    public Slider SliderAfro;
+    public Slider SliderDrill;
+    public Slider SliderCountry;
+    public Slider SliderJazz;
+    public Slider SliderBrazil;
+    public Slider SliderRock;
+    public Slider SliderDisco;
+    public Slider SliderMetal;
+    private Dictionary<string, float> genreValues = new Dictionary<string, float>(); // Déclaration et initialisation de genreValues
+    private float totalPoints = 0; // Variable pour stocker le total des points
 
     void Start()
     {
@@ -51,18 +61,21 @@ public class MusicGenrePointCollector : MonoBehaviour
 
     void UpdateGenreAnalyzer()
     {
-        Dictionary<string, int> totalPoints = CalculateTotalPoints();
+        Dictionary<string, float> totalPoints = CalculateTotalPoints();
         scriptAffiche.reloadFavoriteGenres(totalPoints);
         scriptAffiche.DisplayResult(totalPoints);
     }
 
-    public Dictionary<string, int> CalculateTotalPoints()
- {
+    public Dictionary<string, float> CalculateTotalPoints()
+    {
         // Réinitialiser les valeurs des genres à 0
         foreach (var genre in genreValues.Keys.ToList())
         {
             genreValues[genre] = 0;
         }
+
+        // Réinitialiser le total des points à 0
+        totalPoints = 0;
 
         // Parcourir chaque PNJ pour collecter les données sur les genres musicaux
         foreach (var pair in pnjCounters)
@@ -76,16 +89,56 @@ public class MusicGenrePointCollector : MonoBehaviour
             genreValues["Rock"] += pair.Value.rockCounter;
             genreValues["Disco"] += pair.Value.discoCounter;
             genreValues["Metal"] += pair.Value.metalCounter;
-        }
 
-        // Afficher les valeurs de genreValues
-        foreach (var genre in genreValues)
-        {
-            Debug.Log("Genre: " + genre.Key + ", Value: " + genre.Value);
+            // Incrémenter le total des points
+            totalPoints += pair.Value.afroCounter + pair.Value.drillCounter + pair.Value.jazzCounter +
+                           pair.Value.countryCounter + pair.Value.brasilCounter + pair.Value.rockCounter +
+                           pair.Value.discoCounter + pair.Value.metalCounter;
         }
-
         // Retourner un nouveau dictionnaire avec les valeurs mises à jour de genreValues
-        return new Dictionary<string, int>(genreValues);
+        return new Dictionary<string, float>(genreValues);
     }
 
+    public void CalculateAndSetPercentages()
+    {
+        foreach (KeyValuePair<string, float> genre in genreValues)
+        {
+            float percentage = totalPoints > 0 ? (genre.Value / (float)totalPoints) * 100f : 0f;
+            SetSliderValue(genre.Key, percentage);
+        }
+    }
+    private void SetSliderValue(string genreName, float percentage)
+    {
+        Debug.Log(percentage + "%");
+        switch (genreName)
+        {
+            case "Afro":
+                SliderAfro.value = percentage / 100;
+                break;
+            case "Drill":
+                SliderDrill.value = percentage / 100;
+                break;
+            case "Jazz":
+                SliderJazz.value = percentage / 100;
+                break;
+            case "Country":
+                SliderCountry.value = percentage / 100;
+                break;
+            case "Brasil":
+                SliderBrazil.value = percentage / 100;
+                break;
+            case "Rock":
+                SliderRock.value = percentage / 100;
+                break;
+            case "Disco":
+                SliderDisco.value = percentage / 100;
+                break;
+            case "Metal":
+                SliderMetal.value = percentage / 100;
+                break;
+            default:
+                Debug.LogWarning("Genre musical non reconnu : " + genreName);
+                break;
+        }
+    }
 }

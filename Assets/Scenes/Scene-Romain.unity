@@ -500,6 +500,51 @@ PrefabInstance:
       objectReference: {fileID: 525138403}
     - target: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
         type: 3}
+      propertyPath: Info
+      value: 
+      objectReference: {fileID: 760627027}
+    - target: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
+        type: 3}
+      propertyPath: SliderAfro
+      value: 
+      objectReference: {fileID: 1395408038}
+    - target: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
+        type: 3}
+      propertyPath: SliderJazz
+      value: 
+      objectReference: {fileID: 1686688290}
+    - target: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
+        type: 3}
+      propertyPath: SliderRock
+      value: 
+      objectReference: {fileID: 435041597}
+    - target: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
+        type: 3}
+      propertyPath: SliderDisco
+      value: 
+      objectReference: {fileID: 486368185}
+    - target: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
+        type: 3}
+      propertyPath: SliderDrill
+      value: 
+      objectReference: {fileID: 2027788845}
+    - target: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
+        type: 3}
+      propertyPath: SliderMetal
+      value: 
+      objectReference: {fileID: 1935032275}
+    - target: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
+        type: 3}
+      propertyPath: SliderBrazil
+      value: 
+      objectReference: {fileID: 1026744591}
+    - target: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
+        type: 3}
+      propertyPath: SliderCountry
+      value: 
+      objectReference: {fileID: 136682785}
+    - target: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
+        type: 3}
       propertyPath: scriptAffiche
       value: 
       objectReference: {fileID: 1552170178}
@@ -16855,15 +16900,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 672f1fe24096b4b4bbd484cd4f942dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SliderAfro: {fileID: 1395408038}
-  SliderDrill: {fileID: 2027788845}
-  SliderCountry: {fileID: 1686688290}
-  SliderJazz: {fileID: 136682785}
-  SliderBrazil: {fileID: 1026744591}
-  SliderRock: {fileID: 435041597}
-  SliderDisco: {fileID: 486368185}
-  SliderMetal: {fileID: 1935032275}
-  MesInfos: {fileID: 1552170178}
 --- !u!1 &762718853
 GameObject:
   m_ObjectHideFlags: 0
