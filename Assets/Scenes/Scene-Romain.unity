@@ -508,6 +508,51 @@ PrefabInstance:
       propertyPath: reloadFavoriteGenres
       value: 
       objectReference: {fileID: 1552170178}
+    - target: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
+        type: 3}
+      propertyPath: genreButtons.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
+        type: 3}
+      propertyPath: genreButtons.Array.data[0]
+      value: 
+      objectReference: {fileID: 931967601}
+    - target: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
+        type: 3}
+      propertyPath: genreButtons.Array.data[1]
+      value: 
+      objectReference: {fileID: 40436364}
+    - target: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
+        type: 3}
+      propertyPath: genreButtons.Array.data[2]
+      value: 
+      objectReference: {fileID: 929178997}
+    - target: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
+        type: 3}
+      propertyPath: genreButtons.Array.data[3]
+      value: 
+      objectReference: {fileID: 498606684}
+    - target: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
+        type: 3}
+      propertyPath: genreButtons.Array.data[4]
+      value: 
+      objectReference: {fileID: 1164002640}
+    - target: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
+        type: 3}
+      propertyPath: genreButtons.Array.data[5]
+      value: 
+      objectReference: {fileID: 762718853}
+    - target: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
+        type: 3}
+      propertyPath: genreButtons.Array.data[6]
+      value: 
+      objectReference: {fileID: 1872056279}
+    - target: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
+        type: 3}
+      propertyPath: genreButtons.Array.data[7]
+      value: 
+      objectReference: {fileID: 621559745}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -954,7 +999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   genreName: Drill
-  pointCollector: {fileID: 0}
+  pointCollector: {fileID: 1459734743}
   gameManager: {fileID: 2585372049679176793}
 --- !u!1 &46394374
 GameObject:
@@ -3300,6 +3345,84 @@ MonoBehaviour:
   - {r: 0.6443359, g: 0.2745098, b: 1, a: 0}
   - {r: 0.2745098, g: 1, b: 0.29185387, a: 0}
   mainSceneManager: {fileID: 1396442795}
+--- !u!1001 &169539474
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 536721060909074957, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_Name
+      value: SM_David@Snake Hip Hop Dance (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 536721060909074957, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.08950949
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.609
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2155129761888403983, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef944a99cec47b04b9146287b3c6f9b4, type: 3}
 --- !u!1 &176631186
 GameObject:
   m_ObjectHideFlags: 0
@@ -4067,6 +4190,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8973821836740383002, guid: 8add604f58760854e9fcbdf865e46ee7,
+        type: 3}
+      propertyPath: moneyManager
+      value: 
+      objectReference: {fileID: 1954402524}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6311,89 +6439,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 270130764}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &270870589
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -6503089585961827188, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: maBool
-      value: 
-      objectReference: {fileID: 820315222}
-    - target: {fileID: 536721060909074957, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_Name
-      value: SM_David@Snake Hip Hop Dance
-      objectReference: {fileID: 0}
-    - target: {fileID: 536721060909074957, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.089509726
-      objectReference: {fileID: 0}
-    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2155129761888403983, guid: ef944a99cec47b04b9146287b3c6f9b4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ef944a99cec47b04b9146287b3c6f9b4, type: 3}
 --- !u!1 &270871312
 GameObject:
   m_ObjectHideFlags: 0
@@ -8023,6 +8068,90 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328177470}
   m_Mesh: {fileID: -1577228494232424929, guid: b66194d97ad2f1e469f656d98397c2c1, type: 3}
+--- !u!1001 &328565988
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 536721060909074957, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_Name
+      value: SM_David@Snake Hip Hop Dance
+      objectReference: {fileID: 0}
+    - target: {fileID: 536721060909074957, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.08950949
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.182
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2155129761888403983, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef944a99cec47b04b9146287b3c6f9b4, type: 3}
+--- !u!1 &328565989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 339663036041472342, guid: ef944a99cec47b04b9146287b3c6f9b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 328565988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &328740054
 GameObject:
   m_ObjectHideFlags: 0
@@ -9747,6 +9876,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3ba0e76d501388d4482465ddc287c792, type: 3}
   elecRed: {fileID: 621019899}
   elecGreen: {fileID: 796423330}
+  looseCanvas: {fileID: 0}
+  canvasToHide: []
 --- !u!65 &432255532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11556,7 +11687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   genreName: Country
-  pointCollector: {fileID: 0}
+  pointCollector: {fileID: 1459734743}
   gameManager: {fileID: 2585372049679176793}
 --- !u!23 &502027018 stripped
 MeshRenderer:
@@ -11999,6 +12130,84 @@ RectTransform:
   m_AnchoredPosition: {x: 2, y: 2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &519975093
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 536721060909074957, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_Name
+      value: SM_David@Snake Hip Hop Dance (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 536721060909074957, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.08950949
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.182
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2155129761888403983, guid: ef944a99cec47b04b9146287b3c6f9b4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef944a99cec47b04b9146287b3c6f9b4, type: 3}
 --- !u!23 &521240144 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 8293188755174310204, guid: 61d117b8aca53c743ae0dfb3a0dde915,
@@ -13848,7 +14057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   genreName: Metal
-  pointCollector: {fileID: 0}
+  pointCollector: {fileID: 1459734743}
   gameManager: {fileID: 2585372049679176793}
 --- !u!1 &622830506
 GameObject:
@@ -16599,6 +16808,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 760627026}
+  - component: {fileID: 760627027}
   m_Layer: 5
   m_Name: SliderMusique
   m_TagString: Untagged
@@ -16633,6 +16843,27 @@ RectTransform:
   m_AnchoredPosition: {x: 287.81207, y: -54.34222}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &760627027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760627025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 672f1fe24096b4b4bbd484cd4f942dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SliderAfro: {fileID: 1395408038}
+  SliderDrill: {fileID: 2027788845}
+  SliderCountry: {fileID: 1686688290}
+  SliderJazz: {fileID: 136682785}
+  SliderBrazil: {fileID: 1026744591}
+  SliderRock: {fileID: 435041597}
+  SliderDisco: {fileID: 486368185}
+  SliderMetal: {fileID: 1935032275}
+  MesInfos: {fileID: 1552170178}
 --- !u!1 &762718853
 GameObject:
   m_ObjectHideFlags: 0
@@ -16815,7 +17046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   genreName: Rock
-  pointCollector: {fileID: 0}
+  pointCollector: {fileID: 1459734743}
   gameManager: {fileID: 2585372049679176793}
 --- !u!1 &767932437
 GameObject:
@@ -17751,18 +17982,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818855008}
   m_CullTransparentMesh: 1
---- !u!114 &820315222 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7777692367128493226, guid: ef944a99cec47b04b9146287b3c6f9b4,
-    type: 3}
-  m_PrefabInstance: {fileID: 270870589}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 539da9f10dd146042a0f1c921757685c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &821047165
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19033,7 +19252,9 @@ MonoBehaviour:
   - {fileID: 1526145711}
   retourButton: {fileID: 318009811}
   dialogueButton: {fileID: 289955314}
-  mainSceneManager: {fileID: 0}
+  mainSceneManager: {fileID: 1396442795}
+  gameManager: {fileID: 2585372049679176793}
+  audioClips: []
 --- !u!114 &919750155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19400,7 +19621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   genreName: Jazz
-  pointCollector: {fileID: 0}
+  pointCollector: {fileID: 1459734743}
   gameManager: {fileID: 2585372049679176793}
 --- !u!1 &931967601
 GameObject:
@@ -19584,7 +19805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   genreName: Afro
-  pointCollector: {fileID: 0}
+  pointCollector: {fileID: 1459734743}
   gameManager: {fileID: 2585372049679176793}
 --- !u!1 &943741350
 GameObject:
@@ -23732,6 +23953,8 @@ MonoBehaviour:
   retourButton: {fileID: 836669441}
   dialogueButton: {fileID: 2745560}
   mainSceneManager: {fileID: 1396442795}
+  gameManager: {fileID: 2585372049679176793}
+  audioClips: []
 --- !u!114 &1155547402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24146,7 +24369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   genreName: Brazil
-  pointCollector: {fileID: 0}
+  pointCollector: {fileID: 1459734743}
   gameManager: {fileID: 2585372049679176793}
 --- !u!1001 &1164599989
 PrefabInstance:
@@ -27405,8 +27628,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entryInterval: 20
-  buttonBagarre: {fileID: 0}
-  imgBagarre: {fileID: 0}
+  buttonBagarre: {fileID: 1606249513}
+  imgBagarre: {fileID: 2055115906}
   Fighter: {fileID: 0}
 --- !u!1 &1306954636
 GameObject:
@@ -28150,7 +28373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1345763292
 Transform:
   m_ObjectHideFlags: 0
@@ -29348,6 +29571,18 @@ MeshRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 1241321675}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1459734743 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
+    type: 3}
+  m_PrefabInstance: {fileID: 21087863}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52dff8655aeebfc4e9d72307d26d64e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1461424414
 GameObject:
   m_ObjectHideFlags: 0
@@ -30203,12 +30438,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 33}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1515818376 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 339663036041472342, guid: ef944a99cec47b04b9146287b3c6f9b4,
-    type: 3}
-  m_PrefabInstance: {fileID: 270870589}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1524398130
 GameObject:
   m_ObjectHideFlags: 0
@@ -30947,10 +31176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resultText: {fileID: 1552170179}
-  pointCollector: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
-    type: 3}
-  TotalValueGenre: 0
-  Info: {fileID: 0}
+  pointCollector: {fileID: 1459734743}
+  Info: {fileID: 760627027}
 --- !u!114 &1552170179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38515,7 +38742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   genreName: Disco
-  pointCollector: {fileID: 0}
+  pointCollector: {fileID: 1459734743}
   gameManager: {fileID: 2585372049679176793}
 --- !u!1 &1873673507
 GameObject:
@@ -45817,7 +46044,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PNJ
       value: 
-      objectReference: {fileID: 1515818376}
+      objectReference: {fileID: 328565989}
     - target: {fileID: 8685911421937968491, guid: 66b3feb6f0e77834d98237ff02d9dbf2,
         type: 3}
       propertyPath: gameManager
@@ -46229,5 +46456,7 @@ SceneRoots:
   - {fileID: 1345763292}
   - {fileID: 1319607539}
   - {fileID: 570157639}
-  - {fileID: 270870589}
   - {fileID: 919750158}
+  - {fileID: 328565988}
+  - {fileID: 519975093}
+  - {fileID: 169539474}
