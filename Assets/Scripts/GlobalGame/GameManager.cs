@@ -16,22 +16,38 @@ public class GameManager : MonoBehaviour
     public float Multiplicateur = 1;
     public UpgradeButtons UpdateButtons;
     public List<TextMeshProUGUI> scoreTexts;
-  
+
     private void Update()
     {
-        if (ButtonGenre.getSelectedGenre() != null && MusicGenreAnalyzer.getFavoriteGenres() != null)
+        string selectedGenre = ButtonGenre.getSelectedGenre();
+        List<string> favoriteGenres = MusicGenreAnalyzer.getFavoriteGenres();
+
+        if (selectedGenre != null && favoriteGenres != null)
         {
-            foreach (string genre in MusicGenreAnalyzer.getFavoriteGenres())
+            bool isGenreMatch = false;
+
+            foreach (string genre in favoriteGenres)
             {
-                if (genre == ButtonGenre.getSelectedGenre())
+                Debug.Log(genre);
+
+                if (genre == selectedGenre)
                 {
-                    if (jeGagneEnContinue == false)
-                    {
-                        jeGagneEnContinue = true;
-                        Invoke("GainContinue", 2f);
-                    }
+                    isGenreMatch = true;
+                    break;
                 }
-                else if (jeGagneEnContinue == false)
+            }
+
+            if (isGenreMatch)
+            {
+                if (!jeGagneEnContinue)
+                {
+                    jeGagneEnContinue = true;
+                    Invoke("GainContinue", 2f);
+                }
+            }
+            else
+            {
+                if (!jeGagneEnContinue)
                 {
                     jeGagneEnContinue = true;
                     Invoke("PerteContinue", 2f);

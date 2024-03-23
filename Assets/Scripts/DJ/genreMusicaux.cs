@@ -9,7 +9,7 @@ public class CharacterMusicCounter : MonoBehaviour
     public int drillCounter = 0;
     public int countryCounter = 0;
     public int discoCounter = 0;
-    public int brasilCounter = 0;
+    public int brazilCounter = 0;
     public int metalCounter = 0;
 
     void Start()
@@ -30,7 +30,7 @@ public class CharacterMusicCounter : MonoBehaviour
             case 3:
                 return countryCounter;
             case 4:
-                return brasilCounter;
+                return brazilCounter;
             case 5:
                 return rockCounter;
             case 6:
@@ -64,7 +64,7 @@ public class CharacterMusicCounter : MonoBehaviour
                 countryCounter++;
                 break;
             case 4:
-                brasilCounter++;
+                brazilCounter++;
                 break;
             case 5:
                 rockCounter++;

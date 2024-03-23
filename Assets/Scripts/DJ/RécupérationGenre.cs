@@ -28,7 +28,7 @@ public class MusicGenrePointCollector : MonoBehaviour
         genreValues["Drill"] = 0;
         genreValues["Jazz"] = 0;
         genreValues["Country"] = 0;
-        genreValues["Brasil"] = 0;
+        genreValues["Brazil"] = 0;
         genreValues["Rock"] = 0;
         genreValues["Disco"] = 0;
         genreValues["Metal"] = 0;
@@ -85,14 +85,14 @@ public class MusicGenrePointCollector : MonoBehaviour
             genreValues["Drill"] += pair.Value.drillCounter;
             genreValues["Jazz"] += pair.Value.jazzCounter;
             genreValues["Country"] += pair.Value.countryCounter;
-            genreValues["Brasil"] += pair.Value.brasilCounter;
+            genreValues["Brazil"] += pair.Value.brazilCounter;
             genreValues["Rock"] += pair.Value.rockCounter;
             genreValues["Disco"] += pair.Value.discoCounter;
             genreValues["Metal"] += pair.Value.metalCounter;
 
             // Incrémenter le total des points
             totalPoints += pair.Value.afroCounter + pair.Value.drillCounter + pair.Value.jazzCounter +
-                           pair.Value.countryCounter + pair.Value.brasilCounter + pair.Value.rockCounter +
+                           pair.Value.countryCounter + pair.Value.brazilCounter + pair.Value.rockCounter +
                            pair.Value.discoCounter + pair.Value.metalCounter;
         }
         // Retourner un nouveau dictionnaire avec les valeurs mises à jour de genreValues
@@ -124,7 +124,7 @@ public class MusicGenrePointCollector : MonoBehaviour
             case "Country":
                 SliderCountry.value = percentage / 100;
                 break;
-            case "Brasil":
+            case "Brazil":
                 SliderBrazil.value = percentage / 100;
                 break;
             case "Rock":
