@@ -69,7 +69,6 @@ public class ClientController : MonoBehaviour
             {
                 barmanController.AjouterCommande(this, commande);
                 DemanderBoisson();
-                Debug.Log("lapin");
             }
         }
     }

@@ -13,6 +13,7 @@ public class VideurPNJ : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private Animator animator;
     private bool hasSeparate = false;
+    private Vector3 standPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class VideurPNJ : MonoBehaviour
         StartRepeatingInvoke(entryInterval);
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        standPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -103,7 +105,7 @@ public class VideurPNJ : MonoBehaviour
 
         float triggerDistance = navMeshAgent.radius + otherNavMeshAgent.radius;
 
-        if (distance < triggerDistance)
+        if (distance < triggerDistance + 1f)
         {
             print("touche");
             animator.SetBool("isMenacing", true);
@@ -112,6 +114,12 @@ public class VideurPNJ : MonoBehaviour
             hasSeparate = true;
             navMeshAgent.isStopped = true;
         }
+    }
+
+    public void GoBack()
+    {
+        navMeshAgent.isStopped = false;
+        navMeshAgent.SetDestination(standPosition);
     }
 
     // Coroutine pour l'invocation répétée

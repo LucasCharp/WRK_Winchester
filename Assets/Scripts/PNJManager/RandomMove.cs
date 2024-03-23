@@ -151,7 +151,7 @@ public class RandomNavMeshMovement : MonoBehaviour
                             Fight();
                             transform.LookAt(otherPNJ.transform.position);
                             scriptOtherPNJ.Fight();
-                            otherPNJ.transform.LookAt(transform);
+                            otherPNJ.transform.LookAt(transform.position);
                             VideurCode.ActivateButton(gameObject);
                             opponent = otherPNJ;
                         }
