@@ -19,12 +19,12 @@ public class RandomNavMeshMovement : MonoBehaviour
     public Vector3 EndZonePosition;
     private Vector3 PubOpposite;
     public int whatDance = 0;
-    private ParticleSystem VFXSmoke;
 
     bool hasManagedDoor = false;
     public bool isDrunk = false;
 
     public VisualEffect vfxPrefab;
+    private VisualEffect vfxInstance;
     public float yOffset = 1.0f;
 
     private GameObject[] doors;
@@ -32,6 +32,7 @@ public class RandomNavMeshMovement : MonoBehaviour
     private GameObject opponent;
     private NavMeshAgent opponentNavMeshAgent;
     private Animator opponentAnimator;
+
 
     private void Awake()
     {
@@ -281,18 +282,24 @@ public class RandomNavMeshMovement : MonoBehaviour
         print("stop");
         animator.SetBool("isFighting", false);
         navMeshAgent.isStopped = false;
-        opponentNavMeshAgent = GetComponent<NavMeshAgent>();
-        opponentAnimator = GetComponent<Animator>();
+        vfxInstance.Stop();
+        isDrunk = false;
+
+        opponentNavMeshAgent = opponent.GetComponent<NavMeshAgent>();
+        opponentAnimator = opponent.GetComponent<Animator>();
+        RandomNavMeshMovement opponentCode = opponent.GetComponent<RandomNavMeshMovement>();
+
         opponentAnimator.SetBool("isFighting", false);
         opponentNavMeshAgent.isStopped = false;
-        vfxPrefab.Stop();
+        opponentCode.vfxInstance.Stop();
+        opponentCode.isDrunk = false;
     }
 
     public void Smoke()
     {
         Vector3 spawnPosition = transform.position + Vector3.up * yOffset;
 
-        VisualEffect vfxInstance = Instantiate(vfxPrefab, spawnPosition, Quaternion.identity);
+        vfxInstance = Instantiate(vfxPrefab, spawnPosition, Quaternion.identity);
 
         // Activer le VFX
         vfxInstance.Play();

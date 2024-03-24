@@ -35,7 +35,6 @@ public class ManageActors : MonoBehaviour
                     doorScript.CloseDoor();
                 }
             }
-            Debug.Log("Il est entré");
             Destroy(other.gameObject, 1f);
         }
     }

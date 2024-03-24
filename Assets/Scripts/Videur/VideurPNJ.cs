@@ -14,6 +14,7 @@ public class VideurPNJ : MonoBehaviour
     private Animator animator;
     private bool hasSeparate = false;
     private Vector3 standPosition;
+    public float errorMargin = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,14 @@ public class VideurPNJ : MonoBehaviour
         if (animator.GetBool("isFighting") == true && hasSeparate == false)
         {
             SeparatePeople();
+        }
+
+        if (AreEqual(transform.position, standPosition) && hasSeparate)
+        {
+            print("il est arrive");
+            animator.SetBool("isFighting", false);
+            navMeshAgent.isStopped = true;
+            hasSeparate = false;
         }
     }
     void InvokeInQueue()
@@ -90,9 +99,10 @@ public class VideurPNJ : MonoBehaviour
 
     public void GoToFighter()
     {
+        print("go");
+        navMeshAgent.isStopped = false;
         animator.SetBool("isFighting", true);
         navMeshAgent.SetDestination(Fighter.transform.position);
-        
     }
 
     public void SeparatePeople()
@@ -118,8 +128,21 @@ public class VideurPNJ : MonoBehaviour
 
     public void GoBack()
     {
+        buttonBagarre.gameObject.SetActive(false);
+        imgBagarre.gameObject.SetActive(true);
         navMeshAgent.isStopped = false;
         navMeshAgent.SetDestination(standPosition);
+    }
+
+    public bool AreEqual(Vector3 a, Vector3 b)
+    {
+        // Calculer la distance entre les composantes X, Y et Z des Vector3
+        float distanceX = Mathf.Abs(a.x - b.x);
+        float distanceY = Mathf.Abs(a.y - b.y);
+        float distanceZ = Mathf.Abs(a.z - b.z);
+
+        // Si toutes les distances sont inférieures ou égales à la marge d'erreur, les Vector3 sont considérés comme égaux
+        return distanceX <= errorMargin && distanceY <= errorMargin && distanceZ <= errorMargin;
     }
 
     // Coroutine pour l'invocation répétée

@@ -9370,7 +9370,6 @@ MonoBehaviour:
   - {fileID: 169210509}
   - {fileID: 182228545}
   mainSceneManager: {fileID: 1396442795}
-  moneyManager: {fileID: 1954402524}
   redLights:
   - {fileID: 609515748}
   - {fileID: 1896486592}
@@ -9383,6 +9382,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 823da721754d8724c9896ffb25114bab, type: 3}
   elecRed: {fileID: 621019899}
   elecGreen: {fileID: 796423330}
+  gameManager: {fileID: 0}
   looseCanvas: {fileID: 998139832}
   canvasToHide:
   - {fileID: 511433045}
@@ -29497,7 +29497,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.11666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: ce3b2a62cc3881e419b27c310671a99c, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 706213a011b76b943aacc5831cc6a4a5, type: 2}
   m_BuildHeightMesh: 0
 --- !u!23 &1533157145 stripped
 MeshRenderer:
@@ -30026,8 +30026,6 @@ MonoBehaviour:
   resultText: {fileID: 1552170179}
   pointCollector: {fileID: 7554678595991542042, guid: f7ee23eca9a0232438220bb42b8b9cd1,
     type: 3}
-  TotalValueGenre: 0
-  Info: {fileID: 0}
 --- !u!114 &1552170179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43268,7 +43266,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  boxNumber: 0
   jeGagneEnContinue: 0
   jeChieEnContinue: 0
   toiletArea: {fileID: 8685911421937968491, guid: 66b3feb6f0e77834d98237ff02d9dbf2,
@@ -43276,7 +43273,10 @@ MonoBehaviour:
   scoreText: {fileID: 2114218599709936104}
   Multiplicateur: 1
   UpdateButtons: {fileID: 1572198027}
-  scoreTexts: []
+  moneyTextPlay: {fileID: 0}
+  Multiplicatir: 1
+  money: 0
+  boxNumber: 0
 --- !u!114 &2585372049679176793 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
