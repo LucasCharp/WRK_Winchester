@@ -84,7 +84,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: aucun
+  m_text: Champagne
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f667841601c9f334295756289f446732, type: 2}
   m_sharedMaterial: {fileID: -5914313560220163783, guid: f667841601c9f334295756289f446732,

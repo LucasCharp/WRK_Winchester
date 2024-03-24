@@ -10,11 +10,8 @@ public class BarmanController : MonoBehaviour
     public GameManager gameManager; // Assurez-vous de définir cette référence dans l'inspecteur Unity-
     public MainSceneManager mainSceneManager;
     public TextMeshProUGUI boissprio;
+    string resultString = "Aucun";
 
-    public void Start()
-    {
-        boissprio.text = "aucun";
-    }
     public void AjouterCommande(ClientController client, string commande)
     {
         if (commandePrioritaire == null)
@@ -70,10 +67,9 @@ public class BarmanController : MonoBehaviour
 
         if (commandePrioritaire != null)
             commandePrioritaire.QuitterZoneBarman();
-        // Fait sortir le client de la zone du barman
-
-        // Réinitialiser la commande prioritaire et passer à la suivante dans la file d'attente
         commandePrioritaire = null;
+        boissprio.text = resultString;
+        boissprio.ForceMeshUpdate();
         TraiterCommandes();
     }
 }

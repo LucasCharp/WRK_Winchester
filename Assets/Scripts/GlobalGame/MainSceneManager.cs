@@ -149,7 +149,7 @@ public class MainSceneManager : MonoBehaviour
 
     IEnumerator EndGameTimer()
     {
-        yield return new WaitForSeconds(360);
+        yield return new WaitForSeconds(240);
         spawnManager.DestroySpawner();
         yield return new WaitForSeconds(60);
         Time.timeScale = 0f;
@@ -160,8 +160,6 @@ public class MainSceneManager : MonoBehaviour
         {
             canvas.gameObject.SetActive(false); 
         }
-        
-   
     }
 
     public void OnPauseCliqued()

@@ -19,8 +19,7 @@ public class ClientController : MonoBehaviour
     public Image[] boissonImages;
     private Dictionary<string, Image> boissonsImages = new Dictionary<string, Image>();
     private bool unParUn = true;
-    private bool firstTime = false;
-    private RandomNavMeshMovement maBool;
+    public RandomNavMeshMovement maBool;
     private void Update()
     {
         if(commandeFulfilled == true)
@@ -63,8 +62,8 @@ public class ClientController : MonoBehaviour
             inBarZone = true;
             if (barmanController != null)
             {
-                barmanController.AjouterCommande(this, commande);
                 DemanderBoisson();
+                barmanController.AjouterCommande(this, commande);
             }
         }
     }
@@ -72,6 +71,8 @@ public class ClientController : MonoBehaviour
     {
         unParUn = true;
         bulleCommande.gameObject.SetActive(false);
+        animator.SetBool("willDrink", false);
+        animator.SetBool("isWalking", true);
     }
 
     private void OnTriggerExit(Collider other)
@@ -81,6 +82,8 @@ public class ClientController : MonoBehaviour
             inBarZone = false;
             unParUn = true;
             bulleCommande.gameObject.SetActive(false);
+            animator.SetBool("willDrink", false);
+            animator.SetBool("isWalking", true);
         }
     }
 
@@ -145,11 +148,7 @@ public class ClientController : MonoBehaviour
                 gameManager.AugmenterArgent(20);
                 animator.SetBool("willDrink", false);
                 animator.SetBool("isWalking", true);
-                if (firstTime == true)
-                {
-                    maBool.isDrunk = true;
-                }
-
+                maBool.isDrunk = true;
             }
             else
             {
@@ -168,12 +167,12 @@ public class ClientController : MonoBehaviour
                     Debug.Log("t'es con?");
                     animator.SetBool("willDrink", false);
                     animator.SetBool("isWalking", true);
+                    maBool.isDrunk = true;
                 }
             }
             commandeFulfilled = true;
         }
         CacherCommande();
-        firstTime = true;
     }
 
     public bool EstCommandeFulfilled()

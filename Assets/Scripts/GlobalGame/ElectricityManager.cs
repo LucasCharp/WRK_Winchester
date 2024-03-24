@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ElectricityManager : MonoBehaviour
 {
-    private int waitTime = 120;
+    private int waitTime = 100;
     private bool hasLaunched;
     private int preventTime = 7;
     private bool canStop = true;
