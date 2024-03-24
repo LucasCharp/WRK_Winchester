@@ -72,4 +72,9 @@ public class ToiletArea : MonoBehaviour
         }
         return null;
     }
+
+    public void LanceInfo()
+    {
+        gameManager.AugmenterArgent(15);
+    }
 }

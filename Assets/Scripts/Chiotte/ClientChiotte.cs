@@ -4,7 +4,6 @@ public class ClientChiotte : MonoBehaviour
 {
     public Toilet[] toilets; // Tableau des toilettes dans la zone
     public ToiletArea toiletArea;
-    public static ClientChiotte instance;
     public GameManager gameManager;
     private bool unique;
 
@@ -14,6 +13,11 @@ public class ClientChiotte : MonoBehaviour
         if (gameManagerObject != null)
         {
             gameManager = gameManagerObject.GetComponent<GameManager>();
+        }
+        GameObject moneyManagerObject = GameObject.FindWithTag("GameManager");
+        if (gameManagerObject != null)
+        {
+            gameManager = moneyManagerObject.GetComponent<GameManager>();
         }
     }
     // Coroutine pour attendre dans la zone des toilettes
@@ -60,7 +64,7 @@ public class ClientChiotte : MonoBehaviour
                 if (availableToilet != null)
                 {
                     Debug.Log("E3");
-                    gameManager.AugmenterArgent(15);
+                    toiletArea.LanceInfo();
                     Debug.Log("E4");
                     availableToilet.UseToilet(); // Utiliser le toilette disponible
                 }

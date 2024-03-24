@@ -13,16 +13,13 @@ public class ClientController : MonoBehaviour
     private float tempsInitial;
     public GameManager gameManager;
     private bool tropAttendu = false;
-
     private Animator animator;
-
     public Image bulleCommande;
     public Image boisson;
     public Image[] boissonImages;
     private Dictionary<string, Image> boissonsImages = new Dictionary<string, Image>();
     private bool unParUn = true;
     private bool firstTime = false;
-    private GameObject gameobject;
     private RandomNavMeshMovement maBool;
     private void Update()
     {

@@ -100,6 +100,7 @@ public class GameManager : MonoBehaviour
     }
     public void AugmenterArgent(float points)
     {
+        Debug.Log(points);
         if (points > 0)
         {
             money += points * Multiplicatir;

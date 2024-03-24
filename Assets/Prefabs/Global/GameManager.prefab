@@ -46,12 +46,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jeGagneEnContinue: 0
   jeChieEnContinue: 0
-  toiletArea: {fileID: 8685911421937968491, guid: 66b3feb6f0e77834d98237ff02d9dbf2,
-    type: 3}
   scoreText: {fileID: 3641046227376719246, guid: 5e790d2cba16df24ea09587fb318cf0c,
     type: 3}
   Multiplicateur: 1
   Multiplicatir: 1
-  exitManager: {fileID: 0}
+  exitManager: {fileID: 8973821836740383002, guid: 8add604f58760854e9fcbdf865e46ee7,
+    type: 3}
   moneyTextstart: {fileID: 8794934247729529311, guid: 90f24c4908b049d46b590c8ebe7757e8,
     type: 3}

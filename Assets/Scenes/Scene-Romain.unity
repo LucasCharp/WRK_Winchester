@@ -8530,7 +8530,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 2585372049679176793}
+      objectReference: {fileID: 0}
     - target: {fileID: -6503089585961827188, guid: ef944a99cec47b04b9146287b3c6f9b4,
         type: 3}
       propertyPath: maBool
@@ -8549,7 +8549,7 @@ PrefabInstance:
     - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.2
+      value: -5.598
       objectReference: {fileID: 0}
     - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
         type: 3}
@@ -8559,7 +8559,7 @@ PrefabInstance:
     - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.25
+      value: 1.137
       objectReference: {fileID: 0}
     - target: {fileID: 880735590960894135, guid: ef944a99cec47b04b9146287b3c6f9b4,
         type: 3}
@@ -24447,12 +24447,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129446370}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1136606298 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1082271958561512970, guid: a67c6dd2e0705a84588cec31a9d310d1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1279751819}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1139274755
 GameObject:
   m_ObjectHideFlags: 0
@@ -28186,6 +28180,7 @@ MonoBehaviour:
   buttonBagarre: {fileID: 2035698423}
   imgBagarre: {fileID: 50754187}
   Fighter: {fileID: 0}
+  errorMargin: 0.1
 --- !u!1 &1282641695
 GameObject:
   m_ObjectHideFlags: 0
@@ -37088,6 +37083,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1754998330}
   m_CullTransparentMesh: 1
+--- !u!1 &1755027011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 339663036041472342, guid: ef944a99cec47b04b9146287b3c6f9b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 334410300}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1756765224
 GameObject:
   m_ObjectHideFlags: 0
@@ -46270,8 +46271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jeGagneEnContinue: 0
   jeChieEnContinue: 0
-  toiletArea: {fileID: 8685911421937968491, guid: 66b3feb6f0e77834d98237ff02d9dbf2,
-    type: 3}
+  toiletArea: {fileID: 0}
   scoreText: {fileID: 2114218599709936104}
   Multiplicateur: 1
   Multiplicatir: 1
@@ -47100,7 +47100,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PNJ
       value: 
-      objectReference: {fileID: 1136606298}
+      objectReference: {fileID: 1755027011}
     - target: {fileID: 8685911421937968491, guid: 66b3feb6f0e77834d98237ff02d9dbf2,
         type: 3}
       propertyPath: gameManager

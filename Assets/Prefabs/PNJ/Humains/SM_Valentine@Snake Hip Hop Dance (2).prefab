@@ -992,7 +992,8 @@ MonoBehaviour:
   - {fileID: 6329305383735665579, guid: acc87edd60aa2d847b3c48605e86adb5, type: 3}
   toiletArea: {fileID: 8685911421937968491, guid: 66b3feb6f0e77834d98237ff02d9dbf2,
     type: 3}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
+    type: 3}
 --- !u!114 &3591503924515699619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1008,15 +1009,14 @@ MonoBehaviour:
   commande: 
   gameManager: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
     type: 3}
-  canvaas: {fileID: 0}
   bulleCommande: {fileID: 229520654376158938}
+  boisson: {fileID: 0}
   boissonImages:
   - {fileID: 4983698675517780887}
   - {fileID: 4801816407703536874}
   - {fileID: 1748048750177560005}
   - {fileID: 4747707178874338059}
   - {fileID: 6044362576185462437}
-  maBool: {fileID: 0}
 --- !u!114 &7806564411227657953
 MonoBehaviour:
   m_ObjectHideFlags: 0
