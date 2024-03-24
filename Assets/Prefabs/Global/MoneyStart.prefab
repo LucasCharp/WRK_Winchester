@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7267669093038858711}
   - component: {fileID: 9154456172212884757}
   - component: {fileID: 6581294230536176287}
+  - component: {fileID: -7186565959300268040}
   m_Layer: 0
   m_Name: MoneyStart
   m_TagString: Untagged
@@ -65,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 600
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8cf2d381ca1bb044384d2e64d989f7c4, type: 2}
   m_sharedMaterial: {fileID: 4109278635033254136, guid: 8cf2d381ca1bb044384d2e64d989f7c4,
@@ -135,3 +136,27 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &-7186565959300268040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3293016177156101760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3caca4df1e629f4fa74d81cc2fd18b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  jeGagneEnContinue: 0
+  jeChieEnContinue: 0
+  toiletArea: {fileID: 8685911421937968491, guid: 66b3feb6f0e77834d98237ff02d9dbf2,
+    type: 3}
+  scoreText: {fileID: 0}
+  Multiplicateur: 1
+  UpdateButtons: {fileID: 0}
+  moneyTextPlay: {fileID: 6581294230536176287}
+  Multiplicatir: 1
+  money: 0
+  boxNumber: 0

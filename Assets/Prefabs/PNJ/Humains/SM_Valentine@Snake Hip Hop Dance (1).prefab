@@ -1300,13 +1300,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497d740f220a71a408007a52644a7c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyManager: {fileID: 4200814716295636958, guid: 9d78af1d6edef984d9fbb7bc74d64397,
-    type: 3}
   toilets:
   - {fileID: 8757933926999701384, guid: 002c1be9dce680d44a29462f82366579, type: 3}
   - {fileID: 6329305383735665579, guid: acc87edd60aa2d847b3c48605e86adb5, type: 3}
   toiletArea: {fileID: 8685911421937968491, guid: 66b3feb6f0e77834d98237ff02d9dbf2,
     type: 3}
+  gameManager: {fileID: 0}
 --- !u!114 &5268321931669075762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1322,8 +1321,6 @@ MonoBehaviour:
   commande: 
   gameManager: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
     type: 3}
-  moneyManager: {fileID: 4200814716295636958, guid: 9d78af1d6edef984d9fbb7bc74d64397,
-    type: 3}
   bulleCommande: {fileID: 4559273595486066919}
   boissonImages:
   - {fileID: 5012202193198419005}
@@ -1331,6 +1328,7 @@ MonoBehaviour:
   - {fileID: 7800483269817081481}
   - {fileID: 2069282924544249146}
   - {fileID: 6129224674954148935}
+  maBool: {fileID: 0}
 --- !u!114 &5190579032451571539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1349,7 +1347,7 @@ MonoBehaviour:
   drillCounter: 0
   countryCounter: 0
   discoCounter: 0
-  brasilCounter: 0
+  brazilCounter: 0
   metalCounter: 0
 --- !u!95 &8643544065347208614
 Animator:

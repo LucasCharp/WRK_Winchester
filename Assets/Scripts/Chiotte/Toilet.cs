@@ -17,6 +17,7 @@ public class Toilet : MonoBehaviour
 
     public void UseToilet()
     {
+        Debug.Log("a");
         if (!isOccupied && !isDirty)
         {
             StartCoroutine(UseToiletRoutine());

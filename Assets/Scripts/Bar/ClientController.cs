@@ -12,8 +12,8 @@ public class ClientController : MonoBehaviour
     private bool satisfait = false;
     private float tempsInitial;
     public GameManager gameManager;
-    public MoneyManager moneyManager;
     private bool tropAttendu = false;
+    public Canvas canvaas;
 
     private Animator animator;
 
@@ -24,7 +24,7 @@ public class ClientController : MonoBehaviour
     private bool unParUn = true;
     public RandomNavMeshMovement maBool;
     private bool firstTime = false;
-
+    private GameObject gameobject;
     private void Update()
     {
         if(commandeFulfilled == true)
@@ -36,7 +36,14 @@ public class ClientController : MonoBehaviour
     }
     private void Start()
     {
+        canvaas.gameObject.SetActive(false);
+        bulleCommande.gameObject.SetActive(false);
         animator = GetComponent<Animator>();
+        GameObject canvass = GameObject.FindWithTag("canvaas");
+        if (canvass != null)
+        {
+            gameobject = canvass.GetComponent<GameObject>();
+        }
         GameObject gameManagerObject = GameObject.FindWithTag("GameManager");
         if (gameManagerObject != null)
         {
@@ -45,7 +52,7 @@ public class ClientController : MonoBehaviour
         GameObject moneyManagerObject = GameObject.FindWithTag("MoneyManager");
         if (gameManagerObject != null)
         {
-            moneyManager = moneyManagerObject.GetComponent<MoneyManager>();
+            gameManager = moneyManagerObject.GetComponent<GameManager>();
         }
 
         boissonsImages.Add("Absynthe", boissonImages[0]);
@@ -54,7 +61,6 @@ public class ClientController : MonoBehaviour
         boissonsImages.Add("Cognac", boissonImages[3]);
         boissonsImages.Add("Vin", boissonImages[4]);
 
-        bulleCommande.gameObject.SetActive(false);
         barmanController = FindObjectOfType<BarmanController>();
     }
 
@@ -108,6 +114,7 @@ public class ClientController : MonoBehaviour
     private void AfficherCommande()
     {
         bulleCommande.gameObject.SetActive(true);
+        canvaas.gameObject.SetActive(true);
         Image imageBoisson = boissonsImages[commande];
         imageBoisson.gameObject.SetActive(true);
     }
@@ -134,13 +141,10 @@ public class ClientController : MonoBehaviour
     // Modifier la signature pour accepter un booléen
     public void LivrerBoisson(bool reponse)
     {
-        Debug.Log("oui");
         if (inBarZone && !commandeFulfilled)
         {
-            Debug.Log("oui2");
             if (reponse)
             {
-                Debug.Log("oui3");
                 float duree = Time.time - tempsInitial; // Calculer la durée écoulée
                 float TimePoint = 20 - (Time.time - tempsInitial);
                 Debug.Log(TimePoint + " s restante");
@@ -148,8 +152,7 @@ public class ClientController : MonoBehaviour
                 int scoreGagne = 10 * (multiplicateur + 1); // Calculer le score gagné en fonction du multiplicateur
                 gameManager.AugmenterScore(scoreGagne); // Accéder à la méthode AugmenterScore à partir de l'instance de GameManager
                 Debug.Log("Merci ! Score gagné : ");
-                moneyManager.moneyChange = 20;
-                moneyManager.OnMoneyChange();
+                gameManager.AugmenterArgent(20);
                 animator.SetBool("willDrink", false);
                 animator.SetBool("isWalking", true);
                 if (firstTime == true)

@@ -15,14 +15,11 @@ public class ToiletArea : MonoBehaviour
     {
         if (PNJ.CompareTag("PNJ"))
         {
-            Debug.Log("Jesuila");
             inChiotteZone = true;
             // Récupérer le script ClientChiotte attaché au PNJ
             ClientChiotte clientChiotte = PNJ.GetComponent<ClientChiotte>();
-            Debug.Log(clientChiotte+ "je l'ai");
             if (clientChiotte != null)
             {
-                Debug.Log("la");
                 lesClientsDesChiottes.UseToilet();
                 Debug.Log("la2");
             }
@@ -66,12 +63,10 @@ public class ToiletArea : MonoBehaviour
         // Récupérer un toilette disponible au hasard
         foreach (var toilet in toilets)
         {
-            print("ouiouiuiuiui");
             print(toilet.isOccupied + "e"); // Utilisez toilet au lieu de Toilet.instance
             print(toilet.isDirty + "o"); // Utilisez toilet au lieu de Toilet.instance
             if (!toilet.isOccupied && !toilet.isDirty) // Utilisez toilet au lieu de Toilet.instance
             {
-                Debug.Log("il est libre");
                 return toilet;
             }
         }

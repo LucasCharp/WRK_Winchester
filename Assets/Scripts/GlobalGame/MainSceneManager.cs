@@ -136,8 +136,9 @@ public class MainSceneManager : MonoBehaviour
         cameraRotation.canRotate = true;
         startGame = true;
 
-        startCanvas.gameObject.SetActive(false) ;
         playCanvas.gameObject.SetActive(true);
+        startCanvas.gameObject.SetActive(false) ;
+
 
         djAnimator.SetBool("isDancing", true);
         StartCoroutine(EndGameTimer());

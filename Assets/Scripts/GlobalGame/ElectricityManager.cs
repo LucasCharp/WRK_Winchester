@@ -7,7 +7,6 @@ public class ElectricityManager : MonoBehaviour
 {
     private int waitTime = 120;
     private bool hasLaunched;
-    private int cost = 200;
     private int preventTime = 7;
     private bool canStop = true;
     private bool hasCutElectricity = false;
@@ -15,13 +14,13 @@ public class ElectricityManager : MonoBehaviour
     public bool electricityCut = false;
     public GameObject[] lightsToOff;
     public MainSceneManager mainSceneManager;
-    public MoneyManager moneyManager;
     public List<GameObject> redLights;
     public Collider boxCollider;
     public JukeboxManager jukeboxManager;
     public AudioClip[] sons;
     public Image elecRed;
     public Image elecGreen;
+    public GameManager gameManager;
 
     public Canvas looseCanvas;
     public List<Canvas> canvasToHide;
@@ -45,10 +44,9 @@ public class ElectricityManager : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (moneyManager.moneyTotal >= cost)
+        if (gameManager.money >= 200)
         {
-            moneyManager.moneyChange = -cost;
-            moneyManager.OnMoneyChange();
+            gameManager.AugmenterArgent(-200);
             foreach (GameObject light in redLights)
             {
                 light.gameObject.SetActive(false);

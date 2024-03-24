@@ -73,7 +73,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     public MainSceneManager mainSceneManager;
     public CameraRotation cameraRotation;
     public CameraColliderDetection cameraCollider;
-    public MoneyManager moneyManager;
     public Canvas upgradeCanvas;
 
     private Vector3 initialCameraPosition;
@@ -93,7 +92,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     public AudioClip[] son;
     public List<string> purchasedButtons = new List<string>();
     public GameManager gameManager;
-    public MoneyManager MoneyManager;
 
     private void Update()
     {
@@ -143,7 +141,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         buttonChaiseRetour.gameObject.SetActive(false);
         costChaise.gameObject.SetActive(false);
         gameManager = FindObjectOfType<GameManager>();
-        moneyManager = FindObjectOfType<MoneyManager>();
         if (gameManager == null)
         {
             Debug.LogWarning("GameManager instance not found.");
@@ -163,9 +160,9 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     }
     public void YourMethod2()
     {
-        if (MoneyManager != null)
+        if (gameManager != null)
         {
-            MoneyManager.AddMultiplicato();
+            gameManager.AddMultiplicato();
         }
     }
 
@@ -435,12 +432,11 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnRefillCliqued()
     {
-        if (moneyManager.moneyTotal >= refillCost && mainSceneManager.barLevel != 3)
+        if (gameManager.money >= refillCost && mainSceneManager.barLevel != 3)
         {
             SFXManager.instance.PlaySoundFXClip(son[0], transform, 1f);
             SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
-            moneyManager.moneyChange = -refillCost;
-            moneyManager.OnMoneyChange();
+            gameManager.AugmenterArgent(-refillCost);
             mainSceneManager.SetEtagere();
         }
         else
@@ -476,10 +472,9 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         if (!purchasedButtons.Contains("RedFloor"))
         {
-            if (moneyManager.moneyTotal >= moneyCost)
+            if (gameManager.money >= moneyCost)
             {
-                moneyManager.moneyChange = -moneyCost;
-                moneyManager.OnMoneyChange();
+                gameManager.AugmenterArgent(-moneyCost);
 
                 purchasedButtons.Add("RedFloor");
                 SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
@@ -492,7 +487,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         
         if (purchasedButtons.Contains("RedFloor"))
         {
-            moneyManager.AddMultiplicato();
+            gameManager.AddMultiplicato();
             Renderer renderer = floor.GetComponent<Renderer>();
           if (renderer != null)
           {
@@ -510,10 +505,9 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         if (!purchasedButtons.Contains("BrownFloor"))
         {
-            if (moneyManager.moneyTotal >= moneyCost)
+            if (gameManager.money >= moneyCost)
             {
-                moneyManager.moneyChange = -moneyCost;
-                moneyManager.OnMoneyChange();
+                gameManager.AugmenterArgent(-moneyCost);
 
                 purchasedButtons.Add("BrownFloor");
                 SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
@@ -525,7 +519,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         }
         if (purchasedButtons.Contains("BrownFloor"))
         {
-            moneyManager.AddMultiplicato();
+            gameManager.AddMultiplicato();
             SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
 
             Renderer renderer = floor.GetComponent<Renderer>();
@@ -544,10 +538,9 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         if (!purchasedButtons.Contains("WhiteFloor"))
         {
-            if (moneyManager.moneyTotal >= moneyCost)
+            if (gameManager.money >= moneyCost)
             {
-                moneyManager.moneyChange = -moneyCost;
-                moneyManager.OnMoneyChange();
+                gameManager.AugmenterArgent(-moneyCost);
 
                 purchasedButtons.Add("WhiteFloor");
                 SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
@@ -559,7 +552,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         }
         if (purchasedButtons.Contains("WhiteFloor"))
         {
-            moneyManager.AddMultiplicato();
+            gameManager.AddMultiplicato();
             SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
 
             Renderer renderer = floor.GetComponent<Renderer>();
@@ -602,10 +595,9 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         if (!purchasedButtons.Contains("RedWall"))
         {
-            if (moneyManager.moneyTotal >= moneyCost)
+            if (gameManager.money >= moneyCost)
             {
-                moneyManager.moneyChange = -moneyCost;
-                moneyManager.OnMoneyChange();
+                gameManager.AugmenterArgent(-moneyCost);
 
                 purchasedButtons.Add("RedWall");
                 SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
@@ -618,7 +610,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
        
         if (purchasedButtons.Contains("RedWall"))
         {
-            moneyManager.AddMultiplicato();
+            gameManager.AddMultiplicato();
             SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
             foreach (GameObject wall in walls)
             {
@@ -639,10 +631,9 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         if (!purchasedButtons.Contains("BrownWall"))
         {
-            if (moneyManager.moneyTotal >= moneyCost)
+            if (gameManager.money >= moneyCost)
             {
-                moneyManager.moneyChange = -moneyCost;
-                moneyManager.OnMoneyChange();
+                gameManager.AugmenterArgent(-moneyCost);
 
                 purchasedButtons.Add("BrownWall");
                 SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
@@ -655,7 +646,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         
         if (purchasedButtons.Contains("BrownWall"))
         {
-            moneyManager.AddMultiplicato();
+            gameManager.AddMultiplicato();
             SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
 
             foreach (GameObject wall in walls)
@@ -677,10 +668,9 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         if (!purchasedButtons.Contains("WhiteWall"))
         {
-            if (moneyManager.moneyTotal >= moneyCost)
+            if (gameManager.money >= moneyCost)
             {
-                moneyManager.moneyChange = -moneyCost;
-                moneyManager.OnMoneyChange();
+                gameManager.AugmenterArgent(-moneyCost);
 
                 purchasedButtons.Add("WhiteWall");
                 SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
@@ -693,7 +683,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         
         if (purchasedButtons.Contains("WhiteWall"))
         {
-            moneyManager.AddMultiplicato();
+            gameManager.AddMultiplicato();
             SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
 
             foreach (GameObject wall in walls)
@@ -748,11 +738,10 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("RedTable"))
             {
-                if (moneyManager.moneyTotal >= moneyCost)
+                if (gameManager.money >= moneyCost)
                 {
-                    moneyManager.AddMultiplicato();
-                    moneyManager.moneyChange = -moneyCost;
-                    moneyManager.OnMoneyChange();
+                    gameManager.AddMultiplicata();
+                    gameManager.AugmenterArgent(-moneyCost);
 
                     purchasedButtons.Add("RedTable");
                     SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
@@ -765,7 +754,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             
             if (purchasedButtons.Contains("RedTable"))
             {
-                gameManager.AddMultiplicata();
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
                 foreach (GameObject table in tables)
                 {
@@ -798,11 +786,10 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("RedBanq"))
             {
-                if (moneyManager.moneyTotal >= moneyCost)
+                if (gameManager.money >= moneyCost)
                 {
-                    moneyManager.AddMultiplicato();
-                    moneyManager.moneyChange = -moneyCost;
-                    moneyManager.OnMoneyChange();
+                    gameManager.AddMultiplicata();
+                    gameManager.AugmenterArgent(-moneyCost);
 
                     purchasedButtons.Add("RedBanq");
                     SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
@@ -815,7 +802,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             
             if (purchasedButtons.Contains("RedBanq"))
             {
-                gameManager.AddMultiplicata();
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
                 foreach (GameObject banquette in banquettes)
                 {
@@ -847,11 +833,10 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("RedChaise"))
             {
-                if (moneyManager.moneyTotal >= moneyCost)
+                if (gameManager.money >= moneyCost)
                 {
-                    moneyManager.AddMultiplicato();
-                    moneyManager.moneyChange = -moneyCost;
-                    moneyManager.OnMoneyChange();
+                    gameManager.AddMultiplicata();
+                    gameManager.AugmenterArgent(-moneyCost);
 
                     purchasedButtons.Add("RedChaise");
                     SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
@@ -864,7 +849,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             
             if (purchasedButtons.Contains("RedChaise"))
             {
-                gameManager.AddMultiplicata();
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
                 foreach (GameObject chaise in chaises)
                 {
@@ -900,11 +884,10 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("GreenTable"))
             {
-                if (moneyManager.moneyTotal >= moneyCost)
+                if (gameManager.money >= moneyCost)
                 {
-                    moneyManager.AddMultiplicato();
-                    moneyManager.moneyChange = -moneyCost;
-                    moneyManager.OnMoneyChange();
+                    gameManager.AddMultiplicata();
+                    gameManager.AugmenterArgent(-moneyCost);
 
                     purchasedButtons.Add("GreenTable");
                 }
@@ -916,7 +899,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             
             if (purchasedButtons.Contains("GreenTable"))
             {
-                gameManager.AddMultiplicata();
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
                 foreach (GameObject table in tables)
                 {
@@ -948,11 +930,10 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("GreenBanq"))
             {
-                if (moneyManager.moneyTotal >= moneyCost)
+                if (gameManager.money >= moneyCost)
                 {
-                    moneyManager.AddMultiplicato();
-                    moneyManager.moneyChange = -moneyCost;
-                    moneyManager.OnMoneyChange();
+                    gameManager.AddMultiplicata();
+                    gameManager.AugmenterArgent(-moneyCost);
 
                     purchasedButtons.Add("GreenBanq");
                     SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
@@ -965,7 +946,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
            
             if (purchasedButtons.Contains("GreenBanq"))
             {
-                gameManager.AddMultiplicata();
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
                 foreach (GameObject banquette in banquettes)
                 {
@@ -997,11 +977,10 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("GreenChaise"))
             {
-                if (moneyManager.moneyTotal >= moneyCost)
+                if (gameManager.money >= moneyCost)
                 {
-                    moneyManager.AddMultiplicato();
-                    moneyManager.moneyChange = -moneyCost;
-                    moneyManager.OnMoneyChange();
+                    gameManager.AddMultiplicata();
+                    gameManager.AugmenterArgent(-moneyCost);
 
                     purchasedButtons.Add("GreenChaise");
                     SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
@@ -1014,7 +993,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             
             if (purchasedButtons.Contains("GreenChaise"))
             {
-                gameManager.AddMultiplicata();
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
                 foreach (GameObject chaise in chaises)
                 {
@@ -1050,11 +1028,10 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("YellowTable"))
             {
-                if (moneyManager.moneyTotal >= moneyCost)
+                if (gameManager.money >= moneyCost)
                 {
-                    moneyManager.AddMultiplicato();
-                    moneyManager.moneyChange = -moneyCost;
-                    moneyManager.OnMoneyChange();
+                    gameManager.AddMultiplicata();
+                    gameManager.AugmenterArgent(-moneyCost);
 
                     purchasedButtons.Add("YellowTable");
                     SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
@@ -1067,7 +1044,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
            
             if (purchasedButtons.Contains("YellowTable"))
             {
-                gameManager.AddMultiplicata();
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
                 foreach (GameObject table in tables)
                 {
@@ -1099,11 +1075,10 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("YellowBanq"))
             {
-                if (moneyManager.moneyTotal >= moneyCost)
+                if (gameManager.money >= moneyCost)
                 {
-                    moneyManager.AddMultiplicato();
-                    moneyManager.moneyChange = -moneyCost;
-                    moneyManager.OnMoneyChange();
+                    gameManager.AddMultiplicata();
+                    gameManager.AugmenterArgent(-moneyCost);
 
                     purchasedButtons.Add("YellowBanq");
                     SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
@@ -1116,7 +1091,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             
             if (purchasedButtons.Contains("YellowBanq"))
             {
-                gameManager.AddMultiplicata();
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
                 foreach (GameObject banquette in banquettes)
                 {
@@ -1148,11 +1122,10 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("YellowChaise"))
             {
-                if (moneyManager.moneyTotal >= moneyCost)
+                if (gameManager.money >= moneyCost)
                 {
-                    moneyManager.AddMultiplicato();
-                    moneyManager.moneyChange = -moneyCost;
-                    moneyManager.OnMoneyChange();
+                    gameManager.AddMultiplicata();
+                    gameManager.AugmenterArgent(-moneyCost);
 
                     purchasedButtons.Add("YellowChaise");
                     SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
@@ -1165,7 +1138,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
             
             if (purchasedButtons.Contains("YellowChaise"))
             {
-                gameManager.AddMultiplicata();
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
                 foreach (GameObject chaise in chaises)
                 {
@@ -1201,11 +1173,10 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("BlueTable"))
             {
-                if (moneyManager.moneyTotal >= moneyCost)
+                if (gameManager.money >= moneyCost)
                 {
-                    moneyManager.AddMultiplicato();
-                    moneyManager.moneyChange = -moneyCost;
-                    moneyManager.OnMoneyChange();
+                    gameManager.AddMultiplicata();
+                    gameManager.AugmenterArgent(-moneyCost);
 
                     purchasedButtons.Add("BlueTable");
                     SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
@@ -1218,7 +1189,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
             if (purchasedButtons.Contains("BlueTable"))
             {
-                gameManager.AddMultiplicata();
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
                 foreach (GameObject table in tables)
                 {
@@ -1250,11 +1220,10 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("BlueBanq"))
             {
-                if (moneyManager.moneyTotal >= moneyCost)
+                if (gameManager.money >= moneyCost)
                 {
-                    moneyManager.AddMultiplicato();
-                    moneyManager.moneyChange = -moneyCost;
-                    moneyManager.OnMoneyChange();
+                    gameManager.AddMultiplicata();
+                    gameManager.AugmenterArgent(-moneyCost);
 
                     purchasedButtons.Add("BlueBanq");
                     SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
@@ -1267,7 +1236,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
             if (purchasedButtons.Contains("BlueBanq"))
             {
-                gameManager.AddMultiplicata();
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
                 foreach (GameObject banquette in banquettes)
                 {
@@ -1299,11 +1267,10 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("BlueChaise"))
             {
-                if (moneyManager.moneyTotal >= moneyCost)
+                if (gameManager.money >= moneyCost)
                 {
-                    moneyManager.AddMultiplicato();
-                    moneyManager.moneyChange = -moneyCost;
-                    moneyManager.OnMoneyChange();
+                    gameManager.AddMultiplicata();
+                    gameManager.AugmenterArgent(-moneyCost);
 
                     purchasedButtons.Add("BlueChaise");
                     SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
@@ -1316,7 +1283,6 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
             if (purchasedButtons.Contains("BlueChaise"))
             {
-                gameManager.AddMultiplicata();
 
                 SFXManager.instance.PlaySoundFXClip(son[1], transform, 1f);
                 foreach (GameObject chaise in chaises)

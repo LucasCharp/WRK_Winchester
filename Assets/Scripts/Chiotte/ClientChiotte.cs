@@ -5,9 +5,17 @@ public class ClientChiotte : MonoBehaviour
     public Toilet[] toilets; // Tableau des toilettes dans la zone
     public ToiletArea toiletArea;
     public static ClientChiotte instance;
-    private MoneyManager moneyManager = new MoneyManager();
+    public GameManager gameManager;
     private bool unique;
 
+    private void Start()
+    {
+        GameObject gameManagerObject = GameObject.FindWithTag("GameManager");
+        if (gameManagerObject != null)
+        {
+            gameManager = gameManagerObject.GetComponent<GameManager>();
+        }
+    }
     // Coroutine pour attendre dans la zone des toilettes
     public System.Collections.IEnumerator WaitInToiletZone()
     {
@@ -39,18 +47,21 @@ public class ClientChiotte : MonoBehaviour
     // Méthode pour gérer l'utilisation des toilettes par le PNJ
     public void UseToilet()
     {
+        unique = false; 
         if (unique == false)
         {
+            Debug.Log("E1");
             unique = true;
             ToiletArea toiletArea = FindObjectOfType<ToiletArea>(); // Trouver l'instance de ToiletArea dans la scène
             if (toiletArea != null)
             {
-                Debug.Log("check toil");
-                Toilet availableToilet = toiletArea.GetAvailableToilet(); // Obtenir un toilette disponible
+                Debug.Log("E2");
+                Toilet availableToilet = FindObjectOfType<Toilet>(); // Obtenir un toilette disponible
                 if (availableToilet != null)
                 {
-                    moneyManager.moneyChange = 15;
-                    moneyManager.OnMoneyChange();
+                    Debug.Log("E3");
+                    gameManager.AugmenterArgent(15);
+                    Debug.Log("E4");
                     availableToilet.UseToilet(); // Utiliser le toilette disponible
                 }
             }
