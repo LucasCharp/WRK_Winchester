@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ToiletArea : MonoBehaviour
 {
@@ -10,7 +12,8 @@ public class ToiletArea : MonoBehaviour
     public GameObject PNJ;
     private ClientChiotte lesClientsDesChiottes = new ClientChiotte();
     public static ToiletArea instance;
-
+    public NavMeshAgent navMeshAgent;
+    public Animator animator;
     private void OnTriggerEnter(Collider PNJ)
     {
         if (PNJ.CompareTag("PNJ"))
@@ -18,7 +21,9 @@ public class ToiletArea : MonoBehaviour
             inChiotteZone = true;
             // Récupérer le script ClientChiotte attaché au PNJ
             ClientChiotte clientChiotte = PNJ.GetComponent<ClientChiotte>();
-            if (clientChiotte != null)
+            navMeshAgent = PNJ.GetComponent<NavMeshAgent>();
+            animator = PNJ.GetComponent<Animator>();
+            if (clientChiotte != null&& animator.GetBool("hasAlreadyShit") == false)
             {
                 lesClientsDesChiottes.UseToilet();
                 Debug.Log("la2");

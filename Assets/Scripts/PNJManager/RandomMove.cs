@@ -50,25 +50,23 @@ public class RandomNavMeshMovement : MonoBehaviour
 
     void Update()
     {
-            if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.1f)
+        if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.1f)
+        {
+            if (moveDelayTimer <= 0f)
             {
-                if (moveDelayTimer <= 0f)
+                SetRandomDestination();
+                moveDelayTimer = Random.Range(minMoveDelay, maxMoveDelay);
+            }
+            else
+            {
+                moveDelayTimer -= Time.deltaTime;
+                animator.SetBool("isWalking", false);
+                if (animator.GetBool("willDance") == true)
                 {
-                    SetRandomDestination();
-                    moveDelayTimer = Random.Range(minMoveDelay, maxMoveDelay);
-                }
-                else
-                {
-                    moveDelayTimer -= Time.deltaTime;
-                    animator.SetBool("isWalking", false);
-                    if (animator.GetBool("willDance") == true)
-                    {
-                        animator.SetBool("isDancing", true);
-                    }
+                    animator.SetBool("isDancing", true);
                 }
             }
-
-
+        }
 
         if (animator.GetBool("hasEnterPub") == true)
         {
@@ -118,7 +116,7 @@ public class RandomNavMeshMovement : MonoBehaviour
     {
         GameObject videur = GameObject.Find("VideurEmploye");
         VideurPNJ VideurCode = videur.GetComponent<VideurPNJ>();
-        if (animator.GetBool("isDancing") == false && animator.GetBool("isFighting") == false && animator.GetBool("willDrink") == false && animator.GetBool("shouldGoIn") == false && animator.GetBool("isShitting") == false)
+        if (animator.GetBool("isDancing") == false && animator.GetBool("isFighting") == false && animator.GetBool("willDrink") == false && animator.GetBool("shouldGoIn") == false && animator.GetBool("willShit") == false)
         {
             // Récupérer tous les PNJs avec le tag "PNJ"
             GameObject[] otherPNJs = GameObject.FindGameObjectsWithTag("PNJ");
@@ -168,7 +166,7 @@ public class RandomNavMeshMovement : MonoBehaviour
         {
             // Générer une destination aléatoire à l'intérieur du NavMesh
 
-            if (animator.GetBool("isDancing") == false && animator.GetBool("willDrink") == false && animator.GetBool("isShitting") == false)
+            if (animator.GetBool("isDancing") == false && animator.GetBool("willDrink") == false && animator.GetBool("willShit") == false)
             {
                 animator.SetBool("isWalking", true);
                 Vector3 randomDirection = Random.insideUnitSphere * 3f; // Rayon de 10 unités

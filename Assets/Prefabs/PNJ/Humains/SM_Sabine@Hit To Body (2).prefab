@@ -1861,6 +1861,7 @@ MonoBehaviour:
     type: 3}
   gameManager: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
     type: 3}
+  toiletPos: {x: -7.27, y: 1, z: -3.5}
 --- !u!114 &-335241272087494086
 MonoBehaviour:
   m_ObjectHideFlags: 0

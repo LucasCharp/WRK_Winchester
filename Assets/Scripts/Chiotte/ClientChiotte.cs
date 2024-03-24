@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ClientChiotte : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class ClientChiotte : MonoBehaviour
     public ToiletArea toiletArea;
     public GameManager gameManager;
     private bool unique;
+    private Vector3 toiletPos = new Vector3(-7.27f, 1f, -3.5f);
 
     private void Start()
     {
@@ -33,6 +35,7 @@ public class ClientChiotte : MonoBehaviour
                 if (toiletAvailable)
                 {
                     // Si un toilette est disponible, utiliser les toilettes et arrêter la coroutine
+                    
                     UseToilet();
                     yield break;
                 }
@@ -67,6 +70,9 @@ public class ClientChiotte : MonoBehaviour
                     toiletArea.LanceInfo();
                     Debug.Log("E4");
                     availableToilet.UseToilet(); // Utiliser le toilette disponible
+                    print(toiletPos);
+                    toiletArea.animator.SetBool("willShit", true);
+                    toiletArea.navMeshAgent.SetDestination(toiletPos);
                 }
             }
         }

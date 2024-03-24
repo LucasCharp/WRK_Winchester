@@ -832,6 +832,7 @@ MonoBehaviour:
   toiletArea: {fileID: 8685911421937968491, guid: 66b3feb6f0e77834d98237ff02d9dbf2,
     type: 3}
   gameManager: {fileID: 0}
+  toiletPos: {x: -7.27, y: 1, z: -3.5}
 --- !u!114 &4341564364900507945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,15 +848,14 @@ MonoBehaviour:
   commande: 
   gameManager: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
     type: 3}
-  canvaas: {fileID: 5272359262629808045}
   bulleCommande: {fileID: 4438952151411036496}
+  boisson: {fileID: 0}
   boissonImages:
   - {fileID: 2337604696889228824}
   - {fileID: 4595060805788631546}
   - {fileID: 5289910037160812154}
   - {fileID: 7072869936979711680}
   - {fileID: 8332590621904445929}
-  maBool: {fileID: 0}
 --- !u!54 &2340190231510203529
 Rigidbody:
   m_ObjectHideFlags: 0

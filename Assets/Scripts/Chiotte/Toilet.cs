@@ -14,6 +14,7 @@ public class Toilet : MonoBehaviour
     public Button ToiletFree;
     public Button ToiletOccupied;
     public static Toilet instance;
+    private Vector3 toiletSortie = new Vector3(-1.8f, 1f, -1.2f);
 
     public void UseToilet()
     {
@@ -32,6 +33,10 @@ public class Toilet : MonoBehaviour
         yield return new WaitForSeconds(8f); // Temps passé par le PNJ dans les toilettes
         isOccupied = false;
         isDirty = true;
+        ZoneDesChiottes.animator.SetBool("willShit", false);
+        ZoneDesChiottes.animator.SetBool("hasAlreadyShit", true);
+        ZoneDesChiottes.animator.SetInteger("actions", ZoneDesChiottes.animator.GetInteger("actions") + 1);
+        ZoneDesChiottes.navMeshAgent.SetDestination(toiletSortie);
 
         StartCleaning();
     }
