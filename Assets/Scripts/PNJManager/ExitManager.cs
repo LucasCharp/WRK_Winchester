@@ -37,7 +37,7 @@ public class ExitManager : MonoBehaviour
                 }
                 if (gameObject.CompareTag("Entry"))
                     animator.SetBool("hasEnterPub", true);
-                    gameManager.AugmenterArgent(25);
+                    gameManager.AugmenterArgent(8);
             }
         GoBackInPub(other);
         }

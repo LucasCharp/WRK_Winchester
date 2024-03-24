@@ -97,7 +97,7 @@ public class ClientController : MonoBehaviour
                 //barmanController.TraiterCommandes();
                 Debug.Log("Commande reçue : " + commande);
                 tempsInitial = Time.time; // Stocker le temps initial
-                Invoke("SimulerAttente", 20f);
+                Invoke("SimulerAttente", 15f);
             }
         }
     }
@@ -136,9 +136,9 @@ public class ClientController : MonoBehaviour
             if (reponse)
             {
                 float duree = Time.time - tempsInitial; // Calculer la durée écoulée
-                float TimePoint = 20 - (Time.time - tempsInitial);
+                float TimePoint = 15 - (Time.time - tempsInitial);
                 Debug.Log(TimePoint + " s restante");
-                int multiplicateur = Mathf.FloorToInt(TimePoint / 5f); // Utiliser la durée comme multiplicateur (par exemple, 1 point pour chaque tranche de 10 secondes)
+                int multiplicateur = Mathf.FloorToInt(TimePoint / 6f); // Utiliser la durée comme multiplicateur (par exemple, 1 point pour chaque tranche de 10 secondes)
                 int scoreGagne = 10 * (multiplicateur + 1); // Calculer le score gagné en fonction du multiplicateur
                 gameManager.AugmenterScore(scoreGagne); // Accéder à la méthode AugmenterScore à partir de l'instance de GameManager
                 Debug.Log("Merci ! Score gagné : ");

@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     public bool jeGagneEnContinue = false;
     public bool jeChieEnContinue = false;
     public ToiletArea toiletArea;
-    public TextMeshProUGUI scoreText;
     string resultString = "score: ";
     public float Multiplicateur = 1;
     public static UpgradeButtons UpdateButtons;
@@ -19,11 +18,17 @@ public class GameManager : MonoBehaviour
     private static bool one = false;
     public ExitManager exitManager = new ExitManager();
     public TextMeshProUGUI moneyTextstart = new TextMeshProUGUI();
+    public TextMeshProUGUI scoreText;
     void Start()
     {
         if (one == false)
         {
             money = 600;
+            one = true;
+        }
+        if (one == false)
+        {
+            score = 0;
             one = true;
         }
     }
@@ -52,7 +57,7 @@ public class GameManager : MonoBehaviour
                 if (!jeGagneEnContinue)
                 {
                     jeGagneEnContinue = true;
-                    Invoke("GainContinue", 2f);
+                    Invoke("GainContinue", 2.5f);
                 }
             }
             else
@@ -60,7 +65,7 @@ public class GameManager : MonoBehaviour
                 if (!jeGagneEnContinue)
                 {
                     jeGagneEnContinue = true;
-                    Invoke("PerteContinue", 2f);
+                    Invoke("PerteContinue", 2.5f);
                 }
             }
         }
@@ -73,6 +78,7 @@ public class GameManager : MonoBehaviour
         resultString = null;
         resultString += score;
         scoreText.text = resultString;
+        scoreText.ForceMeshUpdate();
     }
     private void GainContinue()
     {
@@ -86,12 +92,12 @@ public class GameManager : MonoBehaviour
     }
     private void shitContinue()
     {
-        AugmenterScore(-1);
+        AugmenterScore(-2);
         jeChieEnContinue = false;
     }
     public void invokeRef()
     {
-        Invoke("shitContinue", 1f);
+        Invoke("shitContinue", 2.1f);
     }
     public void AddMultiplicata()
     {

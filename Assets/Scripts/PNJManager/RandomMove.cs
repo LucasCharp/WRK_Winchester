@@ -171,11 +171,11 @@ public class RandomNavMeshMovement : MonoBehaviour
             if (animator.GetBool("isDancing") == false && animator.GetBool("willDrink") == false && animator.GetBool("isShitting") == false)
             {
                 animator.SetBool("isWalking", true);
-                Vector3 randomDirection = Random.insideUnitSphere * 5f; // Rayon de 10 unités
+                Vector3 randomDirection = Random.insideUnitSphere * 3f; // Rayon de 10 unités
                 randomDirection += transform.position;
                 randomDirection.y = 0;
                 NavMeshHit hit;
-                NavMesh.SamplePosition(randomDirection, out hit, 5f, NavMesh.AllAreas);
+                NavMesh.SamplePosition(randomDirection, out hit, 3f, NavMesh.AllAreas);
                 randomDestination = hit.position;
 
                 // Définir la destination pour le NavMeshAgent

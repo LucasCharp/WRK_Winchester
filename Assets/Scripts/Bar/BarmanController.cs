@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class BarmanController : MonoBehaviour
@@ -8,6 +9,12 @@ public class BarmanController : MonoBehaviour
     private ClientController commandePrioritaire;
     public GameManager gameManager; // Assurez-vous de définir cette référence dans l'inspecteur Unity-
     public MainSceneManager mainSceneManager;
+    public TextMeshProUGUI boissprio;
+
+    public void Start()
+    {
+        boissprio.text = "aucun";
+    }
     public void AjouterCommande(ClientController client, string commande)
     {
         if (commandePrioritaire == null)
@@ -18,6 +25,7 @@ public class BarmanController : MonoBehaviour
         {
             commandesEnAttente.Enqueue(client);
         }
+    TraiterCommandes();
     }
 
     public void TraiterCommandes()
@@ -25,6 +33,8 @@ public class BarmanController : MonoBehaviour
         if (commandePrioritaire != null && !commandePrioritaire.EstCommandeFulfilled())
         {
             Debug.Log("Commande prioritaire : " + commandePrioritaire.commande);
+            boissprio.text = commandePrioritaire.commande;
+            boissprio.ForceMeshUpdate();
         }
         else if (commandesEnAttente.Count > 0)
         {
