@@ -44,14 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3caca4df1e629f4fa74d81cc2fd18b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
-  boxNumber: 0
   jeGagneEnContinue: 0
   jeChieEnContinue: 0
   toiletArea: {fileID: 8685911421937968491, guid: 66b3feb6f0e77834d98237ff02d9dbf2,
     type: 3}
   scoreText: {fileID: 3641046227376719246, guid: 5e790d2cba16df24ea09587fb318cf0c,
     type: 3}
-  Multiplicateur: 0
-  UpdateButtons: {fileID: 0}
-  scoreTexts: []
+  Multiplicateur: 1
+  Multiplicatir: 1
+  exitManager: {fileID: 0}
+  moneyTextstart: {fileID: 8794934247729529311, guid: 90f24c4908b049d46b590c8ebe7757e8,
+    type: 3}

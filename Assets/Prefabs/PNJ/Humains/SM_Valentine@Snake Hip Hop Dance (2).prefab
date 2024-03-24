@@ -1008,6 +1008,7 @@ MonoBehaviour:
   commande: 
   gameManager: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
     type: 3}
+  canvaas: {fileID: 0}
   bulleCommande: {fileID: 229520654376158938}
   boissonImages:
   - {fileID: 4983698675517780887}

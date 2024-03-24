@@ -17,6 +17,7 @@ public class MainSceneManager : MonoBehaviour
     public Canvas startCanvas;
     public Canvas pauseCanvas;
     public Canvas playCanvas;
+    public Canvas CanvasArgent;
     public AudioClip[] son;
     public CameraRotation cameraRotation;
     public CameraColliderDetection cameraCollider;
@@ -137,7 +138,8 @@ public class MainSceneManager : MonoBehaviour
         startGame = true;
 
         playCanvas.gameObject.SetActive(true);
-        startCanvas.gameObject.SetActive(false) ;
+        startCanvas.gameObject.SetActive(false);
+        CanvasArgent.gameObject.SetActive(true);
 
 
         djAnimator.SetBool("isDancing", true);
@@ -153,7 +155,7 @@ public class MainSceneManager : MonoBehaviour
         Time.timeScale = 0f;
         victoryManager.PlayVictorySound();
         victoryCanvas.gameObject.SetActive(true);
-        scoreFinalText.text = gameManager.score.ToString();
+        scoreFinalText.text = GameManager.score.ToString();
         foreach (Canvas canvas in canvasToHide)
         {
             canvas.gameObject.SetActive(false); 

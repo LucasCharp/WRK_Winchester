@@ -432,7 +432,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
 
     public void OnRefillCliqued()
     {
-        if (gameManager.money >= refillCost && mainSceneManager.barLevel != 3)
+        if (GameManager.money >= refillCost && mainSceneManager.barLevel != 3)
         {
             SFXManager.instance.PlaySoundFXClip(son[0], transform, 1f);
             SFXManager.instance.PlaySoundFXClip(son[4], transform, 1f);
@@ -472,7 +472,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         if (!purchasedButtons.Contains("RedFloor"))
         {
-            if (gameManager.money >= moneyCost)
+            if (GameManager.money >= moneyCost)
             {
                 gameManager.AugmenterArgent(-moneyCost);
 
@@ -505,7 +505,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         if (!purchasedButtons.Contains("BrownFloor"))
         {
-            if (gameManager.money >= moneyCost)
+            if (GameManager.money >= moneyCost)
             {
                 gameManager.AugmenterArgent(-moneyCost);
 
@@ -538,7 +538,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         if (!purchasedButtons.Contains("WhiteFloor"))
         {
-            if (gameManager.money >= moneyCost)
+            if (GameManager.money >= moneyCost)
             {
                 gameManager.AugmenterArgent(-moneyCost);
 
@@ -595,7 +595,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         if (!purchasedButtons.Contains("RedWall"))
         {
-            if (gameManager.money >= moneyCost)
+            if (GameManager.money >= moneyCost)
             {
                 gameManager.AugmenterArgent(-moneyCost);
 
@@ -631,7 +631,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         if (!purchasedButtons.Contains("BrownWall"))
         {
-            if (gameManager.money >= moneyCost)
+            if (GameManager.money >= moneyCost)
             {
                 gameManager.AugmenterArgent(-moneyCost);
 
@@ -668,7 +668,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
     {
         if (!purchasedButtons.Contains("WhiteWall"))
         {
-            if (gameManager.money >= moneyCost)
+            if (GameManager.money >= moneyCost)
             {
                 gameManager.AugmenterArgent(-moneyCost);
 
@@ -738,7 +738,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("RedTable"))
             {
-                if (gameManager.money >= moneyCost)
+                if (GameManager.money >= moneyCost)
                 {
                     gameManager.AddMultiplicata();
                     gameManager.AugmenterArgent(-moneyCost);
@@ -786,7 +786,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("RedBanq"))
             {
-                if (gameManager.money >= moneyCost)
+                if (GameManager.money >= moneyCost)
                 {
                     gameManager.AddMultiplicata();
                     gameManager.AugmenterArgent(-moneyCost);
@@ -833,7 +833,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("RedChaise"))
             {
-                if (gameManager.money >= moneyCost)
+                if (GameManager.money >= moneyCost)
                 {
                     gameManager.AddMultiplicata();
                     gameManager.AugmenterArgent(-moneyCost);
@@ -884,7 +884,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("GreenTable"))
             {
-                if (gameManager.money >= moneyCost)
+                if (GameManager.money >= moneyCost)
                 {
                     gameManager.AddMultiplicata();
                     gameManager.AugmenterArgent(-moneyCost);
@@ -930,7 +930,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("GreenBanq"))
             {
-                if (gameManager.money >= moneyCost)
+                if (GameManager.money >= moneyCost)
                 {
                     gameManager.AddMultiplicata();
                     gameManager.AugmenterArgent(-moneyCost);
@@ -977,7 +977,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("GreenChaise"))
             {
-                if (gameManager.money >= moneyCost)
+                if (GameManager.money >= moneyCost)
                 {
                     gameManager.AddMultiplicata();
                     gameManager.AugmenterArgent(-moneyCost);
@@ -1028,7 +1028,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("YellowTable"))
             {
-                if (gameManager.money >= moneyCost)
+                if (GameManager.money >= moneyCost)
                 {
                     gameManager.AddMultiplicata();
                     gameManager.AugmenterArgent(-moneyCost);
@@ -1075,7 +1075,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("YellowBanq"))
             {
-                if (gameManager.money >= moneyCost)
+                if (GameManager.money >= moneyCost)
                 {
                     gameManager.AddMultiplicata();
                     gameManager.AugmenterArgent(-moneyCost);
@@ -1122,7 +1122,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("YellowChaise"))
             {
-                if (gameManager.money >= moneyCost)
+                if (GameManager.money >= moneyCost)
                 {
                     gameManager.AddMultiplicata();
                     gameManager.AugmenterArgent(-moneyCost);
@@ -1173,7 +1173,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("BlueTable"))
             {
-                if (gameManager.money >= moneyCost)
+                if (GameManager.money >= moneyCost)
                 {
                     gameManager.AddMultiplicata();
                     gameManager.AugmenterArgent(-moneyCost);
@@ -1220,7 +1220,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("BlueBanq"))
             {
-                if (gameManager.money >= moneyCost)
+                if (GameManager.money >= moneyCost)
                 {
                     gameManager.AddMultiplicata();
                     gameManager.AugmenterArgent(-moneyCost);
@@ -1267,7 +1267,7 @@ public class UpgradeButtons : MonoBehaviour // NE PAS OUBLIER DE DISABLE LES BOU
         {
             if (!purchasedButtons.Contains("BlueChaise"))
             {
-                if (gameManager.money >= moneyCost)
+                if (GameManager.money >= moneyCost)
                 {
                     gameManager.AddMultiplicata();
                     gameManager.AugmenterArgent(-moneyCost);

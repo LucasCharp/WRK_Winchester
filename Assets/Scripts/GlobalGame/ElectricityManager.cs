@@ -44,7 +44,7 @@ public class ElectricityManager : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (gameManager.money >= 200)
+        if (GameManager.money >= 200)
         {
             gameManager.AugmenterArgent(-200);
             foreach (GameObject light in redLights)

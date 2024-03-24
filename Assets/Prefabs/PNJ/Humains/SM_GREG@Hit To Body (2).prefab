@@ -1777,6 +1777,7 @@ MonoBehaviour:
   commande: 
   gameManager: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
     type: 3}
+  canvaas: {fileID: 4373934937369707383}
   bulleCommande: {fileID: 6389057609696097927}
   boissonImages:
   - {fileID: 7634886410121431125}
@@ -1784,7 +1785,7 @@ MonoBehaviour:
   - {fileID: 7043887626017907739}
   - {fileID: 642849968683872537}
   - {fileID: 7558787352783804697}
-  maBool: {fileID: 0}
+  maBool: {fileID: 4359923831865558824}
 --- !u!114 &2765869206295378133
 MonoBehaviour:
   m_ObjectHideFlags: 0

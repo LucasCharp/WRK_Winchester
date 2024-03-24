@@ -5,22 +5,27 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public float score = 0;
+    public static float score = 0;
     public bool jeGagneEnContinue = false;
     public bool jeChieEnContinue = false;
     public ToiletArea toiletArea;
     public TextMeshProUGUI scoreText;
     string resultString = "score: ";
     public float Multiplicateur = 1;
-    public UpgradeButtons UpdateButtons;
-    public TextMeshProUGUI moneyTextPlay;
+    public static UpgradeButtons UpdateButtons;
     public float Multiplicatir = 1f;
-    public float money = 0;
-    public int boxNumber;
+    public static float money = 0;
     string moneyString = "money: ";
+    private static bool one = false;
+    public ExitManager exitManager = new ExitManager();
+    public TextMeshProUGUI moneyTextstart = new TextMeshProUGUI();
     void Start()
     {
-        money = 600;
+        if (one == false)
+        {
+            money = 600;
+            one = true;
+        }
     }
     private void Update()
     {
@@ -106,7 +111,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("money augmenté de " + points + " points. Nouveau money : " + money);
         moneyString = null;
         moneyString += money;
-        moneyTextPlay.text = moneyString;
+        moneyTextstart.text = moneyString;
+        moneyTextstart.ForceMeshUpdate(); // Forcer la mise à jour de l'interface utilisateur
     }
     public void AddMultiplicato()
     {

@@ -13,18 +13,17 @@ public class ClientController : MonoBehaviour
     private float tempsInitial;
     public GameManager gameManager;
     private bool tropAttendu = false;
-    public Canvas canvaas;
 
     private Animator animator;
 
     public Image bulleCommande;
-    //public Image boisson;
+    public Image boisson;
     public Image[] boissonImages;
     private Dictionary<string, Image> boissonsImages = new Dictionary<string, Image>();
     private bool unParUn = true;
-    public RandomNavMeshMovement maBool;
     private bool firstTime = false;
     private GameObject gameobject;
+    private RandomNavMeshMovement maBool;
     private void Update()
     {
         if(commandeFulfilled == true)
@@ -36,20 +35,14 @@ public class ClientController : MonoBehaviour
     }
     private void Start()
     {
-        canvaas.gameObject.SetActive(false);
         bulleCommande.gameObject.SetActive(false);
         animator = GetComponent<Animator>();
-        GameObject canvass = GameObject.FindWithTag("canvaas");
-        if (canvass != null)
-        {
-            gameobject = canvass.GetComponent<GameObject>();
-        }
         GameObject gameManagerObject = GameObject.FindWithTag("GameManager");
         if (gameManagerObject != null)
         {
             gameManager = gameManagerObject.GetComponent<GameManager>();
         }
-        GameObject moneyManagerObject = GameObject.FindWithTag("MoneyManager");
+        GameObject moneyManagerObject = GameObject.FindWithTag("GameManager");
         if (gameManagerObject != null)
         {
             gameManager = moneyManagerObject.GetComponent<GameManager>();
@@ -81,6 +74,7 @@ public class ClientController : MonoBehaviour
     public void QuitterZoneBarman()
     {
         unParUn = true;
+        bulleCommande.gameObject.SetActive(false);
     }
 
     private void OnTriggerExit(Collider other)
@@ -114,7 +108,6 @@ public class ClientController : MonoBehaviour
     private void AfficherCommande()
     {
         bulleCommande.gameObject.SetActive(true);
-        canvaas.gameObject.SetActive(true);
         Image imageBoisson = boissonsImages[commande];
         imageBoisson.gameObject.SetActive(true);
     }
