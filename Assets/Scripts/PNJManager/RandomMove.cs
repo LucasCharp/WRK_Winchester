@@ -72,7 +72,7 @@ public class RandomNavMeshMovement : MonoBehaviour
         {
             CheckCollisionWithOtherPNJs();
             //Si le PNJ a réalisé 3 actions, il s'en va du pub
-            if (animator.GetInteger("actions") == 3)
+            if (animator.GetInteger("actions") == 2)
             {
                 animator.SetBool("isWalking", true);
                 if (!hasManagedDoor)
@@ -169,11 +169,11 @@ public class RandomNavMeshMovement : MonoBehaviour
             if (animator.GetBool("isDancing") == false && animator.GetBool("willDrink") == false && animator.GetBool("willShit") == false)
             {
                 animator.SetBool("isWalking", true);
-                Vector3 randomDirection = Random.insideUnitSphere * 3f; // Rayon de 10 unités
+                Vector3 randomDirection = Random.insideUnitSphere * 4f; // Rayon de 10 unités
                 randomDirection += transform.position;
                 randomDirection.y = 0;
                 NavMeshHit hit;
-                NavMesh.SamplePosition(randomDirection, out hit, 3f, NavMesh.AllAreas);
+                NavMesh.SamplePosition(randomDirection, out hit, 4f, NavMesh.AllAreas);
                 randomDestination = hit.position;
 
                 // Définir la destination pour le NavMeshAgent

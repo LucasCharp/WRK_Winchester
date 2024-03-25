@@ -1691,8 +1691,8 @@ Rigidbody:
     serializedVersion: 2
     m_Bits: 0
   m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_ImplicitTensor: 0
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -1706,18 +1706,18 @@ NavMeshAgent:
   m_GameObject: {fileID: 8081415053164089732}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.7
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Radius: 0.00001
+  m_Speed: 2.8
+  m_Acceleration: 5
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 100
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 3.6
+  m_Height: 2.5
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!114 &4359923831865558824
 MonoBehaviour:
@@ -1763,7 +1763,6 @@ MonoBehaviour:
     type: 3}
   gameManager: {fileID: 1828577996108734185, guid: 19634d6e5a35825488394190d7639e57,
     type: 3}
-  toiletPos: {x: -7.27, y: 1, z: -3.5}
 --- !u!114 &-8751832194286201466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1787,6 +1786,7 @@ MonoBehaviour:
   - {fileID: 7043887626017907739}
   - {fileID: 642849968683872537}
   - {fileID: 7558787352783804697}
+  maBool: {fileID: 4359923831865558824}
 --- !u!114 &2765869206295378133
 MonoBehaviour:
   m_ObjectHideFlags: 0
