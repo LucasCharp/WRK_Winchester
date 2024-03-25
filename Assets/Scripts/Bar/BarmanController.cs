@@ -10,6 +10,7 @@ public class BarmanController : MonoBehaviour
     public GameManager gameManager; // Assurez-vous de définir cette référence dans l'inspecteur Unity-
     public MainSceneManager mainSceneManager;
     public TextMeshProUGUI boissprio;
+    public AudioClip[] son;
     string resultString = "Aucun";
 
     public void AjouterCommande(ClientController client, string commande)
@@ -44,6 +45,7 @@ public class BarmanController : MonoBehaviour
     {
         Debug.Log("Boisson vendue : " + nomBoisson);
         Debug.Log(mainSceneManager.barLevel);
+        SFXManager.instance.PlaySoundFXClip(son[0], transform, 1f);
 
         if (commandePrioritaire != null && mainSceneManager.barLevel != 0)
         {

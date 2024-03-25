@@ -45,7 +45,7 @@ public class ClientController : MonoBehaviour
         }
 
         boissonsImages.Add("Absynthe", boissonImages[0]);
-        boissonsImages.Add("Bière", boissonImages[1]);
+        boissonsImages.Add("Biere", boissonImages[1]);
         boissonsImages.Add("Champagne", boissonImages[2]);
         boissonsImages.Add("Cognac", boissonImages[3]);
         boissonsImages.Add("Vin", boissonImages[4]);

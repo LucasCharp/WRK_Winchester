@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public ExitManager exitManager = new ExitManager();
     public TextMeshProUGUI moneyTextstart = new TextMeshProUGUI();
     public TextMeshProUGUI scoreText;
+    public AudioClip[] son;
     void Start()
     {
         if (one == false)
@@ -73,6 +74,7 @@ public class GameManager : MonoBehaviour
     // Méthode pour augmenter le score
     public void AugmenterScore(float points)
     {
+        SFXManager.instance.PlaySoundFXClip(son[0], transform, 1f);
         score += points * Multiplicateur;
         Debug.Log("Score augmenté de " + points + " points. Nouveau score : " + score);
         resultString = null;
@@ -106,7 +108,6 @@ public class GameManager : MonoBehaviour
     }
     public void AugmenterArgent(float points)
     {
-        Debug.Log(points);
         if (points > 0)
         {
             money += points * Multiplicatir;
@@ -120,6 +121,7 @@ public class GameManager : MonoBehaviour
         moneyString += money;
         moneyTextstart.text = moneyString;
         moneyTextstart.ForceMeshUpdate(); // Forcer la mise à jour de l'interface utilisateur
+        SFXManager.instance.PlaySoundFXClip(son[0], transform, 1f);
     }
     public void AddMultiplicato()
     {

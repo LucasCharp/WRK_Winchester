@@ -7,20 +7,22 @@ public class VideurUIManager : MonoBehaviour
     public MainSceneManager mainSceneManager;
     public GameObject videurBox;
     public Canvas videurCanvas;
+    private bool hasCliqued;
 
-    // Start is called before the first frame update
     private void OnMouseDown()
     {
-        videurBox.SetActive(false);
-        videurCanvas.gameObject.SetActive(true);
-        cameraRotation.canRotate = false;
-    }
-
-    public void OnRetourCliqued()
-    {
-        cameraRotation.canRotate = true;
-        videurCanvas.gameObject.SetActive(false);
-        videurBox.SetActive(true);
+        if (hasCliqued == false)
+        {
+            videurCanvas.gameObject.SetActive(true);
+            cameraRotation.canRotate = false;
+            hasCliqued = true;
+        }
+        else
+        {
+            videurCanvas.gameObject.SetActive(false);
+            cameraRotation.canRotate = true;
+            hasCliqued = false;
+        }
     }
 }
 

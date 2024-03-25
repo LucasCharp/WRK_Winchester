@@ -32,6 +32,8 @@ public class RandomNavMeshMovement : MonoBehaviour
     private GameObject opponent;
     private NavMeshAgent opponentNavMeshAgent;
     private Animator opponentAnimator;
+    private float blockedTime = 0f;
+    private const float maxBlockedTime = 15f; // Temps maximum autorisé avant de sortir automatiquement
 
 
     private void Awake()
@@ -70,9 +72,18 @@ public class RandomNavMeshMovement : MonoBehaviour
 
         if (animator.GetBool("hasEnterPub") == true)
         {
+            // Incrémenter le compteur de temps bloqué
+            blockedTime += Time.deltaTime;
+
+            // Vérifier si le temps bloqué dépasse le temps maximum autorisé
+            if (blockedTime >= maxBlockedTime)
+            {
+                // Appeler la méthode pour sortir automatiquement du pub
+                LeavePubAutomatically();
+            }
             CheckCollisionWithOtherPNJs();
             //Si le PNJ a réalisé 3 actions, il s'en va du pub
-            if (animator.GetInteger("actions") == 2)
+            if (animator.GetInteger("actions") == 3)
             {
                 animator.SetBool("isWalking", true);
                 if (!hasManagedDoor)
@@ -301,5 +312,29 @@ public class RandomNavMeshMovement : MonoBehaviour
 
         // Activer le VFX
         vfxInstance.Play();
+    }
+    private void LeavePubAutomatically()
+    {
+        // Mettre à jour les variables nécessaires
+        animator.SetBool("isWalking", true);
+        animator.SetBool("hasEnterPub", false);
+        // Réinitialiser le compteur de temps bloqué
+        blockedTime = 0f;
+        animator.SetBool("isWalking", true);
+        if (!hasManagedDoor)
+        {
+            foreach (GameObject door in doors)
+            {
+                DoorLeft doorScript = door.GetComponent<DoorLeft>();
+                doorScript.howManyPnjUseDoors += 1;
+                if (doorScript.howManyPnjUseDoors == 1)
+                {
+                    doorScript.OpenDoor();
+                }
+            }
+            // Mettez à jour la variable pour indiquer que ManageDoor() a été appelé
+            hasManagedDoor = true;
+        }
+        navMeshAgent.SetDestination(EndZonePosition);
     }
 }
