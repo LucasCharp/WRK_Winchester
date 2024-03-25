@@ -17713,6 +17713,12 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &672930350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1305149774467123497, guid: 002c1be9dce680d44a29462f82366579,
+    type: 3}
+  m_PrefabInstance: {fileID: 1954168443658716963}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &680488133
 GameObject:
   m_ObjectHideFlags: 0
@@ -39430,12 +39436,25 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1954168443658716963}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 672930350}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9100c378c666c364fa7d36e4b8dcf308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1656380709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672930350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08ec80c6fac39d84291d16fd5e114e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: b3027e68bee6c604daeb462311d54a99, type: 2}
 --- !u!1 &1659473176
 GameObject:
   m_ObjectHideFlags: 0
@@ -50886,6 +50905,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8757933926999701384, guid: 002c1be9dce680d44a29462f82366579,
         type: 3}
+      propertyPath: pet
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8757933926999701384, guid: 002c1be9dce680d44a29462f82366579,
+        type: 3}
       propertyPath: Caca
       value: 
       objectReference: {fileID: 1883940914}
@@ -50912,7 +50936,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1305149774467123497, guid: 002c1be9dce680d44a29462f82366579,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1656380709}
   m_SourcePrefab: {fileID: 100100000, guid: 002c1be9dce680d44a29462f82366579, type: 3}
 --- !u!1001 &2009969283228960006
 PrefabInstance:
@@ -52095,6 +52123,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 714278223}
     m_Modifications:
+    - target: {fileID: 6329305383735665579, guid: acc87edd60aa2d847b3c48605e86adb5,
+        type: 3}
+      propertyPath: pet
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6329305383735665579, guid: acc87edd60aa2d847b3c48605e86adb5,
         type: 3}
       propertyPath: Caca

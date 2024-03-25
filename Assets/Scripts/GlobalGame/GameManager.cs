@@ -121,7 +121,6 @@ public class GameManager : MonoBehaviour
         moneyString += money;
         moneyTextstart.text = moneyString;
         moneyTextstart.ForceMeshUpdate(); // Forcer la mise à jour de l'interface utilisateur
-        SFXManager.instance.PlaySoundFXClip(son[0], transform, 1f);
     }
     public void AddMultiplicato()
     {

@@ -15,6 +15,7 @@ public class Toilet : MonoBehaviour
     public Button ToiletOccupied;
     public static Toilet instance;
     private Vector3 toiletSortie = new Vector3(-1.8f, 1f, -1.2f);
+    public AudioClip pet;
 
     public void UseToilet()
     {
