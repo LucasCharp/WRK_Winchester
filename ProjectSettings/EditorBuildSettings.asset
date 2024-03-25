@@ -18,6 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene-Romain.unity
     guid: 3cd41b77df32e8c4bb17577391f42c71
   m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
+      guid: 76e54e90e12a86847bb14aa75e4ef1d1, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: ab9aa38cc627d074bb47510d11a7fb06,
+      type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000,
+      guid: 3e0b216ff388f7845a2b2a9a9d259092, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: 70de52d4f7de72d448cca31cd1352e8d, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
