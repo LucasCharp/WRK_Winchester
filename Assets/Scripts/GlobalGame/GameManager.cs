@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     {
         if (one == false)
         {
-            money = 600;
+            money = 800;
             one = true;
         }
         if (one == false)
